@@ -14,3 +14,7 @@ html, body {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+.btn-round{
+  border-radius: 17px;
+}
