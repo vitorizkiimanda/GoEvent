@@ -1,0 +1,3 @@
+FrontEnd Notes :
+- manage hide/show for mobile
+- nama css buatan sendiri style_goevent : biar ga nubruk sama style.cc nya bootstrap

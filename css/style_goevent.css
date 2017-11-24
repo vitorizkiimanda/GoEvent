@@ -1,0 +1,16 @@
+html, body {
+  height: 100%;
+  width: 100%;
+
+  /* ini nnti fontnya di link */
+  font-family: Comfortaa, Arial, sans-serif;
+}
+
+#goevent_color {
+  color: #2980b9;
+}
+
+#no_padding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
