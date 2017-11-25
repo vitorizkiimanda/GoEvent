@@ -1,3 +1,5 @@
+<?php require_once '../backend/create_event.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -7,7 +9,7 @@
   <title>GoEvent</title>
 
   <link rel="shortcut icon" href="../../images/title.png" />
-  
+
   <!-- pengaturan view agar responsif namun pada mobile tidak bisa zooming -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -53,13 +55,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="goevent_color" href="../../">GoEvent</a>
+          <a class="navbar-brand" id="goevent_color" href="../../index.html">GoEvent</a>
         </div>
-    
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../../pages/browse_event">Browse Event</a></li>
+            <li><a href="#">Browse Event</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -80,66 +82,70 @@
     <div class="row">
       <div class="col-lg-2"></div>
       <div class="col-lg-8">
+
+
         <h1>1. Event Details</h1>
-        <form>
+        <form action="../backend/create_event.php" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <label for="exampleInputEmail1">Event Title</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name">
+              <input type="text" name="event_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Location</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address">
+              <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address">
             </div>
             <div class="row">
               <div class="col-lg-6">
                 <h3>Starts</h3>
                   <div class="col-lg-6">
-                      <p>Date: <input type="text" id="datepicker"></p>
+                      <p>Date: <input type="date" name="event_date_starts" id="datepicker"></p>
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="am/pm">
+                        <input type="time" name="event_time_starts" class="form-control" id="exampleInputEmail1" placeholder="am/pm">
                   </div>
               </div>
               <div class="col-lg-6">
                 <h3>Ends</h3>
                   <div class="col-lg-6">
-                      <p>Date: <input type="text" id="datepicker"></p>
+                      <p>Date: <input type="date" name="event_date_ends" id="datepicker"></p>
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="am/pm">
+                        <input type="time" name="event_time_ends" class="form-control" id="exampleInputEmail1" placeholder="am/pm">
                   </div>
               </div>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Capacity</label>
-              <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Maximum number of participants">
+              <input type="number" name="event_capacity" class="form-control" id="exampleInputEmail1" placeholder="Maximum number of participants">
             </div>
 
             <div class="form-group">
                 <label for="exampleInputFile">Certificate Template</label>
-                <input type="file" accept="image/*" id="exampleInputFile">
+                <input type="file" name="event_certificate" accept="image/*" id="exampleInputFile">
             </div>
-            
+
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Event description</label>
-                <textarea type="number" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">
+                <textarea type="textarea" name="event_description" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">
                 </textarea>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputFile">Event Photo</label>
-                <input type="file" accept="image/*" id="exampleInputFile">
+                <input type="file" name="event_photo" accept="image/*" id="exampleInputFile">
             </div>
 
             <br />
             <button type="submit" class="btn btn-primary btn-round btn-block">Submit</button>
         </form>
       </div>
+
+
       <div class="col-lg-2"></div>
-    </div>  
+    </div>
 
 
 
