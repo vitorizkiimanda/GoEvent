@@ -133,6 +133,13 @@
     <a href="pages/browse_event/" class="btn btn-primary navbar-btn">See More</a>
   </div>
 
+  <?php
+    echo  $_SESSION['id'];
+    echo $_SESSION['user_name'];
+    echo $_SESSION['user_city'];
+    echo $_SESSION['user_photo']; 
+  ?>
+
   <!-- browse by kategories -->
   <div class="container">
     <h2 class="text-center">Browse by Top Categories</h1>

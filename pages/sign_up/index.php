@@ -1,3 +1,7 @@
+<?php
+  include "../backend/sign_up.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -87,11 +91,11 @@
     <div class="row">
       <div class="col-lg-4"></div>
       <div class="col-lg-4">
-          <form>
+          <form method=post>
               <div class="form-group">
                 <label for="email">Email address</label>
                 <!-- <input type="email" class="form-control" id="email" name="email" placeholder="Email"> -->
-                <p class="form-control-static">email@example.com
+                <p class="form-control-static"><?php echo $email;?>
                 <a href="../../pages/sign_in"><span class="glyphicon glyphicon-pencil right_hvsz" aria-hidden="true"></span></a></p>  
               </div>
               <div class="form-group">
@@ -103,7 +107,7 @@
                 <input type="password" class="form-control" id="password" name="password" placeholder="">
               </div>
               <p>By signing up, I agree to Eventbrite's <a>terms of service</a>, <a>privacy policy</a>, and <a>community guidelines</a>.</p>
-              <a href="../../" class="btn btn-primary btn-round btn-block">Sign Up</a>
+              <button type="submit" class="btn btn-primary btn-round btn-block">Sign Up</button>
           </form>
       </div>
       <div class="col-lg-4"></div>
