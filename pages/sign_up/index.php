@@ -78,8 +78,8 @@
 
   <div class="container text-center">
     <p>logo</p>
-    <h2>Let's get started</h2>
-    <p>Enter your email to sign up or sign in.</p>
+    <h2>Welcome</h2>
+    <p>Create an account.</p>
     <br />   
   </div>
 
@@ -95,13 +95,16 @@
                 <a href="../../pages/sign_in"><span class="glyphicon glyphicon-pencil right_hvsz" aria-hidden="true"></span></a></p>  
               </div>
               <div class="form-group">
+                <label for="full_name">Full Name</label>
+                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="">
+              </div>
+              <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="">
               </div>
-              <a href="../../" class="btn btn-primary btn-round btn-block">Log In</a>
+              <p>By signing up, I agree to Eventbrite's <a>terms of service</a>, <a>privacy policy</a>, and <a>community guidelines</a>.</p>
+              <a href="../../" class="btn btn-primary btn-round btn-block">Sign Up</a>
           </form>
-          <br />
-          <div class="text-center"><a>Forgot password</a></div>
       </div>
       <div class="col-lg-4"></div>
     </div>

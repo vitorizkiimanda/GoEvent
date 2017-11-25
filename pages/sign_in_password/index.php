@@ -78,8 +78,8 @@
 
   <div class="container text-center">
     <p>logo</p>
-    <h2>Let's get started</h2>
-    <p>Enter your email to sign up or sign in.</p>
+    <h2>Welcome back</h2>
+    <p>Please enter your password to log in.</p>
     <br />   
   </div>
 
