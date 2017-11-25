@@ -70,41 +70,16 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-  
-  <div class="container-fluid">
+
+  <div class="container text-center middle">
+    <br /> 
+    <!-- <div><span class="glyphicon glyphicon-envelope email_icon_jumbo" aria-hidden="true"></span></div> -->
     <br />
-    <a href="../../" class="close" role="button">X</a>
-  </div>
-
-  <div class="container text-center">
-    <p>logo</p>
-    <h2>Welcome back</h2>
-    <p>Please enter your password to log in.</p>
+    <h1 id="middle">Check your email</h1>
+    <p>We sent an email to </p>
+    <p>example@email.com with instructions </p>
+    <p>to reset your password.</p>
     <br />   
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4"></div>
-      <div class="col-lg-4">
-          <form>
-              <div class="form-group">
-                <label for="email">Email address</label>
-                <!-- <input type="email" class="form-control" id="email" name="email" placeholder="Email"> -->
-                <p class="form-control-static">email@example.com
-                <a href="../../pages/sign_in"><span class="glyphicon glyphicon-pencil right_hvsz" aria-hidden="true"></span></a></p>  
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="">
-              </div>
-              <a href="../../" class="btn btn-primary btn-round btn-block">Log In</a>
-          </form>
-          <br />
-          <div class="text-center"><a href="../../pages/send_email">Forgot password</a></div>
-      </div>
-      <div class="col-lg-4"></div>
-    </div>
   </div>
   
   

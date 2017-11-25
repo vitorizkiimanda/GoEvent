@@ -18,3 +18,7 @@ html, body {
 .btn-round{
   border-radius: 17px;
 }
+
+#middle {
+  padding-top: 20vh;
+}
