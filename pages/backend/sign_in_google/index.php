@@ -10,9 +10,9 @@ if(isset($_GET['code'])){
 	header('Location: ' . filter_var($redirectURL, FILTER_SANITIZE_URL));
 }
 
-if (isset($_SESSION['token'])) {
-    $gClient->setAccessToken($_SESSION['token']);    
-}
+// if (isset($_SESSION['token'])) {
+//     $gClient->setAccessToken($_SESSION['token']);    
+// }
 
 if ($gClient->getAccessToken()) {    
 	//Get user profile data from google
@@ -32,8 +32,8 @@ if ($gClient->getAccessToken()) {
     $userData = $user->checkUser($gpUserData);
 	
 	//Storing user data into session
-    $_SESSION['userData'] = $userData;
-    header('Location: ../../../index.html' );    
+   // $_SESSION['userData'] = $userData;
+    header('Location: ../../../index.php' );    
     
     
 	

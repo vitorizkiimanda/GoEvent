@@ -14,7 +14,7 @@ $redirectURL = 'http://localhost/GoEvent/pages/backend/sign_in_google/'; //Callb
 
 //Call Google API
 $gClient = new Google_Client();
-$gClient->setApplicationName('Login to CodexWorld.com');
+$gClient->setApplicationName('GoEvent');
 $gClient->setClientId($clientId);
 $gClient->setClientSecret($clientSecret);
 $gClient->setRedirectUri($redirectURL);

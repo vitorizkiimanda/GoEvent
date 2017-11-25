@@ -49,8 +49,8 @@
       <div class="col-lg-4">
           <form>
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
               </div>
               <button type="submit" class="btn btn-primary btn-round btn-block">Submit</button>
               <a href="../backend/sign_in_google" class="btn btn-primary btn-round btn-block">Google</a>
