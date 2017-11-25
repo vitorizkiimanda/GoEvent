@@ -108,22 +108,48 @@
     <br />
     <div class="clearfix"></div>
     <!-- details -->
-    <div class="container">
 
-      <div class="row">
-          <div class="col-lg-8">
-              <button type="button" class="btn btn-default" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default" aria-label="Left Align">
-                  <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
-              </button>
-          </div>
-          <div class="col-lg-4">
-              <button type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>
-          </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6">
+            <h5><b>DESCRIPTION</b></h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <br />
+            <h4><b>TERM & CONDITION</b></h4>
+            <ol>
+              <li>Pendaftar bersifat individual/ Group beranggotakan 3 orang . Pria/Wanita dengan usia minimum 17 tahun dan maksimal 45 tahun</li>
+              <li>Setiap Pendaftar dapat memilih role masing -masing yaitu Hacker (Developer), Hustler (Business) dan Hipster (Design)</li>
+              <li>Pendaftaran dikenakan biaya pendaftaran sebesar Rp.50,000 / individu</li>
+              <li>Bagi peserta Individual, di acara AAJI Hackathon 2018 tanggal 24 -25 Januari akan dibentuk menjadi sebuah group dengan maksimal peserta per group sebanyak 3 orang</li>
+            </ol>
+
+            <br />
+            <h4><b>TIMELINE AAJI HACKATHON 2018 :</b></h4>
+            <ol>
+              <li>Pendaftar bersifat individual/ Group beranggotakan 3 orang . Pria/Wanita dengan usia minimum 17 tahun dan maksimal 45 tahun</li>
+              <li>Setiap Pendaftar dapat memilih role masing -masing yaitu Hacker (Developer), Hustler (Business) dan Hipster (Design)</li>
+              <li>Pendaftaran dikenakan biaya pendaftaran sebesar Rp.50,000 / individu</li>
+              <li>Bagi peserta Individual, di acara AAJI Hackathon 2018 tanggal 24 -25 Januari akan dibentuk menjadi sebuah group dengan maksimal peserta per group sebanyak 3 orang</li>
+            </ol>
+
+            <br />
+            <br />
+            <p><i>FOR MORE INFORMATION PLEASE CONTACT :</i></p>
+            <p>VITO 089657011491</p>
+            <p>email : vitorizkiimanda@gmail.com</p>
         </div>
-      </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
+            <h5><b>DATE AND TIME</b></h5>
+            <p>Wed, Jan 24, 2018, 9:00 AM –<br/>Fri, Jan 25, 2019, 8:00 PM WIB<br /><a>Add to Calendar</a></p>
+            <br />
+            <h5><b>LOCATION</b></h5>
+            <p>Purwadhika Startup School Green Office Park 9, Ground Floor, BSD, TangerangCisauk, Banten 15345<br /><a>View Map</a></p>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    
       
   </div>
 
