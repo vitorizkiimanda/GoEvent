@@ -52,7 +52,8 @@
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email">
               </div>
-              <button type="submit" class="btn btn-primary btn-round btn-block">Submit</button>
+              <a href="../../pages/sign_up" class="btn btn-primary btn-round btn-block">Get Started - signup</a>
+              <a href="../../pages/sign_in_password" class="btn btn-primary btn-round btn-block">Get Started</a>
               <a href="../backend/sign_in_google" class="btn btn-primary btn-round btn-block">Google</a>
           </form>
       </div>
