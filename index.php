@@ -129,11 +129,9 @@
   </div>
 
   <!-- button see more -->
-  <form method="post" action="./pages/backend/home.php">
-    <div class="container text-center">
-      <button type="submit" class="btn btn-primary navbar-btn" name="see_more">SEE MORE</button>
-    </div>
-  </form>
+  <div class="container text-center">
+    <a href="pages/browse_event/" class="btn btn-primary navbar-btn">See More</a>
+  </div>
 
   <!-- browse by kategories -->
   <div class="container">
