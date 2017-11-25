@@ -138,6 +138,15 @@
             <p><i>FOR MORE INFORMATION PLEASE CONTACT :</i></p>
             <p>VITO 089657011491</p>
             <p>email : vitorizkiimanda@gmail.com</p>
+
+            <br />
+            <br />
+            <p>TAGS</p>
+            <br />
+            <button type="button" class="btn btn-primary">IT</button>
+            <button type="button" class="btn btn-primary">Computer</button>
+            <button type="button" class="btn btn-primary">Teen</button>
+
         </div>
         <div class="col-lg-1"></div>
         <div class="col-lg-3">
