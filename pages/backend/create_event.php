@@ -26,7 +26,8 @@
         $photo_size = $_FILES['event_photo']['size'];
         $photo_type = $_FILES['event_photo']['type'];
         $photo_file = $_FILES['event_photo']['tmp_name'];
-        $photo_name = $count.'_photo.jpeg';
+        $sub_photo = substr($photo_type,6);
+        $photo_name = $count.'_photo.'.$sub_photo;
         $photo_path = "../../photo_event/".$photo_name;
         move_uploaded_file($photo_file, $photo_path);
 
@@ -34,7 +35,9 @@
         $certificate_size = $_FILES['event_certificate']['size'];
         $certificate_type = $_FILES['event_certificate']['type'];
       	$certificate_file = $_FILES['event_certificate']['tmp_name'];
-        $certificate_name = $count.'_certificate.jpeg';
+        $sub_certificate = substr($certificate_type,6);
+        echo $sub_certificate ;
+        $certificate_name = $count.'_certificate.'.$sub_certificate;
         $certificate_path = "../../certificate_event/".$certificate_name;
         move_uploaded_file($certificate_file, $certificate_path);
 
@@ -45,7 +48,7 @@
           echo "<p> New Event Successfully Created</p>";
       }
       else {
-        echo "<p> GAGAL TOLOL</p>";
+        echo "<p> GAGAL TOLOL!!</p>";
 
       }
     }
