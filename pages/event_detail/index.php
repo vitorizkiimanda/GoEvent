@@ -72,11 +72,13 @@
     </nav>
 
   <div class="container text-wrap">
+    <!-- header -->
     <div class="row">
       <div class="col-lg-8">
-        <h1>P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t</h1>
+        <h1>P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t</h1>
       </div>
       <div class="col-lg-4">
+        <br />
         <p>Date Event</p>
         <br />
         <h3>Event Title</h3>
@@ -86,17 +88,43 @@
         <p>free</p>
       </div>
     </div>
+
     <div class="clearfix"></div>
+    <!-- buttons -->
     <div class="row">
       <div class="col-lg-8">
           <button type="button" class="btn btn-default" aria-label="Left Align">
               <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
-            </button>
+          </button>
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
+          </button>
       </div>
       <div class="col-lg-4">
           <button type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>
       </div>
     </div>
+
+    <br />
+    <div class="clearfix"></div>
+    <!-- details -->
+    <div class="container">
+
+      <div class="row">
+          <div class="col-lg-8">
+              <button type="button" class="btn btn-default" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="btn btn-default" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
+              </button>
+          </div>
+          <div class="col-lg-4">
+              <button type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>
+          </div>
+        </div>
+      </div>
+      
   </div>
 
 
