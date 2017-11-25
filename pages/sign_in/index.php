@@ -33,7 +33,7 @@
   
   <div class="container-fluid">
     <br />
-    <a href="../../index.html" class="close" role="button">X</a>
+    <a href="../../" class="close" role="button">X</a>
   </div>
 
   <div class="container text-center">

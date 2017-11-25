@@ -41,7 +41,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="goevent_color" href="index.html">GoEvent</a>
+            <a class="navbar-brand" id="goevent_color" href="index.php">GoEvent</a>
           </div>
       
           <!-- Collect the nav links, forms, and other content for toggling -->
