@@ -94,7 +94,8 @@
               <label for="exampleInputEmail1">Location</label>
               <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
               <!-- Google API autocomplete starts -->
-                            <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city"></input>
+              <br />  
+                            <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city"></input>
                                 <script>
                                   var placeSearch, autocomplete;
                                   var componentForm = {
