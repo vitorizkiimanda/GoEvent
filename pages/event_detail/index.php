@@ -77,7 +77,7 @@
     <!-- header -->
     <div class="row">
       <div class="col-lg-8">
-        <img src='../../photo_event/<?php echo $hasil['event_photo']; ?>' width='200' height='100'>
+         <img src='../../../photo_event/<?php echo $hasil['event_photo']; ?>' width='300' height='200'>
       </div>
       <div class="col-lg-4">
         <br />
@@ -115,8 +115,7 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-6">
             <h5><b>DESCRIPTION</b></h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+            <p><?php echo $hasil['event_description']?></p>
             <br />
             <h4><b>TERM & CONDITION</b></h4>
             <ol>
@@ -153,10 +152,13 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-3">
             <h5><b>DATE AND TIME</b></h5>
-            <p>Wed, Jan 24, 2018, 9:00 AM –<br/>Fri, Jan 25, 2019, 8:00 PM WIB<br /><a>Add to Calendar</a></p>
+            <p> <?php echo $hasil['event_date_starts'].", ".$hasil['event_time_starts'] ?> <br/>
+              <?php echo $hasil['event_date_ends'].", ".$hasil['event_time_ends'] ?> <br/>
+            <!-- <p>Wed, Jan 24, 2018, 9:00 AM –<br/>Fri, Jan 25, 2019, 8:00 PM WIB<br /> -->
+              <a>Add to Calendar</a></p>
             <br />
             <h5><b>LOCATION</b></h5>
-            <p>Purwadhika Startup School Green Office Park 9, Ground Floor, BSD, TangerangCisauk, Banten 15345<br /><a>View Map</a></p>
+            <p> <?php echo $hasil['event_city']?><br /><a>View Map</a></p>
         </div>
         <div class="col-lg-1"></div>
     </div>
