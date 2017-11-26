@@ -87,9 +87,10 @@
       <div class="col-lg-2"></div>
       <div class="col-lg-8">
         <h1 class="text-center">Find your next experience</h1>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search events or categories">
-          <span class="input-group-btn">
+        <form method="post" action="home.php" >
+          <div class="input-group">
+            <input type="text" class="form-control" name="event_search" placeholder="Search events or categories">
+            <span class="input-group-btn">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Date <span class="caret"></span>
               </button>
@@ -102,9 +103,10 @@
                   <li><a href="#">Next Week</a></li>
                   <li><a href="#">Next Month</a></li>
                 </ul>
-            <button class="btn btn-default" type="button">SEARCH</button>
-          </span>
-        </div><!-- /input-group -->
+              <button class="btn btn-default" type="button">SEARCH</button>
+            </span>
+          </div><!-- /input-group -->
+        </form>
       </div><!-- /.col-lg-6 -->
       <div class="col-lg-2"></div>
     </div><!-- /.row -->
@@ -120,10 +122,17 @@
   <!-- Events Card -->
   <div class="container">
     <div class="row">
-      <?php while ($item = mysqli_fetch_array($event)) { ?>
-        <div class="col-lg-4">
-        <p> <?php echo $item['event_name'] ?> </p>
-        </div>
+      <?php while ($item = mysqli_fetch_array($event)) { ?>   
+        <a href="pages/event_detail/index.php/<?php echo $item['event_id']?>" >  
+          <div class="col-lg-4">
+            <p> <img src='photo_event/<?php echo $item['event_photo']; ?>' width='100' height='70'> </p>
+            <p> <?php echo $item['event_name'] ?> </p>
+            <p> <?php echo $item['event_city'] ?> </p>
+            <p> <?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?> </p>
+            <p> <?php echo $item['event_date_ends'] . " " . $item['event_time_ends'] ?> </p>
+            <p> <?php echo $item['event_description'] ?> </p>
+          </div>
+        </a>  
       <?php } ?>
     </div>
   </div>
@@ -134,10 +143,10 @@
   </div>
 
   <?php
-    echo  $_SESSION['id'];
-    echo $_SESSION['user_name'];
-    echo $_SESSION['user_city'];
-    echo $_SESSION['user_photo']; 
+    //echo  $_SESSION['id'];
+    //echo $_SESSION['user_name'];
+    //echo $_SESSION['user_city'];
+    //echo $_SESSION['user_photo']; 
   ?>
 
   <!-- browse by kategories -->

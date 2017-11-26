@@ -10,7 +10,11 @@
     else
         $event_query = "SELECT * FROM events LIMIT 15";
     $event = mysqli_query($connect, $event_query);
-    if (isset($_POST['see_more']))
-        header('location: ../browse_event/index.html');
+
+    $date = getdate();
+
+    
+
+
     
 ?>
