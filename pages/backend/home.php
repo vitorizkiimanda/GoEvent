@@ -13,14 +13,9 @@
 
     $date = getdate();
 
-<<<<<<< HEAD
     if (isset($_POST['see_more'])){
         header('location: index.html');
     }
-=======
-    
-
->>>>>>> 3766c7aa879c848dac889e80084fdfeb1a20c349
 
     
 ?>
