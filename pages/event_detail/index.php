@@ -1,3 +1,5 @@
+<?php require_once '../backend/event_detail.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -7,10 +9,10 @@
   <title>GoEvent</title>
 
   <link rel="shortcut icon" href="../../images/title.png" />
-  
+
   <!-- pengaturan view agar responsif namun pada mobile tidak bisa zooming -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  
+
   <!-- attach JavaScripts -->
   <script src="../../js/bootstrap.min.js"></script>
   <script src="../../js/jquery.min.js"></script>
@@ -43,7 +45,7 @@
             </button>
             <a class="navbar-brand" id="goevent_color" href="../../">GoEvent</a>
           </div>
-      
+
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <form class="navbar-form navbar-left">
@@ -75,15 +77,15 @@
     <!-- header -->
     <div class="row">
       <div class="col-lg-8">
-        <h1>P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t P o s t e r E v e n t</h1>
+        <img src='../../photo_event/<?php echo $hasil['event_photo']; ?>' width='200' height='100'>
       </div>
       <div class="col-lg-4">
         <br />
-        <p>Date Event</p>
+        <p><?php echo $hasil['event_date_starts']?> </p>
         <br />
-        <h3>Event Title</h3>
+        <h3><?php echo $hasil['event_name']?> </h3>
         <br />
-        <p>Event address</p>
+        <p><?php echo $hasil['event_city']?></p>
         <br />
         <p>free</p>
       </div>
@@ -158,8 +160,8 @@
         </div>
         <div class="col-lg-1"></div>
     </div>
-    
-      
+
+
   </div>
 
 
@@ -170,6 +172,6 @@
       <p class="text-center">Copyright @GoEvent   HVSZ 2017</p>
     </div>
   </footer>
-  
+
 </body>
 </html>
