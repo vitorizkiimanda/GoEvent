@@ -122,8 +122,9 @@
   <!-- Events Card -->
   <div class="container">
     <div class="row">
-      <?php while ($item = mysqli_fetch_array($event)) { ?>   
-        <a href="pages/event_detail/index.php/<?php echo $item['event_id']?>" >  
+      <?php while ($item = mysqli_fetch_array($event)) { ?>  
+        <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
+        <a href="pages/event_detail/index.php/?event_id=<?php echo $event_id_encrypt?>" >  
           <div class="col-lg-4">
             <p> <img src='photo_event/<?php echo $item['event_photo']; ?>' width='100' height='70'> </p>
             <p> <?php echo $item['event_name'] ?> </p>
@@ -143,10 +144,10 @@
   </div>
 
   <?php
-    //echo  $_SESSION['id'];
-    //echo $_SESSION['user_name'];
-    //echo $_SESSION['user_city'];
-    //echo $_SESSION['user_photo']; 
+    echo $_SESSION['id'];
+    echo $_SESSION['user_name'];
+    echo $_SESSION['user_city'];
+    echo $_SESSION['user_photo']; 
   ?>
 
   <!-- browse by kategories -->
