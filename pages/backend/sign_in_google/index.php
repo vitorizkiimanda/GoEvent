@@ -26,13 +26,18 @@ if ($gClient->getAccessToken()) {
         'user_uid'     => $gpUserProfile['id'],
         'user_name'    => $gpUserProfile['given_name']." ".$gpUserProfile['family_name'],
         'user_email'         => $gpUserProfile['email'],
-        'user_city'        => $gpUserProfile['locale'],
         'user_photo'       => $gpUserProfile['picture'],
     );
     $userData = $user->checkUser($gpUserData);
 	
 	//Storing user data into session
    // $_SESSION['userData'] = $userData;
+
+   $_SESSION['user_id']     = $userData['user_id'];
+   $_SESSION['user_email']  = $userData['user_email'];
+   $_SESSION['user_name']   = $userData['user_name'];
+   $_SESSION['user_photo']  = $userData['user_photo'];    
+
     header('Location: ../../../index.php' );    
     
     

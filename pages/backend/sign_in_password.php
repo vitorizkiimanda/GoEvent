@@ -1,8 +1,8 @@
 <?php
     include('dbconnect.php');
 
-    if(isset($_SESSION['email'])) {
-        $email = $_SESSION['email'];
+    if(isset($_SESSION['user_email'])) {
+        $email = $_SESSION['user_email'];
     }
     else{
         header('Location: ../sign_in/');        
@@ -18,10 +18,10 @@
         
         if(mysqli_num_rows($query_login)>0){
             $row=mysqli_fetch_assoc($query_login);
-            $_SESSION['id']         = $row['user_id'];
+            $_SESSION['user_id']    = $row['user_id'];
             $_SESSION['user_name']  = $row['user_name'];
             $_SESSION['user_city']  = $row['user_city'];
-            $_SESSION['user_photo']  = $row['user_photo'];             
+            $_SESSION['user_photo'] = $row['user_photo'];             
         }
         header('Location: ../../');        
         
