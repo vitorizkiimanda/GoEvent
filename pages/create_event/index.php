@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
   <script>
   $( function() {
     $( "#datepicker" ).datepicker();
@@ -55,7 +55,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="goevent_color" href="../../index.html">GoEvent</a>
+          <a class="navbar-brand" id="goevent_color" href="../../">GoEvent</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -133,11 +133,23 @@
                 </textarea>
             </div>
 
+            <!-- Rich text editor -->
+
+            <div class="container" id="sample">
+              <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+            //<![CDATA[
+                    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+              //]]>
+              </script>
+            </div>
+
             <div class="form-group">
                 <label for="exampleInputFile">Event Photo</label>
                 <input type="file" name="event_photo" accept="image/*" id="exampleInputFile">
             </div>
 
+            <br />
+            <h1>2. Create Tickets</h1>
             <br />
             <button type="submit" class="btn btn-primary btn-round btn-block">Submit</button>
         </form>

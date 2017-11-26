@@ -22,3 +22,7 @@ html, body {
 #middle {
   padding-top: 20vh;
 }
+
+#sample{
+  width: 100vw;
+}
