@@ -1,5 +1,5 @@
 <?php
-    //buat di profile, liat tiket dan liat event yg pernah dibeli
+    //buat profile, liat yg di bookmark oleh user
 
     include('dbconnect.php');
 
@@ -9,7 +9,7 @@
     else{
         $id = $_SESSION['user_id'];
 
-        $query = mysqli_query($connect,  "SELECT * FROM attendant A JOIN events E WHERE user_id='$id' AND A.event_id=E.event_id ");
+        $query = mysqli_query($connect,  "SELECT * FROM bookmark B JOIN events E WHERE user_id='$id' AND B.event_id=E.event_id ");
 
         if(mysqli_num_rows($query)>0){
             $result_set = array();

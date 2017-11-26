@@ -1,5 +1,5 @@
 <?php
-    //buat di profile, liat tiket dan liat event yg pernah dibeli
+    //buat profile, album certificate
 
     include('dbconnect.php');
 
@@ -9,7 +9,7 @@
     else{
         $id = $_SESSION['user_id'];
 
-        $query = mysqli_query($connect,  "SELECT * FROM attendant A JOIN events E WHERE user_id='$id' AND A.event_id=E.event_id ");
+        $query = mysqli_query($connect,  "SELECT * FROM album_certificate WHERE user_id='$id'");
 
         if(mysqli_num_rows($query)>0){
             $result_set = array();
@@ -24,5 +24,8 @@
         }
         else{
         }
+
     }
+
+
 ?>
