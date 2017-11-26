@@ -1,3 +1,7 @@
+<?php
+  include "../backend/sign_in.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -33,7 +37,7 @@
   
   <div class="container-fluid">
     <br />
-    <a href="../../index.html" class="close" role="button">X</a>
+    <a href="../../" class="close" role="button">X</a>
   </div>
 
   <div class="container text-center">
@@ -47,13 +51,14 @@
     <div class="row">
       <div class="col-lg-4"></div>
       <div class="col-lg-4">
-          <form>
+          <form method=post>
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" req>
               </div>
-              <button type="submit" class="btn btn-primary btn-round btn-block">Submit</button>
-            </form>
+              <button type="submit" class="btn btn-primary btn-round btn-block">Get Started</button>
+              <a href="../backend/sign_in_google" class="btn btn-primary btn-round btn-block">Google</a>
+          </form>
       </div>
       <div class="col-lg-4"></div>
     </div>

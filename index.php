@@ -1,3 +1,7 @@
+<?php
+  include("pages/backend/home.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -41,13 +45,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="goevent_color" href="index.html">GoEvent</a>
+            <a class="navbar-brand" id="goevent_color" href="index.php">GoEvent</a>
           </div>
       
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Browse Event</a></li>
+              <li><a href="pages/browse_event">Browse Event</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Organize <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -71,7 +75,7 @@
                 </ul>
               </li>
               <li><a href="pages/sign_in">Sign In</a></li>
-              <li><a href="#">Create Event</a></li>
+              <li><a href="pages/create_event">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -83,9 +87,10 @@
       <div class="col-lg-2"></div>
       <div class="col-lg-8">
         <h1 class="text-center">Find your next experience</h1>
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search events or categories">
-          <span class="input-group-btn">
+        <form method="post" action="home.php" >
+          <div class="input-group">
+            <input type="text" class="form-control" name="event_search" placeholder="Search events or categories">
+            <span class="input-group-btn">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Date <span class="caret"></span>
               </button>
@@ -98,9 +103,10 @@
                   <li><a href="#">Next Week</a></li>
                   <li><a href="#">Next Month</a></li>
                 </ul>
-            <button class="btn btn-default" type="button">SEARCH</button>
-          </span>
-        </div><!-- /input-group -->
+              <button class="btn btn-default" type="button">SEARCH</button>
+            </span>
+          </div><!-- /input-group -->
+        </form>
       </div><!-- /.col-lg-6 -->
       <div class="col-lg-2"></div>
     </div><!-- /.row -->
@@ -116,31 +122,33 @@
   <!-- Events Card -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="col-lg-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="col-lg-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="col-lg-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="col-lg-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="col-lg-4">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
+      <?php while ($item = mysqli_fetch_array($event)) { ?>  
+        <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
+        <a href="pages/event_detail/index.php/?event_id=<?php echo $event_id_encrypt?>" >  
+          <div class="col-lg-4">
+            <p> <img src='photo_event/<?php echo $item['event_photo']; ?>' width='100' height='70'> </p>
+            <p> <?php echo $item['event_name'] ?> </p>
+            <p> <?php echo $item['event_city'] ?> </p>
+            <p> <?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?> </p>
+            <p> <?php echo $item['event_date_ends'] . " " . $item['event_time_ends'] ?> </p>
+            <p> <?php echo $item['event_description'] ?> </p>
+          </div>
+        </a>  
+      <?php } ?>
     </div>
   </div>
 
   <!-- button see more -->
   <div class="container text-center">
-      <button type="button" class="btn btn-primary navbar-btn">SEE MORE</button>
+    <a href="pages/browse_event/" class="btn btn-primary navbar-btn">See More</a>
   </div>
+
+  <?php
+    echo $_SESSION['id'];
+    echo $_SESSION['user_name'];
+    echo $_SESSION['user_city'];
+    echo $_SESSION['user_photo']; 
+  ?>
 
   <!-- browse by kategories -->
   <div class="container">
