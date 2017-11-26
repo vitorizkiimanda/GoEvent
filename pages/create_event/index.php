@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
   <script>
   $( function() {
     $( "#datepicker" ).datepicker();
@@ -55,7 +55,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" id="goevent_color" href="../../index.html">GoEvent</a>
+          <a class="navbar-brand" id="goevent_color" href="../../">GoEvent</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -92,7 +92,70 @@
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Location</label>
-              <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address">
+              <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
+              <!-- Google API autocomplete starts -->
+                            <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city"></input>
+                                <script>
+                                  var placeSearch, autocomplete;
+                                  var componentForm = {
+                                    street_number: 'short_name',
+                                    route: 'long_name',
+                                    locality: 'long_name',
+                                    administrative_area_level_1: 'short_name',
+                                    country: 'long_name',
+                                    postal_code: 'short_name'
+                                  };
+
+                                  function initAutocomplete() {
+                                    // Create the autocomplete object, restricting the search to geographical
+                                    // location types.
+                                    autocomplete = new google.maps.places.Autocomplete(
+                                        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+                                        {types: ['geocode']});
+
+                                    // When the user selects an address from the dropdown, populate the address
+                                    // fields in the form.
+                                    autocomplete.addListener('place_changed', fillInAddress);
+                                  }
+
+                                  function fillInAddress() {
+                                    // Get the place details from the autocomplete object.
+                                    var place = autocomplete.getPlace();
+
+                                    for (var component in componentForm) {
+                                      document.getElementById(component).value = '';
+                                      document.getElementById(component).disabled = false;
+                                    }
+
+                                    // Get each component of the address from the place details
+                                    // and fill the corresponding field on the form.
+                                    for (var i = 0; i < place.address_components.length; i++) {
+                                      var addressType = place.address_components[i].types[0];
+                                      if (componentForm[addressType]) {
+                                        var val = place.address_components[i][componentForm[addressType]];
+                                        document.getElementById(addressType).value = val;
+                                      }
+                                    }
+                                  }
+                                  function geolocate() {
+                                    if (navigator.geolocation) {
+                                      navigator.geolocation.getCurrentPosition(function(position) {
+                                        var geolocation = {
+                                          lat: position.coords.latitude,
+                                          lng: position.coords.longitude
+                                        };
+                                        var circle = new google.maps.Circle({
+                                          center: geolocation,
+                                          radius: position.coords.accuracy
+                                        });
+                                        autocomplete.setBounds(circle.getBounds());
+                                      });
+                                    }
+                                  }
+                                </script>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1-maPhWUiX_tOR5JEz5fsU7gOm4y_r_s&libraries=places&callback=initAutocomplete"
+                                    async defer></script>
+                              <!-- End of google API autocomplete -->
             </div>
             <div class="row">
               <div class="col-lg-6">
@@ -133,10 +196,23 @@
                 </textarea>
             </div>
 
+            <!-- Rich text editor -->
+
+            <div class="container" id="sample">
+              <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+            //<![CDATA[
+                    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+              //]]>
+              </script>
+            </div>
+
             <div class="form-group">
                 <label for="exampleInputFile">Event Photo</label>
                 <input type="file" name="event_photo" accept="image/*" id="exampleInputFile">
             </div>
+
+            <br />
+            <h1>2. Create Tickets</h1>
 
             <br />
             <button type="submit" class="btn btn-primary btn-round btn-block">Submit</button>

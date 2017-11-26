@@ -36,7 +36,7 @@
         $certificate_type = $_FILES['event_certificate']['type'];
       	$certificate_file = $_FILES['event_certificate']['tmp_name'];
         $sub_certificate = substr($certificate_type,6);
-        echo $sub_certificate ;
+        //echo $sub_certificate ;
         $certificate_name = $count.'_certificate.'.$sub_certificate;
         $certificate_path = "../../certificate_event/".$certificate_name;
         move_uploaded_file($certificate_file, $certificate_path);
