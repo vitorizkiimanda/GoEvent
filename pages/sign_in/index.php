@@ -11,10 +11,10 @@
   <title>GoEvent</title>
 
   <link rel="shortcut icon" href="../../images/title.png" />
-  
+
   <!-- pengaturan view agar responsif namun pada mobile tidak bisa zooming -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  
+
   <!-- attach JavaScripts -->
   <script src="../../js/bootstrap.min.js"></script>
   <script src="../../js/jquery.min.js"></script>
@@ -34,7 +34,7 @@
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 
 <body>
-  
+
   <div class="container-fluid">
     <br />
     <a href="../../" class="close" role="button">X</a>
@@ -44,7 +44,7 @@
     <p>logo</p>
     <h2>Let's get started</h2>
     <p>Enter your email to sign up or sign in.</p>
-    <br />   
+    <br />
   </div>
 
   <div class="container">
@@ -57,13 +57,13 @@
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" req>
               </div>
               <button type="submit" class="btn btn-primary btn-round btn-block">Get Started</button>
-              <a href="../backend/sign_in_google" class="btn btn-primary btn-round btn-block">Google</a>
+              <a href="../backend/sign_in_google" class="btn btn-danger btn-round btn-block">Google</a>
           </form>
       </div>
       <div class="col-lg-4"></div>
     </div>
   </div>
-  
-  
+
+
 </body>
 </html>

@@ -8,20 +8,20 @@
 
   <title>GoEvent</title>
 
-  <link rel="shortcut icon" href="../../images/title.png" />
+  <link rel="shortcut icon" href="../../../images/title.png" />
 
   <!-- pengaturan view agar responsif namun pada mobile tidak bisa zooming -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- attach JavaScripts -->
-  <script src="../../js/bootstrap.min.js"></script>
-  <script src="../../js/jquery.min.js"></script>
+  <script src="../../../js/bootstrap.min.js"></script>
+  <script src="../../../js/jquery.min.js"></script>
   <!--<script src="//maps.google.com/maps/api/js?sensor=true"></script>-->
   <!--<script src="js/main.js"></script>-->
 
   <!-- attach CSS styles -->
-  <link href="../../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../css/style_goevent.css" rel="stylesheet" />
+  <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../css/style_goevent.css" rel="stylesheet" />
 
   <!-- Online attachment - offline doesnt work -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="goevent_color" href="../../">GoEvent</a>
+            <a class="navbar-brand" id="goevent_color" href="../../../">GoEvent</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,7 +55,7 @@
                   <button type="submit" class="btn btn-default">Submit</button>
               </form>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="../../pages/browse_event">Browse Event</a></li>
+              <li><a href="../../../pages/browse_event">Browse Event</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -66,8 +66,8 @@
                     <li><a href="#">Help Center</a></li>
                 </ul>
               </li>
-              <li><a href="../../pages/sign_in">Sign In</a></li>
-              <li><a href="../../pages/create_event">Create Event</a></li>
+              <li><a href="../../../pages/sign_in">Sign In</a></li>
+              <li><a href="../../../pages/create_event">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

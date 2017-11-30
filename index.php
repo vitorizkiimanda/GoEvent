@@ -11,10 +11,10 @@
   <title>GoEvent</title>
 
   <link rel="shortcut icon" href="images/title.png" />
-  
+
   <!-- pengaturan view agar responsif namun pada mobile tidak bisa zooming -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  
+
   <!-- attach JavaScripts -->
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.min.js"></script>
@@ -47,7 +47,7 @@
             </button>
             <a class="navbar-brand" id="goevent_color" href="index.php">GoEvent</a>
           </div>
-      
+
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -86,7 +86,7 @@
     <div class="row">
       <div class="col-lg-2"></div>
       <div class="col-lg-8">
-        <h1 class="text-center">Find your next experience</h1>
+        <h1 class="text-center">Go get the experience</h1>
         <form method="post" action="home.php" >
           <div class="input-group">
             <input type="text" class="form-control" name="event_search" placeholder="Search events or categories">
@@ -116,15 +116,15 @@
   <div class="container">
     <div class="text-center">
       <p>Events for you in <a>jakarta</a></p>
-    </div>  
-  </div>  
+    </div>
+  </div>
 
   <!-- Events Card -->
   <div class="container">
     <div class="row">
-      <?php while ($item = mysqli_fetch_array($event)) { ?>  
+      <?php while ($item = mysqli_fetch_array($event)) { ?>
         <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
-        <a href="pages/event_detail/index.php/?event_id=<?php echo $event_id_encrypt?>" >  
+        <a href="pages/event_detail/index.php/?event_id=<?php echo $event_id_encrypt?>" >
           <div class="col-lg-4">
             <p> <img src='photo_event/<?php echo $item['event_photo']; ?>' width='100' height='70'> </p>
             <p> <?php echo $item['event_name'] ?> </p>
@@ -133,7 +133,7 @@
             <p> <?php echo $item['event_date_ends'] . " " . $item['event_time_ends'] ?> </p>
             <p> <?php echo $item['event_description'] ?> </p>
           </div>
-        </a>  
+        </a>
       <?php } ?>
     </div>
   </div>
@@ -147,7 +147,7 @@
     echo $_SESSION['id'];
     echo $_SESSION['user_name'];
     echo $_SESSION['user_city'];
-    echo $_SESSION['user_photo']; 
+    echo $_SESSION['user_photo'];
   ?>
 
   <!-- browse by kategories -->
@@ -182,6 +182,6 @@
       <p class="text-center">Copyright @GoEvent   HVSZ 2017</p>
     </div>
   </footer>
-  
+
 </body>
 </html>
