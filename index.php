@@ -179,22 +179,40 @@
     <h2 class="text-center">Browse by Top Categories</h1>
       <div class="row">
       <div class="col-lg-4">
-        <p>Music</p>
+        <img src="images/music_thumbnail.jpeg" alt="music" class="img-responsive hover" />
+        <div class="carousel-caption">
+          <h1>MUSIC</h1>
+        </div>
       </div>
       <div class="col-lg-4">
-        <p>Food and Beverages</p>
+        <img src="images/food_thumbnail.jpeg" alt="music" class="img-responsive hover" />
+        <div class="carousel-caption">
+          <h1>FOOD & BEVERAGE</h1>
+        </div>
       </div>
       <div class="col-lg-4">
-        <p>Science and Technology</p>
+        <img src="images/tech_thumbnail.jpeg" alt="music" class="img-responsive hover" />
+        <div class="carousel-caption">
+          <h1>SCIENCE & TECH</h1>
+        </div>
       </div>
       <div class="col-lg-4">
-        <p>Arts</p>
+        <img src="images/art_thumbnail.jpeg" alt="music" class="img-responsive hover" />
+        <div class="carousel-caption">
+          <h1>ARTS</h1>
+        </div>
       </div>
       <div class="col-lg-4">
-        <p>Sport and Wellness</p>
+        <img src="images/sport_thumbnail.jpeg" alt="music" class="img-responsive hover" />
+        <div class="carousel-caption">
+          <h1>SPORT</h1>
+        </div>
       </div>
       <div class="col-lg-4">
-        <p>Networking</p>
+        <img src="images/networking_thumbnail.jpeg" alt="music" class="img-responsive hover" />
+        <div class="carousel-caption">
+          <h1>NETWORKING</h1>
+        </div>
       </div>
     </div>
   </div>
