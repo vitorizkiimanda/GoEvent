@@ -29,6 +29,18 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+  <!-- Select/option css -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+
 </head>
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
@@ -91,10 +103,22 @@
           <div class="input-group">
             <input type="text" class="form-control" name="event_search" placeholder="Search events or categories">
             <span class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <!-- <button type="button" class="btn btn-clear"> -->
+                <select class="selectpicker">
+                  <option>All Dates</option>
+                  <option>Today</option>
+                  <option>Tomorrow</option>
+                  <option>This Week</option>
+                  <option>This Weekend</option>
+                  <option>Next Week</option>
+                  <option>Next Month</option>
+                </select>
+            <!-- </button> -->
+            
+              <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Date <span class="caret"></span>
-              </button>
-                <ul class="dropdown-menu">
+              </button> -->
+                <!-- <ul class="dropdown-menu">
                   <li><a href="#">All Dates</a></li>
                   <li><a href="#">Today</a></li>
                   <li><a href="#">Tomorrow</a></li>
@@ -102,7 +126,7 @@
                   <li><a href="#">This Weekend</a></li>
                   <li><a href="#">Next Week</a></li>
                   <li><a href="#">Next Month</a></li>
-                </ul>
+                </ul> -->
               <button class="btn btn-default" type="button">SEARCH</button>
             </span>
           </div><!-- /input-group -->
