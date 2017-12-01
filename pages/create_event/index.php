@@ -38,6 +38,18 @@
   } );
   </script>
 
+
+  <!-- Select/option css -->
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+
 </head>
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
@@ -214,6 +226,120 @@
 
             <br />
             <h1>2. Create Tickets</h1>
+
+            <!-- header -->
+            <div class="row">
+              <div class="col-lg-5">
+                <p>Ticket name*</p>
+              </div>
+              <div class="col-lg-2">
+                <p>Quantitiy available*</p>
+              </div>
+              <div class="col-lg-3">
+                <p>Price</p>
+              </div>
+              <div class="col-lg-2">
+                <p>Actions</p>
+              </div>
+            </div>
+            <!-- konten -->
+            <div class="row">
+              <div class="col-lg-5">
+                <input type="text" name="ticket_name" class="form-control" id="exampleInputEmail1" placeholder="RSVP, Early Bird..">
+              </div>
+              <div class="col-lg-2">
+              <!-- nnti ini di regex biar ga bisa minus -->
+                <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" placeholder="1000">
+              </div>
+              <div class="col-lg-3">
+                <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" placeholder="0 for free">
+              </div>
+              <div class="col-lg-2">
+                <a><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+                &nbsp;
+                <a><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+              <br />
+                <h4 id="line_horizontal">Settings -> jadi ini nnti bakalan drop down gitu kalo logo settingnya di pencet,, gua ga tau cara buatnya di web -_-</h4>
+                <hr />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Ticket description</label>
+                  <input type="text" name="ticket_description" class="form-control" id="exampleInputEmail1" placeholder="Tell your audience more about the ticket">
+                </div>
+                <div>
+                  <label for="exampleInputEmail1">Ticket sale start</label>
+                  <br />
+                  <input type="date" name="ticket_date_starts" id="datepicker">
+                  <input type="time" name="ticket_time_starts" id="exampleInputEmail1" placeholder="am/pm">
+                </div>
+                <div>
+                  <label for="exampleInputEmail1">Ticket sale end</label>
+                  <br />
+                  <input type="date" name="ticket_date_end" id="datepicker">
+                  <input type="time" name="ticket_time_end" id="exampleInputEmail1" placeholder="am/pm">
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <h1>3. Additional Settings</h1>
+            <div>
+                <label for="exampleInputEmail1">EVENT TYPE</label>
+                <br />
+                <select class="selectpicker">
+                  <option>Select Event Type</option>
+                  <option>Attraction</option>
+                  <option>Camp/Trip</option>
+                  <option>Class, Training,or Workshop</option>
+                  <option>Concert or Performance</option>
+                  <option>Conference</option>
+                  <option>Convention</option>
+                  <option>Dinner or Gala</option>
+                  <option>Festival or Fair</option>
+                  <option>Game or Competition</option>
+                  <option>Meeting or Networking Event</option>
+                  <option>Party or Social Gathering</option>
+                  <option>Race or Endurance Event</option>
+                  <option>Rally</option>
+                  <option>Seminar</option>
+                  <option>Tour</option>
+                  <option>Tournament</option>
+                  <option>Tradeshow or Expo</option>
+                  <option>Other</option>
+                </select>              
+            </div>
+            <div>
+                <label for="exampleInputEmail1">EVENT TOPIC</label>
+                <br />
+                <select class="selectpicker">
+                  <option>Select a topic</option>
+                  <option>Automotive</option>
+                  <option>Business & professional</option>
+                  <option>Charity</option>
+                  <option>Community & Culture</option>
+                  <option>Education</option>
+                  <option>Familiy</option>
+                  <option>Fashion & Beauty</option>
+                  <option>Film, Media & Entertainment</option>
+                  <option>Food and Beverage</option>
+                  <option>Government & Politics</option>
+                  <option>Health & Wellness</option>
+                  <option>Hobbies & Special Interest</option>
+                  <option>Home & Lifestyle</option>
+                  <option>Music</option>
+                  <option>Performing & Visual Arts</option>
+                  <option>Religion & Spirituality</option>
+                  <option>School Activities</option>
+                  <option>Science & Technology</option>
+                  <option>Holiday</option>
+                  <option>Sport & Fitness</option>
+                  <option>Travel & Outdoor</option>
+                  <option>Other</option>
+                </select>              
+            </div>
 
             <br />
             <button type="submit" class="btn btn-primary btn-round btn-block">Submit</button>

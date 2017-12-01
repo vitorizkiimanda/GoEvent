@@ -26,3 +26,12 @@ html, body {
 #sample{
   width: 100vw;
 }
+
+#line_horizontal {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 10px solid black;
+  margin: 1em 0;
+  padding: 0;
+}
