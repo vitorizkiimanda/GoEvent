@@ -102,23 +102,14 @@
     
     <div class="container">
       <ul class="nav nav-tabs nav-justified text-center">
-        <!-- <div class="row"> -->
-          <!-- <div class="col-lg-3"></div> -->
-          <!-- <div class="col-lg-2"> -->
-            <li class="active"><a data-toggle="tab" href="#home">UPCOMING EVENTS</a></li>
-          <!-- </div> -->
-          <!-- <div class="col-lg-2"> -->
-            <li><a data-toggle="tab" href="#menu1">BOOKMARKED EVENTS</a></li>
-          <!-- </div> -->
-          <!-- <div class="col-lg-2"> -->
-            <li><a data-toggle="tab" href="#menu2">PAST EVENTS</a></li>
-          <!-- </div>           -->
-          <!-- <div class="col-lg-3"></div> -->
-        <!-- </div> -->
+            <li class="active"><a data-toggle="tab" href="#upcoming">UPCOMING EVENTS</a></li>
+            <li><a data-toggle="tab" href="#bookmark">BOOKMARKED EVENTS</a></li>
+            <li><a data-toggle="tab" href="#past">PAST EVENTS</a></li>
+            <li><a data-toggle="tab" href="#certificate">CERTIFICATE</a></li>
       </ul>
 
       <div class="tab-content text-center">
-        <div id="home" class="tab-pane fade in active">
+        <div id="upcoming" class="tab-pane fade in active">
           <br />
           <p>You have no upcoming events</p>
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
@@ -141,13 +132,18 @@
 
 
         </div>
-        <div id="menu1" class="tab-pane fade">
+        <div id="bookmark" class="tab-pane fade">
           <br />
           <p>Bookmarked events will show up here</p>
         </div>
-        <div id="menu2" class="tab-pane fade">
+        <div id="past" class="tab-pane fade">
           <br />
           <p>You have no past events</p>
+          <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
+        </div>
+        <div id="certificate" class="tab-pane fade">
+          <br />
+          <p>You have no certificate yet</p>
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
         </div>
       </div>
