@@ -64,3 +64,10 @@ html, body {
 .thumbnail_pict {
   width: 100px;
 }
+
+.glyphicon.glyphicon-cog{
+  font-size: 25px;
+}
+.glyphicon.glyphicon-trash{
+  font-size: 25px;
+}
