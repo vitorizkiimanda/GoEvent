@@ -122,6 +122,24 @@
           <br />
           <p>You have no upcoming events</p>
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
+
+          <!-- Events Card -->
+          <div class="container">
+            <div class="row">
+                <a href="pages/event_detail/" >
+                  <div class="col-lg-4">
+                    <p> <img src='photo_event/' width='100' height='70'> </p>
+                    <p> nama event </p>
+                    <p> kota event </p>
+                    <p> date event </p>
+                    <p> end date event </p>
+                    <p> Deskripsi </p>
+                  </div>
+                </a>
+            </div>
+          </div>
+
+
         </div>
         <div id="menu1" class="tab-pane fade">
           <br />
