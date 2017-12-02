@@ -12,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- attach JavaScripts -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/jquery.min.js"></script>
   <!--<script src="//maps.google.com/maps/api/js?sensor=true"></script>-->
   <!--<script src="js/main.js"></script>-->
 
@@ -89,6 +89,82 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+
+
+    <div class="container">
+    <h1>Account Settings</h1>
+    <!-- tabs -->
+    <br />
+    <div class="row">
+    <div class="col-lg-3 text-center">
+      <img src="../../images/title.png" class="img-responsive" alt="Organizer Profile Pict" />
+      <p>JPG, GIF or PNG no larger than 1MB. Square images look the best!</p>
+      <a href="#" class="btn btn-primary btn-round btn-block">CHOOSE FILE</a>
+    </div>
+    <div class="col-lg-9">
+
+      <form action="#" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Organizer Name</label>
+              <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name">
+            </div>
+          
+            <div class="form-group">
+                <label for="exampleInputEmail1">About The Organizer</label>
+                <textarea type="textarea" name="about_organizer" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">
+                </textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Website</label>
+              <input type="url" name="website_organizer" class="form-control" id="exampleInputEmail1" value="http://">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Facebook Page</label>
+              <input type="url" name="facebook_organizer" class="form-control" id="exampleInputEmail1" value="facebook.com/">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Twitter</label>
+              <input type="text" name="twitter_organizer" class="form-control" id="exampleInputEmail1" value="@">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Instagram</label>
+              <input type="text" name="instagram_organizer" class="form-control" id="exampleInputEmail1" value="@">
+            </div>
+
+            <!-- Rich text editor -->
+
+            <div class="container" id="sample">
+              <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+            //<![CDATA[
+                    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+              //]]>
+              </script>
+            </div>
+
+            <!-- Rich text editor -->
+
+
+            
+            <br />
+            <div class="row">
+              <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3">
+                <button type="submit" class="btn btn-primary btn-round btn-block">Save</button>
+              </div>
+              <div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
+                <a href="../../pages/organizer_profile_attendance" class="btn btn-success btn-round btn-block">View Profile</a>
+              </div>
+            </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+
 
   <!-- footer -->
   <footer>

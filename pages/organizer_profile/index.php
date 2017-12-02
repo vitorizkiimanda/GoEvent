@@ -12,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- attach JavaScripts -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/jquery.min.js"></script>
   <!--<script src="//maps.google.com/maps/api/js?sensor=true"></script>-->
   <!--<script src="js/main.js"></script>-->
 
@@ -147,7 +147,7 @@
               <!-- Rich text editor -->
 
 
-              
+
               <br />
               <div class="row">
                 <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3">
