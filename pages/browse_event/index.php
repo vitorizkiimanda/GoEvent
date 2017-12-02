@@ -149,10 +149,10 @@
                 <img src='photo_event/<?php echo $item['event_photo']; ?>' width='100' height='70'>
               </div>
               <div class="col-lg-9">
-                  <p>WED. JAN 24 9:00 AM</p>
-                  <p>TITLE EVENT</p>
+                  <p><?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?></p>
+                  <p><?php echo $item['event_name'] ?></p>
                   <br />
-                  <p>Alamat event</p>
+                  <p><?php echo $item['event_city'] ?></p>
                   <br />
                   <p>#hastagKategori</p>         
               </div>
