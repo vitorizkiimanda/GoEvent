@@ -255,15 +255,15 @@
                 <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" placeholder="0 for free">
               </div>
               <div class="col-lg-2">
-                <a><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
+                <a><span data-toggle="collapse" data-target="#setting" class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
                 &nbsp;
                 <a><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12">
-              <br />
-                <h4 id="line_horizontal">Settings -> jadi ini nnti bakalan drop down gitu kalo logo settingnya di pencet,, gua ga tau cara buatnya di web -_-</h4>
+              <div id="setting" class="col-lg-12 collapse">
+                <br />
+                <h4>Settings</h4>
                 <hr />
                 <div class="form-group">
                   <label for="exampleInputEmail1">Ticket description</label>

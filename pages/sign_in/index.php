@@ -41,10 +41,18 @@
   </div>
 
   <div class="container text-center">
-    <p>logo</p>
-    <h2>Let's get started</h2>
-    <p>Enter your email to sign up or sign in.</p>
-    <br />
+    <div class="row">
+      <div class="col-lg-5"></div>
+      <div class="col-lg-2">
+        <img src="../../images/title.png" class="img-responsive" alt="logo" />
+      </div>
+      <div class="col-lg-5"></div>
+    </div>
+    <div class="row">
+      <h2>Let's get started</h2>
+      <p>Enter your email to sign up or sign in.</p>
+    </div>
+      <br />
   </div>
 
   <div class="container">
