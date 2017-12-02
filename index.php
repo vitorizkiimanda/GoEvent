@@ -100,22 +100,22 @@
       <div class="col-lg-2"></div>
       <div class="col-lg-8">
         <h1 class="text-center">Go get the experience</h1>
-        <form method="post" action="home.php" >
+        <form method="post" action="pages/browse_event/index.php" >
           <div class="input-group">
-            <input type="text" class="form-control" name="event_search" placeholder="Search events or categories">
+            <input type="text" class="form-control" name="event_search" id="event_name" placeholder="Search events or categories">
             <span class="input-group-btn">
             <!-- <button type="button" class="btn btn-clear"> -->
-                <select class="selectpicker">
-                  <option>All Dates</option>
-                  <option>Today</option>
-                  <option>Tomorrow</option>
-                  <option>This Week</option>
-                  <option>This Weekend</option>
-                  <option>Next Week</option>
-                  <option>Next Month</option>
+                <select class="selectpicker" name=date_categorized>
+                  <option value="1">All Dates</option>
+                  <option value="2">Today</option>
+                  <option value="3">Tomorrow</option>
+                  <option value="4">This Week</option>
+                  <option value="5">This Weekend</option>
+                  <option value="6">Next Week</option>
+                  <option value="7">Next Month</option>
                 </select>
+                <!-- vito kalo comment nya dibawah ini apus aja wkkwkw -->
             <!-- </button> -->
-            
               <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Date <span class="caret"></span>
               </button> -->
@@ -128,7 +128,7 @@
                   <li><a href="#">Next Week</a></li>
                   <li><a href="#">Next Month</a></li>
                 </ul> -->
-              <button class="btn btn-default" type="button">SEARCH</button>
+              <button class="btn btn-default" type="submit">SEARCH</button>
             </span>
           </div><!-- /input-group -->
         </form>
@@ -165,14 +165,17 @@
 
   <!-- button see more -->
   <div class="container text-center">
-    <a href="pages/browse_event/" class="btn btn-primary navbar-btn">See More</a>
+    <form method="post" action="pages/browse_event/index.php" >
+      <input type="hidden" name="date_categorized" value="1" />
+      <button class="btn btn-primary navbar-btn" type="submit">See More</button>
+    </form>
   </div>
 
   <?php
-    echo $_SESSION['id'];
-    echo $_SESSION['user_name'];
-    echo $_SESSION['user_city'];
-    echo $_SESSION['user_photo'];
+      echo $_SESSION['id'];
+      echo $_SESSION['user_name'];
+      echo $_SESSION['user_city'];
+      echo $_SESSION['user_photo'];
   ?>
 
   <!-- browse by kategories -->

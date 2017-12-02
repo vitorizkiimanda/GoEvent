@@ -1,3 +1,7 @@
+<?php
+  include("../backend/browse_event.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -136,12 +140,13 @@
       </div>
       <div class="col-lg-9">
           <h1>Jakarta, Indonesia Events Just For You</h1>
-          
+          <?php while ($item = mysqli_fetch_array($event)) { ?>
+          <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
           <!-- looping events card -->
-          <a href="../../pages/event_detail">
+          <a href="../../pages/event_detail/index.php/?event_id=<?php echo $event_id_encrypt?>">
             <div class="row">
               <div class="col-lg-3">
-                <h2>Poster Events</h2>
+                <img src='photo_event/<?php echo $item['event_photo']; ?>' width='100' height='70'>
               </div>
               <div class="col-lg-9">
                   <p>WED. JAN 24 9:00 AM</p>
@@ -152,42 +157,8 @@
                   <p>#hastagKategori</p>         
               </div>
             </div>
-          </a>
-
-          <a href="../../pages/event_detail">
-            <div class="row">
-              <div class="col-lg-3">
-                <h2>Poster Events</h2>
-              </div>
-              <div class="col-lg-9">
-                  <p>WED. JAN 24 9:00 AM</p>
-                  <p>TITLE EVENT</p>
-                  <br />
-                  <p>Alamat event</p>
-                  <br />
-                  <p>#hastagKategori</p>         
-              </div>
-            </div>
-          </a>
-
-          <a href="../../pages/event_detail">
-            <div class="row">
-              <div class="col-lg-3">
-                <h2>Poster Events</h2>
-              </div>
-              <div class="col-lg-9">
-                  <p>WED. JAN 24 9:00 AM</p>
-                  <p>TITLE EVENT</p>
-                  <br />
-                  <p>Alamat event</p>
-                  <br />
-                  <p>#hastagKategori</p>         
-              </div>
-            </div>
-          </a>
-
-          
-          
+          </a>      
+          <?php } ?>
       </div>
     </div>
   </div>
