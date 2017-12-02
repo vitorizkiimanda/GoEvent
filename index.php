@@ -95,7 +95,7 @@
                   <li><a href="pages/profile">Certificates</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="pages/organizer_profile">Organizer Profile</a></li>
-                  <li><a href="pages/manage_event">Manage Event</a></li>
+                  <li><a href="pages/manage_event">Manage Events</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="pages/account_setting">Account Setting</a></li>
                   <li><a href="#">Log Out</a></li>

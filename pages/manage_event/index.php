@@ -12,8 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- attach JavaScripts -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/jquery.min.js"></script>
   <!--<script src="//maps.google.com/maps/api/js?sensor=true"></script>-->
   <!--<script src="js/main.js"></script>-->
 
@@ -89,6 +89,64 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+
+
+    <div class="container">
+    <h1>Manage Events</h1>
+    <!-- tabs -->
+    <br />
+    <br />
+    
+    <div class="container">
+      <ul class="nav nav-tabs text-center">
+        <li class="active"><a data-toggle="tab" href="#live">UPCOMING EVENTS</a></li>
+        <li><a data-toggle="tab" href="#draft">DRAFT EVENTS</a></li>
+        <li><a data-toggle="tab" href="#past">PAST EVENTS</a></li>
+      </ul>
+
+      <div class="tab-content text-center">
+        <div id="live" class="tab-pane fade in active">
+          <br />
+          <p>You have no live events</p>
+          
+          <!-- Events Card -->
+          <div class="container text-left">
+            <div class="row">
+                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
+                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+                <hr />
+            </div>
+            <div class="row">
+                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
+                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+                <hr />
+            </div>
+            <div class="row">
+                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
+                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+                <hr />
+            </div>
+          </div>
+
+
+        </div>
+        <div id="draft" class="tab-pane fade">
+          <br />
+          <p>You have no draft events</p>
+        </div>
+        <div id="past" class="tab-pane fade">
+          <br />
+          <p>You have no past events</p>
+        </div>
+      </div>
+    </div>
+
 
   <!-- footer -->
   <footer>
