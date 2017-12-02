@@ -47,7 +47,7 @@
 
 <body>
   <!-- NavBar -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -57,7 +57,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="goevent_color" href="index.php">GoEvent</a>
+            <a class="navbar-brand" id="goevent_color" href="">GoEvent</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
