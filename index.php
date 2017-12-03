@@ -86,6 +86,9 @@
                     <li><a href="#">Help Center</a></li>
                 </ul>
               </li>
+
+              <?php if (!empty($_SESSION['user_id'])) { ?>
+
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HVSZ<span class="caret"></span></a>
                 <ul class="dropdown-menu">                    
@@ -98,10 +101,12 @@
                   <li><a href="pages/manage_event">Manage Events</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="pages/account_setting">Account Settings</a></li>
-                  <li><a href="#">Log Out</a></li>
+                  <li><a href="pages/backend/logout.php">Log Out</a></li>
                 </ul>
               </li>
+              <?php } else {?>
               <li><a href="pages/sign_in">Sign In</a></li>
+              <?php }?>
               <li><a href="pages/create_event">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -184,13 +189,6 @@
       <button class="btn btn-primary navbar-btn" type="submit">See More</button>
     </form>
   </div>
-
-  <?php
-      echo $_SESSION['id'];
-      echo $_SESSION['user_name'];
-      echo $_SESSION['user_city'];
-      echo $_SESSION['user_photo'];
-  ?>
 
   <!-- browse by kategories -->
   <div class="container">
