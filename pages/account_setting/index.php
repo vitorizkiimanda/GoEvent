@@ -103,14 +103,15 @@
         <div class="panel-heading">
           <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-            Collapsible Group 1</a>
+            Account</a>
           </h4>
         </div>
         <div id="collapse1" class="panel-collapse collapse in">
           <ul class="list-group">
-            <li class="list-group-item">One</li>
-            <li class="list-group-item">Two</li>
-            <li class="list-group-item">Three</li>
+            <li class="list-group-item"><a data-toggle="collapse" data-target="#contact">Contact Info</a></li>
+            <li class="list-group-item"><a data-toggle="collapse" data-target="#password">Password</a></li>
+            <li class="list-group-item">Email Preferences</li>
+            <li class="list-group-item">Close Account</li>
           </ul>
         </div>
       </div>
@@ -118,29 +119,14 @@
         <div class="panel-heading">
           <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-            Collapsible Group 2</a>
+            Organizer</a>
           </h4>
         </div>
         <div id="collapse2" class="panel-collapse collapse">
           <ul class="list-group">
-            <li class="list-group-item">One</li>
-            <li class="list-group-item">Two</li>
-            <li class="list-group-item">Three</li>
-          </ul>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-            Collapsible Group 3</a>
-          </h4>
-        </div>
-        <div id="collapse3" class="panel-collapse collapse">
-          <ul class="list-group">
-            <li class="list-group-item">One</li>
-            <li class="list-group-item">Two</li>
-            <li class="list-group-item">Three</li>
+            <li class="list-group-item">Package</li>
+            <li class="list-group-item">Unused Organizers</li>
+            <li class="list-group-item">Multi-User Access</li>
           </ul>
         </div>
       </div>
@@ -149,62 +135,155 @@
     </div>
     <div class="col-lg-9">
 
-      <form action="#" enctype="multipart/form-data" method="post">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Organizer Name</label>
-              <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name">
-            </div>
-          
-            <div class="form-group">
-                <label for="exampleInputEmail1">About The Organizer</label>
-                <textarea type="textarea" name="about_organizer" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">
-                </textarea>
-            </div>
+      <div id="contact" class="collapse">
+        <h3>Account Information</h3>
+        <hr />
+          <form action="#" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Account Email</label>
+                  <input type="email" name="email_user" class="form-control" id="exampleInputEmail1" value="emailsiuser@gmail.com">
+                </div>
+              
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Profile Photo</label>
+                    <p>nnti ditampilin foto usernya</p>
+                </div>
 
-            <div class="form-group">
-              <label for="exampleInputEmail1">Website</label>
-              <input type="url" name="website_organizer" class="form-control" id="exampleInputEmail1" value="http://">
-            </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Website</label>
+                  <input type="url" name="website_organizer" class="form-control" id="exampleInputEmail1" value="http://">
+                </div>
 
-            <div class="form-group">
-              <label for="exampleInputEmail1">Facebook Page</label>
-              <input type="url" name="facebook_organizer" class="form-control" id="exampleInputEmail1" value="facebook.com/">
-            </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                  <input type="text" name="name_user" class="form-control" id="exampleInputEmail1" value="Nama Lengkap SI User di tampilin">
+                </div>
 
-            <div class="form-group">
-              <label for="exampleInputEmail1">Twitter</label>
-              <input type="text" name="twitter_organizer" class="form-control" id="exampleInputEmail1" value="@">
-            </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Phone Number</label>
+                  <input type="number" name="twitter_organizer" class="form-control" id="exampleInputEmail1" value="089657011491">
+                </div>
 
-            <div class="form-group">
-              <label for="exampleInputEmail1">Instagram</label>
-              <input type="text" name="instagram_organizer" class="form-control" id="exampleInputEmail1" value="@">
-            </div>
-
-            <!-- Rich text editor -->
-
-            <div class="container" id="sample">
-              <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-            //<![CDATA[
-                    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-              //]]>
-              </script>
-            </div>
-
-            <!-- Rich text editor -->
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Website / Blog</label>
+                  <input type="url" name="instagram_organizer" class="form-control" id="exampleInputEmail1" value="alamatnya kalo udah ada">
+                </div>
 
 
-            
-            <br />
-            <div class="row">
-              <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3">
-                <button type="submit" class="btn btn-primary btn-round btn-block">Save</button>
-              </div>
-              <div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
-                <a href="../../pages/organizer_profile_attendance" class="btn btn-success btn-round btn-block">View Profile</a>
-              </div>
-            </div>
-        </form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Home Address</label>
+                  <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
+                  <!-- Google API autocomplete starts -->
+                  <br />  
+                                <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city"></input>
+                                    <script>
+                                      var placeSearch, autocomplete;
+                                      var componentForm = {
+                                        street_number: 'short_name',
+                                        route: 'long_name',
+                                        locality: 'long_name',
+                                        administrative_area_level_1: 'short_name',
+                                        country: 'long_name',
+                                        postal_code: 'short_name'
+                                      };
+
+                                      function initAutocomplete() {
+                                        // Create the autocomplete object, restricting the search to geographical
+                                        // location types.
+                                        autocomplete = new google.maps.places.Autocomplete(
+                                            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+                                            {types: ['geocode']});
+
+                                        // When the user selects an address from the dropdown, populate the address
+                                        // fields in the form.
+                                        autocomplete.addListener('place_changed', fillInAddress);
+                                      }
+
+                                      function fillInAddress() {
+                                        // Get the place details from the autocomplete object.
+                                        var place = autocomplete.getPlace();
+
+                                        for (var component in componentForm) {
+                                          document.getElementById(component).value = '';
+                                          document.getElementById(component).disabled = false;
+                                        }
+
+                                        // Get each component of the address from the place details
+                                        // and fill the corresponding field on the form.
+                                        for (var i = 0; i < place.address_components.length; i++) {
+                                          var addressType = place.address_components[i].types[0];
+                                          if (componentForm[addressType]) {
+                                            var val = place.address_components[i][componentForm[addressType]];
+                                            document.getElementById(addressType).value = val;
+                                          }
+                                        }
+                                      }
+                                      function geolocate() {
+                                        if (navigator.geolocation) {
+                                          navigator.geolocation.getCurrentPosition(function(position) {
+                                            var geolocation = {
+                                              lat: position.coords.latitude,
+                                              lng: position.coords.longitude
+                                            };
+                                            var circle = new google.maps.Circle({
+                                              center: geolocation,
+                                              radius: position.coords.accuracy
+                                            });
+                                            autocomplete.setBounds(circle.getBounds());
+                                          });
+                                        }
+                                      }
+                                    </script>
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1-maPhWUiX_tOR5JEz5fsU7gOm4y_r_s&libraries=places&callback=initAutocomplete"
+                                        async defer></script>
+                                  <!-- End of google API autocomplete -->
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Postal Code</label>
+                  <input type="number" name="instagram_organizer" class="form-control" id="exampleInputEmail1" value="kodenya kalo udah ada">
+                </div>
+
+                
+                
+
+                
+                <br />
+                <div class="row">
+                  
+                    <button type="submit" class="btn btn-primary btn-round btn-block">Save</button>
+                  
+                </div>
+            </form>
+        </div>
+
+      <div id="password" class="collapse">
+        <h3>Your Password</h3>
+        <hr />
+        <form action="#" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Current Password</label>
+                  <input type="password" name="password_user" class="form-control" id="exampleInputEmail1">
+                </div>
+              
+                <div class="form-group">
+                    <label for="exampleInputEmail1">New Password</label>
+                    <input type="password" name="password_user_new" class="form-control" id="exampleInputEmail1">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Repeat Password</label>
+                  <input type="password" name="password_user_new_validate" class="form-control" id="exampleInputEmail1">
+                </div>
+
+                <br />
+                <div class="row">
+                  
+                    <button type="submit" class="btn btn-primary btn-round btn-block">Save</button>
+                  
+                </div>
+            </form>
+      </div>
 
 
       </div>
