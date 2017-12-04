@@ -106,7 +106,7 @@
               <label for="exampleInputEmail1">Location</label>
               <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
               <!-- Google API autocomplete starts -->
-              <br />  
+              <br />
                             <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city"></input>
                                 <script>
                                   var placeSearch, autocomplete;
@@ -202,21 +202,11 @@
                 <input type="file" name="event_certificate" accept="image/*" id="exampleInputFile">
             </div>
 
-
+              <!-- Rich text editor -->
             <div class="form-group">
                 <label for="exampleInputEmail1">Event description</label>
-                <textarea type="textarea" name="event_description" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">
-                </textarea>
-            </div>
-
-            <!-- Rich text editor -->
-
-            <div class="container" id="sample">
-              <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-            //<![CDATA[
-                    bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-              //]]>
-              </script>
+                  <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+              		<textarea class="ckeditor" id="ckedtor" name="ckeditor" placeholder="Describe your event briefly"></textarea>
             </div>
 
             <div class="form-group">
@@ -309,7 +299,7 @@
                   <option>Tournament</option>
                   <option>Tradeshow or Expo</option>
                   <option>Other</option>
-                </select>              
+                </select>
             </div>
             <div>
                 <label for="exampleInputEmail1">EVENT TOPIC</label>
@@ -338,7 +328,7 @@
                   <option>Sport & Fitness</option>
                   <option>Travel & Outdoor</option>
                   <option>Other</option>
-                </select>              
+                </select>
             </div>
 
             <br />

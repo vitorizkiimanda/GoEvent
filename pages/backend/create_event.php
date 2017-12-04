@@ -14,7 +14,7 @@
        $event_date_ends = $_POST['event_date_ends'];
        $event_time_ends = $_POST['event_time_ends'];
        $event_capacity = $_POST['event_capacity'];
-       $event_description = $_POST['event_description'];
+       $ckeditor = $_POST['ckeditor'];
 
         //dapetin id yg terakhir
         $count = mysqli_query($connect, "SELECT event_id FROM events ORDER BY event_id DESC");
@@ -42,7 +42,7 @@
         move_uploaded_file($certificate_file, $certificate_path);
 
       $sql = "INSERT INTO events (event_id,   event_name,   event_city, event_date_starts,  event_time_starts,    event_date_ends,  event_time_ends,    event_capacity,   event_certificate,  event_description,   event_photo, organizer_id)
-                          VALUES (''      ,'$event_name','$event_city','$event_date_starts','$event_time_starts','$event_date_ends','$event_time_ends','$event_capacity','$certificate_name','$event_description','$photo_name','$count')";
+                          VALUES (''      ,'$event_name','$event_city','$event_date_starts','$event_time_starts','$event_date_ends','$event_time_ends','$event_capacity','$certificate_name','$ckeditor','$photo_name','$count')";
       if ($connect->query($sql) === true) {
       //echo $sql;// boleh diganti nih, pointnya mau bertambah berapa jika add restaurant
           echo "<p> New Event Successfully Created</p>";
