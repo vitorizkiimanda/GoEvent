@@ -1,11 +1,19 @@
 <?php
 class User {
 	private $dbHost     = "localhost";
-    private $dbUsername = "root";
-    private $dbPassword = "";
-    private $dbName     = "go-event";
     private $userTbl    = 'user';
-	
+    
+    
+    private $dbUsername = "id3904684_hvsz";         //hosting
+    private $dbPassword = "hvszhvsz";               //hosting
+    private $dbName     = "id3904684_goevent";      //hosting
+
+    // private $dbUsername = "root";         //localhost
+    // private $dbPassword = "";               //localhost
+    // private $dbName     = "go-event";      //localhost
+
+
+    
 	function __construct(){
         if(!isset($this->db)){
             // Connect to the database
