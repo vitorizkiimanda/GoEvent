@@ -102,13 +102,16 @@
       </div>
       <div class="col-lg-4">
         <br />
-        <p><?php echo $hasil['event_date_starts']?> </p>
+        <p><?php echo date('d F Y', strtotime($hasil['event_date_starts'])); ?> </p>
         <br />
         <h3><?php echo $hasil['event_name']?> </h3>
         <br />
         <p><?php echo $hasil['event_city']?></p>
         <br />
-        <p>free</p>
+        <p>
+          <?php if($hasil['ticket_price'] === '0' ) echo "FREE" ;
+                else echo $hasil['ticket_price']." Rupiah" ; ?>
+        </p>
       </div>
     </div>
 
@@ -138,24 +141,6 @@
             <h5><b>DESCRIPTION</b></h5>
             <p><?php echo $hasil['event_description']?></p>
             <br />
-            <h4><b>TERM & CONDITION</b></h4>
-            <ol>
-              <li>Pendaftar bersifat individual/ Group beranggotakan 3 orang . Pria/Wanita dengan usia minimum 17 tahun dan maksimal 45 tahun</li>
-              <li>Setiap Pendaftar dapat memilih role masing -masing yaitu Hacker (Developer), Hustler (Business) dan Hipster (Design)</li>
-              <li>Pendaftaran dikenakan biaya pendaftaran sebesar Rp.50,000 / individu</li>
-              <li>Bagi peserta Individual, di acara AAJI Hackathon 2018 tanggal 24 -25 Januari akan dibentuk menjadi sebuah group dengan maksimal peserta per group sebanyak 3 orang</li>
-            </ol>
-
-            <br />
-            <h4><b>TIMELINE AAJI HACKATHON 2018 :</b></h4>
-            <ol>
-              <li>Pendaftar bersifat individual/ Group beranggotakan 3 orang . Pria/Wanita dengan usia minimum 17 tahun dan maksimal 45 tahun</li>
-              <li>Setiap Pendaftar dapat memilih role masing -masing yaitu Hacker (Developer), Hustler (Business) dan Hipster (Design)</li>
-              <li>Pendaftaran dikenakan biaya pendaftaran sebesar Rp.50,000 / individu</li>
-              <li>Bagi peserta Individual, di acara AAJI Hackathon 2018 tanggal 24 -25 Januari akan dibentuk menjadi sebuah group dengan maksimal peserta per group sebanyak 3 orang</li>
-            </ol>
-
-            <br />
             <br />
             <p><i>FOR MORE INFORMATION PLEASE CONTACT :</i></p>
             <p>VITO 089657011491</p>
@@ -165,16 +150,15 @@
             <br />
             <p>TAGS</p>
             <br />
-            <button type="button" class="btn btn-primary">IT</button>
-            <button type="button" class="btn btn-primary">Computer</button>
-            <button type="button" class="btn btn-primary">Teen</button>
+            <button type="button" class="btn btn-primary"> <?php echo $hasil['event_type'] ?> </button>
+            <button type="button" class="btn btn-primary"> <?php echo $hasil['event_topic'] ?> </button>
 
         </div>
         <div class="col-lg-1"></div>
         <div class="col-lg-3">
             <h5><b>DATE AND TIME</b></h5>
-            <p> <?php echo $hasil['event_date_starts'].", ".$hasil['event_time_starts'] ?> <br/>
-              <?php echo $hasil['event_date_ends'].", ".$hasil['event_time_ends'] ?> <br/>
+            <p> <?php echo date('d F Y', strtotime($hasil['event_date_starts'])).", ".$hasil['event_time_starts'] ?> <br/>
+              <?php echo date('d F Y', strtotime($hasil['event_date_ends'])).", ".$hasil['event_time_ends'] ?> <br/>
             <!-- <p>Wed, Jan 24, 2018, 9:00 AM –<br/>Fri, Jan 25, 2019, 8:00 PM WIB<br /> -->
               <a>Add to Calendar</a></p>
             <br />
