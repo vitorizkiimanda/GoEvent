@@ -112,58 +112,103 @@
 
 
     <div class="container">
-    <h1>Manage Events</h1>
+    <h1>Nama Acara</h1>
+    <p>Tanggal Acaranya</p>
     <!-- tabs -->
     <br />
     <br />
 
+
+    <!-- Search -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+        <h3 class="text-center">Input Attendance ID</h3>
+        <form method="post" action="pages/browse_event/index.php" >
+          <div class="input-group">
+            <input type="text" class="form-control" name="attandance_sign" id="event_name" placeholder="Attendance ID">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">SIGN</button>
+            </span>
+          </div><!-- /input-group -->
+        </form>
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-4"></div>
+    </div><!-- /.row -->
+  </div>
+  <div class="container text-center">
+    <h4><span class="text-center label label-success">Budi Budiman Sign Success</span></h4>
+    <h4><span class="text-center label label-danger">BA4UIJ Not Found</span></h4>
+  </div>
+  <br />
+  <br />
+
+
+
     <div class="container">
       <ul class="nav nav-tabs text-center">
-        <li class="active"><a data-toggle="tab" href="#live">UPCOMING EVENTS</a></li>
-        <li><a data-toggle="tab" href="#draft">DRAFT EVENTS</a></li>
-        <li><a data-toggle="tab" href="#past">PAST EVENTS</a></li>
+        <li class="active"><a data-toggle="tab" href="#list">LIST</a></li>
+        <li><a data-toggle="tab" href="#chart">CHART</a></li>
+        <li><a data-toggle="tab" href="#special">SPECIAL CASE</a></li>
       </ul>
 
       <div class="tab-content text-center">
-        <div id="live" class="tab-pane fade in active">
+        <div id="list" class="tab-pane fade in active">
           <br />
-          <p>You have no live events</p>
-
-          <!-- Events Card -->
-          <div class="container text-left">
-            <div class="row">
-                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
-                <a href="../../pages/attendance_event"><span class="glyphicon glyphicon-list-alt"></span> Attendance</a>&nbsp&nbsp&nbsp
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+          <!-- Table -->
+          <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-6">
+                  Name
+                </div>
+                <div class="col-lg-3">
+                  Arrival Time
+                </div>
+                <div class="col-lg-3">
+                  Status
+                </div>
+                <br />
                 <hr />
             </div>
             <div class="row">
-                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
-                <hr />
-            </div>
-            <div class="row">
-                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+                <div class="col-lg-6 text-left">
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                </div>
+                <div class="col-lg-3 text-center">
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                </div>
+                <div class="col-lg-3 text-center">
+                  <p>Signed<br /></p>
+                  <p>Signed<br /></p>
+                  <p>Signed<br /></p>
+                  <p>Not Signed<br /></p>
+                  <p>Signed<br /></p>
+                  <p>Signed<br /></p>
+                </div>
                 <hr />
             </div>
           </div>
 
 
         </div>
-        <div id="draft" class="tab-pane fade">
+        <div id="chart" class="tab-pane fade">
           <br />
-          <p>You have no draft events</p>
+          <p>Coming Soon</p>
         </div>
-        <div id="past" class="tab-pane fade">
+        <div id="special" class="tab-pane fade">
           <br />
-          <p>You have no past events</p>
+          <p>Coming Soon</p>
         </div>
       </div>
     </div>
