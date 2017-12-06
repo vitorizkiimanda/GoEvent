@@ -96,8 +96,8 @@
   <div class="container text-wrap">
     <!-- header -->
     <div class="row">
-      <div class="col-lg-8">
-         <img src='../../../photo_event/<?php echo $hasil['event_photo']; ?>' width='300' height='200'>
+      <div class="col-lg-8 text-center">
+         <img src='../../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" width='300' height='200' style="margin: 0 auto;">
       </div>
       <div class="col-lg-4">
         <br />
