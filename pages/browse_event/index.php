@@ -165,7 +165,7 @@
           <a href="../../pages/event_detail/index.php/?event_id=<?php echo $event_id_encrypt?>">
             <div class="row">
               <div class="col-lg-3">
-                <img src='photo_event/<?php echo $item['event_photo']; ?>' width='100' height='70'>
+                <img src='../../photo_event/<?php echo $item['event_photo']; ?>' width='100' height='70'>
               </div>
               <div class="col-lg-9">
                   <p><?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?></p>

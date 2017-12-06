@@ -2,7 +2,10 @@
 
     include('dbconnect.php');
     $date_now = getdate();
-    $event_name = $_POST['event_search'];
+    if(isset($_POST['event_search']))
+        $event_name = $_POST['event_search'];
+    else
+        $event_name = null;
     $start = time();
     $end = $start;
     $day = date('w', $start);
