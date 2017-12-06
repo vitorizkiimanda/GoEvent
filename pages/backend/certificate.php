@@ -1,7 +1,7 @@
 <?php
     //buat profile, album certificate
 
-    include('dbconnect.php');
+    // include('dbconnect.php');
 
     if (empty($_SESSION['user_id'])) {
         header("Location: ../sign_in"); // jika belum login, maka dikembalikan ke file form_login.php

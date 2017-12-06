@@ -21,9 +21,12 @@
             $_SESSION['user_id']    = $row['user_id'];
             $_SESSION['user_name']  = $row['user_name'];
             $_SESSION['user_city']  = $row['user_city'];
-            $_SESSION['user_photo'] = $row['user_photo'];             
+            $_SESSION['user_photo'] = $row['user_photo'];  
+            header('Location: ../../');                    
         }
-        header('Location: ../../');        
+        else{
+            
+        }
         
     }
     else{
