@@ -1,3 +1,8 @@
+<?php
+  include('../backend/attendance_event');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -125,11 +130,11 @@
       <div class="col-lg-4"></div>
       <div class="col-lg-4">
         <h3 class="text-center">Input Attendance ID</h3>
-        <form method="post" action="pages/browse_event/index.php" >
+        <form method="post" action="../backend/attendance_event.php" >
           <div class="input-group">
-            <input type="text" class="form-control" name="attandance_sign" id="event_name" placeholder="Attendance ID">
+            <input type="text" class="form-control" name="id_attendance" id="event_name" placeholder="Attendance ID">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">SIGN</button>
+              <button class="btn btn-default" type="submit" name="sign">SIGN</button>
             </span>
           </div><!-- /input-group -->
         </form>
@@ -138,8 +143,10 @@
     </div><!-- /.row -->
   </div>
   <div class="container text-center">
-    <h4><span class="text-center label label-success">Budi Budiman Sign Success</span></h4>
-    <h4><span class="text-center label label-danger">BA4UIJ Not Found</span></h4>
+    <?php
+    if($success) echo '<h4><span class="text-center label label-success">Budi Budiman Sign Success</span></h4>';
+    if($error) echo '<h4><span class="text-center label label-danger">BA4UIJ Not Found</span></h4>';
+    ?>
   </div>
   <br />
   <br />
