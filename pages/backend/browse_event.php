@@ -8,7 +8,7 @@
     $day = date('w', $start);
     if ($day > 0 && $day < 5)
     {
-         $start = $time()+ ((5 - $day) * 86400);
+         $start = time()+ ((5 - $day) * 86400);
     }
     if ($day != 0)
     {
@@ -55,7 +55,7 @@
             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= $sunday AND e.event_date_starts <= DATEADD(week, 1, $sunday) AND e.event_name LIKE '%{$event_name}%' LIMIT 15";
             $event = mysqli_query($connect, $event_query);
             //header('location: ../browse_event');
-        } 
+        }
         else if($_POST['date_categorized']=="7")
         {
             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= $firstDayNextMonth AND e.event_date_starts <= DATEADD(month, 1, $firstDayNextMonth) AND e.event_name LIKE '%{$event_name}%' LIMIT 15";

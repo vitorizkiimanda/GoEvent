@@ -82,12 +82,12 @@
                     <li><a href="#">Help Center</a></li>
                 </ul>
               </li>
-              
+
               <?php if (!empty($_SESSION['user_id'])) { ?>
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HVSZ<span class="caret"></span></a>
-                <ul class="dropdown-menu">                    
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php $user_name = $_SESSION['user_name']; echo strtoupper(substr($user_name,0,1)) ?><span class="caret"></span></a>
+                <ul class="dropdown-menu">
                   <li><a href="pages/profile">Profile</a></li>
                   <li><a href="pages/profile">Tickets</a></li>
                   <li><a href="pages/profile">Bookmarks</a></li>
@@ -101,7 +101,7 @@
                 </ul>
               </li>
               <?php } else {
-               header('Location: ../sign_in/' );    
+               header('Location: ../sign_in/' );
               } ?>
 
               <li><a href="../../pages/create_event">Create Event</a></li>
@@ -127,7 +127,7 @@
                 <label for="exampleInputEmail1">Organizer Name</label>
                 <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name">
               </div>
-            
+
               <div class="form-group">
                   <label for="exampleInputEmail1">About The Organizer</label>
                   <textarea type="textarea" name="about_organizer" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">

@@ -11,10 +11,10 @@
   <title>GoEvent</title>
 
   <link rel="shortcut icon" href="../../images/title.png" />
-  
+
   <!-- pengaturan view agar responsif namun pada mobile tidak bisa zooming -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  
+
   <!-- attach JavaScripts -->
   <script src="../../js/bootstrap.min.js"></script>
   <script src="../../js/jquery.min.js"></script>
@@ -47,7 +47,7 @@
             </button>
             <a class="navbar-brand" id="goevent_color" href="../../">GoEvent</a>
           </div>
-      
+
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <form class="navbar-form navbar-left">
@@ -71,8 +71,8 @@
               <?php if (!empty($_SESSION['user_id'])) { ?>
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HVSZ<span class="caret"></span></a>
-                <ul class="dropdown-menu">                    
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php $user_name = $_SESSION['user_name']; echo strtoupper(substr($user_name,0,1)) ?><span class="caret"></span></a>
+                <ul class="dropdown-menu">
                   <li><a href="pages/profile">Profile</a></li>
                   <li><a href="pages/profile">Tickets</a></li>
                   <li><a href="pages/profile">Bookmarks</a></li>
@@ -155,7 +155,7 @@
               <li><a href="#">Angular</a></li>
             </ul>
         </div>
-        
+
       </div>
       <div class="col-lg-9">
           <h1>Jakarta, Indonesia Events Just For You</h1>
@@ -173,10 +173,10 @@
                   <br />
                   <p><?php echo $item['event_city'] ?></p>
                   <br />
-                  <p>#hastagKategori</p>         
+                  <p>#hastagKategori</p>
               </div>
             </div>
-          </a>      
+          </a>
           <?php } ?>
       </div>
     </div>
@@ -190,6 +190,6 @@
       <p class="text-center">Copyright @GoEvent   HVSZ 2017</p>
     </div>
   </footer>
-  
+
 </body>
 </html>

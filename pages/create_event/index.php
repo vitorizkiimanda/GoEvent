@@ -87,8 +87,8 @@
             <?php if (!empty($_SESSION['user_id'])) { ?>
 
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HVSZ<span class="caret"></span></a>
-                <ul class="dropdown-menu">                    
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php $user_name = $_SESSION['user_name']; echo strtoupper(substr($user_name,0,1)) ?><span class="caret"></span></a>
+                <ul class="dropdown-menu">
                   <li><a href="pages/profile">Profile</a></li>
                   <li><a href="pages/profile">Tickets</a></li>
                   <li><a href="pages/profile">Bookmarks</a></li>
@@ -102,10 +102,10 @@
                 </ul>
               </li>
               <?php } else {
-               header('Location: ../sign_in/' );    
+               header('Location: ../sign_in/' );
               } ?>
           </ul>
-          
+
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
   </nav>

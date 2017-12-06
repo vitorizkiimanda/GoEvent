@@ -97,7 +97,7 @@
     <br />
     <div class="row">
     <div class="col-lg-3">
-      
+
     <div class="panel-group" id="accordion">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -143,7 +143,7 @@
                   <label for="exampleInputEmail1">Account Email</label>
                   <input type="email" name="email_user" class="form-control" id="exampleInputEmail1" value="emailsiuser@gmail.com">
                 </div>
-              
+
                 <div class="form-group">
                     <label for="exampleInputEmail1">Profile Photo</label>
                     <p>nnti ditampilin foto usernya</p>
@@ -174,7 +174,7 @@
                   <label for="exampleInputEmail1">Home Address</label>
                   <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
                   <!-- Google API autocomplete starts -->
-                  <br />  
+                  <br />
                                 <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city"></input>
                                     <script>
                                       var placeSearch, autocomplete;
@@ -244,15 +244,15 @@
                   <input type="number" name="instagram_organizer" class="form-control" id="exampleInputEmail1" value="kodenya kalo udah ada">
                 </div>
 
-                
-                
 
-                
+
+
+
                 <br />
                 <div class="row">
-                  
+
                     <button type="submit" class="btn btn-primary btn-round btn-block">Save</button>
-                  
+
                 </div>
             </form>
         </div>
@@ -265,7 +265,7 @@
                   <label for="exampleInputEmail1">Current Password</label>
                   <input type="password" name="password_user" class="form-control" id="exampleInputEmail1">
                 </div>
-              
+
                 <div class="form-group">
                     <label for="exampleInputEmail1">New Password</label>
                     <input type="password" name="password_user_new" class="form-control" id="exampleInputEmail1">
@@ -278,9 +278,9 @@
 
                 <br />
                 <div class="row">
-                  
+
                     <button type="submit" class="btn btn-primary btn-round btn-block">Save</button>
-                  
+
                 </div>
             </form>
       </div>
