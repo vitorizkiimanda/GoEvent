@@ -38,30 +38,30 @@
         }
         else if($_POST['date_categorized']=="3")
         {
-            $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts = DATEADD(day, 1, CURDATE()) AND e.event_name LIKE '%{$event_name}%' LIMIT 15";
+            $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts = ADDDATE(CURDATE(), INTERVAL 1 day)";
             $event = mysqli_query($connect, $event_query);
             //header('location: ../browse_event');
         }
         else if($_POST['date_categorized']=="4")
         {
-            $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_date_starts <= $sunday AND e.event_name LIKE '%{$event_name}%' LIMIT 15";
+            $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_date_starts <= '%{$sunday}%' AND e.event_name LIKE '%{$event_name}%' LIMIT 15";
             $event = mysqli_query($connect, $event_query);
             //header('location: ../browse_event');
         }
         else if($_POST['date_categorized']=="5"){
-            $event_query = "SELECT * FROM events AS e WHERE (e.event_date_starts = $saturday OR e.event_date_starts = $sunday) AND e.event_name LIKE '%{$event_name}%'  LIMIT 15";
+            $event_query = "SELECT * FROM events AS e WHERE (e.event_date_starts = '%{$saturday}%' OR e.event_date_starts = '%{$sunday}%') AND e.event_name LIKE '%{$event_name}%'  LIMIT 15";
             $event = mysqli_query($connect, $event_query);
             //header('location: ../browse_event');
         }
         else if($_POST['date_categorized']=="6")
         {
-            $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= $sunday AND e.event_date_starts <= DATEADD(week, 1, $sunday) AND e.event_name LIKE '%{$event_name}%' LIMIT 15";
+            $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= '%{$sunday}%' AND e.event_date_starts <= ADDDATE('%{$sunday}%', INTERVAL 7 day) AND e.event_name LIKE '%{$event_name}%' LIMIT 15";
             $event = mysqli_query($connect, $event_query);
             //header('location: ../browse_event');
         }
         else if($_POST['date_categorized']=="7")
         {
-            $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= $firstDayNextMonth AND e.event_date_starts <= DATEADD(month, 1, $firstDayNextMonth) AND e.event_name LIKE '%{$event_name}%' LIMIT 15";
+            $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= $firstDayNextMonth AND e.event_date_starts <= ADDDATE($firstDayNextMonth, INTERVAL 1 MONTH) AND e.event_name LIKE '%{$event_name}%' LIMIT 15";
             $event = mysqli_query($connect, $event_query);
             //header('location: ../browse_event');
         }
