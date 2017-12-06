@@ -262,7 +262,7 @@
                 <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" placeholder="1000">
               </div>
               <div class="col-lg-3">
-                <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" placeholder="0 for free">
+                <input type="number" name="ticket_price" class="form-control" id="exampleInputEmail1" placeholder="0 for free">
               </div>
               <div class="col-lg-2">
                 <a><span data-toggle="collapse" data-target="#setting" class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
@@ -288,8 +288,8 @@
                 <div>
                   <label for="exampleInputEmail1">Ticket sale end</label>
                   <br />
-                  <input type="date" name="ticket_date_end" id="datepicker">
-                  <input type="time" name="ticket_time_end" id="exampleInputEmail1" placeholder="am/pm">
+                  <input type="date" name="ticket_date_ends" id="datepicker">
+                  <input type="time" name="ticket_time_ends" id="exampleInputEmail1" placeholder="am/pm">
                 </div>
               </div>
             </div>
@@ -299,7 +299,7 @@
             <div>
                 <label for="exampleInputEmail1">EVENT TYPE</label>
                 <br />
-                <select class="selectpicker">
+                <select class="selectpicker" name = "event_type">
                   <option>Select Event Type</option>
                   <option>Attraction</option>
                   <option>Camp/Trip</option>
@@ -324,7 +324,7 @@
             <div>
                 <label for="exampleInputEmail1">EVENT TOPIC</label>
                 <br />
-                <select class="selectpicker">
+                <select class="selectpicker" name = "event_topic">
                   <option>Select a topic</option>
                   <option>Automotive</option>
                   <option>Business & professional</option>
