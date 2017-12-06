@@ -12,8 +12,8 @@ $clientId = '296198883093-vvr7aflfb6iie9chg5uv1qkriajpbo7i.apps.googleuserconten
 $clientSecret = 'RvXl0bZ0pMsljCy4vpZjjjNE'; //Google client secret
 
 // nuhsatganteng
-        $redirectURL = 'https://goevent-hvsz.000webhostapp.com/pages/backend/sign_in_google/'; //Callback URL hosting
-        // $redirectURL = 'https://localhost/GoEvent/pages/backend/sign_in_google/'; //Callback URL localhost
+        // $redirectURL = 'https://goevent-hvsz.000webhostapp.com/pages/backend/sign_in_google/'; //Callback URL hosting
+        $redirectURL = 'https://localhost/GoEvent/pages/backend/sign_in_google/'; //Callback URL localhost
 //
 
 //Call Google API

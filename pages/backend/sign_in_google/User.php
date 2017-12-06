@@ -4,13 +4,13 @@ class User {
     private $userTbl    = 'user';
     
     // nuhsatganteng
-            private $dbUsername = "id3904684_hvsz";         //hosting
-            private $dbPassword = "hvszhvsz";               //hosting
-            private $dbName     = "id3904684_goevent";      //hosting
+            // private $dbUsername = "id3904684_hvsz";         //hosting
+            // private $dbPassword = "hvszhvsz";               //hosting
+            // private $dbName     = "id3904684_goevent";      //hosting
 
-            // private $dbUsername = "root";         //localhost
-            // private $dbPassword = "";               //localhost
-            // private $dbName     = "go-event";      //localhost
+            private $dbUsername = "root";         //localhost
+            private $dbPassword = "";               //localhost
+            private $dbName     = "go-event";      //localhost
     //
 
     
