@@ -10,8 +10,11 @@ include_once 'src/contrib/Google_Oauth2Service.php';
  */
 $clientId = '296198883093-vvr7aflfb6iie9chg5uv1qkriajpbo7i.apps.googleusercontent.com';  //Google client ID
 $clientSecret = 'RvXl0bZ0pMsljCy4vpZjjjNE'; //Google client secret
-$redirectURL = 'https://goevent-hvsz.000webhostapp.com/pages/backend/sign_in_google/'; //Callback URL hosting
-// $redirectURL = 'https://localhost/GoEvent/pages/backend/sign_in_google/'; //Callback URL localhost
+
+// nuhsatganteng
+        $redirectURL = 'https://goevent-hvsz.000webhostapp.com/pages/backend/sign_in_google/'; //Callback URL hosting
+        // $redirectURL = 'https://localhost/GoEvent/pages/backend/sign_in_google/'; //Callback URL localhost
+//
 
 //Call Google API
 $gClient = new Google_Client();
