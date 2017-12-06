@@ -97,7 +97,8 @@
     <!-- header -->
     <div class="row">
       <div class="col-lg-8 text-center">
-         <img src='../../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" width='300' height='200' style="margin: 0 auto;">
+         <img src='../../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" width='500' height='400' style="margin: 0 auto;">
+         <br />
       </div>
       <div class="col-lg-4">
         <br />
