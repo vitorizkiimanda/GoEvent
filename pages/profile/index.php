@@ -120,7 +120,7 @@
 
     <div class="container text-center">
       <h1>Vito Rizki Imanda</h1>
-      <a href="../../pages/profile_edit">EDIT PROFILE</a>
+      <a href="../../pages/account_setting">EDIT PROFILE</a>
     </div>
 
 
