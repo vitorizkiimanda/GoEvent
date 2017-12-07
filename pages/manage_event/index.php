@@ -1,5 +1,6 @@
 <?php
     require_once '../backend/dbconnect.php';
+    include('../backend/manage_event.php');
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -134,6 +135,17 @@
 
           <!-- Events Card -->
           <div class="container text-left">
+            <?php while ($item = mysqli_fetch_array($event)) { ?>
+            <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
+            <div class="row">
+                <p><span><?php echo $item['event_date_starts']?></span> <span><?php echo $item['event_time_starts']?></span></p>
+                <a href="../../pages/attendance_event"><span class="glyphicon glyphicon-list-alt"></span> Attendance</a>&nbsp&nbsp&nbsp
+                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+                <hr />
+            <?php } ?>
+            </div>
             <div class="row">
                 <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
                 <a href="../../pages/attendance_event"><span class="glyphicon glyphicon-list-alt"></span> Attendance</a>&nbsp&nbsp&nbsp

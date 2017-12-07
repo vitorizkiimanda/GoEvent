@@ -1,5 +1,5 @@
 <?php
-    include('dbconect.php');
+    include('dbconnect.php');
     $error=false;
     $success=false;
 
@@ -13,12 +13,14 @@
         {
             $error=true;
             $success=false;
+            header('location: ../attendance_event/index.php');
         }
         else
         {
             $sign = mysqli_query($connect, $attendace_update);
             $success = true;
             $error=false;
+            header('location: ../attendance_event/index.php');
         }
     }
 
