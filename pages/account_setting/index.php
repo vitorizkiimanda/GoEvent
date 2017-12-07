@@ -1,3 +1,7 @@
+<?php
+    require_once '../backend/dbconnect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
