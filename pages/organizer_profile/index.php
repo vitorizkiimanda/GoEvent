@@ -1,7 +1,9 @@
 <?php
     require_once '../backend/dbconnect.php';
     require_once '../backend/organizer_profile.php';
-    $organizer_id=$_GET['organizer_id'];
+    if (!empty($_GET['organizer_id']))
+      $mark = $_GET['organizer_id'];
+    else $mark = "-1" ;
 ?>
 
 <!DOCTYPE html>
@@ -122,13 +124,15 @@
       <div class="col-lg-10">
         <h1>Organizer Profile</h1>
       </div>
-      <div class="col-lg-2 text-center">
-        <select class="selectpicker" name = "organizer">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Organizer<span class="caret"></span></a>
+          <ul class="dropdown-menu">
         <?php if(mysqli_num_rows($query_organizer)>0) { ?>
         <?php while($result =mysqli_fetch_assoc($query_organizer)){ ?>
-                <option><a href="index.php?organizer_id = ".$result['organizer_id']."" > <?php echo $result['organizer_name'] ?></a></option>
+                <li><a href="index.php/?organizer_id=<?php echo $result['organizer_id']?>" > <?php echo $result['organizer_name'] ?></a></li>
       <?php     }} ?>
-                <option><a href="index.php?organizer_id = '-1'">Create a new organizer</a></option>
+                <li><a href="index.php/">Create a new organizer</a></li>
                 </select>
                 <br />
       </div>
@@ -142,7 +146,7 @@
       </div>
       <div class="col-lg-9">
 
-        <form action="#" enctype="multipart/form-data" method="post">
+        <form action="../backend/organizer_profile.php" enctype="multipart/form-data" method="post">
               <div class="form-group">
                 <label for="exampleInputEmail1">Organizer Name</label>
                 <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name">
@@ -150,48 +154,39 @@
 
               <div class="form-group">
                   <label for="exampleInputEmail1">About The Organizer</label>
-                  <textarea type="textarea" name="about_organizer" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">
+                  <textarea type="textarea" name="organizer_description" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">
                   </textarea>
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Phone Number</label>
-                <input type="number" name="website_organizer" class="form-control" id="exampleInputEmail1" value="">
+                <input type="number" name="organizer_phone_number" class="form-control" id="exampleInputEmail1" value="">
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Website</label>
-                <input type="url" name="website_organizer" class="form-control" id="exampleInputEmail1" value="http://">
+                <input type="url" name="organizer_website" class="form-control" id="exampleInputEmail1" value="http://">
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Facebook Page</label>
-                <input type="url" name="facebook_organizer" class="form-control" id="exampleInputEmail1" value="facebook.com/">
+                <input type="text" name="organizer_facebook" class="form-control" id="exampleInputEmail1" value="facebook.com/">
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Twitter</label>
-                <input type="text" name="twitter_organizer" class="form-control" id="exampleInputEmail1" value="@">
+                <input type="text" name="organizer_twitter" class="form-control" id="exampleInputEmail1" value="@">
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Instagram</label>
-                <input type="text" name="instagram_organizer" class="form-control" id="exampleInputEmail1" value="@">
+                <input type="text" name="organizer_instagram" class="form-control" id="exampleInputEmail1" value="@">
               </div>
 
-              <!-- Rich text editor -->
-
-              <div class="container" id="sample">
-                <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-              //<![CDATA[
-                      bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-                //]]>
-                </script>
+              <div class="form-group">
+                  <label for="exampleInputFile">Organizer_photo</label>
+                  <input type="file" name="organizer_photo" accept="image/*" id="exampleInputFile">
               </div>
-
-              <!-- Rich text editor -->
-
-
 
               <br />
               <div class="row">
