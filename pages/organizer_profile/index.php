@@ -1,5 +1,6 @@
 <?php
     require_once '../backend/dbconnect.php';
+    require_once '../backend/organizer_profile.php';
 ?>
 
 <!DOCTYPE html>
@@ -121,9 +122,12 @@
         <h1>Organizer Profile</h1>
       </div>
       <div class="col-lg-2 text-center">
-                <select class="selectpicker" name = "event_topic">
-                  <option>tampilin kalo udah ada organizer sebelumnya</option>
-                  <option>Create a new organizer</option>
+        <select class="selectpicker" name = "event_topic">
+        <?php if(mysqli_num_rows($query_organizer)>0) { ?>
+        <?php while($result =mysqli_fetch_assoc($query_organizer)){ ?>
+                <option> <?php echo $result['organizer_name'] ?></option>
+      <?php     }} ?>
+                <option>Create a new organizer</option>
                 </select>
                 <br />
       </div>
