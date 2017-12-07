@@ -119,7 +119,7 @@
     </nav>
 
     <div class="container text-center">
-      <h1>Vito Rizki Imanda</h1>
+      <h1> <?php echo $_SESSION['user_name']; ?> </h1>
       <a href="../../pages/account_setting">EDIT PROFILE</a>
     </div>
 

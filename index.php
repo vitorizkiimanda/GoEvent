@@ -175,7 +175,7 @@
         <a href="pages/event_detail/index.php/?event_id=<?php echo $event_id_encrypt?>" >
           <div class="col-lg-4 text-center" style="height: 45vh; padding: 0vh 1vw 0vh 1vw; margin: 2vh 0vw 15vh 0vw;">
             <img src='photo_event/<?php echo $item['event_photo']; ?>' width='200' height='200' style="margin: 0 auto;">
-            <br />
+            <br/>
               <p style="font-weight: 400; color: #42454d;"> <?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?> </p>
               <h4 style="font-weight: 600; color: #42454d;"> <?php echo $item['event_name'] ?> </h4>
               <p style="font-weight: 300; color: #42454d;"> <?php echo $item['event_city'] ?> </p>
