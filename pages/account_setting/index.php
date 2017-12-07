@@ -41,6 +41,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 
 
+  
+
+
+
 </head>
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
@@ -134,10 +138,10 @@
         </div>
         <div id="collapse1" class="panel-collapse collapse in">
           <ul class="list-group">
-            <li class="list-group-item"><a data-toggle="collapse" data-target="#contact">Contact Info</a></li>
-            <li class="list-group-item"><a data-toggle="collapse" data-target="#password">Password</a></li>
-            <li class="list-group-item">Email Preferences</li>
-            <li class="list-group-item">Close Account</li>
+            <li class="list-group-item" id="contact_button" data-toggle="collapse" data-target="#contact"><a href="#">Contact Info</a></li>
+            <li class="list-group-item" id="password_button" data-toggle="collapse" data-target="#password"><a href="#">Password</a></li>
+            <li class="list-group-item" id="email_button" data-toggle="collapse" data-target="#email"><a href="#">Email Preferences</a></li>
+            <li class="list-group-item" id="close_button" data-toggle="collapse" data-target="#close"><a href="#">Close Account</a></li>
           </ul>
         </div>
       </div>
@@ -151,17 +155,43 @@
         <div id="collapse2" class="panel-collapse collapse">
           <ul class="list-group">
             <li class="list-group-item">Package</li>
-            <li class="list-group-item">Unused Organizers</li>
+            <li class="list-group-item">Delete Organizers</li>
             <li class="list-group-item">Multi-User Access</li>
           </ul>
         </div>
       </div>
     </div>
 
+              <!-- kode untuk autocollapse -->
+    <script>
+    $(document).ready(function(){
+        $("#contact_button").click(function(){
+            $("#password").collapse('hide');
+            $("#email").collapse('hide');
+            $("#close").collapse('hide');
+        });
+        $("#password_button").click(function(){
+            $("#contact").collapse('hide');
+            $("#email").collapse('hide');
+            $("#close").collapse('hide');
+        });
+        $("#email_button").click(function(){
+            $("#password").collapse('hide');
+            $("#contact").collapse('hide');
+            $("#close").collapse('hide');
+        });
+        $("#close_button").click(function(){
+            $("#password").collapse('hide');
+            $("#email").collapse('hide');
+            $("#contact").collapse('hide');
+        });
+    });
+    </script>
+
     </div>
     <div class="col-lg-9">
 
-      <div id="contact" class="collapse">
+      <div id="contact" class="collapse in">
         <h3>Account Information</h3>
         <hr />
           <form action="#" enctype="multipart/form-data" method="post">
@@ -309,6 +339,18 @@
 
                 </div>
             </form>
+      </div>
+
+      <div id="email" class="collapse">
+        <h3>Email Preferences</h3>
+        <hr />
+        
+      </div>
+
+      <div id="close" class="collapse">
+        <h3>Close Account</h3>
+        <hr />
+        
       </div>
 
 
