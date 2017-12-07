@@ -116,7 +116,18 @@
 
 
   <div class="container">
-    <h1>Organizer Profile</h1>
+    <div class="row">
+      <div class="col-lg-10">
+        <h1>Organizer Profile</h1>
+      </div>
+      <div class="col-lg-2 text-center">
+                <select class="selectpicker" name = "event_topic">
+                  <option>tampilin kalo udah ada organizer sebelumnya</option>
+                  <option>Create a new organizer</option>
+                </select>
+                <br />
+      </div>
+    </div>
     <br />
     <div class="row">
       <div class="col-lg-3 text-center">
@@ -136,6 +147,11 @@
                   <label for="exampleInputEmail1">About The Organizer</label>
                   <textarea type="textarea" name="about_organizer" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">
                   </textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Phone Number</label>
+                <input type="number" name="website_organizer" class="form-control" id="exampleInputEmail1" value="">
               </div>
 
               <div class="form-group">

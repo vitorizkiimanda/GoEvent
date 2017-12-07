@@ -115,8 +115,18 @@
       <div class="col-lg-2"></div>
       <div class="col-lg-8">
 
-
-        <h1>1. Event Details</h1>
+        <div class="row">
+          <div class="col-lg-10">
+            <h1>1. Event Details</h1>
+          </div>
+          <div class="col-lg-2 text-center">
+                    <select class="selectpicker" name = "event_topic">
+                      <option>tampilin kalo udah ada organizer sebelumnya</option>
+                      <option>Create a new organizer</option>
+                    </select>
+                    <br />
+          </div>
+        </div>
         <form action="../backend/create_event.php" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <label for="exampleInputEmail1">Event Title</label>
