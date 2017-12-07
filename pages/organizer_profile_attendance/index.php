@@ -1,3 +1,7 @@
+<?php
+    require_once '../backend/dbconnect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -87,16 +91,16 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php $user_name = $_SESSION['user_name']; echo strtoupper(substr($user_name,0,1)) ?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="pages/profile">Profile</a></li>
-                  <li><a href="pages/profile">Tickets</a></li>
-                  <li><a href="pages/profile">Bookmarks</a></li>
-                  <li><a href="pages/profile">Certificates</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="pages/organizer_profile">Organizer Profile</a></li>
-                  <li><a href="pages/manage_event">Manage Events</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="pages/account_setting">Account Settings</a></li>
-                  <li><a href="pages/backend/logout.php">Log Out</a></li>
+                <li><a href="../profile">Profile</a></li>
+                <li><a href="../profile">Tickets</a></li>
+                <li><a href="../profile">Bookmarks</a></li>
+                <li><a href="../profile">Certificates</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../manage_event">Manage Events</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="../account_setting">Account Settings</a></li>
+                <li><a href="../backend/logout.php">Log Out</a></li>
                 </ul>
               </li>
               <?php } else {
