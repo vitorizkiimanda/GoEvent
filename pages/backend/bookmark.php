@@ -23,6 +23,7 @@
             
         }
         else{
+            $bookmark=0;
         }
     }
 ?>
