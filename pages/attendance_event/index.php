@@ -1,5 +1,5 @@
 <?php
-  include('../backend/attendance_event');
+  include('../backend/attendance_event.php');
 
 ?>
 
@@ -144,6 +144,7 @@
   </div>
   <div class="container text-center">
     <?php
+    echo $success." ".$error;
     if($success) echo '<h4><span class="text-center label label-success">Budi Budiman Sign Success</span></h4>';
     if($error) echo '<h4><span class="text-center label label-danger">BA4UIJ Not Found</span></h4>';
     ?>
