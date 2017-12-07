@@ -7,6 +7,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="HVSZ" content="GoEvent" />
+  
 
   <title>GoEvent</title>
 
@@ -142,7 +143,7 @@
                 <a href="../../pages/attendance_event"><span class="glyphicon glyphicon-list-alt"></span> Attendance</a>&nbsp&nbsp&nbsp
                 <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
                 <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>&err=false&suc=false"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
                 <hr />
             <?php } ?>
             </div>

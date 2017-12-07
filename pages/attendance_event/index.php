@@ -1,5 +1,10 @@
 <?php
-  include('../backend/attendance_event.php');
+  require_once('../backend/attendance_event.php');
+  if(isset($_GET['event_id']))
+  {
+    $dec=$_GET['event_id'];
+    $event_id=base64_decode($dec);
+  }
 
 ?>
 
@@ -133,6 +138,7 @@
         <form method="post" action="../backend/attendance_event.php" >
           <div class="input-group">
             <input type="text" class="form-control" name="id_attendance" id="event_name" placeholder="Attendance ID">
+            <input type="hiden" name="id_event" value="$event_id">
             <span class="input-group-btn">
               <button class="btn btn-default" type="submit" name="sign">SIGN</button>
             </span>
@@ -144,9 +150,8 @@
   </div>
   <div class="container text-center">
     <?php
-    echo $success." ".$error;
-    if($success) echo '<h4><span class="text-center label label-success">Budi Budiman Sign Success</span></h4>';
-    if($error) echo '<h4><span class="text-center label label-danger">BA4UIJ Not Found</span></h4>';
+      if($_GET['suc']) echo '<h4><span class="text-center label label-success">Budi Budiman Sign Success</span></h4>';
+      if($_GET['err']) echo '<h4><span class="text-center label label-danger">BA4UIJ Not Found</span></h4>';
     ?>
   </div>
   <br />

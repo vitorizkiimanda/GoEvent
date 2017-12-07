@@ -1,14 +1,15 @@
 <?php
     //buat di profile, liat tiket dan liat event yg pernah dibeli
 
-    // include('dbconnect.php');
-
+    include('dbconnect.php');
 
     if (empty($_SESSION['user_id'])) {
         header("Location: ../sign_in"); // jika belum login, maka dikembalikan ke file form_login.php
     }
     else{
         $id = $_SESSION['user_id'];
+        // $_SESSION['err_msg']=false;
+        // $_SESSION['suc_msg']=false;
 
         $query = mysqli_query($connect,  "SELECT * FROM attendant A JOIN events E WHERE user_id='$id' AND status=0 AND A.event_id=E.event_id ");
         $query2 = mysqli_query($connect,  "SELECT * FROM attendant A JOIN events E WHERE user_id='$id' AND status=1 AND A.event_id=E.event_id ");
