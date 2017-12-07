@@ -139,7 +139,7 @@
       <div class="tab-content text-center">
         <div id="upcoming" class="tab-pane fade in active">
           <br />
-          <?php if(count($upcoming)>0) { 
+          <?php if($upcoming!=0) { 
             for($i=0; $i<count($upcoming); $i++){?>
 
                   <!-- Events Card -->
@@ -148,11 +148,11 @@
                     <a href="pages/event_detail/" >
                       <div class="col-lg-4">
                         <p> <img src='photo_event/' width='100' height='70'> </p>
-                        <p> <?php echo $upcoming[$i].event_name; ?> </p>
-                        <p> <?php echo $upcoming[$i].event_city; ?> </p>
-                        <p> <?php echo $upcoming[$i].event_date_starts; ?> </p>
-                        <p> <?php echo $upcoming[$i].event_date_ends; ?> </p>
-                        <p> <?php echo $upcoming[$i].event_description; ?> </p>
+                        <p> <?php echo $upcoming[$i]["event_name"]; ?> </p>
+                        <p> <?php echo $upcoming[$i]["event_city"]; ?> </p>
+                        <p> <?php echo $upcoming[$i]["event_date_starts"]; ?> </p>
+                        <p> <?php echo $upcoming[$i]["event_date_ends"]; ?> </p>
+                        <p> <?php echo $upcoming[$i]["event_description"]; ?> </p>
                       </div>
                     </a>
                 </div>
@@ -173,16 +173,89 @@
         </div>
         <div id="bookmark" class="tab-pane fade">
           <br />
-          <p>Bookmarked events will show up here</p>
+
+          <?php if($bookmark!=0) { 
+            for($i=0; $i<count($bookmark); $i++){?>
+
+                  <!-- Events Card -->
+              <div class="container">
+                <div class="row">
+                    <a href="pages/event_detail/" >
+                      <div class="col-lg-4">
+                        <p> <img src='photo_event/' width='100' height='70'> </p>
+                        <p> <?php echo $bookmark[$i]["event_name"]; ?> </p>
+                        <p> <?php echo $bookmark[$i]["event_city"]; ?> </p>
+                        <p> <?php echo $bookmark[$i]["event_date_starts"]; ?> </p>
+                        <p> <?php echo $bookmark[$i]["event_date_ends"]; ?> </p>
+                        <p> <?php echo $bookmark[$i]["event_description"]; ?> </p>
+                      </div>
+                    </a>
+                </div>
+              </div>
+
+            <?php } ?>
+            
+            
+          <?php } else { ?>
+            <p>Bookmarked events will show up here</p>
+          <?php } ?>
+
         </div>
         <div id="past" class="tab-pane fade">
           <br />
-          <p>You have no past events</p>
+
+          <?php if($past!=0) { 
+              for($i=0; $i<count($past); $i++){?>
+
+                    <!-- Events Card -->
+                <div class="container">
+                  <div class="row">
+                      <a href="pages/event_detail/" >
+                        <div class="col-lg-4">
+                          <p> <img src='photo_event/' width='100' height='70'> </p>
+                          <p> <?php echo $past[$i]["event_name"]; ?> </p>
+                          <p> <?php echo $past[$i]["event_city"]; ?> </p>
+                          <p> <?php echo $past[$i]["event_date_starts"]; ?> </p>
+                          <p> <?php echo $past[$i]["event_date_ends"]; ?> </p>
+                          <p> <?php echo $past[$i]["event_description"]; ?> </p>
+                        </div>
+                      </a>
+                  </div>
+                </div>
+
+              <?php } ?>
+              
+              
+            <?php } else { ?>
+              <p>You have no past events</p>
+            <?php } ?>
+
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
         </div>
         <div id="certificate" class="tab-pane fade">
           <br />
-          <p>You have no certificate yet</p>
+          <?php if($certificate!=0) { 
+              for($i=0; $i<count($certificate); $i++){?>
+
+                    <!-- Events Card -->
+                <div class="container">
+                  <div class="row">
+                      <a href="pages/event_detail/" >
+                        <div class="col-lg-4">
+                          <p> <img src='photo_event/' width='100' height='70'> </p>
+                          <p> <?php echo $certificate[$i]["certificate"]; ?> </p>
+                        </div>
+                      </a>
+                  </div>
+                </div>
+
+              <?php } ?>
+              
+              
+            <?php } else { ?>
+              <p>You have no certificate yet</p>
+            <?php } ?>
+
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
         </div>
       </div>

@@ -12,9 +12,9 @@
         $query = mysqli_query($connect,  "SELECT * FROM album_certificate WHERE user_id='$id'");
 
         if(mysqli_num_rows($query)>0){
-            $result_set = array();
+            $certificate = array();
             while($result =mysqli_fetch_assoc($query)){
-                $result_set[]=$result;
+                $certificate[]=$result;
             
             }
 
@@ -23,6 +23,7 @@
             
         }
         else{
+            $certificate=0;
         }
 
     }
