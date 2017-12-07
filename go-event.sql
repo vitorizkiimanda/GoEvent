@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07 Des 2017 pada 06.33
+-- Generation Time: 07 Des 2017 pada 07.45
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -43,7 +43,7 @@ CREATE TABLE `attendant` (
   `event_id` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `ticket_id` varchar(50) NOT NULL,
-  `arival_time` time NOT NULL
+  `arrival_time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
