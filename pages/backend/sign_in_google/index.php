@@ -34,6 +34,7 @@ if ($gClient->getAccessToken()) {
    // $_SESSION['userData'] = $userData;
 
    $_SESSION['user_id']     = $userData['user_id'];
+   $_SESSION['user_uid']    = $userData['user_uid'];
    $_SESSION['user_email']  = $userData['user_email'];
    $_SESSION['user_name']   = $userData['user_name'];
    $_SESSION['user_photo']  = $userData['user_photo'];    

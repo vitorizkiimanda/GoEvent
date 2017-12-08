@@ -1,5 +1,7 @@
 <?php
     require_once '../backend/dbconnect.php';
+    require_once '../backend/account_setting.php';
+    
 ?>
 
 <!DOCTYPE html>
@@ -197,41 +199,31 @@
           <form action="#" enctype="multipart/form-data" method="post">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Account Email</label>
-                  <input type="email" name="user_email" class="form-control" id="exampleInputEmail1" value="user_email">
+                  <input type="email" name="user_email" class="form-control" id="exampleInputEmail1" value="<?php echo $_SESSION['user_email']; ?>" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Profile Photo</label>
-                    <p>nnti ditampilin foto usernya</p>
-                </div>
+                    <label for="exampleInputEmail1">Profile Photo</label><br>
+                    <?php if(!empty($_SESSION['user_uid'])){ ?>
+                      <img src='<?php echo $_SESSION['user_photo']; ?>' width='200' height='200' style="margin: 0 auto;">
 
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Website</label>
-                  <input type="url" name="organizer_website" class="form-control" id="exampleInputEmail1" value="http://">
+                    <?php } else {?>
+                     <img src='photo_profile/<?php echo  $_SESSION['user_photo']; ?>' width='200' height='200' style="margin: 0 auto;">
+                     <?php } ?>
+                    <!-- <p> aa  </p> -->
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
-                  <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" value="Nama Lengkap SI User di tampilin">
+                  <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" value="<?php echo $_SESSION['user_name']; ?>" required>
                 </div>
-
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Phone Number</label>
-                  <input type="number" name="twitter_organizer" class="form-control" id="exampleInputEmail1" value="089657011491">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Website / Blog</label>
-                  <input type="url" name="instagram_organizer" class="form-control" id="exampleInputEmail1" value="alamatnya kalo udah ada">
-                </div>
-
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Home Address</label>
                   <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
                   <!-- Google API autocomplete starts -->
                   <br />
-                                <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city"></input>
+                                <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" name="user_city" value="<?php if(!empty($_SESSION['user_city'])) echo $_SESSION['user_city']; ?>" required></input>
                                     <script>
                                       var placeSearch, autocomplete;
                                       var componentForm = {
@@ -295,14 +287,6 @@
                                   <!-- End of google API autocomplete -->
                 </div>
 
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Postal Code</label>
-                  <input type="number" name="instagram_organizer" class="form-control" id="exampleInputEmail1" value="kodenya kalo udah ada">
-                </div>
-
-
-
-
 
                 <br />
                 <div class="row">
@@ -319,17 +303,17 @@
         <form action="#" enctype="multipart/form-data" method="post">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Current Password</label>
-                  <input type="password" name="password_user" class="form-control" id="exampleInputEmail1">
+                  <input type="password" name="user_password" class="form-control" id="exampleInputEmail1">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">New Password</label>
-                    <input type="password" name="password_user_new" class="form-control" id="exampleInputEmail1">
+                    <input type="password" name="user_password_new" class="form-control" id="exampleInputEmail1">
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Repeat Password</label>
-                  <input type="password" name="password_user_new_validate" class="form-control" id="exampleInputEmail1">
+                  <input type="password" name="user_password_new_validate" class="form-control" id="exampleInputEmail1">
                 </div>
 
                 <br />
