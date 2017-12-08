@@ -1,9 +1,5 @@
 <?php
-    require_once '../backend/dbconnect.php';
     require_once '../backend/organizer_profile.php';
-    if (!empty($_GET['organizer_id']))
-      $mark = $_GET['organizer_id'];
-    else $mark = "-1" ;
 ?>
 
 <!DOCTYPE html>
@@ -130,8 +126,8 @@
           <ul class="dropdown-menu">
         <?php if(mysqli_num_rows($query_organizer)) { ?>
         <?php while($result =mysqli_fetch_assoc($query_organizer)){ ?>
-                <li><a href="index.php/?organizer_id=<?php echo $result['organizer_id']?>" > <?php echo $result['organizer_name'] ?></a></li>
-      <?php     }} ?>
+                <li><a href="index.php/?mark=<?php echo $result['organizer_id']?>" > <?php echo $result['organizer_name'] ?></a></li>
+        <?php   }} ?>
                 <li><a href="index.php">Create a new organizer</a></li>
                 </select>
                 <br />
@@ -149,38 +145,38 @@
         <form action="../backend/organizer_profile.php" enctype="multipart/form-data" method="post">
               <div class="form-group">
                 <label for="exampleInputEmail1">Organizer Name</label>
-                <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name">
+                <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_name'] ; ?>>
               </div>
 
               <div class="form-group">
                   <label for="exampleInputEmail1">About The Organizer</label>
-                  <textarea type="textarea" name="organizer_description" class="form-control" id="exampleInputEmail1" placeholder="Describe your event briefly">
+                  <textarea type="textarea" name="organizer_description" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_description'] ; ?>>
                   </textarea>
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Phone Number</label>
-                <input type="number" name="organizer_phone_number" class="form-control" id="exampleInputEmail1" value="">
+                <input type="number" name="organizer_phone_number" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_phone_number'] ; ?>>
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Website</label>
-                <input type="url" name="organizer_website" class="form-control" id="exampleInputEmail1" value="http://">
+                <input type="url" name="organizer_website" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_website'] ; ?>>
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Facebook Page</label>
-                <input type="text" name="organizer_facebook" class="form-control" id="exampleInputEmail1" value="facebook.com/">
+                <input type="text" name="organizer_facebook" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_facebook'] ; ?>>
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Twitter</label>
-                <input type="text" name="organizer_twitter" class="form-control" id="exampleInputEmail1" value="@">
+                <input type="text" name="organizer_twitter" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_twitter'] ; ?>>
               </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Instagram</label>
-                <input type="text" name="organizer_instagram" class="form-control" id="exampleInputEmail1" value="@">
+                <input type="text" name="organizer_instagram" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_instagram'] ; ?>>
               </div>
 
               <div class="form-group">

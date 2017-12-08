@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07 Des 2017 pada 07.45
+-- Generation Time: 08 Des 2017 pada 17.50
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -77,7 +77,7 @@ CREATE TABLE `category` (
 CREATE TABLE `events` (
   `event_id` int(11) NOT NULL,
   `event_name` varchar(50) NOT NULL,
-  `event_city` int(11) NOT NULL,
+  `event_city` text NOT NULL,
   `event_date_starts` date NOT NULL,
   `event_time_starts` time NOT NULL,
   `event_date_ends` date NOT NULL,
@@ -104,11 +104,9 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`event_id`, `event_name`, `event_city`, `event_date_starts`, `event_time_starts`, `event_date_ends`, `event_time_ends`, `event_capacity`, `event_certificate`, `event_description`, `event_photo`, `organizer_id`, `ticket_name`, `ticket_quantity`, `ticket_price`, `ticket_description`, `ticket_date_starts`, `ticket_time_starts`, `ticket_date_ends`, `ticket_time_ends`, `event_type`, `event_topic`) VALUES
-(1, 'EVALUASI', 0, '2017-12-03', '14:22:00', '2017-12-06', '23:57:00', 10, '1_certificate.jpeg', 'EVALUASI PAS mpkmb', '1_photo.jpeg', 1, '', 0, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', '', ''),
-(2, 'percobaaan ticket', 0, '2017-12-14', '00:59:00', '2017-12-29', '01:21:00', 121, '2_certificate.', '<p>cobalah mengerti bug ini</p>\r\n', '2_photo.', 2, '', 0, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', '', ''),
-(3, '', 0, '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 0, '', '', '', 0, 'cacad', 1000, 0, 'c c d b g t', '2017-12-14', '00:00:00', '2017-12-21', '23:59:00', '', ''),
-(4, 'percobaaan ticket', 0, '2017-12-14', '00:59:00', '2017-12-29', '01:21:00', 121, '4_certificate.', '<h2 style=\"font-style:italic;\"><strong>cobalah mengerti bug ini</strong></h2>\r\n', '4_photo.', 4, '', 0, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', '', ''),
-(5, '', 0, '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 0, '', '', '', 0, 'cacad', 1000, 0, 'c c d b g t', '2017-12-14', '00:00:00', '2017-12-21', '23:59:00', 'Rally', 'Music');
+(1, 'EVALUASI', '0', '2017-12-03', '14:22:00', '2017-12-06', '23:57:00', 10, '1_certificate.jpeg', 'EVALUASI PAS mpkmb', '1_photo.jpeg', 1, '', 0, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', '', ''),
+(16, 'EVALUASI1', 'lokasi event 1', '2017-12-03', '14:22:00', '2017-12-06', '23:57:00', 10, '1_certificate.jpeg', 'EVALUASI PAS mpkmb', '1_photo.jpeg', 1, '', 0, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', '', ''),
+(17, 'COMPLETE', 'lokasi COMPLETE', '2017-12-30', '14:22:00', '2017-12-31', '23:57:00', 100, '1_certificate.jpeg', 'EVALUASI PAS mpkmb', '1_photo.jpeg', 1, 'TIker Complete', 100, 100, 'deskripsi tiket', '2017-12-16', '02:12:10', '2017-12-18', '03:00:00', 'social', 'party');
 
 -- --------------------------------------------------------
 
@@ -138,6 +136,15 @@ CREATE TABLE `organizer` (
   `organizer_instagram` varchar(100) NOT NULL,
   `organizer_phone_number` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `organizer`
+--
+
+INSERT INTO `organizer` (`organizer_id`, `organizer_name`, `organizer_description`, `organizer_photo`, `organizer_website`, `organizer_facebook`, `organizer_twitter`, `organizer_instagram`, `organizer_phone_number`) VALUES
+(0, '', '', '', 'http://', 'facebook.com/', '@', '@', ''),
+(4, 'percobaan pertama ', 'ini percobaan create yang pertama                  ', '1_photo.png', 'http://iasijansansas', 'facebook.com/kokoq', '@kokoq', '@kokoq', '00099901'),
+(5, 'percobaan pertama ', 'ini percobaan create yang pertama                  ', '1_photo.png', 'http://iasijansansas', 'facebook.com/kokoq', '@kokoq', '@kokoq', '00099901');
 
 -- --------------------------------------------------------
 
@@ -218,12 +225,12 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `organizer`
 --
 ALTER TABLE `organizer`
-  MODIFY `organizer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `organizer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `user`
 --
