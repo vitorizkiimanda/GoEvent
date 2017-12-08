@@ -197,7 +197,7 @@
           <form action="#" enctype="multipart/form-data" method="post">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Account Email</label>
-                  <input type="email" name="email_user" class="form-control" id="exampleInputEmail1" value="emailsiuser@gmail.com">
+                  <input type="email" name="user_email" class="form-control" id="exampleInputEmail1" value="user_email">
                 </div>
 
                 <div class="form-group">
@@ -207,12 +207,12 @@
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Website</label>
-                  <input type="url" name="website_organizer" class="form-control" id="exampleInputEmail1" value="http://">
+                  <input type="url" name="organizer_website" class="form-control" id="exampleInputEmail1" value="http://">
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
-                  <input type="text" name="name_user" class="form-control" id="exampleInputEmail1" value="Nama Lengkap SI User di tampilin">
+                  <input type="text" name="user_name" class="form-control" id="exampleInputEmail1" value="Nama Lengkap SI User di tampilin">
                 </div>
 
                 <div class="form-group">
