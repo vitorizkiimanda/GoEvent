@@ -1,15 +1,5 @@
 <?php
-  require_once('../backend/attendance_event.php');
-  if(isset($_GET['event_id']))
-  {
-    $dec=$_GET['event_id'];
-    $event_id=base64_decode($dec);
-  }
-
-  if (isset($_GET['Message'])) {
-    print '<script type="text/javascript">alert("' . $_GET['Message'] . '");</script>';
-  }
-
+    require_once '../backend/organizer_profile.php';
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +45,7 @@
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 
-<body>
+<body class="page_background_snow">
   <!-- NavBar -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -107,7 +97,7 @@
                 <li><a href="../profile">Bookmarks</a></li>
                 <li><a href="../profile">Certificates</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                 <li><a href="../manage_event">Manage Events</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="../account_setting">Account Settings</a></li>
@@ -125,157 +115,56 @@
     </nav>
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h1>Nama Acara</h1>
-          <p>Tanggal Acaranya</p>
-        </div>
-        <div class="col-lg-4"></div>
-        <div class="col-lg-2">
-          <h2 class="text-center"><span class="text-center label label-dark">Create Certificate</span></h2>
-        </div>
-      </div>
-    <!-- tabs -->
-
-
-    <!-- Search -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-4"></div>
-      <div class="col-lg-4">
-      </div>
-      <div class="col-lg-4"></div>
-    </div>
-  </div>
-  
-  <br />
-  <br />
-
-
-
-    <div class="container">
-      <ul class="nav nav-tabs nav-justified text-center">
-        <li class="active"><a data-toggle="tab" href="#template">CHOOSE TEMPLATE</a></li>
-        <li><a data-toggle="tab" href="#pick">PICK DESIGN</a></li>
-        <li><a data-toggle="tab" href="#preview">PREVIEW</a></li>
-        <li><a data-toggle="tab" href="#generate">GENERATE</a></li>
-      </ul>
-
-      <div class="tab-content text-center">
-        <div id="template" class="tab-pane fade in active">
-          <br />
-          <div class="row">
-              <div class="col-lg-4">
-                <a id="temp1" href="#">
-                  <img src="../../images/certificate_temp_1.jpg" alt="template1" class="img-responsive hover" />
-                </a>
-              </div>
-              <div class="col-lg-4">
-              <a id="temp2" href="#">
-                <img src="../../images/certificate_temp_2.jpg" alt="template2" class="img-responsive hover" />
-              </a>
-              </div>
-              <div class="col-lg-4">
-              <a id="temp3" href="#">
-                <img src="../../images/certificate_temp_3.jpg" alt="template3" class="img-responsive hover" />
-              </a>
-              </div>
-          </div>
-          <script>
-          $(document).ready(function(){
-              $("#temp1").click(function(){
-                $('.nav-tabs a[href="#pick"]').tab('show')
-                // ambil id templatenya disini
-                  
-
-                //
-              });
-              $("#temp2").click(function(){
-                $('.nav-tabs a[href="#pick"]').tab('show')
-                // ambil id templatenya disini
-
-
-                //
-              });
-              $("#temp3").click(function(){
-                $('.nav-tabs a[href="#pick"]').tab('show')
-                // ambil id templatenya disini
-
-
-                //
-              });
-          });
-          </script>
-
-
-
-        </div>
-        <div id="pick" class="tab-pane fade">
-          <br />
-          <div class="row">
-              <div class="col-lg-4"></div>
-              <div class="col-lg-4">
-              <!-- //if belum ada design yang di upload -->
-                <input type="image" src="../../images/certificate_default.jpg" alt="template2" class="img-responsive hover" />
-                <input type="file" id="my_file" style="display: none;" />
-
-              <!-- //else kalo udah ada design yang di upload tampilin -->
-              <!-- //disini -->
-              </div>
-              <div class="col-lg-4"></div>
-          </div>
-        </div>
-
-        <script>
-          $(document).ready(function(){
-              $("input[type='image']").click(function() {
-                  $("input[id='my_file']").click(); 
-                  // ambil designnya di sini
-
-              });
-              // $("#default").click(function(){
-              //   $('.nav-tabs a[href="#preview"]').tab('show')
-              // });
-          });
-          </script>
-
-
-        
-        <div id="preview" class="tab-pane fade">
-          <br />
-          <div class="row">
-              <div class="col-lg-2">
-              </div>
-              <div class="col-lg-8">
-              <a id="temp2" href="#">
-                <img src="../../images/certificate_default_preview.jpg" alt="template2" class="img-responsive hover" />
-              </a>
-              <p>kalo di click nnti nge zoom kayaknya keren</p>
-              </div>
-              <div class="col-lg-2">
-              </div>
-          </div>
-
-        </div>
-        <div id="generate" class="tab-pane fade">
-          <br />
-          <p>ini nnti cuma bisa di click kalo udah hari H atau setelah event</p>
-          <a href="#" class="btn btn-primary btn-round btn-block">Generate Certificates</a>
-        </div>
+      <div class="col-lg-12 text-center">
+        <h1>Choose Organizer</h1>
       </div>
     </div>
+    <br />
 
 
-    <?php if(isset($_GET['Message'])){ ?>
-      <br />
-      <br />
-      <hr />
-      <div class="container" >
-        <a href="../event_detail" class="btn btn-primary btn-round btn-block">Skip To View Event Detail</a>
+    <!-- organizer_card -->
+    <a href="../create_event">
+      <div class="row card_browse_event">
+        <div class="col-lg-4 text-center">
+          <img src="../../images/title.png" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
+        </div>
+        <div class="col-lg-8">
+
+                <br />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Organizer Name</label>
+                  <h1>Nama Organisasinya</h1>
+                </div>
+                <br />
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Phone Number</label>
+                  <h4>089608960896</h4>
+                </div>
+                <br />
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Website</label>
+                  <h4><a href="http://www.google.com">google.com</a></h4>
+                </div>
+        </div>
       </div>
-    <?php }?>
+    </a>
     
+    <!-- create_new_button -->
+    <a href="../create_event">
+      <div class="row card_browse_event">
+        <div class="col-lg-4 text-center"></div>
+        <div class="col-lg-4 text-center">
+          <img src="../../images/add.png" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="250" height="250" />
+          <h3>Create New Organizer</h3>
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+    </a>
+  </div>
 
   <!-- footer -->
   <footer>
