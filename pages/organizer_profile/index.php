@@ -97,7 +97,7 @@
                 <li><a href="../profile">Bookmarks</a></li>
                 <li><a href="../profile">Certificates</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                 <li><a href="../manage_event">Manage Events</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="../account_setting">Account Settings</a></li>

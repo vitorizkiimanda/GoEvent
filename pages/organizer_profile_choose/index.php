@@ -45,7 +45,7 @@
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 
-<body>
+<body class="page_background_snow">
   <!-- NavBar -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -97,7 +97,7 @@
                 <li><a href="../profile">Bookmarks</a></li>
                 <li><a href="../profile">Certificates</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                 <li><a href="../manage_event">Manage Events</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="../account_setting">Account Settings</a></li>
@@ -125,70 +125,45 @@
 
 
     <!-- organizer_card -->
-    <div class="row">
-      <div class="col-lg-3 text-center">
-        <img src="../../images/title.png" class="img-responsive" alt="Organizer Profile Pict" />
-        <p>JPG, GIF or PNG no larger than 1MB. Square images look the best!</p>
-        <a href="#" class="btn btn-primary btn-round btn-block">CHOOSE FILE</a>
-      </div>
-      <div class="col-lg-9">
+    <a href="../organizer_profile">
+      <div class="row card_browse_event">
+        <div class="col-lg-4 text-center">
+          <img src="../../images/title.png" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
+        </div>
+        <div class="col-lg-8">
 
-        <form action="../backend/organizer_profile.php" enctype="multipart/form-data" method="post">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Organizer Name</label>
-                <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_name'] ; ?>>
-              </div>
-
-              <div class="form-group">
-                  <label for="exampleInputEmail1">About The Organizer</label>
-                  <textarea type="textarea" name="organizer_description" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_description'] ; ?>>
-                  </textarea>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">Phone Number</label>
-                <input type="number" name="organizer_phone_number" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_phone_number'] ; ?>>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">Website</label>
-                <input type="url" name="organizer_website" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_website'] ; ?>>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">Facebook Page</label>
-                <input type="text" name="organizer_facebook" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_facebook'] ; ?>>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">Twitter</label>
-                <input type="text" name="organizer_twitter" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_twitter'] ; ?>>
-              </div>
-
-              <div class="form-group">
-                <label for="exampleInputEmail1">Instagram</label>
-                <input type="text" name="organizer_instagram" class="form-control" id="exampleInputEmail1" value= <?php echo $organizer_query['organizer_instagram'] ; ?>>
-              </div>
-
-              <div class="form-group">
-                  <label for="exampleInputFile">Organizer_photo</label>
-                  <input type="file" name="organizer_photo" accept="image/*" id="exampleInputFile">
-              </div>
-
-              <br />
-              <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3">
-                  <button type="submit" class="btn btn-primary btn-round btn-block">Save</button>
+                <br />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Organizer Name</label>
+                  <h1>Nama Organisasinya</h1>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
-                  <a href="../../pages/organizer_profile_attendance" class="btn btn-success btn-round btn-block">View Profile</a>
+                <br />
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Phone Number</label>
+                  <h4>089608960896</h4>
                 </div>
-              </div>
-          </form>
+                <br />
 
-
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Website</label>
+                  <h4><a href="http://www.google.com">google.com</a></h4>
+                </div>
+        </div>
       </div>
-    </div>
+    </a>
+    
+    <!-- create_new_button -->
+    <a href="../organizer_profile">
+      <div class="row card_browse_event">
+        <div class="col-lg-4 text-center"></div>
+        <div class="col-lg-4 text-center">
+          <img src="../../images/add.png" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="250" height="250" />
+          <h3>Create New Organizer</h3>
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+    </a>
   </div>
 
   <!-- footer -->

@@ -45,7 +45,7 @@
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 
-<body class="page_browse_event">
+<body class="page_background_snow">
   <!-- NavBar -->
     <nav class="navbar navbar-inverse">
         <div class="container">
