@@ -1,13 +1,18 @@
 <?php
-    require_once '../backend/dbconnect.php';
-    include('../backend/manage_event.php');
+  require_once('../backend/attendance_event.php');
+  if(isset($_GET['event_id']))
+  {
+    $dec=$_GET['event_id'];
+    $event_id=base64_decode($dec);
+  }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="HVSZ" content="GoEvent" />
-  
 
   <title>GoEvent</title>
 
@@ -24,7 +29,7 @@
 
   <!-- attach CSS styles -->
   <link href="../../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../css/style_goevent.css" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
 
   <!-- Online attachment - offline doesnt work -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -93,16 +98,16 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php $user_name = $_SESSION['user_name']; echo strtoupper(substr($user_name,0,1)) ?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="../profile">Profile</a></li>
-                  <li><a href="../profile">Tickets</a></li>
-                  <li><a href="../profile">Bookmarks</a></li>
-                  <li><a href="../profile">Certificates</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="../organizer_profile">Organizer Profile</a></li>
-                  <li><a href="../manage_event">Manage Events</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="../account_setting">Account Settings</a></li>
-                  <li><a href="../backend/logout.php">Log Out</a></li>
+                <li><a href="../profile">Profile</a></li>
+                <li><a href="../profile">Tickets</a></li>
+                <li><a href="../profile">Bookmarks</a></li>
+                <li><a href="../profile">Certificates</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../manage_event">Manage Events</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="../account_setting">Account Settings</a></li>
+                <li><a href="../backend/logout.php">Log Out</a></li>
                 </ul>
               </li>
               <?php } else {
@@ -117,72 +122,90 @@
 
 
     <div class="container">
-    <h1>Manage Events</h1>
+    <h1>Nama Acara</h1>
+    <p>Tanggal Acaranya</p>
     <!-- tabs -->
-    <br />
-    <br />
+
+
+    <!-- Search -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+        <h2 class="text-center">Create Certificate</h2>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>
+  
+  <br />
+  <br />
+
+
 
     <div class="container">
       <ul class="nav nav-tabs text-center">
-        <li class="active"><a data-toggle="tab" href="#live">UPCOMING EVENTS</a></li>
-        <li><a data-toggle="tab" href="#draft">DRAFT EVENTS</a></li>
-        <li><a data-toggle="tab" href="#past">PAST EVENTS</a></li>
+        <li class="active"><a data-toggle="tab" href="#list">LIST</a></li>
+        <li><a data-toggle="tab" href="#chart">CHART</a></li>
+        <li><a data-toggle="tab" href="#special">SPECIAL CASE</a></li>
       </ul>
 
       <div class="tab-content text-center">
-        <div id="live" class="tab-pane fade in active">
+        <div id="list" class="tab-pane fade in active">
           <br />
-          <p>You have no live events</p>
-
-          <!-- Events Card -->
-          <div class="container text-left">
-            <?php while ($item = mysqli_fetch_array($event)) { ?>
-            <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
-            <div class="row">
-                <p><span><?php echo $item['event_date_starts']?></span> <span><?php echo $item['event_time_starts']?></span></p>
-                <a href="../../pages/attendance_event/?event_id=<?php echo $event_id_encrypt; ?>&status=0"><span class="glyphicon glyphicon-list-alt"></span> Attendance</a>&nbsp&nbsp&nbsp
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>&status=0"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
-                <hr />
-            <?php } ?>
-            </div>
-            <div class="row">
-                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
-                <a href="../../pages/attendance_event"><span class="glyphicon glyphicon-list-alt"></span> Attendance</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/certificate_event"><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+          <!-- Table -->
+          <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-6">
+                  Name
+                </div>
+                <div class="col-lg-3">
+                  Arrival Time
+                </div>
+                <div class="col-lg-3">
+                  Status
+                </div>
+                <br />
                 <hr />
             </div>
             <div class="row">
-                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
-                <a href="../../pages/certificate_event"><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
-                <hr />
-            </div>
-            <div class="row">
-                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
-                <a href="../../pages/certificate_event"><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+                <div class="col-lg-6 text-left">
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                  <p>Budi Budiman<br /><p>
+                </div>
+                <div class="col-lg-3 text-center">
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                  <p>07:00 A.M<br /></p>
+                </div>
+                <div class="col-lg-3 text-center">
+                  <p>Signed<br /></p>
+                  <p>Signed<br /></p>
+                  <p>Signed<br /></p>
+                  <p>Not Signed<br /></p>
+                  <p>Signed<br /></p>
+                  <p>Signed<br /></p>
+                </div>
                 <hr />
             </div>
           </div>
 
 
         </div>
-        <div id="draft" class="tab-pane fade">
+        <div id="chart" class="tab-pane fade">
           <br />
-          <p>You have no draft events</p>
+          <p>Coming Soon</p>
         </div>
-        <div id="past" class="tab-pane fade">
+        <div id="special" class="tab-pane fade">
           <br />
-          <p>You have no past events</p>
+          <p>Coming Soon</p>
         </div>
       </div>
     </div>
