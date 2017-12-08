@@ -247,6 +247,7 @@
               <a id="temp2" href="#">
                 <img src="../../images/certificate_default_preview.jpg" alt="template2" class="img-responsive hover" />
               </a>
+              <p>kalo di click nnti nge zoom kayaknya keren</p>
               </div>
               <div class="col-lg-2">
               </div>

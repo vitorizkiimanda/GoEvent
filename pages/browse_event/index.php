@@ -33,7 +33,7 @@
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 
-<body>
+<body class="page_browse_event">
   <!-- NavBar -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -95,7 +95,7 @@
     </nav>
 
   <div class="container text-wrap">
-    <div class="row">
+    <div class="row" style="margin: auto;">
       <div class="col-lg-3">
         <h1>GOOGLE MAPS MINI</h1>
         <div class="input-group">
@@ -163,17 +163,21 @@
           <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
           <!-- looping events card -->
           <a href="../../pages/event_detail/index.php/?event_id=<?php echo $event_id_encrypt?>">
-            <div class="row">
+            <div class="row card_browse_event">
               <div class="col-lg-3">
                 <img src='../../photo_event/<?php echo $item['event_photo']; ?>' width='100' height='70'>
               </div>
               <div class="col-lg-9">
-                  <p><?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?></p>
-                  <p><?php echo $item['event_name'] ?></p>
+                  <p id="date_card"><?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?></p>
+                  <p id="title_card"><?php echo $item['event_name'] ?></p>
                   <br />
-                  <p><?php echo $item['event_city'] ?></p>
+                  <p id="location_card"><?php echo $item['event_city'] ?></p>
+                  <hr />
+                  <a href="pages/browse_event" id="location_card">#tag </a>
+                  <a href="pages/browse_event" id="location_card">#tag </a>
+                  <a href="pages/browse_event" id="location_card">#tag </a>
+                  <a href="pages/browse_event" id="location_card">#tag </a>
                   <br />
-                  <p>#hastagKategori</p>
               </div>
             </div>
           </a>

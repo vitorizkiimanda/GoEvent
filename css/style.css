@@ -138,3 +138,15 @@ html, body {
 .label-dark {
   background-color: #222222;
 }
+
+.page_browse_event {
+  background-color: #f8f8fa !important;
+}
+
+.card_browse_event {
+  /* width: 95%; */
+  background-color: white;
+  margin: 2vh 10vw 2vh 0vw;
+  padding: 2vh 0vw 2vh 0vw;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.05), 0 2px 0px 0 rgba(0, 0, 0, 0.1  );
+}
