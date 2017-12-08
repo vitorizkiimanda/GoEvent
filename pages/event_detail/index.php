@@ -123,15 +123,16 @@
               <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
           </button>
 
-          <!-- if belum book mark -->
+          <?php if(mysqli_num_rows($mark) == 0){ ?>
           <button id="bookmark_button" type="button" class="btn btn-primary" aria-label="Left Align">
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
           </button>
-
-          <!-- if udah bokmark -->
+        <?php } else { ?>
           <button id="unbookmark_button" type="button" class="btn btn-danger" aria-label="Left Align">
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
           </button>
+        <?php } ?>
+
       </div>
       <div class="col-lg-4">
           <button type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>
@@ -141,10 +142,12 @@
     <script>
     $(document).ready(function(){
         $("#bookmark_button").click(function(){
-            
+          <?php $sql2 = "INSERT INTO bookmark (user_id, event_id) VALUES ('$user_id', '$event_id')";
+          $connect->query($sql2)  ?>
         });
         $("#unbookmark_button").click(function(){
-            
+          <?php $sql2 = "DELETE FROM bookmark WHERE user_id ='$user_id' and event_id = '$event_id' ";
+          $connect->query($sql2);  ?>
         });
     });
     </script>
