@@ -46,7 +46,7 @@
                                 VALUES ('', '$organizer_name','$organizer_description', '$photo_name', '$organizer_website' , '$organizer_facebook','$organizer_twitter', '$organizer_instagram' , '$organizer_phone_number'  )";
         $sql2 = "INSERT INTO user_organizer  (user_id, organizer_id)
                                       VALUES ('$user_id', '$count')";
-        if ($connect->query($sql) === true && $connect->query($sql) === true) {
+        if ($connect->query($sql) === true && $connect->query($sql2) === true) {
                                 //echo $sql;// boleh diganti nih, pointnya mau bertambah berapa jika add restaurant
             echo "<p> New Event Successfully Created</p>";
         }
