@@ -122,7 +122,14 @@
           <button type="button" class="btn btn-default" aria-label="Left Align">
               <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
           </button>
-          <button type="button" class="btn btn-default" aria-label="Left Align">
+
+          <!-- if belum book mark -->
+          <button id="bookmark_button" type="button" class="btn btn-primary" aria-label="Left Align">
+              <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
+          </button>
+
+          <!-- if udah bokmark -->
+          <button id="unbookmark_button" type="button" class="btn btn-danger" aria-label="Left Align">
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
           </button>
       </div>
@@ -130,6 +137,17 @@
           <button type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>
       </div>
     </div>
+
+    <script>
+    $(document).ready(function(){
+        $("#bookmark_button").click(function(){
+            
+        });
+        $("#unbookmark_button").click(function(){
+            
+        });
+    });
+    </script>
 
     <br />
     <div class="clearfix"></div>
