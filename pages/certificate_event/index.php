@@ -122,8 +122,16 @@
 
 
     <div class="container">
-    <h1>Nama Acara</h1>
-    <p>Tanggal Acaranya</p>
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>Nama Acara</h1>
+          <p>Tanggal Acaranya</p>
+        </div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-2">
+          <h2 class="text-center"><span class="text-center label label-dark">Create Certificate</span></h2>
+        </div>
+      </div>
     <!-- tabs -->
 
 
@@ -132,7 +140,6 @@
     <div class="row">
       <div class="col-lg-4"></div>
       <div class="col-lg-4">
-        <h2 class="text-center">Create Certificate</h2>
       </div>
       <div class="col-lg-4"></div>
     </div>
@@ -144,68 +151,112 @@
 
 
     <div class="container">
-      <ul class="nav nav-tabs text-center">
-        <li class="active"><a data-toggle="tab" href="#list">LIST</a></li>
-        <li><a data-toggle="tab" href="#chart">CHART</a></li>
-        <li><a data-toggle="tab" href="#special">SPECIAL CASE</a></li>
+      <ul class="nav nav-tabs nav-justified text-center">
+        <li class="active"><a data-toggle="tab" href="#template">CHOOSE TEMPLATE</a></li>
+        <li><a data-toggle="tab" href="#pick">PICK DESIGN</a></li>
+        <li><a data-toggle="tab" href="#preview">PREVIEW</a></li>
+        <li><a data-toggle="tab" href="#generate">GENERATE</a></li>
       </ul>
 
       <div class="tab-content text-center">
-        <div id="list" class="tab-pane fade in active">
+        <div id="template" class="tab-pane fade in active">
           <br />
-          <!-- Table -->
-          <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-6">
-                  Name
-                </div>
-                <div class="col-lg-3">
-                  Arrival Time
-                </div>
-                <div class="col-lg-3">
-                  Status
-                </div>
-                <br />
-                <hr />
-            </div>
-            <div class="row">
-                <div class="col-lg-6 text-left">
-                  <p>Budi Budiman<br /><p>
-                  <p>Budi Budiman<br /><p>
-                  <p>Budi Budiman<br /><p>
-                  <p>Budi Budiman<br /><p>
-                  <p>Budi Budiman<br /><p>
-                  <p>Budi Budiman<br /><p>
-                </div>
-                <div class="col-lg-3 text-center">
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
-                </div>
-                <div class="col-lg-3 text-center">
-                  <p>Signed<br /></p>
-                  <p>Signed<br /></p>
-                  <p>Signed<br /></p>
-                  <p>Not Signed<br /></p>
-                  <p>Signed<br /></p>
-                  <p>Signed<br /></p>
-                </div>
-                <hr />
-            </div>
+          <div class="row">
+              <div class="col-lg-4">
+                <a id="temp1" href="#">
+                  <img src="../../images/certificate_temp_1.jpg" alt="template1" class="img-responsive hover" />
+                </a>
+              </div>
+              <div class="col-lg-4">
+              <a id="temp2" href="#">
+                <img src="../../images/certificate_temp_2.jpg" alt="template2" class="img-responsive hover" />
+              </a>
+              </div>
+              <div class="col-lg-4">
+              <a id="temp3" href="#">
+                <img src="../../images/certificate_temp_3.jpg" alt="template3" class="img-responsive hover" />
+              </a>
+              </div>
+          </div>
+          <script>
+          $(document).ready(function(){
+              $("#temp1").click(function(){
+                $('.nav-tabs a[href="#pick"]').tab('show')
+                // ambil id templatenya disini
+                  
+
+                //
+              });
+              $("#temp2").click(function(){
+                $('.nav-tabs a[href="#pick"]').tab('show')
+                // ambil id templatenya disini
+
+
+                //
+              });
+              $("#temp3").click(function(){
+                $('.nav-tabs a[href="#pick"]').tab('show')
+                // ambil id templatenya disini
+
+
+                //
+              });
+          });
+          </script>
+
+
+
+        </div>
+        <div id="pick" class="tab-pane fade">
+          <br />
+          <div class="row">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-4">
+              <!-- //if belum ada design yang di upload -->
+                <input type="image" src="../../images/certificate_default.jpg" alt="template2" class="img-responsive hover" />
+                <input type="file" id="my_file" style="display: none;" />
+
+              <!-- //else kalo udah ada design yang di upload tampilin -->
+              <!-- //disini -->
+              </div>
+              <div class="col-lg-4"></div>
+          </div>
+        </div>
+
+        <script>
+          $(document).ready(function(){
+              $("input[type='image']").click(function() {
+                  $("input[id='my_file']").click(); 
+                  // ambil designnya di sini
+
+              });
+              // $("#default").click(function(){
+              //   $('.nav-tabs a[href="#preview"]').tab('show')
+              // });
+          });
+          </script>
+
+
+        
+        <div id="preview" class="tab-pane fade">
+          <br />
+          <div class="row">
+              <div class="col-lg-2">
+              </div>
+              <div class="col-lg-8">
+              <a id="temp2" href="#">
+                <img src="../../images/certificate_default_preview.jpg" alt="template2" class="img-responsive hover" />
+              </a>
+              </div>
+              <div class="col-lg-2">
+              </div>
           </div>
 
-
         </div>
-        <div id="chart" class="tab-pane fade">
+        <div id="generate" class="tab-pane fade">
           <br />
-          <p>Coming Soon</p>
-        </div>
-        <div id="special" class="tab-pane fade">
-          <br />
-          <p>Coming Soon</p>
+          <p>ini nnti cuma bisa di click kalo udah hari H atau setelah event</p>
+          <a href="#" class="btn btn-primary btn-round btn-block">Generate Certificates</a>
         </div>
       </div>
     </div>

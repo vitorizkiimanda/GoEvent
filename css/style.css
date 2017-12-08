@@ -134,3 +134,7 @@ html, body {
 .akun_tombol_gambar {
   width: 20vw;
 }
+
+.label-dark {
+  background-color: #222222;
+}
