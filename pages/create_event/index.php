@@ -227,10 +227,10 @@
               <input type="number" name="event_capacity" class="form-control" id="exampleInputEmail1" placeholder="Maximum number of participants">
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="exampleInputFile">Certificate Template</label>
                 <input type="file" name="event_certificate" accept="image/*" id="exampleInputFile">
-            </div>
+            </div> -->
 
               <!-- Rich text editor -->
             <div class="form-group">

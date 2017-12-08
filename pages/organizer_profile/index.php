@@ -128,11 +128,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select Organizer<span class="caret"></span></a>
           <ul class="dropdown-menu">
-        <?php if(mysqli_num_rows($query_organizer)>0) { ?>
+        <?php if(mysqli_num_rows($query_organizer)) { ?>
         <?php while($result =mysqli_fetch_assoc($query_organizer)){ ?>
                 <li><a href="index.php/?organizer_id=<?php echo $result['organizer_id']?>" > <?php echo $result['organizer_name'] ?></a></li>
       <?php     }} ?>
-                <li><a href="index.php/">Create a new organizer</a></li>
+                <li><a href="index.php">Create a new organizer</a></li>
                 </select>
                 <br />
       </div>
