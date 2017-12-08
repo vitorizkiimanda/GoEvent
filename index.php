@@ -23,7 +23,7 @@
 
   <!-- attach CSS styles -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/style_goevent.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
 
   <!-- Online attachment - offline doesnt work -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -173,17 +173,17 @@
       <?php while ($item = mysqli_fetch_array($event)) { ?>
         <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
         <a href="pages/event_detail/index.php/?event_id=<?php echo $event_id_encrypt?>" >
-          <div class="col-lg-4 text-center" style="height: 45vh; padding: 0vh 1vw 0vh 1vw; margin: 2vh 0vw 15vh 0vw;">
-            <img src='photo_event/<?php echo $item['event_photo']; ?>' width='200' height='200' style="margin: 0 auto;">
+          <div class="col-lg-4 text-center" id="card_event">
+            <img src='photo_event/<?php echo $item['event_photo']; ?>' width='200' height='200' id="card_event2">
             <br/>
-              <p style="font-weight: 400; color: #42454d;"> <?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?> </p>
-              <h4 style="font-weight: 600; color: #42454d;"> <?php echo $item['event_name'] ?> </h4>
-              <p style="font-weight: 300; color: #42454d;"> <?php echo $item['event_city'] ?> </p>
+              <p id="date_card"> <?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?> </p>
+              <h4 id="title_card"> <?php echo $item['event_name'] ?> </h4>
+              <p id="location_card"> <?php echo $item['event_city'] ?> </p>
               <hr />
-              <a href="pages/browse_event" style="font-weight: 300; color: #42454d;">#tag </a>
-              <a href="pages/browse_event" style="font-weight: 300; color: #42454d;">#tag </a>
-              <a href="pages/browse_event" style="font-weight: 300; color: #42454d;">#tag </a>
-              <a href="pages/browse_event" style="font-weight: 300; color: #42454d;">#tag </a>
+              <a href="pages/browse_event" id="location_card">#tag </a>
+              <a href="pages/browse_event" id="location_card">#tag </a>
+              <a href="pages/browse_event" id="location_card">#tag </a>
+              <a href="pages/browse_event" id="location_card">#tag </a>
               <hr />
           </div>
         </a>

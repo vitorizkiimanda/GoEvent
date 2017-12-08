@@ -23,7 +23,7 @@
 
 <!-- attach CSS styles -->
 <link href="../../css/bootstrap.min.css" rel="stylesheet">
-<link href="../../css/style_goevent.css" rel="stylesheet" />
+<link href="../../css/style.css" rel="stylesheet" />
 
 <!-- Online attachment - offline doesnt work -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">

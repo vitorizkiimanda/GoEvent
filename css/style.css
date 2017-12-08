@@ -71,3 +71,30 @@ html, body {
 .glyphicon.glyphicon-trash{
   font-size: 25px;
 }
+
+#card_event {
+
+  height: 45vh; 
+  padding: 0vh 1vw 0vh 1vw; 
+  margin: 2vh 0vw 15vh 0vw;
+
+}
+
+#card_event2 {
+  margin: 0 auto;
+}
+
+#date_card {
+  font-weight: 400; 
+  color: #42454d;
+}
+
+#title_card {
+  font-weight: 600; 
+  color: #42454d;
+}
+
+#location_card {
+  font-weight: 300; 
+  color: #42454d;
+}

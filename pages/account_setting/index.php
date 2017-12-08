@@ -20,12 +20,13 @@
   <!-- attach JavaScripts -->
   <script src="../../js/bootstrap.min.js"></script>
   <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/dropzone.js"></script>
   <!--<script src="//maps.google.com/maps/api/js?sensor=true"></script>-->
   <!--<script src="js/main.js"></script>-->
 
   <!-- attach CSS styles -->
   <link href="../../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../css/style_goevent.css" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
 
   <!-- Online attachment - offline doesnt work -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -202,13 +203,34 @@
                   <input type="email" name="user_email" class="form-control" id="exampleInputEmail1" value="<?php echo $_SESSION['user_email']; ?>" required>
                 </div>
 
+                <!-- <form action="/file-upload" class="dropzone">
+                  <div class="fallback">
+                    <input name="file" type="file" multiple />
+                  </div>
+                </form> -->
+
+                <form class="box" method="post" action="" enctype="multipart/form-data">
+                  <div class="box__input">
+                    <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+                    <button class="box__button" type="submit">Upload</button>
+                  </div>
+                  <div class="box__uploading">Uploading&hellip;</div>
+                  <div class="box__success">Done!</div>
+                  <div class="box__error">Error! <span></span>.</div>
+                </form>
+
                 <div class="form-group">
                     <label for="exampleInputEmail1">Profile Photo</label><br>
                     <?php if(!empty($_SESSION['user_uid'])){ ?>
                       <img src='<?php echo $_SESSION['user_photo']; ?>' width='200' height='200' style="margin: 0 auto;">
 
-                    <?php } else {?>
+                    <?php } else if(!empty($_SESSION['user_photo'])) {?>
                      <img src='photo_profile/<?php echo  $_SESSION['user_photo']; ?>' width='200' height='200' style="margin: 0 auto;">
+      
+
+                     <?php } else {?>
+                     <img src='../../images/logo.jpg' width='200' height='200' style="margin: 0 auto;">
                      <?php } ?>
                     <!-- <p> aa  </p> -->
                 </div>
