@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Des 2017 pada 08.33
+-- Generation Time: 10 Des 2017 pada 09.07
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -144,7 +144,8 @@ CREATE TABLE `organizer` (
 
 INSERT INTO `organizer` (`organizer_id`, `organizer_name`, `organizer_description`, `organizer_phone_number`, `organizer_address`, `organizer_website`, `organizer_facebook`, `organizer_twitter`, `organizer_instagram`, `organizer_photo`) VALUES
 (0, '', '                  ', '', '', 'http://', 'facebook.com/', '@', '@', ''),
-(5, 'percobaan pertama ', 'ini percobaan create yang pertama                  ', '00099901', '', 'http://iasijansansas', 'facebook.com/kokoq', '@kokoq', '@kokoq', '1_photo.png');
+(5, 'percobaan pertama <plis update', '<p>MENCOBA UNTUK UPDATE</p>\r\n', '00099901', 'Sumedang Utara, Kabupaten Sumedang, Jawa Barat, Indonesia', 'http://iasijansansas', 'facebook.com/kokoq', '@kokoq', '@kokoq', '1_photo.png'),
+(10, 'ganti nama coy', '', '0000000', 'Kalimantan Barat, Indonesia', 'http://kalbar.com', 'facebook.com/aadadad', '@adadad', 'dadaddada', 'dummy');
 
 -- --------------------------------------------------------
 
@@ -230,7 +231,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `organizer`
 --
 ALTER TABLE `organizer`
-  MODIFY `organizer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `organizer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `user`
 --

@@ -144,8 +144,8 @@
 
               <div class="form-group">
                   <label for="exampleInputEmail1">About The Organizer</label>
-                  <textarea type="textarea" name="organizer_description" class="form-control" id="exampleInputEmail1" value= "<?php echo $organizer_query['organizer_description'] ?>">
-                  </textarea>
+                    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+                		<textarea class="ckeditor" id="ckedtor" name="ckeditor" value= "<?php echo $organizer_query['organizer_name'] ?>" ></textarea>
               </div>
 
               <div class="form-group">
@@ -153,74 +153,74 @@
                 <input type="number" name="organizer_phone_number" class="form-control" id="exampleInputEmail1" value= "<?php echo $organizer_query['organizer_phone_number'] ?>" >
               </div>
 
-              <div class="form-group">
-              <label for="exampleInputEmail1">Address</label>
-              <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
-              <!-- Google API autocomplete starts -->
-              <br />
-                            <input id="autocomplete" class="form-control"  onFocus="geolocate()" type="text" name="organizer_address" value= <?php echo $organizer_query['organizer_address'] ; ?>></input>
-                                <script>
-                                  var placeSearch, autocomplete;
-                                  var componentForm = {
-                                    street_number: 'short_name',
-                                    route: 'long_name',
-                                    locality: 'long_name',
-                                    administrative_area_level_1: 'short_name',
-                                    country: 'long_name',
-                                    postal_code: 'short_name'
-                                  };
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Address</label>
+                  <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
+                  <!-- Google API autocomplete starts -->
+                  <br />
+                                <input id="autocomplete" class="form-control" value= "<?php echo $organizer_query['organizer_address'] ?>" onFocus="geolocate()" type="text" name="organizer_address"></input>
+                                    <script>
+                                      var placeSearch, autocomplete;
+                                      var componentForm = {
+                                        street_number: 'short_name',
+                                        route: 'long_name',
+                                        locality: 'long_name',
+                                        administrative_area_level_1: 'short_name',
+                                        country: 'long_name',
+                                        postal_code: 'short_name'
+                                      };
 
-                                  function initAutocomplete() {
-                                    // Create the autocomplete object, restricting the search to geographical
-                                    // location types.
-                                    autocomplete = new google.maps.places.Autocomplete(
-                                        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-                                        {types: ['geocode']});
+                                      function initAutocomplete() {
+                                        // Create the autocomplete object, restricting the search to geographical
+                                        // location types.
+                                        autocomplete = new google.maps.places.Autocomplete(
+                                            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+                                            {types: ['geocode']});
 
-                                    // When the user selects an address from the dropdown, populate the address
-                                    // fields in the form.
-                                    autocomplete.addListener('place_changed', fillInAddress);
-                                  }
-
-                                  function fillInAddress() {
-                                    // Get the place details from the autocomplete object.
-                                    var place = autocomplete.getPlace();
-
-                                    for (var component in componentForm) {
-                                      document.getElementById(component).value = '';
-                                      document.getElementById(component).disabled = false;
-                                    }
-
-                                    // Get each component of the address from the place details
-                                    // and fill the corresponding field on the form.
-                                    for (var i = 0; i < place.address_components.length; i++) {
-                                      var addressType = place.address_components[i].types[0];
-                                      if (componentForm[addressType]) {
-                                        var val = place.address_components[i][componentForm[addressType]];
-                                        document.getElementById(addressType).value = val;
+                                        // When the user selects an address from the dropdown, populate the address
+                                        // fields in the form.
+                                        autocomplete.addListener('place_changed', fillInAddress);
                                       }
-                                    }
-                                  }
-                                  function geolocate() {
-                                    if (navigator.geolocation) {
-                                      navigator.geolocation.getCurrentPosition(function(position) {
-                                        var geolocation = {
-                                          lat: position.coords.latitude,
-                                          lng: position.coords.longitude
-                                        };
-                                        var circle = new google.maps.Circle({
-                                          center: geolocation,
-                                          radius: position.coords.accuracy
-                                        });
-                                        autocomplete.setBounds(circle.getBounds());
-                                      });
-                                    }
-                                  }
-                                </script>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1-maPhWUiX_tOR5JEz5fsU7gOm4y_r_s&libraries=places&callback=initAutocomplete"
-                                    async defer></script>
-                              <!-- End of google API autocomplete -->
-            </div>
+
+                                      function fillInAddress() {
+                                        // Get the place details from the autocomplete object.
+                                        var place = autocomplete.getPlace();
+
+                                        for (var component in componentForm) {
+                                          document.getElementById(component).value = '';
+                                          document.getElementById(component).disabled = false;
+                                        }
+
+                                        // Get each component of the address from the place details
+                                        // and fill the corresponding field on the form.
+                                        for (var i = 0; i < place.address_components.length; i++) {
+                                          var addressType = place.address_components[i].types[0];
+                                          if (componentForm[addressType]) {
+                                            var val = place.address_components[i][componentForm[addressType]];
+                                            document.getElementById(addressType).value = val;
+                                          }
+                                        }
+                                      }
+                                      function geolocate() {
+                                        if (navigator.geolocation) {
+                                          navigator.geolocation.getCurrentPosition(function(position) {
+                                            var geolocation = {
+                                              lat: position.coords.latitude,
+                                              lng: position.coords.longitude
+                                            };
+                                            var circle = new google.maps.Circle({
+                                              center: geolocation,
+                                              radius: position.coords.accuracy
+                                            });
+                                            autocomplete.setBounds(circle.getBounds());
+                                          });
+                                        }
+                                      }
+                                    </script>
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1-maPhWUiX_tOR5JEz5fsU7gOm4y_r_s&libraries=places&callback=initAutocomplete"
+                                        async defer></script>
+                                  <!-- End of google API autocomplete -->
+                </div>
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Website</label>

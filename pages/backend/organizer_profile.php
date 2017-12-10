@@ -4,7 +4,7 @@
 
  if ($_POST) {
      $organizer_name = $_POST['organizer_name'];
-     $organizer_description = $_POST['organizer_description'];
+     $organizer_description = $_POST['ckeditor'];
      $organizer_phone_number = $_POST['organizer_phone_number'];
      $organizer_address = $_POST['organizer_address'];
      $organizer_facebook = $_POST['organizer_facebook'];
@@ -33,7 +33,7 @@
         }
      }
      else {
-        $sql12 = "UPDATE organizer SET organizer_name = '$organizer_name' , organizer_description = '$organizer_description', organizer_phone_number = '$organizer_phone_number', organizer_address = $organizer_address'' ,organizer_website = '$organizer_website' , organizer_facebook = '$organizer_facebook', organizer_twitter = '$organizer_twitter' , organizer_instagram = '$organizer_instagram' WHERE organizer_id = '$organizer_id'";
+        $sql12 = "UPDATE organizer SET organizer_name = '$organizer_name' , organizer_description = '$organizer_description', organizer_phone_number = '$organizer_phone_number', organizer_address = '$organizer_address' ,organizer_website = '$organizer_website' , organizer_facebook = '$organizer_facebook', organizer_twitter = '$organizer_twitter' , organizer_instagram = '$organizer_instagram' WHERE organizer_id = '$organizer_id'";
         if ($connect->query($sql12)) {
                                 //echo $sql;// boleh diganti nih, pointnya mau bertambah berapa jika add restaurant
             echo "<p> New Event Successfully Created</p>";
