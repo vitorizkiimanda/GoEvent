@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Des 2017 pada 09.07
+-- Generation Time: 10 Des 2017 pada 09.09
 -- Versi Server: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -184,6 +184,30 @@ CREATE TABLE `user_category` (
   `user_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_organizer`
+--
+
+CREATE TABLE `user_organizer` (
+  `user_id` int(11) NOT NULL,
+  `organizer_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `user_organizer`
+--
+
+INSERT INTO `user_organizer` (`user_id`, `organizer_id`) VALUES
+(5, 1),
+(5, 2),
+(5, 0),
+(5, 0),
+(5, 0),
+(5, 9),
+(5, 6);
 
 --
 -- Indexes for dumped tables
