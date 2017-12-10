@@ -1,5 +1,5 @@
 <?php
-  require_once('../backend/attendance_event.php');
+  include('../backend/attendance_event.php');
   if(isset($_GET['event_id']))
   {
     $dec=$_GET['event_id'];
@@ -138,7 +138,7 @@
         <form method="post" action="../backend/attendance_event.php" >
           <div class="input-group">
             <input type="text" class="form-control" name="id_attendance" id="event_name" placeholder="Attendance ID">
-            <input type="hiden" name="event_id" value="<?php echo $event_id ?>">
+            <input type="hidden" name="id_event" id="id_event "value="<?php echo $event_id ?>">
             <span class="input-group-btn">
               <button class="btn btn-default" type="submit" name="sign">SIGN</button>
             </span>
@@ -188,7 +188,9 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 text-left">
-                  <p>Budi Budiman<br /><p>
+                <?php while ($item = mysqli_fetch_array($attendance)) { ?>
+                  <p><?php echo $item['user_name']?><br /><p>
+                <?php } ?>
                   <p>Budi Budiman<br /><p>
                   <p>Budi Budiman<br /><p>
                   <p>Budi Budiman<br /><p>
@@ -196,6 +198,9 @@
                   <p>Budi Budiman<br /><p>
                 </div>
                 <div class="col-lg-3 text-center">
+                <!-- <?php while ($item = mysqli_fetch_array($attendance)) { ?>
+                  <p><?php echo $item['arrival_time']->format( 'H:i') ?><br /><p>
+                <?php } ?> -->
                   <p>07:00 A.M<br /></p>
                   <p>07:00 A.M<br /></p>
                   <p>07:00 A.M<br /></p>
@@ -204,6 +209,11 @@
                   <p>07:00 A.M<br /></p>
                 </div>
                 <div class="col-lg-3 text-center">
+                <!-- <?php while ($item = mysqli_fetch_array($attendance)) { ?>
+                  <p><?php 
+                    if($item['status']==1) echo "Signed";
+                    else echo "Not Signed" ?><br /><p>
+                <?php } ?> -->
                   <p>Signed<br /></p>
                   <p>Signed<br /></p>
                   <p>Signed<br /></p>

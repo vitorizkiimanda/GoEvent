@@ -66,8 +66,165 @@
             //header('location: ../browse_event');
         }
     }
-    else{
-        $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() LIMIT 15";
-        $event = mysqli_query($connect, $event_query);
-    }
+
+    //protoype untuk filter browse;
+    // if(isset($_POST['filter_browse']))
+    // {
+    //     $topic=$_POST['event_topic'];
+    //     $type=$_POST['event_type'];
+    //     $price=$_post['price_event'];
+    //     if($topic=$_POST['event_topic']=="All Categories")
+    //     {
+    //         $topic="";
+    //     }
+    //     if($type=="All Event Type")
+    //     {
+    //         $type="";
+    //     }
+    //     if($_POST['date_categorized']=="1"){
+    //         if($price==0)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==1)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price < 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==2)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price > 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //     }
+    //     else if($_POST['date_categorized']=="2")
+    //     {
+    //         if($price==0)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts = CURDATE() AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==1)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts = CURDATE() AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price < 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==2)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts = CURDATE() AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price > 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //     }
+    //     else if($_POST['date_categorized']=="3")
+    //     {
+    //         if($price==0)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts = ADDDATE(CURDATE(), INTERVAL 1 day) AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==1)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts = ADDDATE(CURDATE(), INTERVAL 1 day) AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price < 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==2)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts = ADDDATE(CURDATE(), INTERVAL 1 day) AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price > 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //     }
+    //     else if($_POST['date_categorized']=="4")
+    //     {
+    //         if($price==0)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_date_starts <= '%{$sunday}%' AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==1)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_date_starts <= '%{$sunday}%' AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price < 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==2)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_date_starts <= '%{$sunday}%' AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price > 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //     }
+    //     else if($_POST['date_categorized']=="5"){
+    //         if($price==0)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE (e.event_date_starts = '%{$saturday}%' OR e.event_date_starts = '%{$sunday}%') AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==1)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE (e.event_date_starts = '%{$saturday}%' OR e.event_date_starts = '%{$sunday}%') AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price < 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==2)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE (e.event_date_starts = '%{$saturday}%' OR e.event_date_starts = '%{$sunday}%') AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price > 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //     }
+    //     else if($_POST['date_categorized']=="6")
+    //     {
+    //         if($price==0)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= '%{$sunday}%' AND e.event_date_starts <= ADDDATE('%{$sunday}%' AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==1)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= '%{$sunday}%' AND e.event_date_starts <= ADDDATE('%{$sunday}%' AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price < 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==2)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= '%{$sunday}%' AND e.event_date_starts <= ADDDATE('%{$sunday}%' AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price > 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //     }
+    //     else if($_POST['date_categorized']=="7")
+    //     {
+    //         if($price==0)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= $firstDayNextMonth AND e.event_date_starts <= ADDDATE($firstDayNextMonth, INTERVAL 1 MONTH) AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==1)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= $firstDayNextMonth AND e.event_date_starts <= ADDDATE($firstDayNextMonth, INTERVAL 1 MONTH) AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price < 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //         if($price==2)
+    //         {
+    //             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= $firstDayNextMonth AND e.event_date_starts <= ADDDATE($firstDayNextMonth, INTERVAL 1 MONTH) AND e.event_topic LIKE '%{$topic}%' AND e.event_type LIKE '%{$type}%' AND e.event_price > 1 LIMIT 15";
+    //             $event = mysqli_query($connect, $event_query);
+    //             //header('location: ../browse_event');                                
+    //         }
+    //     }
+    // }
 ?>

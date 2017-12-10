@@ -126,51 +126,51 @@
         </div>
         <br />
         <select class="selectpicker" name = "event_topic">
-                  <option>All Categories</option>
-                  <option>Automotive</option>
-                  <option>Business & professional</option>
-                  <option>Charity</option>
-                  <option>Community & Culture</option>
-                  <option>Education</option>
-                  <option>Familiy</option>
-                  <option>Fashion & Beauty</option>
-                  <option>Film, Media & Entertainment</option>
-                  <option>Food and Beverage</option>
-                  <option>Government & Politics</option>
-                  <option>Health & Wellness</option>
-                  <option>Hobbies & Special Interest</option>
-                  <option>Home & Lifestyle</option>
-                  <option>Music</option>
-                  <option>Performing & Visual Arts</option>
-                  <option>Religion & Spirituality</option>
-                  <option>School Activities</option>
-                  <option>Science & Technology</option>
-                  <option>Holiday</option>
-                  <option>Sport & Fitness</option>
-                  <option>Travel & Outdoor</option>
-                  <option>Other</option>
+                  <option value="All Categories">All Categories</option>
+                  <option value="Automotive">Automotive</option>
+                  <option value="Business & professional">Business & professional</option>
+                  <option value="Charity">Charity</option>
+                  <option value="Automotive">Community & Culture</option>
+                  <option value="Community">Education</option>
+                  <option value="Familiy">Familiy</option>
+                  <option value="Fashion & Beauty">Fashion & Beauty</option>
+                  <option value="Film, Media & Entertainment">Film, Media & Entertainment</option>
+                  <option value="Food and Beverage">Food and Beverage</option>
+                  <option value="Government & Politics">Government & Politics</option>
+                  <option value="Health & Wellness">Health & Wellness</option>
+                  <option value="Hobbies & Special Interest">Hobbies & Special Interest</option>
+                  <option value="Home & Lifestyle">Home & Lifestyle</option>
+                  <option value="Music">Music</option>
+                  <option value="Performing & Visual Arts">Performing & Visual Arts</option>
+                  <option value="Religion & Spirituality">Religion & Spirituality</option>
+                  <option value="School Activities">School Activities</option>
+                  <option value="Science & Technology">Science & Technology</option>
+                  <option value="Holiday">Holiday</option>
+                  <option value="Sport & Fitness">Sport & Fitness</option>
+                  <option value="Travel & Outdoor">Travel & Outdoor</option>
+                  <!-- <option value="Automotive">Other</option> -->
         </select>
         <br />
         <select class="selectpicker" name = "event_type">
-                  <option>All Event Types</option>
-                  <option>Attraction</option>
-                  <option>Camp/Trip</option>
-                  <option>Class, Training,or Workshop</option>
-                  <option>Concert or Performance</option>
-                  <option>Conference</option>
-                  <option>Convention</option>
-                  <option>Dinner or Gala</option>
-                  <option>Festival or Fair</option>
-                  <option>Game or Competition</option>
-                  <option>Meeting or Networking Event</option>
-                  <option>Party or Social Gathering</option>
-                  <option>Race or Endurance Event</option>
-                  <option>Rally</option>
-                  <option>Seminar</option>
-                  <option>Tour</option>
-                  <option>Tournament</option>
-                  <option>Tradeshow or Expo</option>
-                  <option>Other</option>
+                  <option value="All Event Types">All Event Types</option>
+                  <option value="Attraction">Attraction</option>
+                  <option value="Camp/Trip">Camp/Trip</option>
+                  <option value="Class, Training,or Workshop">Class, Training,or Workshop</option>
+                  <option value="Concert or Performance">Concert or Performance</option>
+                  <option value="Conference">Conference</option>
+                  <option value="Convention">Convention</option>
+                  <option value="Dinner or Gala">Dinner or Gala</option>
+                  <option value="Festival or Fair">Festival or Fair</option>
+                  <option value="Game or Competition">Game or Competition</option>
+                  <option value="Meeting or Networking Event">Meeting or Networking Event</option>
+                  <option value="Party or Social Gathering">Party or Social Gathering</option>
+                  <option value="Race or Endurance Event">Race or Endurance Event</option>
+                  <option value="Rally">Rally</option>
+                  <option value="Seminar">Seminar</option>
+                  <option value="Tour">Tour</option>
+                  <option value="Tournament">Tournament</option>
+                  <option value="Tradeshow or Expo">Tradeshow or Expo</option>
+                  <!-- <option>Other</option> -->
         </select>
         <br />
         <select class="selectpicker" name=date_categorized>
@@ -184,10 +184,11 @@
         </select>
         <br />
         <select class="selectpicker" name=price_event>
-                  <option value="1">All Prices</option>
-                  <option value="2">Free</option>
-                  <option value="3">Paid</option>
+                  <option value="0">All Prices</option>
+                  <option value="1">Free</option>
+                  <option value="100000000000000">Paid</option>
         </select>
+        <button class="btn btn-default" type="submit" name="filter_browse">SEARCH</button>
       </div>
       <div class="col-lg-9">
           <h1>Jakarta, Indonesia Events Just For You</h1>

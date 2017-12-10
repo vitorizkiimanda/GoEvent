@@ -140,10 +140,12 @@
             <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
             <div class="row">
                 <p><span><?php echo $item['event_date_starts']?></span> <span><?php echo $item['event_time_starts']?></span></p>
-                <a href="../../pages/attendance_event/?event_id=<?php echo $event_id_encrypt; ?>&status=0"><span class="glyphicon glyphicon-list-alt"></span> Attendance</a>&nbsp&nbsp&nbsp
+                <?php if($item['event_date_starts']==CURDATE()) 
+                echo "<a href='../../pages/attendance_event/?event_id=".$event_id_encrypt."&status=0'><span class='glyphicon glyphicon-list-alt'></span> Attendance</a>&nbsp&nbsp&nbsp"
+                ?>
                 <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
                 <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>&status=0"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
                 <hr />
             <?php } ?>
             </div>
