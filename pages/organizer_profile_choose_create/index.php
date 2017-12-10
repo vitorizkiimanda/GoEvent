@@ -125,36 +125,42 @@
 
 
     <!-- organizer_card -->
-    <a href="../create_event">
+    <?php
+    if($query_organizer->num_rows > 0 )
+    {
+      while($row = $query_organizer->fetch_assoc())
+      {
+        if($row['organizer_id'] == 0) continue ; ?>
+    <a href="../create_event/?organizer_id= <?php echo $row['organizer_id'] ; ?>">
       <div class="row card_browse_event">
         <div class="col-lg-4 text-center">
-          <img src="../../images/title.png" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
+          <img src="../../photo_organizer/<?php echo $row['organizer_photo']?>" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
         </div>
         <div class="col-lg-8">
 
                 <br />
                 <div class="form-group">
                   <label for="exampleInputEmail1">Organizer Name</label>
-                  <h1>Nama Organisasinya</h1>
+                  <h1><?php echo $row['organizer_name']?></h1>
                 </div>
                 <br />
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Phone Number</label>
-                  <h4>089608960896</h4>
+                  <h4><?php echo $row['organizer_phone_number']?></h4>
                 </div>
                 <br />
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Website</label>
-                  <h4><a href="http://www.google.com">google.com</a></h4>
+                  <h4><a href="<?php echo $row['organizer_name']?>"><?php echo $row['organizer_website']?></a></h4>
                 </div>
         </div>
       </div>
     </a>
-
+    <?php }}?>
     <!-- create_new_button -->
-    <a href="../create_event">
+    <a href="../organizer_profile/?organizer_id=%200">
       <div class="row card_browse_event">
         <div class="col-lg-4 text-center"></div>
         <div class="col-lg-4 text-center">
@@ -165,6 +171,7 @@
       </div>
     </a>
   </div>
+
 
   <!-- footer -->
   <footer>

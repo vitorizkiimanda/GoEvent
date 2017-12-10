@@ -4,17 +4,19 @@
 //	header("location:../.../index.php"); // jika belum login, maka dikembalikan ke file form_login.php
 // }
 // else {
+
    require_once 'dbconnect.php';
    //$user_id = $_SESSION['user_id'];
    if ($_POST) {
-       $event_name = $_POST['event_name'];
        $event_city = $_POST['event_city'];
+       $event_name = $_POST['event_name'];
        $event_date_starts = $_POST['event_date_starts'];
        $event_time_starts = $_POST['event_time_starts'];
        $event_date_ends = $_POST['event_date_ends'];
        $event_time_ends = $_POST['event_time_ends'];
        $event_capacity = $_POST['event_capacity'];
        $ckeditor = $_POST['ckeditor'];
+       $organizer_id = $_POST['organizer_id'];
 
        $ticket_name = $_POST['ticket_name'];
        $ticket_quantity = $_POST['ticket_quantity'];
@@ -53,15 +55,15 @@
         // move_uploaded_file($certificate_file, $certificate_path);
 
       $sqlticket = "INSERT INTO events (event_id,   event_name,   event_city, event_date_starts,  event_time_starts,    event_date_ends,  event_time_ends,    event_capacity,   event_certificate,  event_description,   event_photo, organizer_id,ticket_name, ticket_quantity, ticket_price, ticket_description,ticket_date_starts, ticket_time_starts, ticket_date_ends, ticket_time_ends, event_type ,  event_topic)
-                              VALUES (''      ,'$event_name','$event_city','$event_date_starts','$event_time_starts','$event_date_ends','$event_time_ends','$event_capacity','$certificate_name','$ckeditor','$photo_name','$count','$ticket_name', '$ticket_quantity', '$ticket_price', '$ticket_description', '$ticket_date_starts', '$ticket_time_starts', '$ticket_date_ends', '$ticket_time_ends', '$event_type' , '$event_topic')";
+                              VALUES (''      ,'$event_name','$event_city','$event_date_starts','$event_time_starts','$event_date_ends','$event_time_ends','$event_capacity','$certificate_name','$ckeditor','$photo_name','$organizer_id','$ticket_name', '$ticket_quantity', '$ticket_price', '$ticket_description', '$ticket_date_starts', '$ticket_time_starts', '$ticket_date_ends', '$ticket_time_ends', '$event_type' , '$event_topic')";
 
       $q2 = $connect->query($sqlticket);
       if ( $q2 === true) {
-      //echo $sql;// boleh diganti nih, pointnya mau bertambah berapa jika add restaurant
+      // echo $sql;// boleh diganti nih, pointnya mau bertambah berapa jika add restaurant
       $Message = "Create Event Success";
       // header('Location: ../../pages/certificate_event/' );
       header("Location: ../../pages/certificate_event/?Message=" . urlencode($Message));
-        
+
       }
       else {
         echo "<p> GAGAL TOLOL!!</p>";

@@ -1,4 +1,6 @@
-<?php require_once '../backend/create_event.php'; ?>
+<?php require_once '../backend/create_event.php';
+$organizer_id = $_GET['organizer_id'];
+?>
 
 <!DOCTYPE html>
 <html lang="en" >
@@ -226,8 +228,8 @@
               <!-- Rich text editor -->
             <div class="form-group">
                 <label for="exampleInputEmail1">Event description</label>
-                  <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-              		<textarea class="ckeditor" id="ckedtor" name="ckeditor" placeholder="Describe your event briefly"></textarea>
+                  <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
+              		<textarea class="ckeditor" id="ckedtor" name="ckeditor"></textarea>
             </div>
 
             <div class="form-group">
@@ -353,6 +355,7 @@
             </div>
 
             <br />
+            <input type="hidden" name="organizer_id" value="<?php echo $organizer_id?>" >
             <button id="submission" type="submit" class="btn btn-primary btn-round btn-block">Submit</button>
             <script>
               $(document).ready(function(){
@@ -362,7 +365,7 @@
               });
               </script>
 
-            
+
         </form>
       </div>
 
