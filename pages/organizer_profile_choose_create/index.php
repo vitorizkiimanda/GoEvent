@@ -1,5 +1,5 @@
 <?php
-    require_once '../backend/organizer_profile.php';
+    require_once '../backend/organizer_profile_choose.php';
 ?>
 
 <!DOCTYPE html>
@@ -152,7 +152,7 @@
         </div>
       </div>
     </a>
-    
+
     <!-- create_new_button -->
     <a href="../create_event">
       <div class="row card_browse_event">
