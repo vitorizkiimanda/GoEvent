@@ -1,5 +1,5 @@
 <?php
-    require_once '../backend/organizer_profile_choose.php';
+    require '../backend/dbconnect.php';
 ?>
 
 <!DOCTYPE html>
@@ -126,39 +126,45 @@
 
     <!-- organizer_card -->
     <?php
-    if($query_organizer->num_rows > 0 )
+
+    $user_id = $_SESSION['user_id'];
+    $query_organizer =mysqli_query($connect, "SELECT * FROM user_organizer INNER JOIN organizer WHERE user_organizer.organizer_id = organizer.organizer_id AND user_organizer.user_id = '$user_id'");
+
+    if(mysqli_num_rows($query_organizer) > 0 )
     {
-      while($row = $query_organizer->fetch_assoc())
+
+      while($row = mysqli_fetch_array($query_organizer))
       {
         if($row['organizer_id'] == 0) continue ; ?>
-    <a href="../create_event/?organizer_id= <?php echo $row['organizer_id'] ; ?>">
-      <div class="row card_browse_event">
-        <div class="col-lg-4 text-center">
-          <img src="../../photo_organizer/<?php echo $row['organizer_photo']?>" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
-        </div>
-        <div class="col-lg-8">
+        <a href="../create_event/?organizer_id= <?php echo $row['organizer_id'] ; ?>">
+          <div class="row card_browse_event">
+            <div class="col-lg-4 text-center">
+              <img src="../../photo_organizer/<?php echo $row['organizer_photo']?>" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
+            </div>
+          <div class="col-lg-8">
 
-                <br />
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Organizer Name</label>
-                  <h1><?php echo $row['organizer_name']?></h1>
-                </div>
-                <br />
+          <br />
+          <div class="form-group">
+              <label for="exampleInputEmail1">Organizer Name</label>
+              <h1><?php echo $row['organizer_name']?></h1>
+          </div>
 
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Phone Number</label>
-                  <h4><?php echo $row['organizer_phone_number']?></h4>
-                </div>
-                <br />
+          <br />
 
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Website</label>
-                  <h4><a href="<?php echo $row['organizer_name']?>"><?php echo $row['organizer_website']?></a></h4>
-                </div>
-        </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Phone Number</label>
+              <h4><?php echo $row['organizer_phone_number']?></h4>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Website</label>
+              <h4><a href="<?php echo $row['organizer_name']?>"><?php echo $row['organizer_website']?></a></h4>
+          </div>
       </div>
-    </a>
-    <?php }}?>
+    </div>
+  </a>
+<?php  }} ?>
     <!-- create_new_button -->
     <a href="../organizer_profile/?organizer_id=%200">
       <div class="row card_browse_event">
@@ -169,7 +175,7 @@
         </div>
         <div class="col-lg-4"></div>
       </div>
-    </a>
+    </a> "
   </div>
 
 
