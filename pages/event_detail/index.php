@@ -97,7 +97,7 @@
     <!-- header -->
     <div class="row">
       <div class="col-lg-8 text-center">
-         <img src='../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" width='500' height='400' style="margin: 0 auto;">
+         <img src='../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" width='400' height='400' style="margin: 0 auto;">
          <br />
       </div>
       <div class="col-lg-4">
@@ -135,6 +135,7 @@
 
       </div>
       <div class="col-lg-4">
+      <br />
           <form action="../backend/register.php" enctype="multipart/form-data" method="post">
             <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
           <button id="submission" type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>

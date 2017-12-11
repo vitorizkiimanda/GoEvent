@@ -151,7 +151,6 @@ html, body {
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.05), 0 2px 0px 0 rgba(0, 0, 0, 0.1  );
 }
 
-
 /* loader */
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
@@ -165,4 +164,10 @@ html, body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.selected_certificate {
+  padding: 10px;
+  border: 5px solid rgba(11,83,133,0.5);
+  border-radius: 25px;
 }

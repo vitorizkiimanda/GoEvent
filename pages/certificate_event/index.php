@@ -118,6 +118,10 @@
         </div><!-- /.container-fluid -->
     </nav>
 
+    <div >1</div>
+<div tabindex="-1">2</div>
+<div tabindex="-1">3</div>
+
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -165,23 +169,31 @@
       <h2>Choose Template</h2>
       <hr />
       <div class="row">
-              <div class="col-lg-4">
+              <!-- selected img -->
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+              <div class="col-lg-4 template_certificate">
                 <a id="temp1" href="#">
                   <img src="../../images/certificate_temp_1.jpg" alt="template1" class="img-responsive hover" />
                 </a>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 template_certificate">
               <a id="temp2" href="#">
                 <img src="../../images/certificate_temp_2.jpg" alt="template2" class="img-responsive hover" />
               </a>
               </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 template_certificate">
               <a id="temp3" href="#">
                 <img src="../../images/certificate_temp_3.jpg" alt="template3" class="img-responsive hover" />
               </a>
               </div>
           </div>
           <script>
+          $('.template_certificate').click(function() {
+            $(this).toggleClass('selected_certificate')
+              .siblings().removeClass('selected_certificate')
+          });
+
+
           $(document).ready(function(){
               $("#temp1").click(function(){
                 $('.nav-tabs a[href="#pick"]').tab('show')
@@ -210,31 +222,56 @@
       <h2>Pick Design</h2>
       <hr />
       <div class="row">
-              <div class="col-lg-4"></div>
-              <div class="col-lg-4">
-              <!-- //if belum ada design yang di upload -->
-                <input type="image" src="../../images/certificate_default.jpg" alt="template2" class="img-responsive hover" />
-                <input type="file" id="my_file" name ="my_file" style="display: none;" />
-
-              <!-- //else kalo udah ada design yang di upload tampilin -->
-              <!-- //disini -->
+              <div class="col-lg-2"></div>
+              <div class="col-lg-8">
+                <form id="form1" runat="server">
+                    <input type='file' id="imgInp" />
+                    <img id="blah" src="#" onError="this.onerror=null;this.src='../../images/certificate_default.jpg';" class="img-responsive" />
+                </form>
+                <script>
+                  function readURL(input) {
+                      if (input.files && input.files[0]) {
+                              var reader = new FileReader();
+                              
+                              reader.onload = function (e) {
+                                  $('#blah').attr('src', e.target.result);
+                              }
+                              
+                              reader.readAsDataURL(input.files[0]);
+                          }
+                      }
+            
+                      $("#imgInp").change(function(){
+                          readURL(this);
+                      });
+                          </script>
+        
+                          <script>
+                            $(document).ready(function(){
+                                $("input[type='image']").click(function() {
+                                    $("input[id='my_file']").click(); 
+                                    // ambil designnya di sini
+        
+                                    
+                                    if (window.FileReader) {
+                                      //then your code goes here
+                                    } else {
+                                      alert('This browser does not support FileReader');
+                                    }
+        
+        
+                                });
+                                // $("#default").click(function(){
+                                //   $('.nav-tabs a[href="#preview"]').tab('show')
+                                // });
+                            });
+                  </script>
               </div>
-              <div class="col-lg-4"></div>
+              <div class="col-lg-2"></div>
           </div>
         </div>
 
-        <script>
-          $(document).ready(function(){
-              $("input[type='image']").click(function() {
-                  $("input[id='my_file']").click(); 
-                  // ambil designnya di sini
-
-              });
-              // $("#default").click(function(){
-              //   $('.nav-tabs a[href="#preview"]').tab('show')
-              // });
-          });
-          </script>
+        
         
       <br />
       <br />
