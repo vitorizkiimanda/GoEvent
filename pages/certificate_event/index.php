@@ -50,7 +50,6 @@
   <!-- (Optional) Latest compiled and minified JavaScript translation files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 
-
 </head>
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
@@ -124,7 +123,6 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -148,24 +146,30 @@
       <div class="col-lg-4"></div>
     </div>
   </div>
+
+  
+  <?php if(isset($_GET['Message'])){ ?>
+      <br />
+      <br />
+      <hr />
+      <div class="container" >
+        <a href="../event_detail" class="btn btn-primary btn-round btn-lg btn-block">Skip To View Event Detail</a>
+      </div>
+      <hr />
+      <br />
+      <br />
+    <?php }?>
   
   <br />
   <br />
 
+  
 
 
     <div class="container">
-      <ul class="nav nav-tabs nav-justified text-center">
-        <li class="active"><a data-toggle="tab" href="#template">CHOOSE TEMPLATE</a></li>
-        <li><a data-toggle="tab" href="#pick">PICK DESIGN</a></li>
-        <li><a data-toggle="tab" href="#preview">PREVIEW</a></li>
-        <li><a data-toggle="tab" href="#generate">GENERATE</a></li>
-      </ul>
-
-      <div class="tab-content text-center">
-        <div id="template" class="tab-pane fade in active">
-          <br />
-          <div class="row">
+      <h2>Choose Template</h2>
+      <hr />
+      <div class="row">
               <div class="col-lg-4">
                 <a id="temp1" href="#">
                   <img src="../../images/certificate_temp_1.jpg" alt="template1" class="img-responsive hover" />
@@ -208,12 +212,9 @@
           });
           </script>
 
-
-
-        </div>
-        <div id="pick" class="tab-pane fade">
-          <br />
-          <div class="row">
+      <h2>Pick Design</h2>
+      <hr />
+      <div class="row">
               <div class="col-lg-4"></div>
               <div class="col-lg-4">
               <!-- //if belum ada design yang di upload -->
@@ -239,43 +240,66 @@
               // });
           });
           </script>
+        
+      <br />
+      <br />
+      <br />  
 
+      <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+          <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#myModal">Preview</button>  
+          <!-- Modal Preview -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <img src="../../images/certificate_default_preview.jpg" alt="template2" class="img-responsive hover" />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+      
+      <div class="container row text-left">
+        <br />
+        <br />
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#generateModal">Generate & Send</button>
+        <!-- Modal Generate -->
+        <div class="modal fade" id="generateModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <p>Generate only available after or during event</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
 
         
-        <div id="preview" class="tab-pane fade">
+        <!-- <div id="preview" class="tab-pane fade">
           <br />
           <div class="row">
               <div class="col-lg-2">
               </div>
               <div class="col-lg-8">
               <a id="temp2" href="#">
-                <img src="../../images/certificate_default_preview.jpg" alt="template2" class="img-responsive hover" />
+                
               </a>
               <p>kalo di click nnti nge zoom kayaknya keren</p>
               </div>
               <div class="col-lg-2">
               </div>
-          </div>
-
-        </div>
-        <div id="generate" class="tab-pane fade">
-          <br />
-          <p>ini nnti cuma bisa di click kalo udah hari H atau setelah event</p>
-          <a href="#" class="btn btn-primary btn-round btn-block">Generate Certificates</a>
-        </div>
-      </div>
-    </div>
-
-
-    <?php if(isset($_GET['Message'])){ ?>
-      <br />
-      <br />
-      <hr />
-      <div class="container" >
-        <a href="../event_detail" class="btn btn-primary btn-round btn-block">Skip To View Event Detail</a>
-      </div>
-    <?php }?>
-    
+          </div> -->    
 
   <!-- footer -->
   <footer>
