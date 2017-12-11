@@ -2,8 +2,12 @@
   include('../backend/attendance_event.php');
   if(isset($_GET['event_id']))
   {
-    $dec=$_GET['event_id'];
-    $event_id=base64_decode($dec);
+    $id = $_GET['event_id'];
+    $event_query="SELECT * FROM events e WHERE e.event_id= '$event_id'";
+    $events = mysqli_query($connect, $event_query);
+    $event_array = mysqli_fetch_array($events);
+    $i=0;
+    $j=0;
   }
 
 ?>
@@ -122,8 +126,8 @@
 
 
     <div class="container">
-    <h1>Nama Acara</h1>
-    <p>Tanggal Acaranya</p>
+    <h1><?php echo $event_array['event_name']?></h1>
+    <p><?php echo date('M d, Y', strtotime($event_array['event_date_starts']))?></p>
     <!-- tabs -->
     <br />
     <br />
@@ -187,41 +191,20 @@
                 <hr />
             </div>
             <div class="row">
+                <?php while ($item = mysqli_fetch_array($attendance_table)) { ?>
                 <div class="col-lg-6 text-left">
-                <?php while ($item = mysqli_fetch_array($attendance)) { ?>
                   <p><?php echo $item['user_name']?><br /><p>
-                <?php } ?>
-                  <p>Budi Budiman<br /><p>
-                  <p>Budi Budiman<br /><p>
-                  <p>Budi Budiman<br /><p>
-                  <p>Budi Budiman<br /><p>
-                  <p>Budi Budiman<br /><p>
                 </div>
                 <div class="col-lg-3 text-center">
-                <!-- <?php while ($item = mysqli_fetch_array($attendance)) { ?>
-                  <p><?php echo $item['arrival_time']->format( 'H:i') ?><br /><p>
-                <?php } ?> -->
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
-                  <p>07:00 A.M<br /></p>
+                  <p><?php echo date('h:i A', strtotime($item['arrival_time'])) ?><br /><p>
                 </div>
                 <div class="col-lg-3 text-center">
-                <!-- <?php while ($item = mysqli_fetch_array($attendance)) { ?>
                   <p><?php 
                     if($item['status']==1) echo "Signed";
                     else echo "Not Signed" ?><br /><p>
-                <?php } ?> -->
-                  <p>Signed<br /></p>
-                  <p>Signed<br /></p>
-                  <p>Signed<br /></p>
-                  <p>Not Signed<br /></p>
-                  <p>Signed<br /></p>
-                  <p>Signed<br /></p>
                 </div>
                 <hr />
+                <?php } ?>
             </div>
           </div>
 

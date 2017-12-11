@@ -139,7 +139,7 @@
             <?php while ($item = mysqli_fetch_array($event)) { ?>
             <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
             <div class="row">
-                <p><span><?php echo date('M d, Y', strtotime($item['event_date_starts']) )?></span> <span><?php echo date('h:i A', strtotime($item['event_time_starts']))?></span></p>
+                <p><span><?php echo date('M d, Y', strtotime($item['event_date_starts']) )?></span> <span><?php echo date('h:i A', strtotime($item['event_time_starts']))?></span> <span><?php echo $item['event_name'] ?></span></p>
                 <?php if($item['event_date_starts']==date("Y-m-d")) 
                 echo "<a href='../../pages/attendance_event/?event_id=".$event_id_encrypt."&status=0'><span class='glyphicon glyphicon-list-alt'></span> Attendance</a>&nbsp&nbsp&nbsp"
                 ?>

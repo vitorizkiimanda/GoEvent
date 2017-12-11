@@ -176,7 +176,7 @@
           <div class="col-lg-4 text-center" id="card_event">
             <img src='photo_event/<?php echo $item['event_photo']; ?>' width='200' height='200' id="card_event2">
             <br/>
-              <p id="date_card"> <?php echo date('d F Y', strtotime($item['event_date_starts']) ). "\r\n" . date('h:i A', strtotime($item['event_time_starts'])); ?> </p>
+              <p id="date_card"> <?php echo date('d F Y', strtotime($item['event_date_starts'])). "\r\n" . date('h:i A', strtotime($item['event_time_starts'])); ?> </p>
               <h4 id="title_card"> <?php echo $item['event_name'] ?> </h4>
               <p id="location_card"> <?php echo $item['event_city'] ?> </p>
               <hr />
