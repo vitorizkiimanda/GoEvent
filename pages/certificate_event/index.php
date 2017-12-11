@@ -1,13 +1,8 @@
 <?php
-  require_once('../backend/attendance_event.php');
-  if(isset($_GET['event_id']))
-  {
-    $dec=$_GET['event_id'];
-    $event_id=base64_decode($dec);
-  }
+  require_once('../backend/certificate_mantab.php');
 
   if (isset($_GET['Message'])) {
-    print '<script type="text/javascript">alert("' . $_GET['Message'] . '");</script>';
+    print '<script type="text/javascript">alert("' . $_GET['Message'] . '");';
   }
 
 ?>
@@ -219,7 +214,7 @@
               <div class="col-lg-4">
               <!-- //if belum ada design yang di upload -->
                 <input type="image" src="../../images/certificate_default.jpg" alt="template2" class="img-responsive hover" />
-                <input type="file" id="my_file" style="display: none;" />
+                <input type="file" id="my_file" name ="my_file" style="display: none;" />
 
               <!-- //else kalo udah ada design yang di upload tampilin -->
               <!-- //disini -->

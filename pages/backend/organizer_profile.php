@@ -25,7 +25,9 @@
                                       VALUES ('$user_id', '$count')";
         if ($connect->query($sql) === true && $connect->query($sql2) === true) {
                                 //echo $sql;// boleh diganti nih, pointnya mau bertambah berapa jika add restaurant
+            header('Location: ../organizer_profile_choose_create');                                          
             echo "<p> New Event Successfully Created</p>";
+
         }
         else {
           echo "<p> GAGAL TOLOL!!</p>";
@@ -35,6 +37,8 @@
      else {
         $sql12 = "UPDATE organizer SET organizer_name = '$organizer_name' , organizer_description = '$organizer_description', organizer_phone_number = '$organizer_phone_number', organizer_address = '$organizer_address' ,organizer_website = '$organizer_website' , organizer_facebook = '$organizer_facebook', organizer_twitter = '$organizer_twitter' , organizer_instagram = '$organizer_instagram' WHERE organizer_id = '$organizer_id'";
         if ($connect->query($sql12)) {
+          header('Location: ../organizer_profile_choose_create');          
+          
                                 //echo $sql;// boleh diganti nih, pointnya mau bertambah berapa jika add restaurant
             echo "<p> New Event Successfully Created</p>";
         }

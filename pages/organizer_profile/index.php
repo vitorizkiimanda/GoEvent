@@ -129,7 +129,7 @@
     </div>
     <br />
     <div class="row">
-      <form action="../backend/organizer.php" enctype="multipart/form-data" method="post">
+      <form action="../backend/organizer_profile.php" enctype="multipart/form-data" method="post">
       <div class="col-lg-3 text-center">
         <img src="../../photo_organizer/<?php echo $organizer_query['organizer_photo']?>" class="img-responsive" alt="Organizer Profile Pict" />
         <p>JPG, GIF or PNG no larger than 1MB. Square images look the best!</p>
