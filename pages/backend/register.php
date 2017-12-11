@@ -10,7 +10,8 @@
   $ticket_name = $count['ticket_name'];
   $event_name = strtoupper(substr($event_name,0,2)) ;
   $ticket_name = strtoupper(substr($ticket_name,0,2)) ;
-  $ticket_id = $event_name.$ticket_name.$user_id.$event_id.'00000000';
+  $random = rand(10,99);
+  $ticket_id = $event_name.$ticket_name.$random.$user_id.$event_id.'000000';
   $ticket_id = substr($ticket_id,0,10) ;
 
   $sql = "INSERT INTO attendant (user_id, event_id, ticket_id) VALUES ('$user_id', '$event_id', '$ticket_id')";
