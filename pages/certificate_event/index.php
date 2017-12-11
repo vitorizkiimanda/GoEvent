@@ -117,11 +117,7 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-
-    <div >1</div>
-<div tabindex="-1">2</div>
-<div tabindex="-1">3</div>
-
+    
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
