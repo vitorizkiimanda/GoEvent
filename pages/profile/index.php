@@ -112,7 +112,7 @@
                header('Location: ../sign_in/' );
               } ?>
 
-              <li><a href="../../pages/create_event">Create Event</a></li>
+              <li><a href="../../pages/organizer_profile_choose_create">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -141,18 +141,18 @@
           <br />
           <?php if($upcoming!=0) { 
             for($i=0; $i<count($upcoming); $i++){?>
-
+                <?php $event_id_encrypt = base64_encode($upcoming[$i]['event_id']); ?>
                   <!-- Events Card -->
               <div class="container">
                 <div class="row">
-                    <a href="pages/event_detail/" >
+                    <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
                       <div class="col-lg-4">
-                        <p> <img src='photo_event/' width='100' height='70'> </p>
-                        <p> <?php echo $upcoming[$i]["event_name"]; ?> </p>
-                        <p> <?php echo $upcoming[$i]["event_city"]; ?> </p>
-                        <p> <?php echo $upcoming[$i]["event_date_starts"]; ?> </p>
-                        <p> <?php echo $upcoming[$i]["event_date_ends"]; ?> </p>
-                        <p> <?php echo $upcoming[$i]["event_description"]; ?> </p>
+                        <p> <img src='../../photo_event/<?php echo $upcoming[$i]['event_photo']; ?>' width='100' height='70'> </p>
+                        <p> Event Name : <?php echo $upcoming[$i]["event_name"]; ?> </p>
+                        <p> Event City : <?php echo $upcoming[$i]["event_city"]; ?> </p>
+                        <p> Event Date Starts : <?php echo date('d F Y', strtotime($upcoming[$i]['event_date_starts'])); ?> </p>
+                        <p> Event Date Ends : <?php echo date('d F Y', strtotime($upcoming[$i]["event_date_ends"])); ?> </p>
+                        <p> Event Description : <?php echo $upcoming[$i]["event_description"]; ?> </p>
                       </div>
                     </a>
                 </div>
@@ -176,18 +176,19 @@
 
           <?php if($bookmark!=0) { 
             for($i=0; $i<count($bookmark); $i++){?>
+                <?php $event_id_encrypt = base64_encode($bookmark[$i]['event_id']); ?>
 
                   <!-- Events Card -->
               <div class="container">
                 <div class="row">
-                    <a href="pages/event_detail/" >
-                      <div class="col-lg-4">
-                        <p> <img src='photo_event/' width='100' height='70'> </p>
-                        <p> <?php echo $bookmark[$i]["event_name"]; ?> </p>
-                        <p> <?php echo $bookmark[$i]["event_city"]; ?> </p>
-                        <p> <?php echo $bookmark[$i]["event_date_starts"]; ?> </p>
-                        <p> <?php echo $bookmark[$i]["event_date_ends"]; ?> </p>
-                        <p> <?php echo $bookmark[$i]["event_description"]; ?> </p>
+                <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
+                     <div class="col-lg-4">
+                        <p> <img src='../../photo_event/<?php echo $bookmark[$i]['event_photo']; ?>' width='100' height='70'> </p>
+                        <p> Event Name : <?php echo $bookmark[$i]["event_name"]; ?> </p>
+                        <p> Event City : <?php echo $bookmark[$i]["event_city"]; ?> </p>
+                        <p> Event Date Starts : <?php echo date('d F Y', strtotime($bookmark[$i]['event_date_starts'])); ?> </p>
+                        <p> Event Date Ends : <?php echo date('d F Y', strtotime($bookmark[$i]["event_date_ends"])); ?> </p>
+                        <p> Event Description : <?php echo $bookmark[$i]["event_description"]; ?> </p>
                       </div>
                     </a>
                 </div>
@@ -206,18 +207,19 @@
 
           <?php if($past!=0) { 
               for($i=0; $i<count($past); $i++){?>
+                <?php $event_id_encrypt = base64_encode($past[$i]['event_id']); ?>
 
                     <!-- Events Card -->
                 <div class="container">
                   <div class="row">
-                      <a href="pages/event_detail/" >
+                <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
                         <div class="col-lg-4">
-                          <p> <img src='photo_event/' width='100' height='70'> </p>
-                          <p> <?php echo $past[$i]["event_name"]; ?> </p>
-                          <p> <?php echo $past[$i]["event_city"]; ?> </p>
-                          <p> <?php echo $past[$i]["event_date_starts"]; ?> </p>
-                          <p> <?php echo $past[$i]["event_date_ends"]; ?> </p>
-                          <p> <?php echo $past[$i]["event_description"]; ?> </p>
+                          <p> <img src='../../photo_event/<?php echo $past[$i]['event_photo']; ?>' width='100' height='70'> </p>
+                          <p> Event Name : <?php echo $past[$i]["event_name"]; ?> </p>
+                          <p> Event City : <?php echo $past[$i]["event_city"]; ?> </p>
+                          <p> Event Date Starts : <?php echo date('d F Y', strtotime($past[$i]['event_date_starts'])); ?> </p>
+                          <p> Event Date Ends : <?php echo date('d F Y', strtotime($past[$i]["event_date_ends"])); ?> </p>
+                          <p> Event Description : <?php echo $past[$i]["event_description"]; ?> </p>
                         </div>
                       </a>
                   </div>
@@ -236,13 +238,14 @@
           <br />
           <?php if($certificate!=0) { 
               for($i=0; $i<count($certificate); $i++){?>
+                <?php $event_id_encrypt = base64_encode($certificate[$i]['event_id']); ?>
 
                     <!-- Events Card -->
                 <div class="container">
                   <div class="row">
-                      <a href="pages/event_detail/" >
+                <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
                         <div class="col-lg-4">
-                          <p> <img src='photo_event/' width='100' height='70'> </p>
+                          <p> <img src='../../photo_event/' width='100' height='70'> </p>
                           <p> <?php echo $certificate[$i]["certificate"]; ?> </p>
                         </div>
                       </a>

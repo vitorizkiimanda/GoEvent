@@ -190,7 +190,7 @@
                   
 
                 //
-              });
+              }); 
               $("#temp2").click(function(){
                 $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
