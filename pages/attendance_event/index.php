@@ -118,7 +118,7 @@
                header('Location: ../sign_in/' );
               } ?>
 
-              <li><a href="../../pages/create_event">Create Event</a></li>
+              <li><a href="../../pages/organizer_profile_choose_create">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -127,7 +127,7 @@
 
     <div class="container">
     <h1><?php echo $event_array['event_name']?></h1>
-    <p><?php echo date('M d, Y', strtotime($event_array['event_date_starts']))?></p>
+    <p><?php echo date('F d, Y', strtotime($event_array['event_date_starts']))?></p>
     <!-- tabs -->
     <br />
     <br />

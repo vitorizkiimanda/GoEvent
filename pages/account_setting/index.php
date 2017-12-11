@@ -116,7 +116,7 @@
 
               <!-- <li><a href="../../pages/sign_in">Sign In</a></li>
               <li><a href="../../pages/profile">Profile</a></li> -->
-              <li><a href="../../pages/create_event">Create Event</a></li>
+              <li><a href="../../pages/organizer_profile_choose_create">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
