@@ -151,9 +151,9 @@
   <div class="container text-center">
     <?php
       $status = $_GET['status'];
-      if($status=0) echo '<h4><span class="text-center label label-success">Input Ticket id here</span></h4>';
-      if($status=1) echo '<h4><span class="text-center label label-danger">Tiket Id Not Found</span></h4>';
-      if($status=2) echo '<h4><span class="text-center label label-success">Success Sign Tiket</span></h4>';
+      if($status==0) echo '<h4><span class="text-center label label-success">Input Ticket id here</span></h4>';
+      if($status==1) echo '<h4><span class="text-center label label-danger">Tiket Id Not Found</span></h4>';
+      if($status==2) echo '<h4><span class="text-center label label-success">Success Sign Tiket</span></h4>';
     ?>
   </div>
   <br />

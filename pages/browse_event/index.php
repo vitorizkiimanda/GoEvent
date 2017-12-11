@@ -202,15 +202,13 @@
               </div>
               <div class="col-lg-9">
                 <br />
-                  <p id="date_card"><?php echo $item['event_date_starts'] . " " . $item['event_time_starts'] ?></p>
+                <p id="date_card"> <?php echo date('d F Y', strtotime($item['event_date_starts']) ). "\r\n" . date('h:i A', strtotime($item['event_time_starts'])); ?> </p>
                   <p id="title_card"><?php echo $item['event_name'] ?></p>
                   <br />
                   <p id="location_card"><?php echo $item['event_city'] ?></p>
                   <hr />
-                  <a href="pages/browse_event" id="location_card">#tag </a>
-                  <a href="pages/browse_event" id="location_card">#tag </a>
-                  <a href="pages/browse_event" id="location_card">#tag </a>
-                  <a href="pages/browse_event" id="location_card">#tag </a>
+                  <a id="location_card"><?php echo "#".$item['event_topic']?> </a>
+                  <a id="location_card"><?php echo "#".$item['event_type']?> </a>
                   <br />
               </div>
             </div>

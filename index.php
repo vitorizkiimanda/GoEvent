@@ -180,10 +180,8 @@
               <h4 id="title_card"> <?php echo $item['event_name'] ?> </h4>
               <p id="location_card"> <?php echo $item['event_city'] ?> </p>
               <hr />
-              <a href="pages/browse_event" id="location_card">#tag </a>
-              <a href="pages/browse_event" id="location_card">#tag </a>
-              <a href="pages/browse_event" id="location_card">#tag </a>
-              <a href="pages/browse_event" id="location_card">#tag </a>
+              <a id="location_card"><?php echo "#".$item['event_topic']?> </a>
+              <a id="location_card"><?php echo "#".$item['event_type']?> </a>
               <hr />
           </div>
         </a>

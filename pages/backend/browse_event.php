@@ -66,6 +66,11 @@
             //header('location: ../browse_event');
         }
     }
+    else if (!isset($_POST['date_categorized']))
+    {
+        $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() LIMIT 15";
+        $event = mysqli_query($connect, $event_query);
+    }
 
     //protoype untuk filter browse;
     // if(isset($_POST['filter_browse']))
