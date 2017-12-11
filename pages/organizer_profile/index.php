@@ -129,10 +129,12 @@
     </div>
     <br />
     <div class="row">
+      <form action="../backend/organizer.php" enctype="multipart/form-data" method="post">
       <div class="col-lg-3 text-center">
-        <img src="../../photo_organizer/<?php $organizer_query['organizer_name']?>" class="img-responsive" alt="Organizer Profile Pict" />
+        <img src="../../photo_organizer/<?php echo $organizer_query['organizer_photo']?>" class="img-responsive" alt="Organizer Profile Pict" />
         <p>JPG, GIF or PNG no larger than 1MB. Square images look the best!</p>
-        <a href="#" class="btn btn-primary btn-round btn-block">CHOOSE FILE</a>
+        <input id="exampleInputFile" type="file" name="event_photo" accept="image/*">
+        <button class="btn btn-primary btn-round btn-block"  id="submission" type="submit" class="btn btn-primary btn-round btn-block">Submit</button>
       </div>
       <div class="col-lg-9">
 
