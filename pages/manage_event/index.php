@@ -143,7 +143,7 @@
                 <a href='../../pages/attendance_event/?event_id=<?php echo $event_id_encrypt ?>&status=0'><span class='glyphicon glyphicon-list-alt'></span> Attendance</a>&nbsp&nbsp&nbsp
                 <a href='../../pages/certificate_event?event_id=<?php echo $event_id_encrypt; ?>'><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
                 <a href="#"><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/edit_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
                 <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
                 <hr />
             </div>
