@@ -146,7 +146,11 @@
               <div class="form-group">
                   <label for="exampleInputEmail1">About The Organizer</label>
                     <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
-                		<textarea class="ckeditor" id="ckedtor" name="ckeditor" value= "<?php echo $organizer_query['organizer_name'] ?>" ></textarea>
+                		<textarea class="ckeditor" id="ckeditor" name="ckeditor"><?php echo $organizer_query['organizer_description']; ?></textarea>
+                    </br>
+                    <script>
+                        CKEDITOR.replace( 'organizer_description' );
+                    </script>
               </div>
 
               <div class="form-group">
