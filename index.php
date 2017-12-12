@@ -179,10 +179,10 @@
               <p id="date_card"> <?php echo date('d F Y', strtotime($item['event_date_starts'])). "\r\n" . date('h:i A', strtotime($item['event_time_starts'])); ?> </p>
               <h4 id="title_card"> <?php echo $item['event_name'] ?> </h4>
               <p id="location_card"> <?php echo $item['event_city'] ?> </p>
-              <hr />
+              
               <a id="location_card"><?php echo "#".$item['event_topic']?> </a>
               <a id="location_card"><?php echo "#".$item['event_type']?> </a>
-              <hr />
+              
           </div>
         </a>
       <?php } ?>

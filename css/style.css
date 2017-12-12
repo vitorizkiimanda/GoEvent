@@ -74,9 +74,9 @@ html, body {
 
 #card_event {
 
-  height: 45vh; 
+  /* height: 45vh;  */
   padding: 0vh 1vw 0vh 1vw; 
-  margin: 2vh 0vw 15vh 0vw;
+  margin: 2vh 0vw 5vh 0vw;
 
 }
 
