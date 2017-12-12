@@ -167,7 +167,8 @@
             <h5><b>DESCRIPTION</b></h5>
             <p><?php echo $hasil['event_description']?></p>
             <br />
-            <iframe width="100%" height="345" src="https://www.youtube.com/embed/Rc2dG7uMlhA?playlist=Rc2dG7uMlhA&loop=1">
+            <?php $sub = substr($hasil['event_video'] ,-11)?>
+            <iframe width="100%" height="345" src="https://www.youtube.com/embed/<?php echo $sub?>?playlist=<?php echo $sub?>&loop=1">
             </iframe>
             <br />
             <br />
