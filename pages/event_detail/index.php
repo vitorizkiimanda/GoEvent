@@ -168,7 +168,11 @@
             <p><?php echo $hasil['event_description']?></p>
             <br />
             <?php $sub = substr($hasil['event_video'] ,-11)?>
-            <iframe width="100%" height="345" src="https://www.youtube.com/embed/<?php echo $sub?>?playlist=<?php echo $sub?>&loop=1">
+            <iframe allowfullscreen="allowfullscreen"
+        mozallowfullscreen="mozallowfullscreen" 
+        msallowfullscreen="msallowfullscreen" 
+        oallowfullscreen="oallowfullscreen" 
+        webkitallowfullscreen="webkitallowfullscreen" width="100%" height="345" src="https://www.youtube.com/embed/<?php echo $sub?>?playlist=<?php echo $sub?>&loop=1">
             </iframe>
             <br />
             <br />
