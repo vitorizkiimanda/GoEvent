@@ -105,6 +105,7 @@
         <p><?php echo date('d F Y', strtotime($hasil['event_date_starts'])); ?> </p>
         <br />
         <h3><?php echo $hasil['event_name']?> </h3>
+        <h6> <?php echo $hasil['organizer_name'] ?> </h6>
         <br />
         <p><?php echo $hasil['event_city']?></p>
         <br />

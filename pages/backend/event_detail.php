@@ -3,7 +3,7 @@
 $user_id=$_SESSION['user_id'];
 $event_id=base64_decode($_GET['event_id']);
 
-$sql= "SELECT * FROM events WHERE event_id='$event_id'";
+$sql= "SELECT * FROM events e INNER JOIN organizer o ON e.organizer_id = o.organizer_id WHERE event_id='$event_id'";
 $queri = $connect->query($sql);
 $hasil = $queri->fetch_assoc();
 
