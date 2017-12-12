@@ -75,7 +75,7 @@ $organizer_id = $_GET['organizer_id'];
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Browse Event</a></li>
+            <li><a href="../../pages/browse_event">Browse Event</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -234,7 +234,12 @@ $organizer_id = $_GET['organizer_id'];
 
             <div class="form-group">
                 <label for="exampleInputFile">Event Photo</label>
-                <input type="file" name="event_photo" accept="image/*" id="exampleInputFile">
+                <input type="file" name="event_photo" accept="image/" id="exampleInputFile">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputFile">Event Video</label>
+                <input type="url" class="form-control" name="event_video" placeholder="Youtube Video Link" id="exampleInputFile">
             </div>
 
             <br />
