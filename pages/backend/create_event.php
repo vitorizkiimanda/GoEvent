@@ -52,9 +52,9 @@
       $q2 = $connect->query($sqlticket);
       if ( $q2 === true) {
       // echo $sql;// boleh diganti nih, pointnya mau bertambah berapa jika add restaurant
-      $Message = "Create Event Success";
-      // header('Location: ../../pages/certificate_event/' );
-      header("Location: ../../pages/certificate_event/?Message=" . urlencode($Message));
+        $Message = "Create Event Success";
+        // header('Location: ../../pages/certificate_event/' );
+        header("Location: ../../pages/certificate_event/?Message=" . urlencode($Message));
 
       }
       else {
