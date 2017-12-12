@@ -131,14 +131,13 @@
     <div class="row">
       <form action="../backend/organizer_profile.php" enctype="multipart/form-data" method="post">
       <div class="col-lg-3 text-center">
+        <div class="form-group">
         <img src="../../photo_organizer/<?php echo $organizer_query['organizer_photo']?>" class="img-responsive" alt="Organizer Profile Pict" />
         <p>JPG, GIF or PNG no larger than 1MB. Square images look the best!</p>
-        <input id="exampleInputFile" type="file" name="event_photo" accept="image/*">
-        <button class="btn btn-primary btn-round btn-block"  id="submission" type="submit" class="btn btn-primary btn-round btn-block">Submit</button>
+        <input id="exampleInputFile" class="form-control" type="file" name="organizer_photo" accept="image/*">
+        </div>
       </div>
       <div class="col-lg-9">
-
-        <form action="../backend/organizer_profile.php" enctype="multipart/form-data" method="post">
               <div class="form-group">
                 <label for="exampleInputEmail1">Organizer Name</label>
                 <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" value= "<?php echo $organizer_query['organizer_name'] ?>" >
@@ -254,8 +253,6 @@
                 </div>
               </div>
           </form>
-
-
       </div>
     </div>
   </div>

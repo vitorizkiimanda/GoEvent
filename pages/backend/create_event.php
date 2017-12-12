@@ -43,16 +43,7 @@
         $photo_name = $count.'_photo.'.$sub_photo;
         $photo_path = "../../photo_event/".$photo_name;
         move_uploaded_file($photo_file, $photo_path);
-
-        // $certificate_name = $_FILES['event_certificate']['name'];
-        // $certificate_size = $_FILES['event_certificate']['size'];
-        // $certificate_type = $_FILES['event_certificate']['type'];
-      	// $certificate_file = $_FILES['event_certificate']['tmp_name'];
-        // $sub_certificate = substr($certificate_type,6);
-        //echo $sub_certificate ;
         $certificate_name = 'certificate_template';
-        // $certificate_path = "../../certificate_event/".$certificate_name;
-        // move_uploaded_file($certificate_file, $certificate_path);
 
       $sqlticket = "INSERT INTO events (event_id,   event_name,   event_city, event_date_starts,  event_time_starts,    event_date_ends,  event_time_ends,    event_capacity,   event_certificate,  event_description,   event_photo, organizer_id,ticket_name, ticket_quantity, ticket_price, ticket_description,ticket_date_starts, ticket_time_starts, ticket_date_ends, ticket_time_ends, event_type ,  event_topic)
                               VALUES (''      ,'$event_name','$event_city','$event_date_starts','$event_time_starts','$event_date_ends','$event_time_ends','$event_capacity','$certificate_name','$ckeditor','$photo_name','$organizer_id','$ticket_name', '$ticket_quantity', '$ticket_price', '$ticket_description', '$ticket_date_starts', '$ticket_time_starts', '$ticket_date_ends', '$ticket_time_ends', '$event_type' , '$event_topic')";
