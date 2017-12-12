@@ -368,7 +368,7 @@ $organizer_id = $_GET['organizer_id'];
                     window.alert("Create Event Success");
                   });
               });
-              </script>
+            </script>
 
 
         </form>

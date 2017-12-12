@@ -43,7 +43,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="goevent_color" href="../../">GoEvent</a>
+            <a class="navbar-brand" id="goevent_color" style="color: #2980b9;" href="../../">GoEvent</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -164,7 +164,7 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-6">
-            <h5><b>DESCRIPTION</b></h5>
+            <!-- <h5><b>DESCRIPTION</b></h5> -->
             <p><?php echo $hasil['event_description']?></p>
             <br />
             <?php $sub = substr($hasil['event_video'] ,-11)?>
