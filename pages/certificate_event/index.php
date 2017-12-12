@@ -194,13 +194,14 @@
               $("#temp1").click(function(){
                 $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
-                  
+                  $_SESSION['temp']=1;
 
                 //
               });
               $("#temp2").click(function(){
                 $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
+                $_SESSION['temp']=2;
 
 
                 //
@@ -208,6 +209,7 @@
               $("#temp3").click(function(){
                 $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
+                $_SESSION['temp']=3;
 
 
                 //
@@ -221,7 +223,7 @@
               <div class="col-lg-2"></div>
               <div class="col-lg-8">
                 <form id="form1" runat="server">
-                    <input type='file' id="imgInp" />
+                    <input type='file' id="my_file" name="my_file"/>
                     <img id="blah" src="#" onError="this.onerror=null;this.src='../../images/certificate_default.jpg';" class="img-responsive" />
                 </form>
                 <script>
@@ -237,7 +239,7 @@
                           }
                       }
             
-                      $("#imgInp").change(function(){
+                      $("#my_file").change(function(){
                           readURL(this);
                       });
                           </script>
