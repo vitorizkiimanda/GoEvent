@@ -282,13 +282,41 @@
                     <h4>Choose Font Color</h4>
                     <br />
                     <h4>Choose Font Style</h4>
+                    <br />
+                    <h4>Choose Font Size</h4>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 text-left">
                     <br />
                     <input type="color" id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" value="#fff" style="width:100%;">
                     <br />
                     <br />
-                    <input type="color" id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" value="#fff" style="width:100%;">
+                    <input id="font" type="text"/>
+                    
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+                    <link rel="stylesheet" type="text/css" href="../../css/fontselect-default.css" />
+                    <script src="../../js/jquery.fontselect.js"></script>
+                    <script>
+                      $(function(){
+                        $('#font').fontselect();
+                      });
+                    </script>
+
+                    <br />
+                    <br />
+                    <select class="selectpicker" name=date_categorized>
+                      <option value="12">12</option>
+                      <option value="14">14</option>
+                      <option value="16">16</option>
+                      <option value="18">18</option>
+                      <option value="20">20</option>
+                      <option value="22">22</option>
+                      <option value="24">24</option>
+                      <option value="26">26</option>
+                      <option value="28">28</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="72">72</option>
+                    </select>
         </div>
       </div>
       <br />
