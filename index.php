@@ -179,10 +179,10 @@
               <p id="date_card"> <?php echo date('d F Y', strtotime($item['event_date_starts'])). "\r\n" . date('h:i A', strtotime($item['event_time_starts'])); ?> </p>
               <h4 id="title_card"> <?php echo $item['event_name'] ?> </h4>
               <p id="location_card"> <?php echo $item['event_city'] ?> </p>
-              
-              <a id="location_card"><?php echo "#".$item['event_topic']?> </a>
-              <a id="location_card"><?php echo "#".$item['event_type']?> </a>
-              
+              <div class="top_down_border">
+                <a id="location_card"><?php echo "#".$item['event_topic']?> </a>
+                <a id="location_card"><?php echo "#".$item['event_type']?> </a>
+              </div>
           </div>
         </a>
       <?php } ?>
@@ -190,14 +190,16 @@
   </div>
 
   <!-- button see more -->
+  <br />
   <div class="container text-center">
     <form method="post" action="pages/browse_event/index.php" >
       <input type="hidden" name="date_categorized" value="1" />
-      <button class="btn btn-primary navbar-btn" type="submit">See More</button>
+      <button class="btn btn-lg btn-primary navbar-btn" type="submit">See More</button>
     </form>
   </div>
 
   <!-- browse by kategories -->
+  <br />
   <div class="container">
     <h2 class="text-center">Browse by Top Categories</h1>
       <div class="row">
