@@ -105,9 +105,8 @@
         <p><?php echo date('d F Y', strtotime($hasil['event_date_starts'])); ?> </p>
         <br />
         <h3><?php echo $hasil['event_name']?> </h3>
-        <h6> <?php echo $hasil['organizer_name'] ?> </h6>
+        <a href="../../pages/organizer_profile_view"><h6>by <?php echo $hasil['organizer_name'] ?></h6></a>
         <br />
-        <p><?php echo $hasil['event_city']?></p>
         <br />
         <p>
           <?php if($hasil['ticket_price'] === '0' ) echo "FREE" ;
