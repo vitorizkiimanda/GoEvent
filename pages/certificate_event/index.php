@@ -274,6 +274,26 @@
       <br />
       <br />
       <br />  
+      <h2>Font</h2>
+      <hr />
+      <div class="row text-center">
+        <div class="col-lg-6">
+                    <br />
+                    <h4>Choose Font Color</h4>
+                    <br />
+                    <h4>Choose Font Style</h4>
+        </div>
+        <div class="col-lg-6">
+                    <br />
+                    <input type="color" id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" value="#fff" style="width:100%;">
+                    <br />
+                    <br />
+                    <input type="color" id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" value="#fff" style="width:100%;">
+        </div>
+      </div>
+      <br />
+      <br />
+      <br /> 
 
       <div class="row">
         <div class="col-lg-4"></div>
