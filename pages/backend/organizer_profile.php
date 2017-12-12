@@ -56,7 +56,7 @@
         $sql12 = "UPDATE organizer SET organizer_name = '$organizer_name' , organizer_description = '$organizer_description', organizer_phone_number = '$organizer_phone_number', organizer_address = '$organizer_address' ,organizer_website = '$organizer_website' , organizer_facebook = '$organizer_facebook', organizer_twitter = '$organizer_twitter' , organizer_instagram = '$organizer_instagram' , organizer_photo = '$photo_name' WHERE organizer_id = '$organizer_id'";
         if ($connect->query($sql12)) {
           echo "<p> New Event Successfully Created</p>";
-          header('Location: ../organizer_profile_choose_create');
+          header('Location: ../organizer_profile_choose');
         }
         else {
           echo "<p> GAGAL TOLOL!!</p>";

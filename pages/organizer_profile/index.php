@@ -132,9 +132,51 @@
       <form action="../backend/organizer_profile.php" enctype="multipart/form-data" method="post">
       <div class="col-lg-3 text-center">
         <div class="form-group">
-        <img src="../../photo_organizer/<?php echo $organizer_query['organizer_photo']?>" class="img-responsive" alt="Organizer Profile Pict" />
+
+          <input class="form-control" name="organizer_photo" accept="image/*" type='file' id="my_file" name="my_file"/>
+          <br/>
+          <img id="blah" src="../../photo_organizer/<?php echo $organizer_query['organizer_photo']?>" onError="this.onerror=null;this.src='../../images/default.png';" class="img-responsive" style="margin: 0 auto;" />
+          <br />
+        <script>
+                  function readURL(input) {
+                      if (input.files && input.files[0]) {
+                              var reader = new FileReader();
+                              
+                              reader.onload = function (e) {
+                                  $('#blah').attr('src', e.target.result);
+                              }
+                              
+                              reader.readAsDataURL(input.files[0]);
+                          }
+                      }
+            
+                      $("#my_file").change(function(){
+                          readURL(this);
+                      });
+                          </script>
+        
+                          <script>
+                            $(document).ready(function(){
+                                $("input[type='image']").click(function() {
+                                    $("input[id='my_file']").click(); 
+                                    // ambil designnya di sini
+        
+                                    
+                                    if (window.FileReader) {
+                                      //then your code goes here
+                                    } else {
+                                      alert('This browser does not support FileReader');
+                                    }
+        
+        
+                                });
+                                // $("#default").click(function(){
+                                //   $('.nav-tabs a[href="#preview"]').tab('show')
+                                // });
+                            });
+        </script>
+      
         <p>JPG, GIF or PNG no larger than 1MB. Square images look the best!</p>
-        <input id="exampleInputFile" class="form-control" type="file" name="organizer_photo" accept="image/*">
         </div>
       </div>
       <div class="col-lg-9">

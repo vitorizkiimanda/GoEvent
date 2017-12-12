@@ -108,7 +108,7 @@
                header('Location: ../sign_in/' );
               } ?>
 
-              <li><a href="../../pages/create_event">Create Event</a></li>
+              <li><a href="../organizer_profile_choose_create">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -136,7 +136,7 @@
       while($row = mysqli_fetch_array($query_organizer))
       {
         if($row['organizer_id'] == 0) continue ; ?>
-        <a href="../create_event/?organizer_id= <?php echo $row['organizer_id'] ; ?>">
+        <a href="../create_event?organizer_id= <?php echo $row['organizer_id'] ; ?>">
           <div class="row card_browse_event">
             <div class="col-lg-4 text-center">
               <img src="../../photo_organizer/<?php echo $row['organizer_photo']?>" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
@@ -166,7 +166,7 @@
   </a>
 <?php  }} ?>
     <!-- create_new_button -->
-    <a href="../organizer_profile/?organizer_id=%200">
+    <a href="../organizer_profile?organizer_id=%200">
       <div class="row card_browse_event">
         <div class="col-lg-4 text-center"></div>
         <div class="col-lg-4 text-center">
