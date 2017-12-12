@@ -162,7 +162,7 @@
   <div class="container">
     <div class="text-center">
       <br />
-      <p>Events for you in <a>jakarta</a></p>
+      <!-- <p>Events for you in <a>jakarta</a></p> -->
     </div>
   </div>
 

@@ -82,6 +82,16 @@ html, body {
 
 }
 
+#card_event_profile {
+  background-color: #f8f8fa; 
+  /* border: 10px solid #f8f8fa; */
+
+  /* height: 45vh;  */
+  padding: 0vh 1vw 1vh 1vw; 
+  margin: 2vh 0vw 0vh 0vw;
+
+}
+
 #card_event2 {
   margin: 0 auto;
 }

@@ -101,7 +101,7 @@
                 <li><a href="../profile">Bookmarks</a></li>
                 <li><a href="../profile">Certificates</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                 <li><a href="../manage_event">Manage Events</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="../account_setting">Account Settings</a></li>
@@ -143,24 +143,24 @@
             for($i=0; $i<count($upcoming); $i++){?>
                 <?php $event_id_encrypt = base64_encode($upcoming[$i]['event_id']); ?>
                   <!-- Events Card -->
-              <div class="container">
-                <div class="row">
-                    <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
-                      <div class="col-lg-4">
-                        <p> <img src='../../photo_event/<?php echo $upcoming[$i]['event_photo']; ?>' width='100' height='70'> </p>
-                        <p> Event Name : <?php echo $upcoming[$i]["event_name"]; ?> </p>
-                        <p> Event City : <?php echo $upcoming[$i]["event_city"]; ?> </p>
-                        <p> Event Date Starts : <?php echo date('d F Y', strtotime($upcoming[$i]['event_date_starts'])); ?> </p>
-                        <p> Event Date Ends : <?php echo date('d F Y', strtotime($upcoming[$i]["event_date_ends"])); ?> </p>
-                        <p> Event Description : <?php echo $upcoming[$i]["event_description"]; ?> </p>
-                      </div>
-                    </a>
-                </div>
-              </div>
+                  <div class="container">
+                    <br />
+                    <div class="row">
+                        <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
+                          <div class="col-lg-4 text-center" id="card_event_profile">
+                            
+                            <img src='../../photo_event/<?php echo $upcoming[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
+                            <br/>
+                              <p id="date_card"> <?php echo date('d F Y', strtotime($upcoming[$i]['event_date_starts'])); ?> </p>
+                              <h4 id="title_card"> <?php echo $upcoming[$i]["event_name"]; ?> </h4>
+                              <p id="location_card"> <?php echo $upcoming[$i]["event_city"]; ?> </p>
+                          </div>
+                        </a>
+                    </div>
+                  </div>
 
-            <?php } ?>
-            
-            
+          <?php } ?>
+          
           <?php } else { ?>
           <p>You have no upcoming events</p>
           <?php } ?>
@@ -178,22 +178,22 @@
             for($i=0; $i<count($bookmark); $i++){?>
                 <?php $event_id_encrypt = base64_encode($bookmark[$i]['event_id']); ?>
 
-                  <!-- Events Card -->
-              <div class="container">
-                <div class="row">
-                <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
-                     <div class="col-lg-4">
-                        <p> <img src='../../photo_event/<?php echo $bookmark[$i]['event_photo']; ?>' width='100' height='70'> </p>
-                        <p> Event Name : <?php echo $bookmark[$i]["event_name"]; ?> </p>
-                        <p> Event City : <?php echo $bookmark[$i]["event_city"]; ?> </p>
-                        <p> Event Date Starts : <?php echo date('d F Y', strtotime($bookmark[$i]['event_date_starts'])); ?> </p>
-                        <p> Event Date Ends : <?php echo date('d F Y', strtotime($bookmark[$i]["event_date_ends"])); ?> </p>
-                        <p> Event Description : <?php echo $bookmark[$i]["event_description"]; ?> </p>
-                      </div>
-                    </a>
-                </div>
-              </div>
-
+                <!-- Events Card -->
+                <div class="container">
+                    <br />
+                    <div class="row">
+                        <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
+                          <div class="col-lg-4 text-center" id="card_event_profile">
+                            
+                            <img src='../../photo_event/<?php echo $bookmark[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
+                            <br/>
+                              <p id="date_card"> <?php echo date('d F Y', strtotime($bookmark[$i]['event_date_starts'])); ?> </p>
+                              <h4 id="title_card"> <?php echo $bookmark[$i]["event_name"]; ?> </h4>
+                              <p id="location_card"> <?php echo $bookmark[$i]["event_city"]; ?> </p>
+                          </div>
+                        </a>
+                    </div>
+                  </div>
             <?php } ?>
             
             
@@ -208,23 +208,23 @@
           <?php if($past!=0) { 
               for($i=0; $i<count($past); $i++){?>
                 <?php $event_id_encrypt = base64_encode($past[$i]['event_id']); ?>
-
-                    <!-- Events Card -->
+                  <!-- Events Card -->
                 <div class="container">
-                  <div class="row">
-                <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
-                        <div class="col-lg-4">
-                          <p> <img src='../../photo_event/<?php echo $past[$i]['event_photo']; ?>' width='100' height='70'> </p>
-                          <p> Event Name : <?php echo $past[$i]["event_name"]; ?> </p>
-                          <p> Event City : <?php echo $past[$i]["event_city"]; ?> </p>
-                          <p> Event Date Starts : <?php echo date('d F Y', strtotime($past[$i]['event_date_starts'])); ?> </p>
-                          <p> Event Date Ends : <?php echo date('d F Y', strtotime($past[$i]["event_date_ends"])); ?> </p>
-                          <p> Event Description : <?php echo $past[$i]["event_description"]; ?> </p>
-                        </div>
-                      </a>
+                    <br />
+                    <div class="row">
+                        <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
+                          <div class="col-lg-4 text-center" id="card_event_profile">
+                            
+                            <img src='../../photo_event/<?php echo $past[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
+                            <br/>
+                              <p id="date_card"> <?php echo date('d F Y', strtotime($past[$i]['event_date_starts'])); ?> </p>
+                              <h4 id="title_card"> <?php echo $past[$i]["event_name"]; ?> </h4>
+                              <p id="location_card"> <?php echo $past[$i]["event_city"]; ?> </p>
+                          </div>
+                        </a>
+                    </div>
                   </div>
-                </div>
-
+                    
               <?php } ?>
               
               
@@ -243,10 +243,10 @@
                     <!-- Events Card -->
                 <div class="container">
                   <div class="row">
-                <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
-                        <div class="col-lg-4">
-                          <p> <img src='../../photo_event/' width='100' height='70'> </p>
-                          <p> <?php echo $certificate[$i]["certificate"]; ?> </p>
+                    <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
+                        <div class="col-lg-4 text-center">
+                          <p> <img src='../../photo_event/' class="img-responsive" width='400' height='300'> </p>
+                          <h5 id="title_card"> <?php echo $certificate[$i]["certificate"]; ?> </h5>
                         </div>
                       </a>
                   </div>

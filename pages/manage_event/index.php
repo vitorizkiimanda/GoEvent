@@ -98,7 +98,7 @@
                   <li><a href="../profile">Bookmarks</a></li>
                   <li><a href="../profile">Certificates</a></li>
                   <li role="separator" class="divider"></li>
-                  <li><a href="../organizer_profile">Organizer Profile</a></li>
+                  <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                   <li><a href="../manage_event">Manage Events</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="../account_setting">Account Settings</a></li>
@@ -109,7 +109,7 @@
                header('Location: ../sign_in/' );
               } ?>
 
-              <li><a href="../../pages/create_event">Create Event</a></li>
+              <li><a href="../../pages/organizer_profile_choose_create">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
