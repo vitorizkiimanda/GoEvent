@@ -1,6 +1,6 @@
 <?php
   require_once '../backend/edit_event.php';
-  $event_id = $_GET['event_id'];
+  $event_id =base64_decode($_GET['event_id']);
   $event_query = mysqli_query($connect, "SELECT * FROM events WHERE event_id = '$event_id'");
   $event_query = mysqli_fetch_assoc($event_query);
 ?>
@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+  <?php echo $event_query['event_name']; ?>
   <meta charset="utf-8" />
   <meta name="HVSZ" content="GoEvent" />
 
@@ -292,14 +293,14 @@
                 <div>
                   <label for="exampleInputEmail1">Ticket sale start</label>
                   <br />
-                  <input type="date" name="ticket_date_starts" id="datepicker" value= "<?php echo $event_query['ticket_date_starts'] ?>>
-                  <input type="time" name="ticket_time_starts" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_time_starts'] ?>>
+                  <input type="date" name="ticket_date_starts" id="datepicker" value= "<?php echo $event_query['ticket_date_starts'] ?>">
+                  <input type="time" name="ticket_time_starts" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_time_starts'] ?>">
                 </div>
                 <div>
                   <label for="exampleInputEmail1">Ticket sale end</label>
                   <br />
-                  <input type="date" name="ticket_date_ends" id="datepicker" value= "<?php echo $event_query['ticket_date_ends'] ?>>
-                  <input type="time" name="ticket_time_ends" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_time_ends'] ?>>
+                  <input type="date" name="ticket_date_ends" id="datepicker" value= "<?php echo $event_query['ticket_date_ends'] ?>">
+                  <input type="time" name="ticket_time_ends" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_time_ends'] ?>">
                 </div>
               </div>
             </div>
@@ -309,7 +310,7 @@
             <div>
                 <label for="exampleInputEmail1">EVENT TYPE</label>
                 <br />
-                <select class="selectpicker" name = "event_type" value= "<?php echo $event_query['event_type']?>">
+                <select class="selectpicker" name = "event_type" >
                   <option>Select Event Type</option>
                   <option>Attraction</option>
                   <option>Camp/Trip</option>
@@ -334,7 +335,7 @@
             <div>
                 <label for="exampleInputEmail1">EVENT TOPIC</label>
                 <br />
-                <select class="selectpicker" name = "event_topic" value= "<?php echo $event_query['event_topic'] ?>">
+                <select class="selectpicker" name = "event_topic">
                   <option>Select a topic</option>
                   <option>Automotive</option>
                   <option>Business & professional</option>
