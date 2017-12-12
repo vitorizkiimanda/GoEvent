@@ -150,6 +150,9 @@
       <div class="container" >
         <a href="../event_detail" class="btn btn-primary btn-round btn-lg btn-block">Skip To View Event Detail</a>
       </div>
+      <script>
+        window.alert("Create Event Success");
+      </script>
       <hr />
       <br />
       <br />

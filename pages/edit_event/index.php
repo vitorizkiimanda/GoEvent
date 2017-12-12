@@ -1,10 +1,14 @@
-<?php require_once '../backend/create_event.php';
-$organizer_id = $_GET['organizer_id'];
+<?php
+  require_once '../backend/edit_event.php';
+  $event_id =base64_decode($_GET['event_id']);
+  $event_query = mysqli_query($connect, "SELECT * FROM events WHERE event_id = '$event_id'");
+  $event_query = mysqli_fetch_assoc($event_query);
 ?>
 
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+  <?php echo $event_query['event_name']; ?>
   <meta charset="utf-8" />
   <meta name="HVSZ" content="GoEvent" />
 
@@ -120,17 +124,17 @@ $organizer_id = $_GET['organizer_id'];
         <div class="row">
             <h1>1. Event Details</h1>
         </div>
-        <form action="../backend/create_event.php" enctype="multipart/form-data" method="post">
+        <form action="../backend/edit_event.php" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <label for="exampleInputEmail1">Event Title</label>
-              <input type="text" name="event_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name">
+              <input type="text" name="event_name" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_name'] ?>">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Location</label>
               <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
               <!-- Google API autocomplete starts -->
               <br />
-                            <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city"></input>
+                            <input id="autocomplete" class="form-control" value= "<?php echo $event_query['event_city'] ?>" onFocus="geolocate()" type="text" name="event_city"></input>
                                 <script>
                                   var placeSearch, autocomplete;
                                   var componentForm = {
@@ -197,39 +201,38 @@ $organizer_id = $_GET['organizer_id'];
               <div class="col-lg-6">
                 <h3>Starts</h3>
                   <div class="col-lg-6">
-                      <p>Date: <input type="date" name="event_date_starts" id="datepicker"></p>
+                      <p>Date: <input type="date" name="event_date_starts" id="datepicker" value= "<?php echo $event_query['event_date_starts'] ?>"></p>
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="time" name="event_time_starts" class="form-control" id="exampleInputEmail1" placeholder="am/pm">
+                        <input type="time" name="event_time_starts" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_time_starts'] ?>">
                   </div>
               </div>
               <div class="col-lg-6">
                 <h3>Ends</h3>
                   <div class="col-lg-6">
-                      <p>Date: <input type="date" name="event_date_ends" id="datepicker"></p>
+                      <p>Date: <input type="date" name="event_date_ends" id="datepicker" value= "<?php echo $event_query['event_date_ends'] ?>"></p>
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="time" name="event_time_ends" class="form-control" id="exampleInputEmail1" placeholder="am/pm">
+                        <input type="time" name="event_time_ends" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_time_ends'] ?>">
                   </div>
               </div>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Capacity</label>
-              <input type="number" name="event_capacity" class="form-control" id="exampleInputEmail1" placeholder="Maximum number of participants">
+              <input type="number" name="event_capacity" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_capacity'] ?>">
             </div>
-
-            <!-- <div class="form-group">
-                <label for="exampleInputFile">Certificate Template</label>
-                <input type="file" name="event_certificate" accept="image/*" id="exampleInputFile">
-            </div> -->
 
               <!-- Rich text editor -->
             <div class="form-group">
                 <label for="exampleInputEmail1">Event description</label>
                   <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
-              		<textarea class="ckeditor" id="ckedtor" name="ckeditor"></textarea>
+              		<textarea class="ckeditor" id="ckedtor" name="ckeditor"><?php echo $event_query['event_description']; ?></textarea>
+                </br>
+                <script>
+                    CKEDITOR.replace( 'event_description' );
+                </script>
             </div>
 
             <div class="form-group">
@@ -239,7 +242,7 @@ $organizer_id = $_GET['organizer_id'];
 
             <div class="form-group">
                 <label for="exampleInputFile">Event Video</label>
-                <input type="url" class="form-control" name="event_video" placeholder="Youtube Video Link" id="exampleInputFile">
+                <input type="url" class="form-control" name="event_video" value= "<?php echo $event_query['event_video'] ?>" id="exampleInputFile">
             </div>
 
             <br />
@@ -263,14 +266,14 @@ $organizer_id = $_GET['organizer_id'];
             <!-- konten -->
             <div class="row">
               <div class="col-lg-5">
-                <input type="text" name="ticket_name" class="form-control" id="exampleInputEmail1" placeholder="RSVP, Early Bird..">
+                <input type="text" name="ticket_name" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_name'] ?>">
               </div>
               <div class="col-lg-2">
               <!-- nnti ini di regex biar ga bisa minus -->
-                <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" placeholder="1000">
+                <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_quantity'] ?>">
               </div>
               <div class="col-lg-3">
-                <input type="number" name="ticket_price" class="form-control" id="exampleInputEmail1" placeholder="0 for free">
+                <input type="number" name="ticket_price" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_price'] ?>">
               </div>
               <div class="col-lg-2">
                 <a><span data-toggle="collapse" data-target="#setting" class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
@@ -285,19 +288,19 @@ $organizer_id = $_GET['organizer_id'];
                 <hr />
                 <div class="form-group">
                   <label for="exampleInputEmail1">Ticket description</label>
-                  <input type="text" name="ticket_description" class="form-control" id="exampleInputEmail1" placeholder="Tell your audience more about the ticket">
+                  <input type="text" name="ticket_description" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_description'] ?>">
                 </div>
                 <div>
                   <label for="exampleInputEmail1">Ticket sale start</label>
                   <br />
-                  <input type="date" name="ticket_date_starts" id="datepicker">
-                  <input type="time" name="ticket_time_starts" id="exampleInputEmail1" placeholder="am/pm">
+                  <input type="date" name="ticket_date_starts" id="datepicker" value= "<?php echo $event_query['ticket_date_starts'] ?>">
+                  <input type="time" name="ticket_time_starts" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_time_starts'] ?>">
                 </div>
                 <div>
                   <label for="exampleInputEmail1">Ticket sale end</label>
                   <br />
-                  <input type="date" name="ticket_date_ends" id="datepicker">
-                  <input type="time" name="ticket_time_ends" id="exampleInputEmail1" placeholder="am/pm">
+                  <input type="date" name="ticket_date_ends" id="datepicker" value= "<?php echo $event_query['ticket_date_ends'] ?>">
+                  <input type="time" name="ticket_time_ends" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_time_ends'] ?>">
                 </div>
               </div>
             </div>
@@ -307,7 +310,7 @@ $organizer_id = $_GET['organizer_id'];
             <div>
                 <label for="exampleInputEmail1">EVENT TYPE</label>
                 <br />
-                <select class="selectpicker" name = "event_type">
+                <select class="selectpicker" name = "event_type" >
                   <option>Select Event Type</option>
                   <option>Attraction</option>
                   <option>Camp/Trip</option>
@@ -360,7 +363,7 @@ $organizer_id = $_GET['organizer_id'];
             </div>
 
             <br />
-            <input type="hidden" name="organizer_id" value="<?php echo $organizer_id?>" >
+            <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
             <button id="submission" type="submit" class="btn btn-primary btn-round btn-block">Submit</button>
             <script>
               $(document).ready(function(){
@@ -368,7 +371,7 @@ $organizer_id = $_GET['organizer_id'];
                     window.alert("Create Event Success");
                   });
               });
-            </script>
+              </script>
 
 
         </form>

@@ -162,7 +162,7 @@
   <div class="container">
     <div class="text-center">
       <br />
-      <p>Events for you in <a>jakarta</a></p>
+      <!-- <p>Events for you in <a>jakarta</a></p> -->
     </div>
   </div>
 
@@ -179,10 +179,10 @@
               <p id="date_card"> <?php echo date('d F Y', strtotime($item['event_date_starts'])). "\r\n" . date('h:i A', strtotime($item['event_time_starts'])); ?> </p>
               <h4 id="title_card"> <?php echo $item['event_name'] ?> </h4>
               <p id="location_card"> <?php echo $item['event_city'] ?> </p>
-              <hr />
-              <a id="location_card"><?php echo "#".$item['event_topic']?> </a>
-              <a id="location_card"><?php echo "#".$item['event_type']?> </a>
-              <hr />
+              <div class="top_down_border">
+                <a id="location_card"><?php echo "#".$item['event_topic']?> </a>
+                <a id="location_card"><?php echo "#".$item['event_type']?> </a>
+              </div>
           </div>
         </a>
       <?php } ?>
@@ -190,19 +190,21 @@
   </div>
 
   <!-- button see more -->
+  <br />
   <div class="container text-center">
     <form method="post" action="pages/browse_event/index.php" >
       <input type="hidden" name="date_categorized" value="1" />
-      <button class="btn btn-primary navbar-btn" type="submit">See More</button>
+      <button class="btn btn-lg btn-primary navbar-btn" type="submit">See More</button>
     </form>
   </div>
 
   <!-- browse by kategories -->
+  <br />
   <div class="container">
     <h2 class="text-center">Browse by Top Categories</h1>
       <div class="row">
         <a href="pages/browse_event">
-        <div class="col-lg-4">
+        <div class="col-lg-4 itemmm">
         <br />
           <img src="images/music_thumbnail.jpeg" alt="music" class="img-responsive hover" />
           <div class="carousel-caption">
@@ -212,7 +214,7 @@
         </a>
 
         <a href="pages/browse_event">
-        <div class="col-lg-4">
+        <div class="col-lg-4 itemmm">
           <br />
           <img src="images/food_thumbnail.jpeg" alt="music" class="img-responsive hover" />
           <div class="carousel-caption">
@@ -222,7 +224,7 @@
         </a>
 
         <a href="pages/browse_event">
-        <div class="col-lg-4">
+        <div class="col-lg-4 itemmm">
           <br />
           <img src="images/tech_thumbnail.jpeg" alt="music" class="img-responsive hover" />
           <div class="carousel-caption">
@@ -232,7 +234,7 @@
         </a>
 
         <a href="pages/browse_event">
-        <div class="col-lg-4">
+        <div class="col-lg-4 itemmm">
           <br />
           <img src="images/art_thumbnail.jpeg" alt="music" class="img-responsive hover" />
           <div class="carousel-caption">
@@ -242,7 +244,7 @@
         </a>
 
         <a href="pages/browse_event">
-        <div class="col-lg-4">
+        <div class="col-lg-4 itemmm">
           <br />
           <img src="images/sport_thumbnail.jpeg" alt="music" class="img-responsive hover" />
           <div class="carousel-caption">
@@ -252,7 +254,7 @@
         </a>
 
         <a href="pages/browse_event">
-        <div class="col-lg-4">
+        <div class="col-lg-4 itemmm">
           <br />
           <img src="images/networking_thumbnail.jpeg" alt="music" class="img-responsive hover" />
           <div class="carousel-caption">
