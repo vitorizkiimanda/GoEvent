@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="HVSZ" content="GoEvent" />
-  
+
 
   <title>GoEvent</title>
 
@@ -58,7 +58,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="goevent_color" style="color: #2980b9;" href="../../">GoEvent</a>
+            <a class="navbar-brand" id="goevent_color" href="../../">GoEvent</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -98,7 +98,7 @@
                   <li><a href="../profile">Bookmarks</a></li>
                   <li><a href="../profile">Certificates</a></li>
                   <li role="separator" class="divider"></li>
-                  <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
+                  <li><a href="../organizer_profile">Organizer Profile</a></li>
                   <li><a href="../manage_event">Manage Events</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="../account_setting">Account Settings</a></li>
@@ -109,7 +109,7 @@
                header('Location: ../sign_in/' );
               } ?>
 
-              <li><a href="../../pages/organizer_profile_choose_create">Create Event</a></li>
+              <li><a href="../../pages/create_event">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -140,11 +140,11 @@
             <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
             <div class="row">
                 <p><span><?php echo date('M d, Y', strtotime($item['event_date_starts']) )?></span> <span><?php echo date('h:i A', strtotime($item['event_time_starts']))?></span> <span><?php echo $item['event_name'] ?></span></p>
-                <a href='../../pages/attendance_event/?event_id=<?php echo $event_id_encrypt ?>&status=0'><span class='glyphicon glyphicon-list-alt'></span> Attendance</a>&nbsp&nbsp&nbsp
+                <a href='../../pages/attendance_event?event_id=<?php echo $event_id_encrypt ?>&status=0'><span class='glyphicon glyphicon-list-alt'></span> Attendance</a>&nbsp&nbsp&nbsp
                 <a href='../../pages/certificate_event?event_id=<?php echo $event_id_encrypt; ?>'><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
                 <a href="#"><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/edit_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/edit_event?event_id=<?php echo $event_id_encrypt?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
+                <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt; ?>"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
                 <hr />
             </div>
             <?php } ?>
