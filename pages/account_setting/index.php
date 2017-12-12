@@ -103,7 +103,7 @@
                 <li><a href="../profile">Bookmarks</a></li>
                 <li><a href="../profile">Certificates</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                 <li><a href="../manage_event">Manage Events</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="../account_setting">Account Settings</a></li>
@@ -205,22 +205,52 @@
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Profile Photo</label><br>
-                    <?php if(!empty($_SESSION['user_uid'])){ ?>
-                      <img src='<?php echo $_SESSION['user_photo']; ?>' width='250' height='250' style="margin: 0 auto;">
-
-                    <?php } else if(!empty($_SESSION['user_photo'])) {?>
-                     <img src='photo_profile/<?php echo  $_SESSION['user_photo']; ?>' width='250' height='250' style="margin: 0 auto;">
-      
-
-                     <?php } else {?>
-                     <img src='../../images/logo.jpg' width='250' height='250' style="margin: 0 auto;">
-                      <div class="akun_tombol_gambar">
+                    <input class="form-control" name="organizer_photo" accept="image/*" type='file' id="my_file" name="my_file"/>
+                      <br/>
+                      <img id="blah" src="../../photo_organizer/<?php echo $organizer_query['organizer_photo']?>" onError="this.onerror=null;this.src='../../images/default.png';" class="img-responsive" style="margin: 0 auto;" />
+                      <br />
+                      <div class="text-center">
                         <p>JPG, GIF or PNG no larger than 1MB. Square images look the best!</p>
-                        <a href="#" class="btn btn-primary btn-round btn-block" >CHOOSE FILE</a>
                       </div>
-                     <?php } ?>
-                    <!-- <p> aa  </p> -->
-                </div>
+                    <script>
+                              function readURL(input) {
+                                  if (input.files && input.files[0]) {
+                                          var reader = new FileReader();
+                                          
+                                          reader.onload = function (e) {
+                                              $('#blah').attr('src', e.target.result);
+                                          }
+                                          
+                                          reader.readAsDataURL(input.files[0]);
+                                      }
+                                  }
+                        
+                                  $("#my_file").change(function(){
+                                      readURL(this);
+                                  });
+                                      </script>
+                    
+                                      <script>
+                                        $(document).ready(function(){
+                                            $("input[type='image']").click(function() {
+                                                $("input[id='my_file']").click(); 
+                                                // ambil designnya di sini
+                    
+                                                
+                                                if (window.FileReader) {
+                                                  //then your code goes here
+                                                } else {
+                                                  alert('This browser does not support FileReader');
+                                                }
+                    
+                    
+                                            });
+                                            // $("#default").click(function(){
+                                            //   $('.nav-tabs a[href="#preview"]').tab('show')
+                                            // });
+                                        });
+                    </script>
+                    
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
