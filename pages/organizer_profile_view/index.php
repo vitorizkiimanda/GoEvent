@@ -1,5 +1,5 @@
 <?php
-    require_once '../backend/organizer_profile.php';
+    require_once '../backend/organizer_profile_view.php';
     if($_GET['organizer_id'])
     {
       $mark = $_GET['organizer_id'];
@@ -124,7 +124,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 text-center">
-        <h1>Nama Organizer Profile</h1>
+        <h1><?php echo $item['organizer_name']?> Profile</h1>
       </div>
     </div>
     <br />
@@ -138,49 +138,49 @@
       <div class="col-lg-9">
               <div>
                 <label for="exampleInputEmail1">Organizer Name</label>
-                <h4>Tampilin Nama</h4>
+                <h4><?php echo $item['organizer_name']?></h4>
                 <br />
               </div>
 
               <div>
                   <label for="exampleInputEmail1">About The Organizer</label>
-                  <h4>Tampilin</h4>
+                  <h4><?php echo $item['organizer_description']?></h4>
                   <br />
               </div>
 
               <div>
                 <label for="exampleInputEmail1">Phone Number</label>
-                <h4>Tampilin</h4>
+                <h4><?php echo $item['organizer_phone_number']?></h4>
                   <br />
               </div>
 
                 <div>
                   <label for="exampleInputEmail1">Address</label>
-                  <h4>Tampilin</h4>
+                  <h4><?php echo $item['organizer_address']?></h4>
                   <br />
                 </div>
 
               <div>
                 <label for="exampleInputEmail1">Website</label>
-                <h4>Tampilin</h4>
+                <h4><?php echo $item['organizer_website']?></h4>
                   <br />
               </div>
 
               <div>
                 <label for="exampleInputEmail1">Facebook Page</label>
-                <h4>Tampilin</h4>
+                <h4><?php echo $item['organizer_facebook']?></h4>
                   <br />
               </div>
 
               <div>
                 <label for="exampleInputEmail1">Twitter</label>
-                <h4>Tampilin</h4>
+                <h4><?php echo $item['organizer_twitter']?></h4>
                   <br />
               </div>
 
               <div>
                 <label for="exampleInputEmail1">Instagram</label>
-                <h4>Tampilin</h4>
+                <h4><?php echo $item['organizer_instagram']?></h4>
                   <br />
               </div>
               <br />

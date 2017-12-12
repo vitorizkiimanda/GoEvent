@@ -105,7 +105,7 @@
         <p><?php echo date('d F Y', strtotime($hasil['event_date_starts'])); ?> </p>
         <br />
         <h3><?php echo $hasil['event_name']?> </h3>
-        <a href="../../pages/organizer_profile_view"><h6>by <?php echo $hasil['organizer_name'] ?></h6></a>
+        <a href="../../pages/organizer_profile_view?organizer_id=<?php echo $hasil['organizer_id']?> "><h6>by <?php echo $hasil['organizer_name'] ?></h6></a>
         <br />
         <br />
         <p>
