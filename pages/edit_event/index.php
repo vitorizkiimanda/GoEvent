@@ -8,7 +8,6 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <?php echo $event_query['event_name']; ?>
   <meta charset="utf-8" />
   <meta name="HVSZ" content="GoEvent" />
 
