@@ -132,11 +132,11 @@
       <div class="tab-content text-center">
         <div id="live" class="tab-pane fade in active">
           <br />
-          <p>You have no live events</p>
+          <p><?php if(mysqli_num_rows($upcoming)==0) echo "You have no live events" ?></p>
 
           <!-- Events Card -->
           <div class="container text-left">
-            <?php while ($item = mysqli_fetch_array($event)) { ?>
+            <?php while ($item = mysqli_fetch_array($upcoming)) { ?>
             <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
             <div class="row">
                 <p><span><?php echo date('M d, Y', strtotime($item['event_date_starts']) )?></span> <span><?php echo date('h:i A', strtotime($item['event_time_starts']))?></span> <span><?php echo $item['event_name'] ?></span></p>
@@ -147,33 +147,8 @@
                 <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
                 <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
                 <hr />
+            </div>
             <?php } ?>
-            </div>
-            <div class="row">
-                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
-                <a href="../../pages/attendance_event"><span class="glyphicon glyphicon-list-alt"></span> Attendance</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/certificate_event"><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
-                <hr />
-            </div>
-            <div class="row">
-                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
-                <a href="../../pages/certificate_event"><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
-                <hr />
-            </div>
-            <div class="row">
-                <p><span>Jan 4, 2018</span> <span>7:00 PM</span></p>
-                <a href="../../pages/certificate_event"><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
-                <a><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
-                <a href="../../pages/event_detail"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
-                <hr />
-            </div>
           </div>
 
 
