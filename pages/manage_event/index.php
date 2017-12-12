@@ -141,7 +141,7 @@
             <div class="row">
                 <p><span><?php echo date('M d, Y', strtotime($item['event_date_starts']) )?></span> <span><?php echo date('h:i A', strtotime($item['event_time_starts']))?></span> <span><?php echo $item['event_name'] ?></span></p>
                 <a href='../../pages/attendance_event/?event_id=".$event_id_encrypt."&status=0'><span class='glyphicon glyphicon-list-alt'></span> Attendance</a>&nbsp&nbsp&nbsp
-                <a href='../../pages/certificate_event'><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
+                <a href='../../pages/certificate_event?event_id=<?php echo $event_id_encrypt; ?>'><span class="glyphicon glyphicon-credit-card"></span> Certificate</a>&nbsp&nbsp&nbsp
                 <a href="#"><span class="glyphicon glyphicon-wrench"></span> Manage</a>&nbsp&nbsp&nbsp
                 <a href="../../pages/create_event"><span class="glyphicon glyphicon-pencil"></span> Edit</a>&nbsp&nbsp&nbsp
                 <a href="../../pages/event_detail/?event_id=<?php echo $event_id_encrypt; ?>"><span class="glyphicon glyphicon-expand"></span> View</a>&nbsp&nbsp&nbsp
