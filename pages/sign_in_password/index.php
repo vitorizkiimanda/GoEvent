@@ -100,7 +100,7 @@
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="">
+              <input type="password" class="form-control" id="password" name="password" placeholder="">z
             </div>
             <button type="submit" class="btn btn-primary btn-round btn-block">Log In</button>
         </form>

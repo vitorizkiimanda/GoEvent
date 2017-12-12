@@ -26,13 +26,13 @@
             // $count = mysqli_fetch_array($avail['count']);
             if($num==0)
             {
-                //header('location: ../attendance_event/index.php?status=1&event_id='.$dec);
+                header('location: ../attendance_event/index.php?status=1&event_id='.$dec);
             }
             else
             {
                 $attendace_update="UPDATE attendant a SET a.status='1', a.arrival_time=CURRENT_TIME() WHERE ticket_id = '$id_attendance' AND a.event_id='$event_id'";
                 $sign = mysqli_query($connect, $attendace_update);                
-                //header('location: ../attendance_event/index.php?status=2&event_id='.$dec);
+                header('location: ../attendance_event/index.php?status=2&event_id='.$dec);
             }
         }
         else

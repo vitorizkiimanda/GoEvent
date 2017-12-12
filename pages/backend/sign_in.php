@@ -12,7 +12,7 @@
                 header('Location: ../backend/sign_in_google');
             }
             else{
-                header('Location: ../sign_in_password/' );                                
+                header('Location: ../sign_in_password?status=0' );                                
             }
         }
         else{
