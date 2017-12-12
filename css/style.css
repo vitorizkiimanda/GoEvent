@@ -171,3 +171,8 @@ html, body {
   border: 5px solid rgba(11,83,133,0.5);
   border-radius: 25px;
 }
+
+.piechart_attendance {
+  width: 500px;
+  height: 500px;
+}

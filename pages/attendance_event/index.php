@@ -50,7 +50,31 @@
   <!-- (Optional) Latest compiled and minified JavaScript translation files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 
-
+  <!-- ini script untuk chart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  
+  <script type="text/javascript">  
+    google.charts.load('current', {'packages':['corechart']});  
+    google.charts.setOnLoadCallback(drawChart);  
+    function drawChart()  
+          {  
+                var data = google.visualization.arrayToDataTable([  
+                          ['status', 'number'],  
+                          <?php  
+                          while($row = mysqli_fetch_array($chart))  
+                          {  
+                               echo "['".$row["status"]."', ".$row["number"]."],";  
+                          }  
+                          ?>  
+                     ]);  
+                var options = {  
+                      title: 'Percentage of Already Arrive and Not Yet Arrive',  
+                      //is3D:true,  
+                      pieHole: 0.4  
+                     };  
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));  
+                chart.draw(data, options);  
+          }  
+  </script> 
 </head>
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
@@ -207,12 +231,13 @@
                 <?php } ?>
             </div>
           </div>
-
-
         </div>
         <div id="chart" class="tab-pane fade">
           <br />
-          <p>Coming Soon</p>
+          <div>    
+                <br />  
+                <div id="piechart" class="piechart_attendance"></div>  
+           </div> 
         </div>
         <div id="special" class="tab-pane fade">
           <br />
