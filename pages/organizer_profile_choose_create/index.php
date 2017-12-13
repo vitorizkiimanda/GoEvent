@@ -139,8 +139,8 @@
       while($row = mysqli_fetch_array($query_organizer))
       {
         if($row['organizer_id'] == 0) continue ; ?>
-        <a href="../create_event?organizer_id= <?php echo $row['organizer_id'] ; ?>">
-          <div class="row card_browse_event">
+        <!-- <a href="../create_event?organizer_id= <?php echo $row['organizer_id'] ; ?>"> -->
+          <div onclick="location.href='../create_event?organizer_id= <?php echo $row['organizer_id'] ; ?>';" style="cursor: pointer;" class="row card_browse_event">
             <div class="col-lg-4 text-center">
               <img src="../../photo_organizer/<?php echo $row['organizer_photo']?>" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
             </div>
@@ -166,7 +166,7 @@
           </div>
       </div>
     </div>
-  </a>
+  <!-- </a> -->
 <?php  }} ?>
     <!-- create_new_button -->
     <a href="../organizer_profile?organizer_id=%200">

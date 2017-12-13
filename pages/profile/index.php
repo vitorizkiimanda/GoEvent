@@ -146,8 +146,8 @@
                   <div class="container">
                     <br />
                     <div class="row">
-                        <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
-                          <div class="col-lg-4 text-center" id="card_event_profile">
+                        <!-- <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" > -->
+                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer;" class="col-lg-4 text-center" id="card_event_profile">
                             
                             <img src='../../photo_event/<?php echo $upcoming[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
                             <br/>
@@ -155,7 +155,7 @@
                               <h4 id="title_card"> <?php echo $upcoming[$i]["event_name"]; ?> </h4>
                               <p id="location_card"> <?php echo $upcoming[$i]["event_city"]; ?> </p>
                           </div>
-                        </a>
+                        <!-- </a> -->
                     </div>
                   </div>
 
@@ -182,8 +182,8 @@
                 <div class="container">
                     <br />
                     <div class="row">
-                        <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
-                          <div class="col-lg-4 text-center" id="card_event_profile">
+                        <!-- <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" > -->
+                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer;" class="col-lg-4 text-center" id="card_event_profile">
                             
                             <img src='../../photo_event/<?php echo $bookmark[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
                             <br/>
@@ -191,7 +191,7 @@
                               <h4 id="title_card"> <?php echo $bookmark[$i]["event_name"]; ?> </h4>
                               <p id="location_card"> <?php echo $bookmark[$i]["event_city"]; ?> </p>
                           </div>
-                        </a>
+                        <!-- </a> -->
                     </div>
                   </div>
             <?php } ?>
@@ -212,8 +212,8 @@
                 <div class="container">
                     <br />
                     <div class="row">
-                        <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
-                          <div class="col-lg-4 text-center" id="card_event_profile">
+                        <!-- <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" > -->
+                          <div ../../pages/event_detail?event_id=<?php echo $event_id_encrypt?> class="col-lg-4 text-center" id="card_event_profile">
                             
                             <img src='../../photo_event/<?php echo $past[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
                             <br/>
@@ -221,7 +221,7 @@
                               <h4 id="title_card"> <?php echo $past[$i]["event_name"]; ?> </h4>
                               <p id="location_card"> <?php echo $past[$i]["event_city"]; ?> </p>
                           </div>
-                        </a>
+                        <!-- </a> -->
                     </div>
                   </div>
                     
