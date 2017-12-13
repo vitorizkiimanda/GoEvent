@@ -1,6 +1,11 @@
 <?php
     require_once '../backend/dbconnect.php';
     require_once '../backend/account_setting.php';
+
+    if (isset($_GET['Message'])) {
+      $message = $_GET['Message'];
+      echo "<script type='text/javascript'>alert('$message');</script>";
+    }
     
 ?>
 
@@ -337,27 +342,49 @@
         <h3>Your Password</h3>
         <hr />
         <form action="#" enctype="multipart/form-data" method="post">
+<!-- 
+        <input type="password" placeholder="Password" id="password" required>
+        <input type="password" placeholder="Confirm Password" id="confirm_password" required>
+
+        <button type="submit" class="pure-button pure-button-primary">Confirm</button> -->
+
                 <div class="form-group">
                   <label for="exampleInputEmail1">Current Password</label>
-                  <input type="password" name="user_password" class="form-control" id="exampleInputEmail1">
+                  <input type="password" name="user_password" class="form-control" id="current_password" required>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">New Password</label>
-                    <input type="password" name="user_password_new" class="form-control" id="exampleInputEmail1">
+                    <input type="password" name="user_password_new" class="form-control" id="password_new" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Repeat Password</label>
-                  <input type="password" name="user_password_new_validate" class="form-control" id="exampleInputEmail1">
+                  <input type="password" name="user_password_new_validate" class="form-control" id="confirm_password_new" required>
                 </div>
 
                 <br />
                 <div class="row">
 
-                    <button type="submit" class="btn btn-primary btn-round btn-block">Save</button>
+                    <button id="password_button" type="submit" class="btn btn-primary btn-round btn-block">Save</button>
 
                 </div>
+                        
+                <script>
+                  var password = document.getElementById("password_new")
+                    , confirm_password = document.getElementById("confirm_password_new");
+
+                  function validatePassword(){
+                    if(password.value != confirm_password.value) {
+                      confirm_password.setCustomValidity("Passwords Don't Match");
+                    } else {
+                      confirm_password.setCustomValidity('');
+                    }
+                  }
+
+                  password.onchange = validatePassword;
+                  confirm_password.onkeyup = validatePassword;
+                  </script>
             </form>
       </div>
 

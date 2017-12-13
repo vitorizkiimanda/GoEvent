@@ -31,7 +31,7 @@
         $query = mysqli_query($connect,  "SELECT user_name, user_email, user_city, user_photo 
         FROM user WHERE user_id='$id'");
     
-        if(mysqli_num_rows($query)>0){
+        if(mysqli_num_rows($query_email)>0){
             $data = mysqli_fetch_assoc($query);
             $_SESSION['user_name']  = $data['user_name'];
             $_SESSION['user_email']  = $data['user_email'];            
@@ -44,20 +44,28 @@
     }
 
     else if(!empty($_POST['user_password'])){
-        $user_password = $_POST['user_password'];
-        $user_password_new = $_POST['user_password_new'];        
+        $aww = $_POST['user_password'];
+        $user_password = md5($aww);
+
+        $user_password_new = $_POST['user_password_new'];    
+        $user_password_new_validate = $_POST['user_password_new_validate'];    
         $encrypt_password = md5($user_password_new);
         
         $query_pass = mysqli_query($connect,  "SELECT user_name, user_email, user_city, user_photo 
         FROM user WHERE user_id='$id' AND user_password='$user_password'");
 
-        if(mysqli_num_rows($query)>0){
-            $query_email =mysqli_query($connect, "UPDATE user   SET user_password = '$encrypt_password'
-                                                                WHERE user_id = '$id'");
+        if(mysqli_num_rows($query_pass)>0){
+                $query_email =mysqli_query($connect, "UPDATE user   SET user_password = '$encrypt_password'
+                WHERE user_id = '$id'"); 
+
+                $Message = "Password Change Success";
+                header("Location: ../../pages/account_setting?Message=$Message&event_id= echo $count ");
+            
             
         }
         else{
-            echo "false";
+            $Message = "Password Wrong";
+            header("Location: ../../pages/account_setting?Message=$Message&event_id= echo $count ");
         }
 
     }
