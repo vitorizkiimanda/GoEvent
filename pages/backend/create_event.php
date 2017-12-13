@@ -52,7 +52,7 @@
       $q2 = $connect->query($sqlticket);
       if ( $q2 === true) {
         $Message = "Create Event Success";
-        header("Location: ../../pages/certificate_event?Message=" . urlencode($Message));
+        header("Location: ../../pages/certificate_event?Message=. urlencode($Message)&event_id= echo $count ");
 
       }
       else {
