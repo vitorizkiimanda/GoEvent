@@ -123,7 +123,7 @@ $organizer_id = $_GET['organizer_id'];
         <form action="../backend/create_event.php" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <label for="exampleInputEmail1">Event Title</label>
-              <input type="text" name="event_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name" required >
+              <input type="text" name="event_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name" autofocus required >
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Location</label>
