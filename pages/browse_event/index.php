@@ -218,6 +218,7 @@
             </div>
           <!-- </a> -->
           <?php } ?>
+          <?php if(mysqli_num_rows($event)==0) echo "not found"?>
       </div>
     </div>
   </div>
