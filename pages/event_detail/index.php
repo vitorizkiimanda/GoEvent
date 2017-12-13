@@ -144,20 +144,24 @@
       </div>
     </div>
 
-    <?php if(isset($_SESSION['user_id'])) {?>
+    <?php if(isset($_SESSION['user_id'])) {
+      $_SESSION['event'] = $event_id ;
+      ?>
     <script>
     $(document).ready(function(){
         $("#bookmark_button").click(function(){
           var x = 1 ;
+          var ev = '<?php echo $_SESSION['event']; ?>';
           window.alert("Bookmark");
-          $.post('bookmark_on.php', { x }, function(result) {
-
+          $.post('bookmark_on.php', { x , ev }, function(result) {
+            
           });
         });
         $("#unbookmark_button").click(function(){
           var x = 2 ;
+          var ev = '<?php echo $_SESSION['event']; ?>';
           window.alert("Unbookmark");
-          $.post('bookmark_on.php', { x }, function(result) {
+          $.post('bookmark_on.php', { x , ev }, function(result) {
 
           });
         });
