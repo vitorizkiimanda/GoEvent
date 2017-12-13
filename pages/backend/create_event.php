@@ -29,6 +29,8 @@
        $ticket_time_ends = $_POST['ticket_time_ends'];
        $event_type = $_POST['event_type'];
        $event_topic = $_POST['event_topic'];
+       $latitude = $_POST['latitude'];
+       $longitude = $_POST['longitude'];
 
         //dapetin id yg terakhir
         $count = mysqli_query($connect, "SELECT event_id FROM events ORDER BY event_id DESC");
@@ -46,8 +48,8 @@
         move_uploaded_file($photo_file, $photo_path);
         $certificate_name = 'certificate_template';
 
-      $sqlticket = "INSERT INTO events (event_id,   event_name,   event_city, event_date_starts,  event_time_starts,    event_date_ends,  event_time_ends,    event_capacity,   event_certificate,  event_description,   event_video, event_photo, organizer_id,ticket_name, ticket_quantity, ticket_price, ticket_description,ticket_date_starts, ticket_time_starts, ticket_date_ends, ticket_time_ends, event_type ,  event_topic)
-                        VALUES ('','$event_name','$event_city','$event_date_starts','$event_time_starts','$event_date_ends','$event_time_ends','$event_capacity','$certificate_name','$ckeditor', '$event_video', '$photo_name','$organizer_id','$ticket_name', '$ticket_quantity', '$ticket_price', '$ticket_description','$ticket_date_starts','$ticket_time_starts','$ticket_date_ends','$ticket_time_ends','$event_type','$event_topic')";
+      $sqlticket = "INSERT INTO events (event_id,   event_name,   event_city, event_date_starts,  event_time_starts,    event_date_ends,  event_time_ends,    event_capacity,   event_certificate,  event_description,   event_video, event_photo, organizer_id,ticket_name, ticket_quantity, ticket_price, ticket_description,ticket_date_starts, ticket_time_starts, ticket_date_ends, ticket_time_ends, event_type ,  event_topic , latitude ,  longitude )
+                        VALUES ('','$event_name','$event_city','$event_date_starts','$event_time_starts','$event_date_ends','$event_time_ends','$event_capacity','$certificate_name','$ckeditor', '$event_video', '$photo_name','$organizer_id','$ticket_name', '$ticket_quantity', '$ticket_price', '$ticket_description','$ticket_date_starts','$ticket_time_starts','$ticket_date_ends','$ticket_time_ends','$event_type','$event_topic','$latitude', '$longitude')";
 
       $q2 = $connect->query($sqlticket);
       if ( $q2 === true) {
