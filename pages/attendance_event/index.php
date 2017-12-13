@@ -131,7 +131,7 @@
                 <li><a href="../profile">Bookmarks</a></li>
                 <li><a href="../profile">Certificates</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                 <li><a href="../manage_event">Manage Events</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="../account_setting">Account Settings</a></li>
@@ -179,7 +179,7 @@
   <div class="container text-center">
     <?php
       $status = $_GET['status'];
-      if($status==0) echo '<h4><span class="text-center label label-success">Input Ticket id here</span></h4>';
+      // if($status==0) echo '<h4><span class="text-center label label-success">Input Ticket id here</span></h4>';
       if($status==1) echo '<h4><span class="text-center label label-danger">Tiket Id Not Found</span></h4>';
       if($status==2) echo '<h4><span class="text-center label label-success">Success Sign Tiket</span></h4>';
     ?>
@@ -202,21 +202,27 @@
           <!-- Table -->
           <div class="container">
             <div class="row text-center">
-                <div class="col-lg-6">
-                  Name
+                <div class="col-lg-3 text-left">
+                  <b>Name
+                </div>
+                <div class="col-lg-3">
+                  ID
                 </div>
                 <div class="col-lg-3">
                   Arrival Time
                 </div>
                 <div class="col-lg-3">
-                  Status
+                  Status</b>
                 </div>
                 <br />
                 <hr />
             </div>
             <div class="row">
                 <?php while ($item = mysqli_fetch_array($attendance_table)) { ?>
-                <div class="col-lg-6 text-left">
+                <div class="col-lg-3 text-left">
+                  <p><?php echo $item['user_name']?><br /><p>
+                </div>
+                <div class="col-lg-3 text-center">
                   <p><?php echo $item['user_name']?><br /><p>
                 </div>
                 <div class="col-lg-3 text-center">
