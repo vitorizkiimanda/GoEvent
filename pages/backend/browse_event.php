@@ -243,4 +243,11 @@
             }
         }
     }
+
+    if(isset($_POST['search']))
+    {
+        $input = $_POST['search_input'];
+        $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_name LIKE '%{$input}%' LIMIT 15";
+        $event = mysqli_query($connect, $event_query);
+    }
 ?>

@@ -62,11 +62,11 @@
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <form class="navbar-form navbar-left">
+              <form class="navbar-form navbar-left" method="post">
                   <div class="form-group">
-                    <input type="text" class="form-control col-lg-12" placeholder="Search">
+                    <input type="text" name="search_input" class="form-control col-lg-12" placeholder="Search">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="submit" name="search" class="btn btn-default">Search</button>
               </form>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="../../pages/browse_event">Browse Event</a></li>
