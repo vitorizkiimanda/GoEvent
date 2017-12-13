@@ -149,13 +149,16 @@
     $(document).ready(function(){
         $("#bookmark_button").click(function(){
           window.alert("Bookmark");
-          <?php $sql2 = "INSERT INTO bookmark (user_id, event_id) VALUES ('$user_id', '$event_id')";
-          $connect->query($sql2)  ?>
+          $.post('bookmark_on.php', { x }, function(result) { 
+                  
+          }); 
         });
         $("#unbookmark_button").click(function(){
+          $.post('bookmark_off.php', { x }, function(result) { 
+                  
+          }); 
           window.alert("Unbookmark");
-          <?php $sql2 = "DELETE FROM bookmark WHERE user_id ='$user_id' and event_id = '$event_id' ";
-          $connect->query($sql2);  ?>
+          
         });
     });
     </script>
