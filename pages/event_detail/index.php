@@ -129,7 +129,7 @@
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
           </button>
         <?php } else { ?>
-          <button id="unbookmark_button" type="button" class="btn btn-danger" aria-label="Left Align">
+          <button id="unbookmark_button" type="button" class="btn btn-success" aria-label="Left Align">
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
           </button>
         <?php } ?>
@@ -152,18 +152,23 @@
         $("#bookmark_button").click(function(){
           var x = 1 ;
           var ev = '<?php echo $_SESSION['event']; ?>';
-          window.alert("Bookmark");
+          // window.alert("Bookmark");
           $.post('bookmark_on.php', { x , ev }, function(result) {
             
           });
+          
+        location.reload();
+          
         });
         $("#unbookmark_button").click(function(){
           var x = 2 ;
           var ev = '<?php echo $_SESSION['event']; ?>';
-          window.alert("Unbookmark");
+          // window.alert("Unbookmark");
           $.post('bookmark_on.php', { x , ev }, function(result) {
 
           });
+          
+        location.reload();
         });
     });
     </script>
