@@ -39,23 +39,22 @@
      //
 
     //  pilih penempatan
-         if($temp==1){
+         if($temp=="1"){
              $origin_x = 210;
              $origin_y = 100;
          }
 
-         else if($temp==2){
+         else if($temp=="2"){
              $origin_x = 210;
              $origin_y = 290;
          }
 
-         else if($temp==3){
+         else if($temp=="3"){
              $origin_x = 210;
              $origin_y = 490;
          }
 
          else{
-             
          }
      //
 
@@ -80,7 +79,6 @@
         // $font       = '../../fonts/glyphicons-halflings-regular.ttf';
         // $color      = imagecolorallocate( $o_gambar, 0, 0, 0 );        
     }
-    
         
 
 

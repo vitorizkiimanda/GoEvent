@@ -1,5 +1,6 @@
 <?php
   require_once('../backend/certificate_mantab.php');
+  
   if (isset($_GET['Message'])) {
     print '<script type="text/javascript">alert("' . $_GET['Message'] . '");';
   }
@@ -105,7 +106,7 @@
                 <li><a href="../profile">Bookmarks</a></li>
                 <li><a href="../profile">Certificates</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                 <li><a href="../manage_event">Manage Events</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="../account_setting">Account Settings</a></li>
@@ -116,7 +117,7 @@
                header('Location: ../sign_in/' );
               } ?>
 
-              <li><a href="../../pages/create_event">Create Event</a></li>
+              <li><a href="../../pages/organizer_profile_choose_create">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -183,32 +184,36 @@
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
               <div class="col-lg-4 template_certificate">
                 <a id="temp1" href="#">
-                  <img src="../../images/certificate_temp_1.jpg" alt="template1" class="img-responsive hover" />
-                  <?php $_SESSION['temp']=1; ?>
+                  <img src="../../images/certificate_temp_1.jpg" alt="template1" class="img-responsive hover" />  
                 </a>
               </div>
               <div class="col-lg-4 template_certificate">
               <a id="temp2" href="#">
                 <img src="../../images/certificate_temp_2.jpg" alt="template2" class="img-responsive hover" />
-                <?php $_SESSION['temp']=2; ?>
-              </a>
+                </a>
               </div>
               <div class="col-lg-4 template_certificate">
               <a id="temp3" href="#">
                 <img src="../../images/certificate_temp_3.jpg" alt="template3" class="img-responsive hover" />
-                <?php $_SESSION['temp']=3; ?>
-              </a>
+                </a>
               </div>
           </div>
           <script>
+          var x=1;
           $('.template_certificate').click(function() {
             $(this).toggleClass('selected_certificate')
               .siblings().removeClass('selected_certificate')
           });
           $(document).ready(function(){
+            
               $("#temp1").click(function(){
                 // $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
+                x = 1;
+                $.post('certificate_temp.php', { x }, function(result) { 
+                  
+                }); 
+                
                 
                   // $_SESSION['temp']=1;
                 //
@@ -216,6 +221,10 @@
               $("#temp2").click(function(){
                 // $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
+                x = 2;
+                $.post('certificate_temp.php', { x }, function(result) { 
+                  
+                }); 
 
                       
                 //
@@ -223,11 +232,23 @@
               $("#temp3").click(function(){
                 // $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
+                 x = 3;
+                 $.post('certificate_temp.php', { x }, function(result) { 
+                  
+                }); 
 
+                //
+              });
+              $("#submit_button").click(function(){
+                // $('.nav-tabs a[href="#pick"]').tab('show')
+                // ambil id templatenya disini
+                
+                
                 //
               });
           });
           </script>
+          
 
       <h2>Pick Design</h2>
       <hr />
@@ -340,8 +361,9 @@
         <div class="col-lg-4">
 
         <?php if($cek==0){ ?>
+          <!-- <input type="hidden" name="event_id" value=""> -->
            <input type="hidden" name="event_id" value="<?php echo $event_id;?>" >
-            <button  type="submit"  class="btn btn-info btn-lg btn-block">Submit</button>
+            <button id="submit_button"  type="submit"  class="btn btn-info btn-lg btn-block">Submit</button>
             </form>
         <?php }else {?>
           <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
