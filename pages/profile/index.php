@@ -147,7 +147,7 @@
             for($i=0; $i<count($upcoming); $i++){?>
                 <?php $event_id_encrypt = base64_encode($upcoming[$i]['event_id']); ?>
                   
-                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer; border: 10px solid white; background-color: #f1f1f1;" class="col-lg-4 text-center" id="card_event_profile">
+                          <div onclick="location.href='../../pages/ticket?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer; border: 10px solid white; background-color: #f1f1f1;" class="col-lg-4 text-center" id="card_event_profile">
 
                             <img src='../../photo_event/<?php echo $upcoming[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
                             <br/><br/>
