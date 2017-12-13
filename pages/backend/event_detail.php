@@ -28,6 +28,11 @@ $sql= "SELECT * FROM events e INNER JOIN organizer o ON e.organizer_id = o.organ
 $queri = $connect->query($sql);
 $hasil = $queri->fetch_assoc();
 
+$organizer = $hasil['organizer_id'];
+$sql2 = "SELECT * FROM user u INNER JOIN user_organizer uo ON u.user_id = uo.user_id WHERE organizer_id = '$organizer'";
+$queri2 = $connect->query($sql2);
+$hasil2 = $queri2->fetch_assoc();
+
 
 
 ?>
