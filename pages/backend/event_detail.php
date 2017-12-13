@@ -11,7 +11,7 @@ if(isset($_SESSION['user_id'])){
     if($connect->query($sql2)) echo "brehasil " ;
     else echo "gagal" ;
   }
-  
+
   function _del()
   {
     $sql2 = "DELETE FROM bookmark WHERE user_id ='$user_id' and event_id = '$event_id' ";

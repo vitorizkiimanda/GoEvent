@@ -29,7 +29,7 @@
        $photo_size = $_FILES['event_photo']['size'];
        $photo_type = $_FILES['event_photo']['type'];
        $photo_file = $_FILES['event_photo']['tmp_name'];
-       $sub_photo = substr($photo_type,6);
+       $sub_photo = substr($photo_name,-6);
        $photo_name = $event_id.'_photo.'.$sub_photo;
        $photo_path = "../../photo_event/".$photo_name;
        move_uploaded_file($photo_file, $photo_path);
