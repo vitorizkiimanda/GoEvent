@@ -196,6 +196,7 @@
 
       <div class="col-lg-9">
           <h1>Events Just For You</h1>
+          <hr />
           <?php while ($item = mysqli_fetch_array($event)) { ?>
           <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
           <!-- looping events card -->
@@ -218,7 +219,7 @@
             </div>
           <!-- </a> -->
           <?php } ?>
-          <?php if(mysqli_num_rows($event)==0) echo "not found"?>
+          <?php if(mysqli_num_rows($event)==0) echo "<h3><i>Sorry, we couldn't find any event that match your desire :(</i></h3>"?>
       </div>
     </div>
   </div>
