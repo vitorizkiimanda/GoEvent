@@ -172,7 +172,7 @@
     <div class="row">
       <?php while ($item = mysqli_fetch_array($event)) { ?>
         <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
-        <a href="pages/event_detail/index.php?event_id=<?php echo $event_id_encrypt?>" >
+        <a style="display:block;width:100%;height:100%;" href="pages/event_detail/index.php?event_id=<?php echo $event_id_encrypt?>" >
           <div class="col-lg-4 text-center" id="card_event">
             <img src='photo_event/<?php echo $item['event_photo']; ?>' width='200' height='200' id="card_event2">
             <br/>
