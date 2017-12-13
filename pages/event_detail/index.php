@@ -154,11 +154,11 @@
           var ev = '<?php echo $_SESSION['event']; ?>';
           // window.alert("Bookmark");
           $.post('bookmark_on.php', { x , ev }, function(result) {
-            
+
           });
-          
+
         location.reload();
-          
+
         });
         $("#unbookmark_button").click(function(){
           var x = 2 ;
@@ -167,7 +167,7 @@
           $.post('bookmark_on.php', { x , ev }, function(result) {
 
           });
-          
+
         location.reload();
         });
     });
@@ -214,14 +214,46 @@
               <a>Add to Calendar</a></p>
             <br />
             <h5><b>LOCATION</b></h5>
-            <p> <?php echo $hasil['event_city']?><br /><a>View Map</a></p>
+            <p> <?php echo $hasil['event_city']?><br />
+
+              <div class="postmap">
+                   <div id="map" style="width:145%;height:300px;"></div>
+                   <div class="w3-text-white mapdetail hide-on-med-and-down">
+                         <div class="col s6"><strong>Latitude : </strong><span id="latspan"></span></div>
+                         <div class="col s6"><strong>Longitude: </strong><span id="lngspan"></span></div>
+                   </div>
+              </div>
+
+             <script type="text/javascript">
+              function initMap() {
+                var wisata = {lat: <?php echo $hasil['latitude']; ?>, lng: <?php echo $hasil['longitude']; ?>};
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                  center: wisata,
+                  scrollwheel: false,
+                  zoom: 12
+                });
+
+                var marker = new google.maps.Marker({
+                  map: map,
+                  position: wisata,
+                  title: '<?php echo $hasil['event_city'] ?>'
+                });
+
+                google.maps.event.addListener(map, 'mousemove', function(event){
+                  document.getElementById('latspan').innerHTML = event.latLng.lat();
+                  document.getElementById('lngspan').innerHTML = event.latLng.lng();
+                });
+              }
+             </script>
+             <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb_wit1zaI8b-PdijBl0KWd705ZSdCAo&callback=initMap">
+             </script>
+
         </div>
         <div class="col-lg-1"></div>
     </div>
-
-
   </div>
-
 
   <!-- footer -->
   <footer>

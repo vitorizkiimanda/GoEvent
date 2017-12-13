@@ -24,6 +24,8 @@
    $ticket_time_ends = $_POST['ticket_time_ends'];
    $event_type = $_POST['event_type'];
    $event_topic = $_POST['event_topic'];
+   $latitude = $_POST['latitude'];
+   $longitude = $_POST['longitude'];
 
        if( file_exists($_FILES['event_photo']['tmp_name']) && is_uploaded_file($_FILES['event_photo']['tmp_name'])){
 
@@ -55,7 +57,9 @@
                           ticket_date_ends = '$ticket_date_ends' ,
                           ticket_time_ends = '$ticket_time_ends' ,
                           event_type = '$event_type' ,
-                          event_topic = '$event_topic'
+                          event_topic = '$event_topic' ,
+                          latitude = '$latitude' ,
+                          longitude = '$longitude'
                           WHERE event_id = '$event_id'";
         }
         else {
@@ -77,7 +81,9 @@
                             ticket_date_ends = '$ticket_date_ends' ,
                             ticket_time_ends = '$ticket_time_ends' ,
                             event_type = '$event_type' ,
-                            event_topic = '$event_topic'
+                            event_topic = '$event_topic' ,
+                            latitude = '$latitude' ,
+                            longitude = '$longitude'
                             WHERE event_id = '$event_id'";
         }
         if ($connect->query($sql) === true) {
