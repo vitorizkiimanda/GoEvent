@@ -148,17 +148,18 @@
     <script>
     $(document).ready(function(){
         $("#bookmark_button").click(function(){
+          var x = 1 ;
           window.alert("Bookmark");
-          $.post('bookmark_on.php', { x }, function(result) { 
-                  
-          }); 
+          $.post('bookmark_on.php', { x }, function(result) {
+
+          });
         });
         $("#unbookmark_button").click(function(){
-          $.post('bookmark_off.php', { x }, function(result) { 
-                  
-          }); 
+          var x = 2 ;
           window.alert("Unbookmark");
-          
+          $.post('bookmark_on.php', { x }, function(result) {
+
+          });
         });
     });
     </script>
