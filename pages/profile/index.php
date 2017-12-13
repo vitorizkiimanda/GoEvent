@@ -1,9 +1,9 @@
 <?php
-    require_once '../backend/dbconnect.php';    
+    require_once '../backend/dbconnect.php';
     require_once '../backend/attendant.php';
     require_once '../backend/bookmark.php';
     require_once '../backend/certificate.php';
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -139,42 +139,42 @@
       <div class="tab-content text-center">
         <div id="upcoming" class="tab-pane fade in active">
           <br />
-          <?php if($upcoming!=0) { 
+          <?php if($upcoming!=0) {
             for($i=0; $i<count($upcoming); $i++){?>
                 <?php $event_id_encrypt = base64_encode($upcoming[$i]['event_id']); ?>
                   <!-- Events Card -->
                   <div class="container">
                     <br />
                     <div class="row">
-                        <!-- <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" > -->
                           <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer;" class="col-lg-4 text-center" id="card_event_profile">
-                            
+
                             <img src='../../photo_event/<?php echo $upcoming[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
                             <br/>
                               <p id="date_card"> <?php echo date('d F Y', strtotime($upcoming[$i]['event_date_starts'])); ?> </p>
                               <h4 id="title_card"> <?php echo $upcoming[$i]["event_name"]; ?> </h4>
                               <p id="location_card"> <?php echo $upcoming[$i]["event_city"]; ?> </p>
+                              <p id="ticket_card"> <?php echo $upcoming[$i]["ticket_id"]; ?> </p>
                           </div>
                         <!-- </a> -->
                     </div>
                   </div>
 
           <?php } ?>
-          
+
           <?php } else { ?>
           <p>You have no upcoming events</p>
           <?php } ?>
 
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
 
-         
+
 
 
         </div>
         <div id="bookmark" class="tab-pane fade">
           <br />
 
-          <?php if($bookmark!=0) { 
+          <?php if($bookmark!=0) {
             for($i=0; $i<count($bookmark); $i++){?>
                 <?php $event_id_encrypt = base64_encode($bookmark[$i]['event_id']); ?>
 
@@ -182,9 +182,8 @@
                 <div class="container">
                     <br />
                     <div class="row">
-                        <!-- <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" > -->
                           <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer;" class="col-lg-4 text-center" id="card_event_profile">
-                            
+
                             <img src='../../photo_event/<?php echo $bookmark[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
                             <br/>
                               <p id="date_card"> <?php echo date('d F Y', strtotime($bookmark[$i]['event_date_starts'])); ?> </p>
@@ -195,8 +194,8 @@
                     </div>
                   </div>
             <?php } ?>
-            
-            
+
+
           <?php } else { ?>
             <p>Bookmarked events will show up here</p>
           <?php } ?>
@@ -205,7 +204,7 @@
         <div id="past" class="tab-pane fade">
           <br />
 
-          <?php if($past!=0) { 
+          <?php if($past!=0) {
               for($i=0; $i<count($past); $i++){?>
                 <?php $event_id_encrypt = base64_encode($past[$i]['event_id']); ?>
                   <!-- Events Card -->
@@ -213,8 +212,8 @@
                     <br />
                     <div class="row">
                         <!-- <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" > -->
-                          <div ../../pages/event_detail?event_id=<?php echo $event_id_encrypt?> class="col-lg-4 text-center" id="card_event_profile">
-                            
+                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" class="col-lg-4 text-center" id="card_event_profile">
+
                             <img src='../../photo_event/<?php echo $past[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
                             <br/>
                               <p id="date_card"> <?php echo date('d F Y', strtotime($past[$i]['event_date_starts'])); ?> </p>
@@ -224,10 +223,10 @@
                         <!-- </a> -->
                     </div>
                   </div>
-                    
+
               <?php } ?>
-              
-              
+
+
             <?php } else { ?>
               <p>You have no past events</p>
             <?php } ?>
@@ -236,7 +235,7 @@
         </div>
         <div id="certificate" class="tab-pane fade">
           <br />
-          <?php if($certificate!=0) { 
+          <?php if($certificate!=0) {
               for($i=0; $i<count($certificate); $i++){?>
                 <?php $event_id_encrypt = base64_encode($certificate[$i]['event_id']); ?>
 
@@ -253,8 +252,8 @@
                 </div>
 
               <?php } ?>
-              
-              
+
+
             <?php } else { ?>
               <p>You have no certificate yet</p>
             <?php } ?>
