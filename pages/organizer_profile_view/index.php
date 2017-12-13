@@ -114,7 +114,7 @@
                header('Location: ../sign_in/' );
               } ?>
 
-              <li><a href="../../pages/create_event">Create Event</a></li>
+              <li><a href="../../pages/organizer_profile_choose_create">Create Event</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -123,8 +123,9 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-10 text-center">
+      <div class="col-lg-12 text-center">
         <h1><?php echo $item['organizer_name']?> Profile</h1>
+        <hr />
       </div>
     </div>
     <br />
@@ -137,51 +138,59 @@
       </div>
       <div class="col-lg-9">
               <div>
-                <label for="exampleInputEmail1">Organizer Name</label>
-                <h4><?php echo $item['organizer_name']?></h4>
-                <br />
+                <label id="date_card" style="font-size: 18px;" for="exampleInputEmail1">Organizer Name</label>
+                <h4 id="date_card" style="font-size: 32px;"><?php echo $item['organizer_name']?></h4>
+
+                <hr />
               </div>
 
               <div>
-                  <label for="exampleInputEmail1">About The Organizer</label>
-                  <h4><?php echo $item['organizer_description']?></h4>
-                  <br />
+                  <label id="date_card" style="font-size: 18px;" for="exampleInputEmail1">About The Organizer</label>
+                  <h4 id="date_card" style="font-size: 16px;"><?php echo $item['organizer_description']?></h4>
+                  
+                <hr />
               </div>
 
               <div>
-                <label for="exampleInputEmail1">Phone Number</label>
-                <h4><?php echo $item['organizer_phone_number']?></h4>
-                  <br />
+                <label id="date_card" style="font-size: 18px;" for="exampleInputEmail1">Phone Number</label>
+                <h4 id="date_card" style="font-size: 28px;"><?php echo $item['organizer_phone_number']?></h4>
+                  
+                <hr />
               </div>
 
                 <div>
-                  <label for="exampleInputEmail1">Address</label>
-                  <h4><?php echo $item['organizer_address']?></h4>
-                  <br />
+                  <label id="date_card" style="font-size: 18px;" for="exampleInputEmail1">Address</label>
+                  <h4 id="date_card" style="font-size: 24px;"><?php echo $item['organizer_address']?></h4>
+                  
+                <hr />
                 </div>
 
               <div>
-                <label for="exampleInputEmail1">Website</label>
-                <h4><?php echo $item['organizer_website']?></h4>
-                  <br />
+                <label id="date_card" style="font-size: 18px;" for="exampleInputEmail1">Website</label>
+                <h4 id="date_card" style="font-size: 24px;"><?php echo $item['organizer_website']?></h4>
+                  
+                <hr />
               </div>
 
               <div>
-                <label for="exampleInputEmail1">Facebook Page</label>
-                <h4><?php echo $item['organizer_facebook']?></h4>
-                  <br />
+                <label id="date_card" style="font-size: 18px;" for="exampleInputEmail1">Facebook Page</label>
+                <h4 id="date_card" style="font-size: 24px;"><?php echo $item['organizer_facebook']?></h4>
+                  
+                <hr />
               </div>
 
               <div>
-                <label for="exampleInputEmail1">Twitter</label>
-                <h4><?php echo $item['organizer_twitter']?></h4>
-                  <br />
+                <label id="date_card" style="font-size: 18px;" for="exampleInputEmail1">Twitter</label>
+                <h4 id="date_card" style="font-size: 24px;"><?php echo $item['organizer_twitter']?></h4>
+                  
+                <hr />
               </div>
 
               <div>
-                <label for="exampleInputEmail1">Instagram</label>
-                <h4><?php echo $item['organizer_instagram']?></h4>
-                  <br />
+                <label id="date_card" style="font-size: 18px;" for="exampleInputEmail1">Instagram</label>
+                <h4 id="date_card" style="font-size: 24px;"><?php echo $item['organizer_instagram']?></h4>
+                  
+                <hr />
               </div>
               <br />
       </div>

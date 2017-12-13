@@ -45,7 +45,7 @@
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 
-<body class="page_background_snow">
+<body class="page_background_snow" style="background-color: #f1f1f1 !important;">
   <!-- NavBar -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -90,7 +90,7 @@
                 <li><a href="../profile">Bookmarks</a></li>
                 <li><a href="../profile">Certificates</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="../organizer_profile">Organizer Profile</a></li>
+                <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                 <li><a href="../manage_event">Manage Events</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="../account_setting">Account Settings</a></li>
@@ -195,7 +195,7 @@
         
 
       <div class="col-lg-9">
-          <h1>Jakarta, Indonesia Events Just For You</h1>
+          <h1>Events Just For You</h1>
           <?php while ($item = mysqli_fetch_array($event)) { ?>
           <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
           <!-- looping events card -->

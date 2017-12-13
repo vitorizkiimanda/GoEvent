@@ -45,7 +45,7 @@
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 
-<body class="page_background_snow">
+<body class="page_background_snow" style="background-color: #f1f1f1 !important;">
   <!-- NavBar -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">

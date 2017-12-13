@@ -289,14 +289,13 @@
                 <input type="text" name="organizer_instagram" class="form-control" id="exampleInputEmail1" value= "<?php echo $organizer_query['organizer_instagram']?>" >
               </div>
               <br />
-              <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3">
+              <div>
+                
                   <input type="hidden" name="organizer_id" value="<?php echo $mark?>" >
                   <button type="submit" class="btn btn-primary btn-round btn-block">Save</button>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
+                <!-- <div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
                   <a href="../../pages/organizer_profile_attendance" class="btn btn-success btn-round btn-block">View Profile</a>
-                </div>
+                </div> -->
               </div>
           </form>
       </div>

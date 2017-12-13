@@ -243,15 +243,12 @@ $organizer_id = $_GET['organizer_id'];
               <div class="col-lg-6">
                 <h3>Starts</h3>
                   <div class="col-lg-6">
-                  <?php
-                    date_default_timezone_set("Asia/Bangkok");
-                  ?>
                     
                       <p>Date: <input type="date" min='<?php echo date("Y-m-d"); ?>' name="event_date_starts" id="datepicker" required ></p>
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="time"  name="event_time_starts" class="form-control" id="exampleInputEmail1" placeholder="am/pm" required >
+                        <input type="time"  name="event_time_starts" class="form-control" id="time_start" placeholder="am/pm" required >
                   </div>
               </div>
               <div class="col-lg-6">
@@ -261,7 +258,7 @@ $organizer_id = $_GET['organizer_id'];
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="time" name="event_time_ends" class="form-control" id="exampleInputEmail1" placeholder="am/pm" required >
+                        <input type="time" name="event_time_ends" class="form-control" id="time_end" placeholder="am/pm" required >
                   </div>
               </div>
             </div>

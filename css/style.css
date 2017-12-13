@@ -74,7 +74,8 @@ html, body {
 
 #card_event {
   background-color: white; 
-  border: 10px solid #f8f8fa;
+  border: 10px solid #f1f1f1;
+  /* background-color: #e0e0e0;  */
 
   /* height: 45vh;  */
   padding: 0vh 1vw 1vh 1vw; 
@@ -83,8 +84,7 @@ html, body {
 }
 
 #card_event_profile {
-  background-color: #f8f8fa; 
-  /* border: 10px solid #f8f8fa; */
+  background-color: #f1f1f1;
 
   /* height: 45vh;  */
   padding: 0vh 1vw 1vh 1vw; 
@@ -152,7 +152,8 @@ html, body {
 }
 
 .page_background_snow {
-  background-color: #f8f8fa !important;
+  background-color: #f1f1f1 !important;
+  
 }
 
 .card_browse_event {

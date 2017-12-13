@@ -97,7 +97,7 @@
     <!-- header -->
     <div class="row">
       <div class="col-lg-8 text-center">
-         <img src='../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" width='400' height='400' style="margin: 0 auto;">
+         <img src='../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" style="max-height: 65vh; margin: 0 auto;">
          <br />
       </div>
       <div class="col-lg-4">
@@ -184,13 +184,15 @@
             <!-- <h5><b>DESCRIPTION</b></h5> -->
             <p><?php echo $hasil['event_description']?></p>
             <br />
+            <?php if($hasil['event_video']) { ?>
             <?php $sub = substr($hasil['event_video'] ,-11)?>
             <iframe allowfullscreen="allowfullscreen"
-        mozallowfullscreen="mozallowfullscreen"
-        msallowfullscreen="msallowfullscreen"
-        oallowfullscreen="oallowfullscreen"
-        webkitallowfullscreen="webkitallowfullscreen" width="100%" height="345" src="https://www.youtube.com/embed/<?php echo $sub?>?playlist=<?php echo $sub?>&loop=1">
+            mozallowfullscreen="mozallowfullscreen"
+            msallowfullscreen="msallowfullscreen"
+            oallowfullscreen="oallowfullscreen"
+            webkitallowfullscreen="webkitallowfullscreen" width="100%" height="345" src="https://www.youtube.com/embed/<?php echo $sub?>?playlist=<?php echo $sub?>&loop=1">
             </iframe>
+            <?php } ?>
             <br />
             <br />
             <p><i>FOR MORE INFORMATION PLEASE CONTACT :</i></p>
@@ -219,8 +221,8 @@
               <div class="postmap">
                    <div id="map" style="width:145%;height:300px;"></div>
                    <div class="w3-text-white mapdetail hide-on-med-and-down">
-                         <div class="col s6"><strong>Latitude : </strong><span id="latspan"></span></div>
-                         <div class="col s6"><strong>Longitude: </strong><span id="lngspan"></span></div>
+                         <!-- <div class="col s6"><strong>Latitude : </strong><span id="latspan"></span></div>
+                         <div class="col s6"><strong>Longitude: </strong><span id="lngspan"></span></div> -->
                    </div>
               </div>
 

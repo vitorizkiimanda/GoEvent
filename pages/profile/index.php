@@ -139,27 +139,30 @@
       <div class="tab-content text-center">
         <div id="upcoming" class="tab-pane fade in active">
           <br />
+          <!-- Events Card -->
+          <div class="container">
+                    <br />
+                    <div class="row">
           <?php if($upcoming!=0) {
             for($i=0; $i<count($upcoming); $i++){?>
                 <?php $event_id_encrypt = base64_encode($upcoming[$i]['event_id']); ?>
-                  <!-- Events Card -->
-                  <div class="container">
-                    <br />
-                    <div class="row">
-                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer;" class="col-lg-4 text-center" id="card_event_profile">
+                  
+                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer; border: 10px solid white; background-color: #f1f1f1;" class="col-lg-4 text-center" id="card_event_profile">
 
                             <img src='../../photo_event/<?php echo $upcoming[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
-                            <br/>
+                            <br/><br/>
                               <p id="date_card"> <?php echo date('d F Y', strtotime($upcoming[$i]['event_date_starts'])); ?> </p>
-                              <h4 id="title_card"> <?php echo $upcoming[$i]["event_name"]; ?> </h4>
-                              <p id="location_card"> <?php echo $upcoming[$i]["event_city"]; ?> </p>
-                              <p id="ticket_card"> <?php echo $upcoming[$i]["ticket_id"]; ?> </p>
+                              <h4 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; " id="title_card"> <?php echo $upcoming[$i]["event_name"]; ?> </h4>
+                              <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; " id="location_card"> <?php echo $upcoming[$i]["event_city"]; ?> </p>
+                              <hr />
+                              <h3 id="ticket_card">Ticket ID : <?php echo $upcoming[$i]["ticket_id"]; ?> </h3>
                           </div>
                         <!-- </a> -->
-                    </div>
-                  </div>
+                    
 
           <?php } ?>
+          </div>
+      </div>
 
           <?php } else { ?>
           <p>You have no upcoming events</p>

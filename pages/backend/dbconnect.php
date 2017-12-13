@@ -1,5 +1,8 @@
 <?php
 
+	date_default_timezone_set("Asia/Bangkok");
+
+
 	if(!isset($_SESSION)) 
 	{ 
 		session_start(); 

@@ -45,7 +45,7 @@
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 
-<body  class="page_background_snow">
+<body  class="page_background_snow" style="background-color: #f1f1f1 !important;">
   <!-- NavBar -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -173,7 +173,7 @@
       <?php while ($item = mysqli_fetch_array($event)) { ?>
         <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
         <!-- <a style="display:block;width:100%;height:100%;" href="pages/event_detail/index.php?event_id=<?php echo $event_id_encrypt?>" > -->
-          <div onclick="location.href='pages/event_detail/index.php?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer;" class="col-lg-4 text-center" id="card_event">
+          <div onclick="location.href='pages/event_detail/index.php?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer; border: 10px solid #f1f1f1;" class="col-lg-4 text-center" id="card_event">
             <img src='photo_event/<?php echo $item['event_photo']; ?>' class="img-responsive" style="margin: auto; height: 30vh;" id="card_event2">
             <br/>
               <p id="date_card"> <?php echo date('d F Y', strtotime($item['event_date_starts'])). "\r\n" . date('h:i A', strtotime($item['event_time_starts'])); ?> </p>
