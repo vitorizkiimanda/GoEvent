@@ -213,7 +213,7 @@
         </div>
         </a>
 
-        <a href="pages/browse_event">
+        <a href="pages/browse_event?category=<?php echo urlencode('Food and Beverage')?>">
         <div class="col-lg-4 itemmm">
           <br />
           <img src="images/food_thumbnail.jpeg" alt="music" class="img-responsive hover" />

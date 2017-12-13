@@ -23,7 +23,12 @@
     $sunday = $weekend['EndDate'];
     $firstDayNextMonth = date('Y-m-d', strtotime('first day of next month'));
 
-    if(isset($_POST['date_categorized']))
+    if(isset($_GET['category'])){
+        $topic = $_GET['category'];
+        $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_topic LIKE '%{$topic}%' LIMIT 15";
+        $event = mysqli_query($connect, $event_query);
+    }
+    else if(isset($_POST['date_categorized']))
     {
         if($_POST['date_categorized']=="1"){
             $event_query = "SELECT * FROM events AS e WHERE e.event_date_starts >= CURDATE() AND e.event_name LIKE '%{$event_name}%' LIMIT 15";
