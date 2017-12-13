@@ -118,78 +118,82 @@
               &q=IPB+Dramaga" allowfullscreen>
           </iframe>
         </div>
-
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-map-marker
-              " aria-hidden="true"></span></span>
-            <input type="text" class="form-control" placeholder="Jakarta, Indonesia" aria-describedby="basic-addon1">
-        </div>
-        <br />
-        <select class="selectpicker" name = "event_topic">
-                  <option value="All Categories">All Categories</option>
-                  <option value="Automotive">Automotive</option>
-                  <option value="Business & professional">Business & professional</option>
-                  <option value="Charity">Charity</option>
-                  <option value="Automotive">Community & Culture</option>
-                  <option value="Community">Education</option>
-                  <option value="Familiy">Familiy</option>
-                  <option value="Fashion & Beauty">Fashion & Beauty</option>
-                  <option value="Film, Media & Entertainment">Film, Media & Entertainment</option>
-                  <option value="Food and Beverage">Food and Beverage</option>
-                  <option value="Government & Politics">Government & Politics</option>
-                  <option value="Health & Wellness">Health & Wellness</option>
-                  <option value="Hobbies & Special Interest">Hobbies & Special Interest</option>
-                  <option value="Home & Lifestyle">Home & Lifestyle</option>
-                  <option value="Music">Music</option>
-                  <option value="Performing & Visual Arts">Performing & Visual Arts</option>
-                  <option value="Religion & Spirituality">Religion & Spirituality</option>
-                  <option value="School Activities">School Activities</option>
-                  <option value="Science & Technology">Science & Technology</option>
-                  <option value="Holiday">Holiday</option>
-                  <option value="Sport & Fitness">Sport & Fitness</option>
-                  <option value="Travel & Outdoor">Travel & Outdoor</option>
-                  <!-- <option value="Automotive">Other</option> -->
-        </select>
-        <br />
-        <select class="selectpicker" name = "event_type">
-                  <option value="All Event Types">All Event Types</option>
-                  <option value="Attraction">Attraction</option>
-                  <option value="Camp/Trip">Camp/Trip</option>
-                  <option value="Class, Training,or Workshop">Class, Training,or Workshop</option>
-                  <option value="Concert or Performance">Concert or Performance</option>
-                  <option value="Conference">Conference</option>
-                  <option value="Convention">Convention</option>
-                  <option value="Dinner or Gala">Dinner or Gala</option>
-                  <option value="Festival or Fair">Festival or Fair</option>
-                  <option value="Game or Competition">Game or Competition</option>
-                  <option value="Meeting or Networking Event">Meeting or Networking Event</option>
-                  <option value="Party or Social Gathering">Party or Social Gathering</option>
-                  <option value="Race or Endurance Event">Race or Endurance Event</option>
-                  <option value="Rally">Rally</option>
-                  <option value="Seminar">Seminar</option>
-                  <option value="Tour">Tour</option>
-                  <option value="Tournament">Tournament</option>
-                  <option value="Tradeshow or Expo">Tradeshow or Expo</option>
-                  <!-- <option>Other</option> -->
-        </select>
-        <br />
-        <select class="selectpicker" name=date_categorized>
-                  <option value="1">All Dates</option>
-                  <option value="2">Today</option>
-                  <option value="3">Tomorrow</option>
-                  <option value="4">This Week</option>
-                  <option value="5">This Weekend</option>
-                  <option value="6">Next Week</option>
-                  <option value="7">Next Month</option>
-        </select>
-        <br />
-        <select class="selectpicker" name=price_event>
-                  <option value="0">All Prices</option>
-                  <option value="1">Free</option>
-                  <option value="100000000000000">Paid</option>
-        </select>
-        <button class="btn btn-default" type="submit" name="filter_browse">SEARCH</button>
+        
+        <form method='post'>      
+          <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-map-marker
+                " aria-hidden="true"></span></span>
+              <input type="text" class="form-control" placeholder="Jakarta, Indonesia" aria-describedby="basic-addon1">
+          </div>
+          <br />
+          <select class="selectpicker" name = "event_topic">
+                    <option value="All Categories">All Categories</option>
+                    <option value="Automotive">Automotive</option>
+                    <option value="Business & professional">Business & professional</option>
+                    <option value="Charity">Charity</option>
+                    <option value="Automotive">Community & Culture</option>
+                    <option value="Community">Education</option>
+                    <option value="Familiy">Familiy</option>
+                    <option value="Fashion & Beauty">Fashion & Beauty</option>
+                    <option value="Film, Media & Entertainment">Film, Media & Entertainment</option>
+                    <option value="Food and Beverage">Food and Beverage</option>
+                    <option value="Government & Politics">Government & Politics</option>
+                    <option value="Health & Wellness">Health & Wellness</option>
+                    <option value="Hobbies & Special Interest">Hobbies & Special Interest</option>
+                    <option value="Home & Lifestyle">Home & Lifestyle</option>
+                    <option value="Music">Music</option>
+                    <option value="Performing & Visual Arts">Performing & Visual Arts</option>
+                    <option value="Religion & Spirituality">Religion & Spirituality</option>
+                    <option value="School Activities">School Activities</option>
+                    <option value="Science & Technology">Science & Technology</option>
+                    <option value="Holiday">Holiday</option>
+                    <option value="Sport & Fitness">Sport & Fitness</option>
+                    <option value="Travel & Outdoor">Travel & Outdoor</option>
+                    <!-- <option value="Automotive">Other</option> -->
+          </select>
+          <br />
+          <select class="selectpicker" name = "event_type">
+                    <option value="All Event Types">All Event Types</option>
+                    <option value="Attraction">Attraction</option>
+                    <option value="Camp/Trip">Camp/Trip</option>
+                    <option value="Class, Training,or Workshop">Class, Training,or Workshop</option>
+                    <option value="Concert or Performance">Concert or Performance</option>
+                    <option value="Conference">Conference</option>
+                    <option value="Convention">Convention</option>
+                    <option value="Dinner or Gala">Dinner or Gala</option>
+                    <option value="Festival or Fair">Festival or Fair</option>
+                    <option value="Game or Competition">Game or Competition</option>
+                    <option value="Meeting or Networking Event">Meeting or Networking Event</option>
+                    <option value="Party or Social Gathering">Party or Social Gathering</option>
+                    <option value="Race or Endurance Event">Race or Endurance Event</option>
+                    <option value="Rally">Rally</option>
+                    <option value="Seminar">Seminar</option>
+                    <option value="Tour">Tour</option>
+                    <option value="Tournament">Tournament</option>
+                    <option value="Tradeshow or Expo">Tradeshow or Expo</option>
+                    <!-- <option>Other</option> -->
+          </select>
+          <br />
+          <select class="selectpicker" name=date_categorized>
+                    <option value="1">All Dates</option>
+                    <option value="2">Today</option>
+                    <option value="3">Tomorrow</option>
+                    <option value="4">This Week</option>
+                    <option value="5">This Weekend</option>
+                    <option value="6">Next Week</option>
+                    <option value="7">Next Month</option>
+          </select>
+          <br />
+          <select class="selectpicker" name=price_event>
+                    <option value="0">All Prices</option>
+                    <option value="1">Free</option>
+                    <option value="2">Paid</option>
+          </select>
+          <button class="btn btn-default" type="submit" name="filter_browse">SEARCH</button>
+        </form>
       </div>
+        
+
       <div class="col-lg-9">
           <h1>Jakarta, Indonesia Events Just For You</h1>
           <?php while ($item = mysqli_fetch_array($event)) { ?>
