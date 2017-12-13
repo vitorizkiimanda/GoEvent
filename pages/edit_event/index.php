@@ -295,34 +295,34 @@
                   function readURL(input) {
                       if (input.files && input.files[0]) {
                               var reader = new FileReader();
-                              
+
                               reader.onload = function (e) {
                                   $('#blah').attr('src', e.target.result);
                               }
-                              
+
                               reader.readAsDataURL(input.files[0]);
                           }
                       }
-            
+
                       $("#my_file").change(function(){
                           readURL(this);
                       });
                           </script>
-        
+
                           <script>
                             $(document).ready(function(){
                                 $("input[type='image']").click(function() {
-                                    $("input[id='my_file']").click(); 
+                                    $("input[id='my_file']").click();
                                     // ambil designnya di sini
-        
-                                    
+
+
                                     if (window.FileReader) {
                                       //then your code goes here
                                     } else {
                                       alert('This browser does not support FileReader');
                                     }
-        
-        
+
+
                                 });
                                 // $("#default").click(function(){
                                 //   $('.nav-tabs a[href="#preview"]').tab('show')
@@ -330,6 +330,39 @@
                             });
                   </script>
 
+                  <center>
+                  <label>Klik Lokasi Tempat Event pada Map untuk mendapatkan latitude dan longitude </label>
+                  <div id="map" style="width:85%; height:350px; border:2px solid #00ff00;"></div>
+                  </center>
+                  <div class="input-field col s6">
+                  <i class="fa fa-map prefix"></i>
+                  <input style="width:30%;" type="text" name="latitude" id="lat" value="<?php echo $event_query['latitude'] ?>">
+                  <label class="item" for="latpost">Latitude</label>
+                  </div>
+                  <div class="input-field col s6">
+                  <i class="fa fa-map prefix"></i>
+                  <input style="width:30%;" type="text" name="longitude" id="long" value="<?php echo $event_query['longitude'] ?>">
+                  <label class="item" for="long">Longitude</label>
+                  </div>
+
+                  <script type="text/javascript">
+                            function initMap() {
+                              var bogor = {lat: -6.5950181, lng: 106.7218509};
+
+                              var map = new google.maps.Map(document.getElementById('map'), {
+                                center: bogor,
+                                scrollwheel: false,
+                                zoom: 12
+                              });
+                              google.maps.event.addListener(map, 'click', function(event){
+                                document.getElementById('lat').value = event.latLng.lat();
+                                document.getElementById('long').value = event.latLng.lng();
+                              });
+                            }
+                          </script>
+                          <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb_wit1zaI8b-PdijBl0KWd705ZSdCAo&callback=initMap">
+                          </script>
 
             </div>
 
