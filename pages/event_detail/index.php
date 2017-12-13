@@ -181,8 +181,8 @@
             <br />
             <br />
             <p><i>FOR MORE INFORMATION PLEASE CONTACT :</i></p>
-            <p>VITO 089657011491</p>
-            <p>email : vitorizkiimanda@gmail.com</p>
+            <p><?php echo $hasil2['user_name']." ".$hasil['organizer_phone_number']?></p>
+            <p>website : <?php echo $hasil['organizer_website']?></p>
 
             <br />
             <br />
