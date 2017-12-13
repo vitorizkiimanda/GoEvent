@@ -1,3 +1,9 @@
+<?php
+  require_once '../backend/dbconnect.php';
+  require_once '../backend/ticket.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -93,31 +99,37 @@
 
   <div class="container text-wrap">
     <!-- header -->
-    <h1>Order for <a>Nama eventnya kalo di click ke event detail page</a></h1>
-    <p><span>Free/Paid</span></p>
-    <p>tampilin datenya terus jamnya juga</p>
-    <p>tampilin alamatnya</p>
+    <h1>Order for <?php echo $sql_event['event_name'] ;?></h1>
+    <p><span>
+    <?php if($sql_event['ticket_price'] === '0' ) echo "FREE" ;
+          else echo "PAID" ?></span></p>
+    <p><?php echo date('l jS F Y', strtotime($sql_event['event_date_starts'])).", ".date('H:i', strtotime($sql_event['event_time_starts']))." WIB" ?></p>
+    <p><?php echo $sql_event['event_city']?></p>
     <br />
     <div class="row">
-      <div class="col-lg-3 text-center"> 
+      <div class="col-lg-3 text-center">
         <br />
-        <a href="../../pages/event_detail" class="btn btn-primary btn-lg btn-round btn-block">See Event</a>
-        <a href="#" class="btn btn-danger btn-lg btn-round btn-block">Cancel Order</a>
+        <a href="../../pages/event_detail/index.php?event_id=<?php echo $event_id_encrypt?>" class="btn btn-primary btn-lg btn-round btn-block">See Event</a>
+        <a href="../backend/cancel_order.php?event_id=<?php echo $event_id_encrypt?>" class="btn btn-danger btn-lg btn-round btn-block">Cancel Order</a>
       </div>
       <div class="col-lg-9" style="background-color: white !important;">
-        <h2>Free/Rp.sekian</h2>
+        <h2><?php if($sql_event['ticket_price'] === '0' ) echo "FREE" ;
+              else echo "Rp ".$sql_event['ticket_price'].",00" ; ?></h2>
         <hr />
         <h3>Contact Information</h3>
         <br />
         <h4>Name</h4>
-        <h4><b>Nama Lengkap</b></h4>
+        <h4><b><?php echo $sql_user['user_name']?></b></h4>
         <br />
         <h4>Email</h4>
-        <h4><b>Emailnya Lengkap</b></h4>
+        <h4><b><?php echo $sql_user['user_email']?></b></h4>
+        <br />
+        <h4>Ticket Id</h4>
+        <h4><b><?php echo $sql_att['ticket_id']?></b></h4>
         <br />
         <a href="../../pages/account_setting" class="btn btn-primary btn-lg btn-round btn-block">Edit</a>
         <br />
-        
+
       </div>
     </div>
 
