@@ -126,14 +126,14 @@
         <form action="../backend/edit_event.php" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <label for="exampleInputEmail1">Event Title</label>
-              <input type="text" name="event_name" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_name'] ?>">
+              <input type="text" name="event_name" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_name'] ?>" required>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Location</label>
               <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
               <!-- Google API autocomplete starts -->
               <br />
-                            <input id="autocomplete" class="form-control" value= "<?php echo $event_query['event_city'] ?>" onFocus="geolocate()" type="text" name="event_city"></input>
+                            <input id="autocomplete" class="form-control" value= "<?php echo $event_query['event_city'] ?>" onFocus="geolocate()" type="text" name="event_city" required></input>
                                 <script>
                                   var placeSearch, autocomplete;
                                   var componentForm = {
@@ -200,34 +200,34 @@
               <div class="col-lg-6">
                 <h3>Starts</h3>
                   <div class="col-lg-6">
-                      <p>Date: <input type="date" name="event_date_starts" id="datepicker" value= "<?php echo $event_query['event_date_starts'] ?>"></p>
+                      <p>Date: <input type="date" name="event_date_starts" id="datepicker" value= "<?php echo $event_query['event_date_starts'] ?>" required></p>
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="time" name="event_time_starts" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_time_starts'] ?>">
+                        <input type="time" name="event_time_starts" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_time_starts'] ?>" required>
                   </div>
               </div>
               <div class="col-lg-6">
                 <h3>Ends</h3>
                   <div class="col-lg-6">
-                      <p>Date: <input type="date" name="event_date_ends" id="datepicker" value= "<?php echo $event_query['event_date_ends'] ?>"></p>
+                      <p>Date: <input type="date" name="event_date_ends" id="datepicker" value= "<?php echo $event_query['event_date_ends'] ?>" required></p>
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="time" name="event_time_ends" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_time_ends'] ?>">
+                        <input type="time" name="event_time_ends" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_time_ends'] ?>" required>
                   </div>
               </div>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Capacity</label>
-              <input type="number" name="event_capacity" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_capacity'] ?>">
+              <input type="number" name="event_capacity" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['event_capacity'] ?>" min="0" required>
             </div>
 
               <!-- Rich text editor -->
             <div class="form-group">
                 <label for="exampleInputEmail1">Event description</label>
                   <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
-              		<textarea class="ckeditor" id="ckedtor" name="ckeditor"><?php echo $event_query['event_description']; ?></textarea>
+              		<textarea class="ckeditor" id="ckedtor" name="ckeditor" required><?php echo $event_query['event_description']; ?></textarea>
                 </br>
                 <script>
                     CKEDITOR.replace( 'event_description' );
@@ -236,12 +236,54 @@
 
             <div class="form-group">
                 <label for="exampleInputFile">Event Photo</label>
-                <input type="file" name="event_photo" accept="image/" id="exampleInputFile">
+                <input src="<?php echo $event_query['event_photo'] ?>" name="event_photo" accept="image/" type='file' id="my_file" name="my_file"/ >
+                    <img id="blah" src="../../photo_event/<?php echo $event_query['event_photo'] ?>" class="img-responsive" style="margin: auto; max-height: 50vh;" />
+                <!-- </form> -->
+                <script>
+                  function readURL(input) {
+                      if (input.files && input.files[0]) {
+                              var reader = new FileReader();
+                              
+                              reader.onload = function (e) {
+                                  $('#blah').attr('src', e.target.result);
+                              }
+                              
+                              reader.readAsDataURL(input.files[0]);
+                          }
+                      }
+            
+                      $("#my_file").change(function(){
+                          readURL(this);
+                      });
+                          </script>
+        
+                          <script>
+                            $(document).ready(function(){
+                                $("input[type='image']").click(function() {
+                                    $("input[id='my_file']").click(); 
+                                    // ambil designnya di sini
+        
+                                    
+                                    if (window.FileReader) {
+                                      //then your code goes here
+                                    } else {
+                                      alert('This browser does not support FileReader');
+                                    }
+        
+        
+                                });
+                                // $("#default").click(function(){
+                                //   $('.nav-tabs a[href="#preview"]').tab('show')
+                                // });
+                            });
+                  </script>
+
+
             </div>
 
             <div class="form-group">
                 <label for="exampleInputFile">Event Video</label>
-                <input type="url" class="form-control" name="event_video" value= "<?php echo $event_query['event_video'] ?>" id="exampleInputFile">
+                <input type="url" class="form-control" name="event_video" value= "<?php echo $event_query['event_video'] ?>" id="exampleInputFile" required>
             </div>
 
             <br />
@@ -265,19 +307,19 @@
             <!-- konten -->
             <div class="row">
               <div class="col-lg-5">
-                <input type="text" name="ticket_name" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_name'] ?>">
+                <input type="text" name="ticket_name" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_name'] ?>" required>
               </div>
               <div class="col-lg-2">
               <!-- nnti ini di regex biar ga bisa minus -->
-                <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_quantity'] ?>">
+                <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_quantity'] ?>" min="0" required>
               </div>
               <div class="col-lg-3">
-                <input type="number" name="ticket_price" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_price'] ?>">
+                <input type="number" name="ticket_price" class="form-control" id="exampleInputEmail1" value= "<?php echo $event_query['ticket_price'] ?>" min="0" required>
               </div>
-              <div class="col-lg-2">
+              <div class="col-lg-2 text-center">
                 <a><span data-toggle="collapse" data-target="#setting" class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
                 &nbsp;
-                <a><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                <!-- <a><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> -->
               </div>
             </div>
             <div class="row">
@@ -309,7 +351,7 @@
             <div>
                 <label for="exampleInputEmail1">EVENT TYPE</label>
                 <br />
-                <select class="selectpicker" name = "event_type" >
+                <select class="selectpicker" name = "event_type" required>
                   <option>Select Event Type</option>
                   <option>Attraction</option>
                   <option>Camp/Trip</option>
@@ -334,7 +376,7 @@
             <div>
                 <label for="exampleInputEmail1">EVENT TOPIC</label>
                 <br />
-                <select class="selectpicker" name = "event_topic">
+                <select class="selectpicker" name = "event_topic" required>
                   <option>Select a topic</option>
                   <option>Automotive</option>
                   <option>Business & professional</option>
