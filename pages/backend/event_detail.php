@@ -1,5 +1,6 @@
 <?php require_once 'dbconnect.php';
 
+$event_id=base64_decode($_GET['event_id']);
 if(isset($_SESSION['user_id'])){
   $user_id=$_SESSION['user_id'];
   $sqlmark = "SELECT * FROM bookmark WHERE event_id='$event_id' and user_id = '$user_id'";
@@ -22,7 +23,6 @@ else
 {
   
 }
-$event_id=base64_decode($_GET['event_id']);
 
 $sql= "SELECT * FROM events e INNER JOIN organizer o ON e.organizer_id = o.organizer_id WHERE event_id='$event_id'";
 $queri = $connect->query($sql);

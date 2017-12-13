@@ -1,5 +1,8 @@
 <?php
     require '../backend/dbconnect.php';
+    if(!isset($_SESSION['user_id'])){
+      header('location: ../sign_in/');
+    }
 ?>
 
 <!DOCTYPE html>
