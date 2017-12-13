@@ -148,21 +148,21 @@
 
           <br />
           <div class="form-group">
-              <label for="exampleInputEmail1">Organizer Name</label>
-              <h1><?php echo $row['organizer_name']?></h1>
+              <label for="exampleInputEmail1" id="date_card">Organizer Name</label>
+              <h1 id="date_card"><?php echo $row['organizer_name']?></h1>
           </div>
 
           <br />
 
           <div class="form-group">
-            <label for="exampleInputEmail1">Phone Number</label>
-              <h4><?php echo $row['organizer_phone_number']?></h4>
+            <label for="exampleInputEmail1" id="date_card">Phone Number</label>
+              <h4 id="date_card"><?php echo $row['organizer_phone_number']?></h4>
           </div>
           <br />
 
           <div class="form-group">
-            <label for="exampleInputEmail1">Website</label>
-              <h4><a href="<?php echo $row['organizer_name']?>"><?php echo $row['organizer_website']?></a></h4>
+            <label for="exampleInputEmail1" id="date_card">Website</label>
+              <h4 id="date_card"><?php echo $row['organizer_website']?></h4>
           </div>
       </div>
     </div>
