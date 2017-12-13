@@ -203,7 +203,7 @@
   <div class="container">
     <h2 class="text-center">Browse by Top Categories</h1>
       <div class="row">
-        <a href="pages/browse_event">
+        <a href="pages/browse_event?category=<?php echo urlencode('Music')?>">
         <div class="col-lg-4 itemmm">
         <br />
           <img src="images/music_thumbnail.jpeg" alt="music" class="img-responsive hover" />
@@ -223,7 +223,7 @@
         </div>
         </a>
 
-        <a href="pages/browse_event">
+        <a href="pages/browse_event?category=<?php echo urlencode('Science & Technology')?>">
         <div class="col-lg-4 itemmm">
           <br />
           <img src="images/tech_thumbnail.jpeg" alt="music" class="img-responsive hover" />
@@ -233,7 +233,7 @@
         </div>
         </a>
 
-        <a href="pages/browse_event">
+        <a href="pages/browse_event?category=<?php echo urlencode('Arts')?>">
         <div class="col-lg-4 itemmm">
           <br />
           <img src="images/art_thumbnail.jpeg" alt="music" class="img-responsive hover" />
@@ -243,7 +243,7 @@
         </div>
         </a>
 
-        <a href="pages/browse_event">
+        <a href="pages/browse_event?category=<?php echo urlencode('Sport')?>">
         <div class="col-lg-4 itemmm">
           <br />
           <img src="images/sport_thumbnail.jpeg" alt="music" class="img-responsive hover" />
@@ -253,7 +253,7 @@
         </div>
         </a>
 
-        <a href="pages/browse_event">
+        <a href="pages/browse_event?category=<?php echo urlencode('Networking')?>">
         <div class="col-lg-4 itemmm">
           <br />
           <img src="images/networking_thumbnail.jpeg" alt="music" class="img-responsive hover" />
