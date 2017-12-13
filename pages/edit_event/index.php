@@ -224,7 +224,7 @@
                       </div>
                     </div>
                   </div>
-                  
+              
                 <script type="text/javascript">
                             function initMap() {
                               var bogor = {lat: -6.5950181, lng: 106.7218509};
@@ -245,8 +245,6 @@
                           </script>
 
                           <!-- end of google maps -->
-
-
               
             <div class="row">
               <div class="col-lg-6">
