@@ -123,7 +123,7 @@
           <div class="input-group">
               <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-map-marker
                 " aria-hidden="true"></span></span>
-              <input type="text" class="form-control" placeholder="Jakarta, Indonesia" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" name="event_city" id="event_city" placeholder="Jakarta, Indonesia" aria-describedby="basic-addon1">
           </div>
           <br />
           <select class="selectpicker" name = "event_topic">

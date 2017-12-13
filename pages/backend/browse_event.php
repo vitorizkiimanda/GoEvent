@@ -80,9 +80,11 @@
     //protoype untuk filter browse;
     if(isset($_POST['filter_browse']))
     {
+        $city = $_POST['event_city'];
         $topic=$_POST['event_topic'];
         $type=$_POST['event_type'];
         $price=$_POST['price_event'];
+        echo $city;
         if($topic=$_POST['event_topic']=="All Categories")
         {
             $topic="_";
@@ -90,6 +92,10 @@
         if($type=="All Event Types")
         {
             $type="_";
+        }
+        if($city==null)
+        {
+            $city="_";
         }
         if($_POST['date_categorized']=="1"){
             if($price==0)
