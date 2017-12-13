@@ -25,15 +25,17 @@
    $event_type = $_POST['event_type'];
    $event_topic = $_POST['event_topic'];
 
-       $photo_name = $_FILES['event_photo']['name'];
-       $photo_size = $_FILES['event_photo']['size'];
-       $photo_type = $_FILES['event_photo']['type'];
-       $photo_file = $_FILES['event_photo']['tmp_name'];
-       $sub_photo = substr($photo_name,-6);
-       $photo_name = $event_id.'_photo.'.$sub_photo;
-       $photo_path = "../../photo_event/".$photo_name;
-       move_uploaded_file($photo_file, $photo_path);
-       if( file_exists($_FILES['organizer_photo']['tmp_name']) && is_uploaded_file($_FILES['organizer_photo']['tmp_name'])){
+       if( file_exists($_FILES['event_photo']['tmp_name']) && is_uploaded_file($_FILES['event_photo']['tmp_name'])){
+
+      $photo_name = $_FILES['event_photo']['name'];
+      $photo_size = $_FILES['event_photo']['size'];
+      $photo_type = $_FILES['event_photo']['type'];
+      $photo_file = $_FILES['event_photo']['tmp_name'];
+      $sub_photo = substr($photo_name,-6);
+      $photo_name = $event_id.'_photo.'.$sub_photo;
+      $photo_path = "../../photo_event/".$photo_name;
+      move_uploaded_file($photo_file, $photo_path);
+
         $sql = "UPDATE events SET event_name = '$event_name' ,
                           event_city = '$event_city' ,
                           event_date_starts = '$event_date_starts',
@@ -80,7 +82,7 @@
         }
         if ($connect->query($sql) === true) {
             echo "<p> New Event Successfully Created</p>";
-            header('Location: ../organizer_profile_choose_create');
+            header('Location: ../manage_event');
         }
         else {
           echo "<p> GAGAL TOLOL!!</p>";
