@@ -332,7 +332,7 @@ $organizer_id = $_GET['organizer_id'];
 
             <div class="form-group">
                 <label for="exampleInputFile">Event Video</label>
-                <input type="text" class="form-control" name="event_video" placeholder="Youtube Video Link" id="exampleInputFile" required >
+                <input type="text" class="form-control" name="event_video" placeholder="Youtube Video Link (optional)" id="exampleInputFile" >
             </div>
 
             <br />

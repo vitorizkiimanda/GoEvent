@@ -366,7 +366,7 @@
 
             <div class="form-group">
                 <label for="exampleInputFile">Event Video</label>
-                <input type="url" class="form-control" name="event_video" value= "<?php echo $event_query['event_video'] ?>" id="exampleInputFile" required>
+                <input type="url" class="form-control" name="event_video" value= "<?php echo $event_query['event_video'] ?>" placeholder="put your youtube video link (optional)" id="exampleInputFile">
             </div>
 
             <br />
