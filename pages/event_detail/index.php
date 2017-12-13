@@ -102,7 +102,7 @@
       </div>
       <div class="col-lg-4">
         <br />
-        <p><?php echo date('d F Y', strtotime($hasil['event_date_starts'])); ?> </p>
+        <p><?php echo date('d F', strtotime($hasil['event_date_starts'])); ?> </p>
         <br />
         <h3><?php echo $hasil['event_name']?> </h3>
         <a href="../../pages/organizer_profile_view?organizer_id=<?php echo $hasil['organizer_id']?> "><h6>by <?php echo $hasil['organizer_name'] ?></h6></a>
@@ -110,7 +110,7 @@
         <br />
         <p>
           <?php if($hasil['ticket_price'] === '0' ) echo "FREE" ;
-                else echo $hasil['ticket_price']." Rupiah" ; ?>
+                else echo "Rp ".$hasil['ticket_price'].",00" ; ?>
         </p>
       </div>
     </div>
@@ -123,7 +123,7 @@
               <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
           </button>
 
-          <?php if(isset($_SESSION['user_id'])) 
+          <?php if(isset($_SESSION['user_id']))
                   if(mysqli_num_rows($mark) == 0){ ?>
           <button id="bookmark_button" type="button" class="btn btn-primary" aria-label="Left Align">
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
@@ -140,10 +140,10 @@
           <form action=<?php if(isset($_SESSION['user_id'])) echo "../backend/register.php"; else echo "../sign_in/"?> enctype="multipart/form-data" method="post">
             <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
           <button id="submission" type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>
-          
+
       </div>
     </div>
-    
+
     <?php if(isset($_SESSION['user_id'])) {?>
     <script>
     $(document).ready(function(){
@@ -173,16 +173,16 @@
             <br />
             <?php $sub = substr($hasil['event_video'] ,-11)?>
             <iframe allowfullscreen="allowfullscreen"
-        mozallowfullscreen="mozallowfullscreen" 
-        msallowfullscreen="msallowfullscreen" 
-        oallowfullscreen="oallowfullscreen" 
+        mozallowfullscreen="mozallowfullscreen"
+        msallowfullscreen="msallowfullscreen"
+        oallowfullscreen="oallowfullscreen"
         webkitallowfullscreen="webkitallowfullscreen" width="100%" height="345" src="https://www.youtube.com/embed/<?php echo $sub?>?playlist=<?php echo $sub?>&loop=1">
             </iframe>
             <br />
             <br />
             <p><i>FOR MORE INFORMATION PLEASE CONTACT :</i></p>
-            <p><?php echo $hasil2['user_name']." ".$hasil['organizer_phone_number']?></p>
-            <p>website : <?php echo $hasil['organizer_website']?></p>
+            <p>VITO 089657011491</p>
+            <p>email : vitorizkiimanda@gmail.com</p>
 
             <br />
             <br />
@@ -195,8 +195,8 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-3">
             <h5><b>DATE AND TIME</b></h5>
-            <p> <?php echo date('d F Y', strtotime($hasil['event_date_starts'])).", ".$hasil['event_time_starts'] ?> <br/>
-              <?php echo date('d F Y', strtotime($hasil['event_date_ends'])).", ".$hasil['event_time_ends'] ?> <br/>
+            <p> <?php echo date('l jS F Y', strtotime($hasil['event_date_starts'])).", ".date('H:i', strtotime($hasil['event_time_starts']))." WIB" ?> <br/>
+              <?php echo date('l jS F Y', strtotime($hasil['event_date_ends'])).", ".date('H:i', strtotime($hasil['event_time_ends']))." WIB" ?> <br/>
             <!-- <p>Wed, Jan 24, 2018, 9:00 AM –<br/>Fri, Jan 25, 2019, 8:00 PM WIB<br /> -->
               <a>Add to Calendar</a></p>
             <br />
