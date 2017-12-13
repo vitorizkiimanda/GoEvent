@@ -129,7 +129,7 @@
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
           </button>
         <?php } else { ?>
-          <button id="unbookmark_button" type="button" class="btn btn-danger" aria-label="Left Align">
+          <button id="unbookmark_button" type="button" class="btn btn-success" aria-label="Left Align">
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
           </button>
         <?php } ?>
@@ -144,22 +144,31 @@
       </div>
     </div>
 
-    <?php if(isset($_SESSION['user_id'])) {?>
+    <?php if(isset($_SESSION['user_id'])) {
+      $_SESSION['event'] = $event_id ;
+      ?>
     <script>
     $(document).ready(function(){
         $("#bookmark_button").click(function(){
           var x = 1 ;
-          window.alert("Bookmark");
-          $.post('bookmark_on.php', { x }, function(result) {
-
+          var ev = '<?php echo $_SESSION['event']; ?>';
+          // window.alert("Bookmark");
+          $.post('bookmark_on.php', { x , ev }, function(result) {
+            
           });
+          
+        location.reload();
+          
         });
         $("#unbookmark_button").click(function(){
           var x = 2 ;
-          window.alert("Unbookmark");
-          $.post('bookmark_on.php', { x }, function(result) {
+          var ev = '<?php echo $_SESSION['event']; ?>';
+          // window.alert("Unbookmark");
+          $.post('bookmark_on.php', { x , ev }, function(result) {
 
           });
+          
+        location.reload();
         });
     });
     </script>
