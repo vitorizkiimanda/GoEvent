@@ -42,7 +42,6 @@
   <!-- (Optional) Latest compiled and minified JavaScript translation files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 
-
   
 
 
@@ -140,11 +139,11 @@
         </div>
         <div id="collapse1" class="panel-collapse collapse in">
           <ul class="list-group">
-            <li class="list-group-item" id="contact_button" data-toggle="collapse" data-target="#contact"><a href="#">Contact Info</a></li>
-            <li class="list-group-item" id="password_button" data-toggle="collapse" data-target="#password"><a href="#">Password</a></li>
-            <li class="list-group-item" id="email_button" data-toggle="collapse" data-target="#email"><a href="#">Email Preferences</a></li>
-            <li class="list-group-item" id="close_button" data-toggle="collapse" data-target="#close"><a href="#">Close Account</a></li>
-          </ul>
+            <li style="cursor: pointer;" class="list-group-item" id="contact_button" data-toggle="collapse" data-target="#contact">&nbsp; Contact Info</li>
+            <li style="cursor: pointer;" class="list-group-item" id="password_button" data-toggle="collapse" data-target="#password">&nbsp; Password</li>
+            <li style="cursor: pointer;" class="list-group-item" id="email_button" data-toggle="collapse" data-target="#email">&nbsp; Email Preferences</li>
+            <li style="cursor: pointer;" class="list-group-item" id="close_button" data-toggle="collapse" data-target="#close">&nbsp; Close Account</li>
+            </ul>
         </div>
       </div>
       <div class="panel panel-default">
@@ -192,7 +191,6 @@
 
     </div>
     <div class="col-lg-9">
-
       <div id="contact" class="collapse in">
         <h3>Account Information</h3>
         <hr />
@@ -335,6 +333,7 @@
                 </div>
             </form>
         </div>
+    </div>
 
       <div id="password" class="collapse">
         <h3>Your Password</h3>
