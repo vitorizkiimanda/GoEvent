@@ -234,7 +234,53 @@ $organizer_id = $_GET['organizer_id'];
 
             <div class="form-group">
                 <label for="exampleInputFile">Event Photo</label>
-                <input type="file" name="event_photo" accept="image/" id="exampleInputFile">
+                
+                <!-- <input type="file" name="event_photo" accept="image/" id="exampleInputFile"> -->
+            <!-- <form id="form1" runat="server"> -->
+               <input name="event_photo" accept="image/" type='file' id="my_file" name="my_file"/>
+                    <img id="blah" src="#" class="img-responsive" style="margin: auto; max-height: 50vh;" />
+                <!-- </form> -->
+                <script>
+                  function readURL(input) {
+                      if (input.files && input.files[0]) {
+                              var reader = new FileReader();
+                              
+                              reader.onload = function (e) {
+                                  $('#blah').attr('src', e.target.result);
+                              }
+                              
+                              reader.readAsDataURL(input.files[0]);
+                          }
+                      }
+            
+                      $("#my_file").change(function(){
+                          readURL(this);
+                      });
+                          </script>
+        
+                          <script>
+                            $(document).ready(function(){
+                                $("input[type='image']").click(function() {
+                                    $("input[id='my_file']").click(); 
+                                    // ambil designnya di sini
+        
+                                    
+                                    if (window.FileReader) {
+                                      //then your code goes here
+                                    } else {
+                                      alert('This browser does not support FileReader');
+                                    }
+        
+        
+                                });
+                                // $("#default").click(function(){
+                                //   $('.nav-tabs a[href="#preview"]').tab('show')
+                                // });
+                            });
+                  </script>
+
+
+
             </div>
 
             <div class="form-group">
@@ -272,10 +318,10 @@ $organizer_id = $_GET['organizer_id'];
               <div class="col-lg-3">
                 <input type="number" name="ticket_price" class="form-control" id="exampleInputEmail1" placeholder="0 for free">
               </div>
-              <div class="col-lg-2">
+              <div class="col-lg-2 text-center">
                 <a><span data-toggle="collapse" data-target="#setting" class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
                 &nbsp;
-                <a><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                <!-- <a><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> -->
               </div>
             </div>
             <div class="row">

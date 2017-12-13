@@ -174,11 +174,11 @@
         <?php $event_id_encrypt = base64_encode($item['event_id']); ?>
         <!-- <a style="display:block;width:100%;height:100%;" href="pages/event_detail/index.php?event_id=<?php echo $event_id_encrypt?>" > -->
           <div onclick="location.href='pages/event_detail/index.php?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer;" class="col-lg-4 text-center" id="card_event">
-            <img src='photo_event/<?php echo $item['event_photo']; ?>' width='200' height='200' id="card_event2">
+            <img src='photo_event/<?php echo $item['event_photo']; ?>' class="img-responsive" style="margin: auto; height: 30vh;" id="card_event2">
             <br/>
               <p id="date_card"> <?php echo date('d F Y', strtotime($item['event_date_starts'])). "\r\n" . date('h:i A', strtotime($item['event_time_starts'])); ?> </p>
-              <h4 id="title_card"> <?php echo $item['event_name'] ?> </h4>
-              <p id="location_card"> <?php echo $item['event_city'] ?> </p>
+              <h4 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; " id="title_card"> <?php echo $item['event_name'] ?> </h4>
+              <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; " id="location_card"> <?php echo $item['event_city'] ?> </p>
               <div class="top_down_border">
                 <a id="location_card"><?php echo "#".$item['event_topic']?> </a>
                 <a id="location_card"><?php echo "#".$item['event_type']?> </a>
