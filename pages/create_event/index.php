@@ -123,14 +123,14 @@ $organizer_id = $_GET['organizer_id'];
         <form action="../backend/create_event.php" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <label for="exampleInputEmail1">Event Title</label>
-              <input type="text" name="event_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name">
+              <input type="text" name="event_name" class="form-control" id="exampleInputEmail1" placeholder="Give it a short distinict name" required >
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Location</label>
               <!-- <input type="text" name="event_city" class="form-control" id="exampleInputEmail1" placeholder="Search for a venue or address"> -->
               <!-- Google API autocomplete starts -->
               <br />
-                            <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city"></input>
+                            <input id="autocomplete" class="form-control" placeholder="Enter your address" onFocus="geolocate()" type="text" name="event_city" required ></input>
                                 <script>
                                   var placeSearch, autocomplete;
                                   var componentForm = {
@@ -197,27 +197,27 @@ $organizer_id = $_GET['organizer_id'];
               <div class="col-lg-6">
                 <h3>Starts</h3>
                   <div class="col-lg-6">
-                      <p>Date: <input type="date" name="event_date_starts" id="datepicker"></p>
+                      <p>Date: <input type="date" name="event_date_starts" id="datepicker" required ></p>
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="time" name="event_time_starts" class="form-control" id="exampleInputEmail1" placeholder="am/pm">
+                        <input type="time" name="event_time_starts" class="form-control" id="exampleInputEmail1" placeholder="am/pm" required >
                   </div>
               </div>
               <div class="col-lg-6">
                 <h3>Ends</h3>
                   <div class="col-lg-6">
-                      <p>Date: <input type="date" name="event_date_ends" id="datepicker"></p>
+                      <p>Date: <input type="date" name="event_date_ends" id="datepicker" required ></p>
                     </div>
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1">Time</label>
-                        <input type="time" name="event_time_ends" class="form-control" id="exampleInputEmail1" placeholder="am/pm">
+                        <input type="time" name="event_time_ends" class="form-control" id="exampleInputEmail1" placeholder="am/pm" required >
                   </div>
               </div>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Capacity</label>
-              <input type="number" name="event_capacity" class="form-control" id="exampleInputEmail1" placeholder="Maximum number of participants">
+              <input type="number" name="event_capacity" class="form-control" id="exampleInputEmail1" placeholder="Maximum number of participants" min="0" required >
             </div>
 
             <!-- <div class="form-group">
@@ -229,7 +229,7 @@ $organizer_id = $_GET['organizer_id'];
             <div class="form-group">
                 <label for="exampleInputEmail1">Event description</label>
                   <script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
-              		<textarea class="ckeditor" id="ckedtor" name="ckeditor"></textarea>
+              		<textarea class="ckeditor" id="ckedtor" name="ckeditor" required ></textarea>
             </div>
 
             <div class="form-group">
@@ -237,7 +237,7 @@ $organizer_id = $_GET['organizer_id'];
                 
                 <!-- <input type="file" name="event_photo" accept="image/" id="exampleInputFile"> -->
             <!-- <form id="form1" runat="server"> -->
-               <input name="event_photo" accept="image/" type='file' id="my_file" name="my_file"/>
+               <input name="event_photo" accept="image/" type='file' id="my_file" name="my_file"/ required >
                     <img id="blah" src="#" class="img-responsive" style="margin: auto; max-height: 50vh;" />
                 <!-- </form> -->
                 <script>
@@ -285,7 +285,7 @@ $organizer_id = $_GET['organizer_id'];
 
             <div class="form-group">
                 <label for="exampleInputFile">Event Video</label>
-                <input type="url" class="form-control" name="event_video" placeholder="Youtube Video Link" id="exampleInputFile">
+                <input type="text" class="form-control" name="event_video" placeholder="Youtube Video Link" id="exampleInputFile" required >
             </div>
 
             <br />
@@ -309,14 +309,14 @@ $organizer_id = $_GET['organizer_id'];
             <!-- konten -->
             <div class="row">
               <div class="col-lg-5">
-                <input type="text" name="ticket_name" class="form-control" id="exampleInputEmail1" placeholder="RSVP, Early Bird..">
+                <input type="text" name="ticket_name" class="form-control" id="exampleInputEmail1" placeholder="RSVP, Early Bird.." required >
               </div>
               <div class="col-lg-2">
               <!-- nnti ini di regex biar ga bisa minus -->
-                <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" placeholder="1000">
+                <input type="number" name="ticket_quantity" class="form-control" id="exampleInputEmail1" placeholder="1000" min="0" required >
               </div>
               <div class="col-lg-3">
-                <input type="number" name="ticket_price" class="form-control" id="exampleInputEmail1" placeholder="0 for free">
+                <input type="number" name="ticket_price" class="form-control" id="exampleInputEmail1" placeholder="0 for free" min="0" required >
               </div>
               <div class="col-lg-2 text-center">
                 <a><span data-toggle="collapse" data-target="#setting" class="glyphicon glyphicon-cog" aria-hidden="true"></span></a>
@@ -331,19 +331,19 @@ $organizer_id = $_GET['organizer_id'];
                 <hr />
                 <div class="form-group">
                   <label for="exampleInputEmail1">Ticket description</label>
-                  <input type="text" name="ticket_description" class="form-control" id="exampleInputEmail1" placeholder="Tell your audience more about the ticket">
+                  <input type="text" name="ticket_description" class="form-control" id="exampleInputEmail1" placeholder="Tell your audience more about the ticket" >
                 </div>
                 <div>
                   <label for="exampleInputEmail1">Ticket sale start</label>
                   <br />
-                  <input type="date" name="ticket_date_starts" id="datepicker">
-                  <input type="time" name="ticket_time_starts" id="exampleInputEmail1" placeholder="am/pm">
+                  <input type="date" name="ticket_date_starts" id="datepicker" >
+                  <input type="time" name="ticket_time_starts" id="exampleInputEmail1" placeholder="am/pm" >
                 </div>
                 <div>
                   <label for="exampleInputEmail1">Ticket sale end</label>
                   <br />
-                  <input type="date" name="ticket_date_ends" id="datepicker">
-                  <input type="time" name="ticket_time_ends" id="exampleInputEmail1" placeholder="am/pm">
+                  <input type="date" name="ticket_date_ends" id="datepicker" >
+                  <input type="time" name="ticket_time_ends" id="exampleInputEmail1" placeholder="am/pm" >
                 </div>
               </div>
             </div>
@@ -353,7 +353,7 @@ $organizer_id = $_GET['organizer_id'];
             <div>
                 <label for="exampleInputEmail1">EVENT TYPE</label>
                 <br />
-                <select class="selectpicker" name = "event_type">
+                <select class="selectpicker" name = "event_type" required >
                   <option>Select Event Type</option>
                   <option>Attraction</option>
                   <option>Camp/Trip</option>
@@ -378,7 +378,7 @@ $organizer_id = $_GET['organizer_id'];
             <div>
                 <label for="exampleInputEmail1">EVENT TOPIC</label>
                 <br />
-                <select class="selectpicker" name = "event_topic">
+                <select class="selectpicker" name = "event_topic" required >
                   <option>Select a topic</option>
                   <option>Automotive</option>
                   <option>Business & professional</option>

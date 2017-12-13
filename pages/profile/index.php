@@ -133,7 +133,7 @@
             <li class="active"><a data-toggle="tab" href="#upcoming">UPCOMING EVENTS</a></li>
             <li><a data-toggle="tab" href="#bookmark">BOOKMARKED EVENTS</a></li>
             <li><a data-toggle="tab" href="#past">PAST EVENTS</a></li>
-            <li><a data-toggle="tab" href="#certificate">CERTIFICATE</a></li>
+            <li><a data-toggle="tab" href="#certificate">CERTIFICATES</a></li>
       </ul>
 
       <div class="tab-content text-center">
