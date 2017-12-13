@@ -123,7 +123,8 @@
               <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
           </button>
 
-          <?php if(mysqli_num_rows($mark) == 0){ ?>
+          <?php if(isset($_SESSION['user_id'])) 
+                  if(mysqli_num_rows($mark) == 0){ ?>
           <button id="bookmark_button" type="button" class="btn btn-primary" aria-label="Left Align">
               <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
           </button>
@@ -136,12 +137,14 @@
     </div>
       <div class="col-lg-4">
       <br />
-          <form action="../backend/register.php" enctype="multipart/form-data" method="post">
+          <form action=<?php if(isset($_SESSION['user_id'])) echo "../backend/register.php"; else echo "../sign_in/"?> enctype="multipart/form-data" method="post">
             <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
           <button id="submission" type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>
+          
       </div>
     </div>
-
+    
+    <?php if(isset($_SESSION['user_id'])) {?>
     <script>
     $(document).ready(function(){
         $("#bookmark_button").click(function(){
@@ -156,6 +159,7 @@
         });
     });
     </script>
+    <?php } ?>
 
     <br />
     <div class="clearfix"></div>
