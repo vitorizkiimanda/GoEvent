@@ -106,7 +106,12 @@
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="">z
+              <input type="password" class="form-control" id="password" name="password" placeholder="" autofocus required>
+              <?php 
+                if (isset($_GET['Message'])) {
+                  $message = $_GET['Message'];
+                  ?><p class="text-danger" style="font-weight:500;"><?php echo "$message"; ?> </p> <?php
+                } ?>
             </div>
             <button type="submit" class="btn btn-primary btn-round btn-block">Log In</button>
         </form>

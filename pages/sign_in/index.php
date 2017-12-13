@@ -62,7 +62,7 @@
           <form method=post>
               <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email" req>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" autofocus required>
               </div>
               <button type="submit" class="btn btn-primary btn-round btn-block">Get Started</button>
               <a href="../backend/sign_in_google" class="btn btn-danger btn-round btn-block">Google</a>

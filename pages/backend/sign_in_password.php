@@ -26,7 +26,8 @@
             header('Location: ../../');
         }
         else{
-            
+            $Message = "Wrong Password!";
+            header("Location: ../../pages/sign_in_password?Message=$Message&event_id= echo $count ");
         }
 
     }
