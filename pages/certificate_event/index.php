@@ -1,14 +1,14 @@
 <?php
   require_once('../backend/certificate_mantab.php');
-  
+
   if (isset($_GET['Message'])) {
     print '<script type="text/javascript">alert("' . $_GET['Message'] . '");';
   }
 
   if($_GET['event_id']){
-    $event_id=base64_decode($_GET['event_id']);
-    $query = mysqli_query($connect,  "SELECT * FROM events WHERE event_id='$event_id' ");   
-    $result =mysqli_fetch_assoc($query); 
+    $event_id=base64_encode($_GET['event_id']);
+    $query = mysqli_query($connect,  "SELECT * FROM events WHERE event_id='$event_id' ");
+    $result =mysqli_fetch_assoc($query);
   }
 ?>
 
@@ -122,7 +122,7 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    
+
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -151,13 +151,13 @@
     </div>
   </div>
 
-  
+
   <?php if(isset($_GET['Message'])){ ?>
       <br />
       <br />
       <hr />
       <div class="container" >
-        <a href="../event_detail" class="btn btn-primary btn-round btn-lg btn-block">Skip To View Event Detail</a>
+        <a href='../event_detail/index.php?event_id=<?php echo $event_id?>;' class="btn btn-primary btn-round btn-lg btn-block">Skip To View Event Detail</a>
       </div>
       <script>
         window.alert("Create Event Success");
@@ -166,11 +166,11 @@
       <br />
       <br />
     <?php }?>
-  
+
   <br />
   <br />
 
-  
+
 
 
     <div class="container">
@@ -184,7 +184,7 @@
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
               <div class="col-lg-4 template_certificate">
                 <a id="temp1" href="#">
-                  <img src="../../images/certificate_temp_1.jpg" alt="template1" class="img-responsive hover" />  
+                  <img src="../../images/certificate_temp_1.jpg" alt="template1" class="img-responsive hover" />
                 </a>
               </div>
               <div class="col-lg-4 template_certificate">
@@ -205,16 +205,16 @@
               .siblings().removeClass('selected_certificate')
           });
           $(document).ready(function(){
-            
+
               $("#temp1").click(function(){
                 // $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
                 x = 1;
-                $.post('certificate_temp.php', { x }, function(result) { 
-                  
-                }); 
-                
-                
+                $.post('certificate_temp.php', { x }, function(result) {
+
+                });
+
+
                   // $_SESSION['temp']=1;
                 //
               });
@@ -222,33 +222,33 @@
                 // $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
                 x = 2;
-                $.post('certificate_temp.php', { x }, function(result) { 
-                  
-                }); 
+                $.post('certificate_temp.php', { x }, function(result) {
 
-                      
+                });
+
+
                 //
               });
               $("#temp3").click(function(){
                 // $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
                  x = 3;
-                 $.post('certificate_temp.php', { x }, function(result) { 
-                  
-                }); 
+                 $.post('certificate_temp.php', { x }, function(result) {
+
+                });
 
                 //
               });
               $("#submit_button").click(function(){
                 // $('.nav-tabs a[href="#pick"]').tab('show')
                 // ambil id templatenya disini
-                
-                
+
+
                 //
               });
           });
           </script>
-          
+
 
       <h2>Pick Design</h2>
       <hr />
@@ -263,34 +263,34 @@
                   function readURL(input) {
                       if (input.files && input.files[0]) {
                               var reader = new FileReader();
-                              
+
                               reader.onload = function (e) {
                                   $('#blah').attr('src', e.target.result);
                               }
-                              
+
                               reader.readAsDataURL(input.files[0]);
                           }
                       }
-            
+
                       $("#my_file").change(function(){
                           readURL(this);
                       });
                           </script>
-        
+
                           <script>
                             $(document).ready(function(){
                                 $("input[type='image']").click(function() {
-                                    $("input[id='my_file']").click(); 
+                                    $("input[id='my_file']").click();
                                     // ambil designnya di sini
-        
-                                    
+
+
                                     if (window.FileReader) {
                                       //then your code goes here
                                     } else {
                                       alert('This browser does not support FileReader');
                                     }
-        
-        
+
+
                                 });
                                 // $("#default").click(function(){
                                 //   $('.nav-tabs a[href="#preview"]').tab('show')
@@ -302,11 +302,11 @@
           </div>
         </div>
 
-        
-        
+
+
       <br />
       <br />
-      <br />  
+      <br />
       <h2>Font</h2>
       <hr />
       <div class="row text-center">
@@ -324,7 +324,7 @@
                     <br />
                     <br />
                     <input id="font" name="font" type="text"/>
-                    
+
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
                     <link rel="stylesheet" type="text/css" href="../../css/fontselect-default.css" />
                     <script src="../../js/jquery.fontselect.js"></script>
@@ -354,7 +354,7 @@
       </div>
       <br />
       <br />
-      <br /> 
+      <br />
 
       <div class="row">
         <div class="col-lg-4"></div>
@@ -367,7 +367,7 @@
             </form>
         <?php }else {?>
           <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
-          <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#myModal">Preview</button>  
+          <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#myModal">Preview</button>
         <?php } ?>
                   <!-- Modal Preview -->
           <div class="modal fade" id="myModal" role="dialog">
@@ -385,7 +385,7 @@
         </div>
         <div class="col-lg-4"></div>
       </div>
-      
+
       <div class="container row text-left">
         <br />
         <br />
@@ -405,7 +405,7 @@
           </div>
       </div>
 
-        
+
         <!-- <div id="preview" class="tab-pane fade">
           <br />
           <div class="row">
@@ -413,13 +413,13 @@
               </div>
               <div class="col-lg-8">
               <a id="temp2" href="#">
-                
+
               </a>
               <p>kalo di click nnti nge zoom kayaknya keren</p>
               </div>
               <div class="col-lg-2">
               </div>
-          </div> -->    
+          </div> -->
 
   <!-- footer -->
   <footer>
