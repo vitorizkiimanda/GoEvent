@@ -200,10 +200,12 @@
 
             <br />
             <br />
+            <?php if($hasil['event_type'] != "Select Event Type" && $hasil['event_type'] != "Select a topic") { ?>
             <p>TAGS</p>
             <br />
             <button type="button" class="btn btn-primary"> <?php echo $hasil['event_type'] ?> </button>
             <button type="button" class="btn btn-primary"> <?php echo $hasil['event_topic'] ?> </button>
+            <?php } ?>
 
         </div>
         <div class="col-lg-1"></div>
