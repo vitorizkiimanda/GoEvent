@@ -6,7 +6,7 @@
       $message = $_GET['Message'];
       echo "<script type='text/javascript'>alert('$message');</script>";
     }
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +47,7 @@
   <!-- (Optional) Latest compiled and minified JavaScript translation files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 
-  
+
 
 
 
@@ -206,9 +206,9 @@
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Profile Photo</label><br>
-                    <input class="form-control" name="organizer_photo" accept="image/*" type='file' id="my_file" name="my_file"/>
+                    <input class="form-control" name="user_photo" accept="image/*" type='file' id="my_file" name="my_file"/>
                       <br/>
-                      <img id="blah" src="../../photo_organizer/<?php echo $organizer_query['organizer_photo']?>" onError="this.onerror=null;this.src='../../images/default.png';" class="img-responsive" style="margin: 0 auto;" />
+                      <img id="blah" src="../../user_photo/<?php echo $_SESSION['user_photo']?>" onError="this.onerror=null;this.src='../../images/default.png';" class="img-responsive" style="margin: 0 auto;" />
                       <br />
                       <div class="text-center">
                         <p>JPG, GIF or PNG no larger than 1MB. Square images look the best!</p>
@@ -217,41 +217,41 @@
                               function readURL(input) {
                                   if (input.files && input.files[0]) {
                                           var reader = new FileReader();
-                                          
+
                                           reader.onload = function (e) {
                                               $('#blah').attr('src', e.target.result);
                                           }
-                                          
+
                                           reader.readAsDataURL(input.files[0]);
                                       }
                                   }
-                        
+
                                   $("#my_file").change(function(){
                                       readURL(this);
                                   });
                                       </script>
-                    
+
                                       <script>
                                         $(document).ready(function(){
                                             $("input[type='image']").click(function() {
-                                                $("input[id='my_file']").click(); 
+                                                $("input[id='my_file']").click();
                                                 // ambil designnya di sini
-                    
-                                                
+
+
                                                 if (window.FileReader) {
                                                   //then your code goes here
                                                 } else {
                                                   alert('This browser does not support FileReader');
                                                 }
-                    
-                    
+
+
                                             });
                                             // $("#default").click(function(){
                                             //   $('.nav-tabs a[href="#preview"]').tab('show')
                                             // });
                                         });
                     </script>
-                    
+
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
@@ -342,7 +342,7 @@
         <h3>Your Password</h3>
         <hr />
         <form action="#" enctype="multipart/form-data" method="post">
-<!-- 
+<!--
         <input type="password" placeholder="Password" id="password" required>
         <input type="password" placeholder="Confirm Password" id="confirm_password" required>
 
@@ -369,7 +369,7 @@
                     <button id="password_button" type="submit" class="btn btn-primary btn-round btn-block">Save</button>
 
                 </div>
-                        
+
                 <script>
                   var password = document.getElementById("password_new")
                     , confirm_password = document.getElementById("confirm_password_new");
@@ -391,13 +391,13 @@
       <div id="email" class="collapse">
         <h3>Email Preferences</h3>
         <hr />
-        
+
       </div>
 
       <div id="close" class="collapse">
         <h3>Close Account</h3>
         <hr />
-        
+
       </div>
 
 
