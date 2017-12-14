@@ -196,6 +196,7 @@
               </h4>
 
               <p>ti ati kalo doi nge hapus dirinya sendiri nnti gimana jadinya,, wkwkw </p>
+              <br />
           </div>
         </div>
       </div>
