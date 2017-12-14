@@ -23,8 +23,7 @@
         $user_email = $_POST['user_email'];
         $user_city = $_POST['user_city'];
 
-        if( file_exists($_FILES['user_photo']['tmp_name']) && is_uploaded_file($_FILES['user_photo']['tmp_name'])){
-
+        if( is_uploaded_file($_FILES['user_photo']['tmp_name'])){
        $photo_name = $_FILES['user_photo']['name'];
        $photo_size = $_FILES['user_photo']['size'];
        $photo_type = $_FILES['user_photo']['type'];
@@ -34,14 +33,16 @@
        $photo_path = "../../user_photo/".$photo_name;
        move_uploaded_file($photo_file, $photo_path);
 
-       $query_email =mysqli_query($connect, "UPDATE user   SET user_email = '$user_email',
-                                                              user_photo = '$photo_name',
-                                                               user_name = '$user_name',
-                                                               user_city = '$user_city'
+       $query_email =mysqli_query($connect, "UPDATE user   SET user_name = '$user_name',
+                                                                user_email = '$user_email',
+                                                               user_city = '$user_city',
+                                                              user_photo = '$photo_name'
                                                                WHERE user_id = '$id'");
 
       }
       else {
+        echo "aww";
+        
         $query_email =mysqli_query($connect, "UPDATE user   SET user_name = '$user_name',
                                                                 user_email = '$user_email',
                                                                 user_city = '$user_city'
@@ -49,11 +50,11 @@
       }
 
 
-      $query = mysqli_query($connect,  "SELECT user_name, user_email, user_city, user_photo
+      $query_aww = mysqli_query($connect,  "SELECT user_name, user_email, user_city, user_photo
       FROM user WHERE user_id='$id'");
 
-        if(mysqli_num_rows($query_email)){
-            $data = mysqli_fetch_assoc($query);
+        if(mysqli_num_rows($query_aww)){
+            $data = mysqli_fetch_assoc($query_aww);
             $_SESSION['user_name']  = $data['user_name'];
             $_SESSION['user_email']  = $data['user_email'];
             $_SESSION['user_city']  = $data['user_city'];
@@ -75,18 +76,22 @@
         $query_pass = mysqli_query($connect,  "SELECT user_name, user_email, user_city, user_photo
         FROM user WHERE user_id='$id' AND user_password='$user_password'");
 
+        $event_id_encrypt = base64_encode($id);
+
+
         if(mysqli_num_rows($query_pass)>0){
                 $query_email =mysqli_query($connect, "UPDATE user   SET user_password = '$encrypt_password'
                 WHERE user_id = '$id'");
 
+
                 $Message = "Password Change Success";
-                header("Location: ../../pages/account_setting?Message=$Message&event_id= echo $count ");
+                header("Location: ../../pages/account_setting?Message=$Message&event_id=".$event_id_encrypt );
 
 
         }
         else{
             $Message = "Password Wrong";
-            header("Location: ../../pages/account_setting?Message=$Message&event_id= echo $count ");
+            header("Location: ../../pages/account_setting?Message=$Message&event_id=".$event_id_encrypt);
         }
 
     }
