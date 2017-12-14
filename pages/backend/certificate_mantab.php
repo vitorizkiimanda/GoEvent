@@ -1,7 +1,7 @@
 <?php
     include('dbconnect.php');
     
-    $cek        = 0;
+    
     $rotation   = 0;
     $teks       = "Nama Peserta";
     
@@ -14,7 +14,9 @@
         $font_size = $_POST['font_size'];
         // $font_size = "72";        
         $event_id = $_POST['event_id'];
-        $cek=1;
+        
+        
+        
         $hex = $_POST['html5colorpicker'];
         // $font = $_POST['font'];
         // $font = "https://fonts.googleapis.com/css?family=".$font;
@@ -38,23 +40,23 @@
          $photo_path = '../../certificate_event/'.$photo_name;
          move_uploaded_file($photo_file, $photo_path);
 
-         $sql = mysqli_query($connect,  "UPDATE certificate_format SET certificate_image = $photo_name WHERE event_id = $event_id");
+        //  $sql = mysqli_query($connect,  "UPDATE certificate_format SET certificate_image = '$photo_name' WHERE event_id = '$event_id'");
          
     //  //
 
     //  pilih penempatan
          if($temp=="1"){
-             $origin_x = 310;
-             $origin_y = 100;
+             $origin_x = 400;
+             $origin_y = 150;
          }
 
          else if($temp=="2"){
-             $origin_x = 310;
+             $origin_x = 400;
              $origin_y = 290;
          }
 
          else if($temp=="3"){
-             $origin_x = 310;
+             $origin_x = 400;
              $origin_y = 490;
          }
 
@@ -70,8 +72,17 @@
          
 
          //ke database
-         $query = mysqli_query($connect, "INSERT INTO certificate_format (event_id,certificate_image,font_size, font, origin_x, origin_y, color_r, color_g, color_b, temp, rotation) 
-                                                    VALUES ('$event_id','','$font_size','$font', '$origin_x', '$origin_y', '$r', '$g', '$b', '$temp', '$rotation')");
+         $query = "INSERT INTO certificate_format (event_id,certificate_image,font_size, font, origin_x, origin_y, color_r, color_g, color_b, temp, rotation) 
+                    VALUES ('$event_id','$photo_name','$font_size','$font', '$origin_x', '$origin_y', '$r', '$g', '$b', '$temp', '$rotation')";
+
+        $q = $connect->query($query);
+        if($q === true){
+
+        }
+        else{
+            $sql = mysqli_connect($connect, "UPDATE certificate_format SET certificate_image ='$photo_name' , font_size = '$font_size' , font = '$font', origin_x = '$origin_x', origin_y = '$origin_y' ,color_r = '$r' , color_g = '$g', color_b = '$b' , temp = '$temp' , rotation = '$rotation' WHERE event_id = '$event_id'");
+            
+        }
 
      
          imagettftext($o_gambar, $font_size, $rotation, $origin_x, $origin_y, $color, $font, $teks);
