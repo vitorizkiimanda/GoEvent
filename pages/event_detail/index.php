@@ -97,7 +97,19 @@
     <!-- header -->
     <div class="row" style="max-height: 65vh;">
       <div class="col-lg-8 text-center">
+        <a id="fullscreen_img" href="#" data-toggle="modal" data-target="#myModal">
          <img src='../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" style="max-height: 50vh; margin: 0 auto;">
+        </a>
+          <!-- Modal Preview -->
+       <div class="modal fade" id="myModal" role="dialog">
+         <div class="modal-dialog modal-lg">
+           <div class="modal-content">
+             <div class="modal-body">
+             <img id="blah" src="../../photo_event/<?php echo $hasil['event_photo']; ?>" onError="this.onerror=null;this.src='../../images/certificate_default.jpg';" alt="template2" class="img-responsive" style=" margin: 0 auto;" />
+             </div>
+           </div>
+         </div>
+       </div>
          <br />
       </div>
       <div class="col-lg-4" style="height: 50vh;">
@@ -266,6 +278,7 @@
       <p class="text-center">Copyright @GoEvent   HVSZ 2017</p>
     </div>
   </footer>
+
 
 </body>
 </html>
