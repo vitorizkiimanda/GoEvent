@@ -193,10 +193,10 @@
             </iframe>
             <?php } ?>
             <br />
-            <br />
+            <hr />
             <p><i>FOR MORE INFORMATION PLEASE CONTACT :</i></p>
-            <p><?php echo $hasil2['user_name']." ".$hasil['organizer_phone_number']?></p>
-            <p>website : <?php echo $hasil['organizer_website']?></p>
+            <p><?php echo $hasil2['user_name']." : ".$hasil['organizer_phone_number']?></p>
+            <p>website : <a href="<?php echo $hasil['organizer_website']?>"><?php echo $hasil['organizer_website']?></a></p>
 
             <br />
             <br />
@@ -209,10 +209,11 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-3">
             <h5><b>DATE AND TIME</b></h5>
-            <p> <?php echo date('l jS F Y', strtotime($hasil['event_date_starts'])).", ".date('H:i', strtotime($hasil['event_time_starts']))." WIB" ?> <br/>
-              <?php echo date('l jS F Y', strtotime($hasil['event_date_ends'])).", ".date('H:i', strtotime($hasil['event_time_ends']))." WIB" ?> <br/>
+            <p><?php echo date('l jS F, Y', strtotime($hasil['event_date_starts']))."<br/>".date('H:i', strtotime($hasil['event_time_starts']))." (WIB)" ?> <br/>
+            <br />
+              <?php echo date('l jS F, Y', strtotime($hasil['event_date_ends']))."<br/>".date('H:i', strtotime($hasil['event_time_ends']))." (WIB)" ?> <br/>
             <!-- <p>Wed, Jan 24, 2018, 9:00 AM –<br/>Fri, Jan 25, 2019, 8:00 PM WIB<br /> -->
-              <a>Add to Calendar</a></p>
+              <!-- <a>Add to Calendar</a></p> -->
             <br />
             <h5><b>LOCATION</b></h5>
             <p> <?php echo $hasil['event_city']?><br />
