@@ -177,6 +177,26 @@
         </script>
       
         <p>JPG, GIF or PNG no larger than 1MB. Square images look the best!</p>
+
+        <hr />
+
+          <div class="text-left">
+            <h3>Admin :</h3>
+
+            <!-- ini yang di looping -->
+            
+              <h4 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;margin-bottom:10px; ">&nbsp;Admin1<a href="#"><span class="glyphicon glyphicon-trash text-danger" style="font-size: 18px; float:right;" aria-hidden="true"></span></a>
+              </h4>
+<!-- ini yang di looping -->
+
+
+              <h4 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;margin-bottom:10px; ">&nbsp;Admin1<a href="#"><span class="glyphicon glyphicon-trash text-danger" style="font-size: 18px; float:right;" aria-hidden="true"></span></a>
+              </h4>
+              <h4 style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;margin-bottom:10px; ">&nbsp;Admin1<a href="#"><span class="glyphicon glyphicon-trash text-danger" style="font-size: 18px; float:right;" aria-hidden="true"></span></a>
+              </h4>
+
+              <p>ti ati kalo doi nge hapus dirinya sendiri nnti gimana jadinya,, wkwkw </p>
+          </div>
         </div>
       </div>
       <div class="col-lg-9">
