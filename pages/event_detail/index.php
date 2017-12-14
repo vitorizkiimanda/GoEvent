@@ -77,7 +77,7 @@
                       <li><a href="../profile">Bookmarks</a></li>
                       <li><a href="../profile">Certificates</a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="../organizer_profile">Organizer Profile</a></li>
+                      <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                       <li><a href="../manage_event">Manage Events</a></li>
                       <li role="separator" class="divider"></li>
                       <li><a href="../account_setting">Account Settings</a></li>
@@ -95,23 +95,22 @@
 
   <div class="container text-wrap">
     <!-- header -->
-    <div class="row">
+    <div class="row" style="max-height: 65vh;">
       <div class="col-lg-8 text-center">
-         <img src='../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" style="max-height: 65vh; margin: 0 auto;">
+         <img src='../../photo_event/<?php echo $hasil['event_photo']; ?>' class="img-responsive" style="max-height: 50vh; margin: 0 auto;">
          <br />
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-4" style="height: 50vh;">
         <br />
-        <p><?php echo date('d F', strtotime($hasil['event_date_starts'])); ?> </p>
+        <p><?php echo date('d F Y', strtotime($hasil['event_date_starts'])); ?> </p>
         <br />
-        <h3><?php echo $hasil['event_name']?> </h3>
-        <a href="../../pages/organizer_profile_view?organizer_id=<?php echo $hasil['organizer_id']?> "><h6>by <?php echo $hasil['organizer_name'] ?></h6></a>
-        <br />
-        <br />
-        <p>
+        <h1><?php echo $hasil['event_name']?> </h1>
+        <a href="../../pages/organizer_profile_view?organizer_id=<?php echo $hasil['organizer_id']?> "><h4 style="color: #666a73;">by <?php echo $hasil['organizer_name'] ?></h4></a>
+        
+        <h4 style="position: absolute; bottom: 5px;">
           <?php if($hasil['ticket_price'] === '0' ) echo "FREE" ;
                 else echo "Rp ".$hasil['ticket_price'].",00" ; ?>
-        </p>
+        </h4>
       </div>
     </div>
 
@@ -119,9 +118,9 @@
     <!-- buttons -->
     <div class="row">
       <div class="col-lg-8">
-          <button type="button" class="btn btn-default" aria-label="Left Align">
+          <!-- <button type="button" class="btn btn-default" aria-label="Left Align">
               <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
-          </button>
+          </button> -->
 
           <?php if(isset($_SESSION['user_id']))
                   if(mysqli_num_rows($mark) == 0){ ?>

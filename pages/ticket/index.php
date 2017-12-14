@@ -81,7 +81,7 @@
                       <li><a href="../profile">Bookmarks</a></li>
                       <li><a href="../profile">Certificates</a></li>
                       <li role="separator" class="divider"></li>
-                      <li><a href="../organizer_profile">Organizer Profile</a></li>
+                      <li><a href="../organizer_profile_choose">Organizer Profile</a></li>
                       <li><a href="../manage_event">Manage Events</a></li>
                       <li role="separator" class="divider"></li>
                       <li><a href="../account_setting">Account Settings</a></li>
@@ -105,10 +105,10 @@
           else echo "PAID" ?></span></p>
     <p><?php echo date('l jS F Y', strtotime($sql_event['event_date_starts'])).", ".date('H:i', strtotime($sql_event['event_time_starts']))." WIB" ?></p>
     <p><?php echo $sql_event['event_city']?></p>
-    <br />
+    <!-- <br /> -->
     <div class="row">
       <div class="col-lg-3 text-center">
-        <br />
+        <!-- <br /> -->
         <a href="../../pages/event_detail/index.php?event_id=<?php echo $event_id_encrypt?>" class="btn btn-primary btn-lg btn-round btn-block">See Event</a>
         <a href="../backend/cancel_order.php?event_id=<?php echo $event_id_encrypt?>" class="btn btn-danger btn-lg btn-round btn-block">Cancel Order</a>
       </div>
@@ -124,7 +124,7 @@
         <h4>Email</h4>
         <h4><b><?php echo $sql_user['user_email']?></b></h4>
         <br />
-        <h4>Ticket Id</h4>
+        <h4>Ticket ID</h4>
         <h4><b><?php echo $sql_att['ticket_id']?></b></h4>
         <br />
         <a href="../../pages/account_setting" class="btn btn-primary btn-lg btn-round btn-block">Edit</a>

@@ -134,11 +134,11 @@
         <div class="col-lg-4 text-center">
           <img src="../../photo_organizer/<?php echo $row['organizer_photo']?>" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-6">
 
                 <br />
                 <div class="form-group">
-                  <label for="exampleInputEmail1" id="date_card">Organizer Name</label>
+                  <label for="exampleInputEmail1" id="date_card">Organizer Name</label> 
                   <h1 id="date_card"><?php echo $row['organizer_name']?></h1>
                 </div>
                 <br />
@@ -153,6 +153,10 @@
                   <label for="exampleInputEmail1" id="date_card">Website</label>
                   <h4><?php echo $row['organizer_website']?></h4>
                 </div>
+        </div>
+        <div class="col-lg-2">
+          
+        <a href="../backend/sign_in_google" class="btn btn-danger btn-round btn-block">Delete</a>
         </div>
       </div>
     <!-- </a> -->
