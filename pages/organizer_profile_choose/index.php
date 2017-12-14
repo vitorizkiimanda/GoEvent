@@ -138,7 +138,7 @@
 
                 <br />
                 <div class="form-group">
-                  <label for="exampleInputEmail1" id="date_card">Organizer Name</label> 
+                  <label for="exampleInputEmail1" id="date_card">Organizer Name</label>
                   <h1 id="date_card"><?php echo $row['organizer_name']?></h1>
                 </div>
                 <br />
@@ -155,8 +155,8 @@
                 </div>
         </div>
         <div class="col-lg-2">
-          
-        <a href="../backend/sign_in_google" class="btn btn-danger btn-round btn-block">Delete</a>
+
+        <a href="../backend/delete_organizer.php?organizer_id= <?php echo $row['organizer_id'] ; ?>" class="btn btn-danger btn-round btn-block">Delete</a>
         </div>
       </div>
     <!-- </a> -->
