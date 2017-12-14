@@ -132,7 +132,7 @@
     <!-- <a href="../organizer_profile?organizer_id= <?php echo $row['organizer_id'] ; ?>"> -->
       <div onclick="location.href='../organizer_profile?organizer_id= <?php echo $row['organizer_id'] ; ?>';" style="cursor: pointer;" class="row card_browse_event">
         <div class="col-lg-4 text-center">
-          <img src="../../photo_organizer/<?php echo $row['organizer_photo']?>" class="img-responsive" style="margin: 0 auto;" alt="Organizer Profile Pict" width="300" height="300" />
+          <img src="../../photo_organizer/<?php echo $row['organizer_photo']?>" class="img-responsive" style="margin: 0 auto;" onError="this.onerror=null;this.src='../../images/default.png';" alt="Organizer Profile Pict" width="300" height="300" />
         </div>
         <div class="col-lg-6">
 

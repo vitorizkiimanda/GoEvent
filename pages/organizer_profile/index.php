@@ -182,7 +182,7 @@
       <div class="col-lg-9">
               <div class="form-group">
                 <label for="exampleInputEmail1">Organizer Name</label>
-                <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" value= "<?php echo $organizer_query['organizer_name'] ?>" >
+                <input type="text" name="organizer_name" class="form-control" id="exampleInputEmail1" value= "<?php echo $organizer_query['organizer_name'] ?>" required >
               </div>
 
               <div class="form-group">
@@ -197,7 +197,7 @@
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Phone Number</label>
-                <input type="number" name="organizer_phone_number" class="form-control" id="exampleInputEmail1" value= "<?php echo $organizer_query['organizer_phone_number'] ?>" >
+                <input type="number" name="organizer_phone_number" class="form-control" id="exampleInputEmail1" value= "<?php echo $organizer_query['organizer_phone_number'] ?>" required >
               </div>
 
                 <div class="form-group">
