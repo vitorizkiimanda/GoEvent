@@ -53,8 +53,11 @@
 
       $q2 = $connect->query($sqlticket);
       if ( $q2 === true) {
+
+        $event_id_encrypt = base64_encode($count);
+        
         $Message = "Create Event Success";
-        header("Location: ../../pages/certificate_event?Message=. urlencode($Message)&event_id= echo $count ");
+        header("Location: ../../pages/certificate_event?Message=. urlencode($Message)&event_id=".$event_id_encrypt );
 
       }
       else {

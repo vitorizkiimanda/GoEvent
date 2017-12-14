@@ -178,7 +178,8 @@
       <br />
       <hr />
       <div class="container" >
-        <a href="../event_detail" class="btn btn-primary btn-round btn-lg btn-block">Skip To View Event Detail</a>
+      <?php $event_id_encrypt = base64_encode($event_id); ?>
+        <a href="../event_detail?event_id=<?php echo $event_id_encrypt;?>" class="btn btn-primary btn-round btn-lg btn-block">Skip To View Event Detail</a>
       </div>
       <script>
         window.alert("Create Event Success");
@@ -394,7 +395,7 @@
          <div class="modal-dialog modal-sm">
            <div class="modal-content">
              <div class="modal-body">
-             <?php if(CURRENT_TIME() < $result['event_date_starts'] ){?>
+             <?php if( CURRENT_TIME() < $result['event_date_starts'] ){?>
                <p>Generate only available after or during event</p>
              <?php } else {
                 $event_id_encrypt = base64_encode($event_id);
