@@ -1,9 +1,9 @@
 <?php
     include('dbconnect.php');
         
-    if(isset($_POST['event_id'])){
-        $event_id = $_POST['event_id'];
-        
+    if($_GET['event_id']){
+        $event_id=base64_decode($_GET['event_id']);
+                
         //peserta
         $query = mysqli_query($connect,  "SELECT user_id FROM attendant WHERE event_id= '$event_id' AND attendant.status='1'");
 
@@ -24,7 +24,7 @@
         if(mysqli_num_rows($query_format)>0){
             $aww = mysqli_fetch_assoc($query_format);
 
-            
+
 
 
 

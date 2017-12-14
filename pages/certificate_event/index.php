@@ -7,14 +7,26 @@
 
   if($_GET['event_id']){
     $event_id=base64_decode($_GET['event_id']);
-    $query = mysqli_query($connect,  "SELECT * FROM events JOIN certificate_format WHERE event_id='$event_id'");   
+    $query = mysqli_query($connect,  "SELECT * FROM events WHERE event_id='$event_id'");   
     if(mysqli_num_rows($query)>0){
       $result =mysqli_fetch_assoc($query);
     }
-    else{
-      $query = mysqli_query($connect,  "SELECT * FROM events WHERE event_id='$event_id' ");   
-      $result =mysqli_fetch_assoc($query);      
+    else{ 
     }
+
+
+    $query2 = mysqli_query($connect,  "SELECT * FROM certificate_format WHERE event_id='$event_id'");       
+    if(mysqli_num_rows($query2)>0){
+        $cek = 1;
+        $result2 =mysqli_fetch_assoc($query2);
+        
+        
+    }
+    else{
+        $cek=0;    
+    }
+
+
   }
   else{
     header('Location: ../manage_event');            
@@ -348,11 +360,10 @@
       <div class="row">
       <div class="col-lg-4"></div>
       <div class="col-lg-4">
-      <?php if($cek==0){ ?>
         <input type="hidden" name="event_id" value="<?php echo $event_id;?>" >
-         <button type="submit"  class="btn btn-info btn-lg btn-block">Submit</button>
-         <?php }else {?> <br>
-           <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
+         <button type="submit"  class="btn btn-info btn-lg btn-block">Submit</button><br>
+         <?php if($cek==1){ ?>
+          <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
            <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#myModal">Preview</button>  
          <?php } ?>
          </form>
@@ -362,7 +373,7 @@
          <div class="modal-dialog modal-lg">
            <div class="modal-content">
              <div class="modal-body">
-             <img id="blah" src="../../certificate_event<?php echo $result['certificate_image']?>" onError="this.onerror=null;this.src='../../images/certificate_default.jpg';" alt="template2" class="img-responsive" />
+             <img id="blah" src="../../certificate_event/<?php echo "example".$result2['certificate_image']?>" onError="this.onerror=null;this.src='../../images/certificate_default.jpg';" alt="template2" class="img-responsive" />
              </div>
              <div class="modal-footer">
                <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
@@ -383,7 +394,12 @@
          <div class="modal-dialog modal-sm">
            <div class="modal-content">
              <div class="modal-body">
+             <?php if(CURRENT_TIME() < $result['event_date_starts'] ){?>
                <p>Generate only available after or during event</p>
+             <?php } else {
+                $event_id_encrypt = base64_encode($event_id);
+                header('Location: ../backend/certificate_generate?event_id='.$event_id_encrypt);        
+             }?>
              </div>
              <div class="modal-footer">
                <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
