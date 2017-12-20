@@ -29,36 +29,48 @@
         // $origin_y = 100;
         // $temp = $_SESSION['temp'];
 
+        // simpen design certificate
+        $query_format = mysqli_query($connect,  "SELECT * FROM certificate_format WHERE event_id= '$event_id'");
+        if(mysqli_num_rows($query_format)>0){
+            $result = mysqli_fetch_assoc($query_format);
+            $photo_name = $result['certificate_image'];
+            $photo_path = '../../certificate_event/'.$result['certificate_image'];
+        }
+        else{
+            $photo_name = $_FILES['my_file']['name'];
+            $photo_size = $_FILES['my_file']['size'];
+            $photo_type = $_FILES['my_file']['type'];
+            $photo_file = $_FILES['my_file']['tmp_name'];
+            $sub_photo = substr($photo_name,-6);
+            $photo_name = $event_id.'_certificate.'.$sub_photo;
+            $photo_path = '../../certificate_event/'.$photo_name;
+            move_uploaded_file($photo_file, $photo_path);
+        }
 
-    // simpen design certificate
-         $photo_name = $_FILES['my_file']['name'];
-         $photo_size = $_FILES['my_file']['size'];
-         $photo_type = $_FILES['my_file']['type'];
-         $photo_file = $_FILES['my_file']['tmp_name'];
-         $sub_photo = substr($photo_name,-6);
-         $photo_name = $event_id.'_certificate.'.$sub_photo;
-         $photo_path = '../../certificate_event/'.$photo_name;
-         move_uploaded_file($photo_file, $photo_path);
+
+         
 
         //  $sql = mysqli_query($connect,  "UPDATE certificate_format SET certificate_image = '$photo_name' WHERE event_id = '$event_id'");
          
     //  //
+        list($width, $height) = getimagesize($photo_path);
+    
 
     //  pilih penempatan
          if($temp=="1"){
-             $origin_x = 400;
-             $origin_y = 150;
+             $origin_x = (2*$width)/5;
+             $origin_y = $height/3;
          }
 
          else if($temp=="2"){
-             $origin_x = 400;
-             $origin_y = 290;
+            $origin_x = (2*$width)/5;
+            $origin_y = $height/2;
          }
 
          else if($temp=="3"){
-             $origin_x = 400;
-             $origin_y = 490;
-         }
+            $origin_x = (2*$width)/5;
+            $origin_y = (2*$height)/3;
+        }
 
          else{
          }

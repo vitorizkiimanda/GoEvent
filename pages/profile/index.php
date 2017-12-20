@@ -158,18 +158,17 @@
                               <h3 id="ticket_card">Ticket ID : <?php echo $upcoming[$i]["ticket_id"]; ?> </h3>
                           </div>
                         <!-- </a> -->
-                    
-
           <?php } ?>
-          </div>
-      </div>
-
           <?php } else { ?>
           <p>You have no upcoming events</p>
           <?php } ?>
 
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
 
+          </div>
+      </div>
+
+          
 
 
 
@@ -214,7 +213,6 @@
                 <div class="container">
                     <br />
                     <div class="row">
-                        <!-- <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" > -->
                           <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" class="col-lg-4 text-center" id="card_event_profile">
 
                             <img src='../../photo_event/<?php echo $past[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
@@ -245,9 +243,8 @@
                     <!-- Events Card -->
                 <div class="container">
                   <div class="row">
-                    <a href="../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>" >
                         <div class="col-lg-4 text-center">
-                          <p> <img src='../../photo_event/' class="img-responsive" width='400' height='300'> </p>
+                          <img src='../../user_certificate/<?php echo $certificate[$i]["certificate"]; ?>' width='200' height='200' id="card_event2">
                           <h5 id="title_card"> <?php echo $certificate[$i]["certificate"]; ?> </h5>
                         </div>
                       </a>
