@@ -391,7 +391,16 @@
      <br />
      <?php $event_id_encrypt = base64_encode($event_id); ?> 
      <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#generateModal">Generate & Send</button> -->
-     <a class="btn btn-primary btn-lg" href="../backend/certificate_generate.php?event_id=<?php echo $event_id_encrypt;?>">Generate</a>
+     <?php if($cek==1){ ?>
+     <a id="submission" class="btn btn-primary btn-lg" href="../backend/certificate_generate.php?event_id=<?php echo $event_id_encrypt;?>">Generate</a>
+     <script>
+              $(document).ready(function(){
+                  $("#submission").click(function(){
+                    window.alert("Generate Certificates Success");
+                  });
+              });
+    </script>
+    <?php } ?>
 
      <!-- Modal Generate -->
      <div class="modal fade" id="generateModal" role="dialog">
