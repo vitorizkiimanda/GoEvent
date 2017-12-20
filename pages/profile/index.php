@@ -161,10 +161,10 @@
           <?php } ?>
           <?php } else { ?>
           <p>You have no upcoming events</p>
-          <?php } ?>
+          
 
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
-
+          <?php } ?>
           </div>
       </div>
 
@@ -176,15 +176,15 @@
         <div id="bookmark" class="tab-pane fade">
           <br />
 
-          <?php if($bookmark!=0) {
-            for($i=0; $i<count($bookmark); $i++){?>
-                <?php $event_id_encrypt = base64_encode($bookmark[$i]['event_id']); ?>
-
                 <!-- Events Card -->
                 <div class="container">
                     <br />
                     <div class="row">
-                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer;" class="col-lg-4 text-center" id="card_event_profile">
+          <?php if($bookmark!=0) {
+            for($i=0; $i<count($bookmark); $i++){?>
+                <?php $event_id_encrypt = base64_encode($bookmark[$i]['event_id']); ?>
+
+                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer; border: 10px solid white;" class="col-lg-4 text-center" id="card_event_profile">
 
                             <img src='../../photo_event/<?php echo $bookmark[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
                             <br/>
@@ -193,10 +193,10 @@
                               <p id="location_card"> <?php echo $bookmark[$i]["event_city"]; ?> </p>
                           </div>
                         <!-- </a> -->
-                    </div>
-                  </div>
+                    
             <?php } ?>
-
+                 </div>
+              </div>
 
           <?php } else { ?>
             <p>Bookmarked events will show up here</p>
@@ -205,15 +205,16 @@
         </div>
         <div id="past" class="tab-pane fade">
           <br />
+          <!-- Events Card -->
+          <div class="container">
+                    <br />
+                    <div class="row">
 
           <?php if($past!=0) {
               for($i=0; $i<count($past); $i++){?>
                 <?php $event_id_encrypt = base64_encode($past[$i]['event_id']); ?>
-                  <!-- Events Card -->
-                <div class="container">
-                    <br />
-                    <div class="row">
-                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" class="col-lg-4 text-center" id="card_event_profile">
+                  
+                          <div onclick="location.href='../../pages/event_detail?event_id=<?php echo $event_id_encrypt?>';" style="cursor: pointer; border: 10px solid white;" class="col-lg-4 text-center" id="card_event_profile">
 
                             <img src='../../photo_event/<?php echo $past[$i]['event_photo']; ?>' width='200' height='200' id="card_event2">
                             <br/>
@@ -222,43 +223,48 @@
                               <p id="location_card"> <?php echo $past[$i]["event_city"]; ?> </p>
                           </div>
                         <!-- </a> -->
-                    </div>
-                  </div>
+                    
 
               <?php } ?>
+              </div>
+            </div>
 
 
             <?php } else { ?>
               <p>You have no past events</p>
-            <?php } ?>
+            
 
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
+          <?php } ?>
         </div>
         <div id="certificate" class="tab-pane fade">
           <br />
+          
+                    <!-- Events Card -->
+                <div class="container">
+                  <div class="row">
           <?php if($certificate!=0) {
               for($i=0; $i<count($certificate); $i++){?>
                 <?php $event_id_encrypt = base64_encode($certificate[$i]['event_id']); ?>
 
-                    <!-- Events Card -->
-                <div class="container">
-                  <div class="row">
-                        <div class="col-lg-4 text-center">
+                        <div class="col-lg-4 text-center" style="cursor: pointer; border: 10px solid white;">
                           <img src='../../user_certificate/<?php echo $certificate[$i]["certificate"]; ?>' width='200' height='200' id="card_event2">
                           <h5 id="title_card"> <?php echo $certificate[$i]["certificate"]; ?> </h5>
                         </div>
                       </a>
-                  </div>
-                </div>
+                  
 
               <?php } ?>
+                </div>
+              </div>
 
 
             <?php } else { ?>
               <p>You have no certificate yet</p>
-            <?php } ?>
+            
 
           <a href="../../pages/browse_event" class="btn btn-primary btn-round text-center">DISCOVER EVENTS</a>
+          <?php } ?>
         </div>
       </div>
     </div>

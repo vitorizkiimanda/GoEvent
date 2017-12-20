@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2017 at 03:31 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Dec 20, 2017 at 11:18 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -32,6 +32,15 @@ CREATE TABLE `album_certificate` (
   `certificate` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `album_certificate`
+--
+
+INSERT INTO `album_certificate` (`user_id`, `event_id`, `certificate`) VALUES
+(1, 39, '39-1-Nuh Satria.jpg'),
+(2, 40, '40-2-NuhSat.jpg'),
+(2, 41, '41-2-NuhSat.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -57,7 +66,12 @@ INSERT INTO `attendant` (`user_id`, `event_id`, `status`, `ticket_id`, `arrival_
 (4, 20, 1, 'B30', '10:11:55'),
 (6, 27, 0, 'EV89627000', '00:00:00'),
 (13, 29, 1, 'EV36132900', '02:58:26'),
-(13, 36, 0, 'EV63133600', '00:00:00');
+(13, 36, 0, 'EV63133600', '00:00:00'),
+(1, 38, 0, 'EV31138000', '00:00:00'),
+(1, 39, 0, 'EV60139000', '00:00:00'),
+(1, 39, 1, 'EV60139001', '11:00:00'),
+(2, 40, 1, 'EV45240000', '16:41:07'),
+(2, 41, 1, 'EV23241000', '17:13:56');
 
 -- --------------------------------------------------------
 
@@ -87,6 +101,36 @@ CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certificate_format`
+--
+
+CREATE TABLE `certificate_format` (
+  `event_id` int(31) NOT NULL,
+  `certificate_image` text NOT NULL,
+  `font_size` varchar(100) NOT NULL,
+  `font` varchar(100) NOT NULL,
+  `origin_x` float NOT NULL,
+  `origin_y` float NOT NULL,
+  `color_r` int(11) NOT NULL,
+  `color_g` int(11) NOT NULL,
+  `color_b` int(11) NOT NULL,
+  `temp` int(11) NOT NULL,
+  `rotation` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `certificate_format`
+--
+
+INSERT INTO `certificate_format` (`event_id`, `certificate_image`, `font_size`, `font`, `origin_x`, `origin_y`, `color_r`, `color_g`, `color_b`, `temp`, `rotation`) VALUES
+(38, '38_certificate.08.jpg', '28', '../../font/Aaargh.ttf', 400, 150, 0, 0, 0, 1, 0),
+(39, '39_certificate.63.jpg', '36', '../../font/Aaargh.ttf', 400, 290, 255, 255, 255, 2, 0),
+(40, '40_certificate.92.jpg', '48', '../../font/Aaargh.ttf', 512, 426.667, 255, 0, 255, 1, 0),
+(41, '41_certificate.12.jpg', '48', '../../font/Aaargh.ttf', 320, 400, 255, 0, 255, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -146,7 +190,12 @@ INSERT INTO `events` (`event_id`, `event_name`, `event_city`, `event_date_starts
 (33, '', '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 0, 'certificate_template', '', '', '33_photo.', 13, '', 0, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', 0, 0),
 (34, ';asldkfj', ';lkdsjf;lsdkjf', '0898-08-07', '08:07:00', '0081-12-01', '08:18:00', 9, 'certificate_template', '', 'https://www.youtube.com/watch?v=xE-Ogt9Sc_E', '34_photo.or.jpg', 13, ';sladkfj', 2, 2, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', 0, 0),
 (35, 'sadjfs;dfj', ';lkjds;lfkj', '0000-00-00', '09:08:00', '0000-00-00', '01:00:00', 897, 'certificate_template', '<p>kjshdflksjhdf</p>\r\n', 'https://www.youtube.com/watch?v=xE-Ogt9Sc_E', '35_photo.or.jpg', 13, '987', 987, 987987, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', 0, 0),
-(36, 'tes map', 'dramaga', '2017-12-14', '22:01:00', '2017-12-14', '01:00:00', 1, 'certificate_template', '<p>;lsdkfjskd</p>\r\n', 'https://www.youtube.com/watch?v=xE-Ogt9Sc_E', '36_photo.or.jpg', 13, ';lfd', 1, 1, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', -6.64176, 106.69);
+(36, 'tes map', 'dramaga', '2017-12-14', '22:01:00', '2017-12-14', '01:00:00', 1, 'certificate_template', '<p>;lsdkfjskd</p>\r\n', 'https://www.youtube.com/watch?v=xE-Ogt9Sc_E', '36_photo.or.jpg', 13, ';lfd', 1, 1, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', -6.64176, 106.69),
+(37, 'Ilution 52', 'Dramaga', '2017-12-14', '10:30:00', '2017-12-14', '10:35:00', 10, 'certificate_template', '<p>ilution nih</p>\r\n', 'https://www.youtube.com/watch?v=E5ONTXHS2mM', '37_photo.53.JPG', 21, 'Tiket masuk', 10, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', -6.58719, 106.73),
+(38, 'Ilution 52', 'Dramaga', '2017-12-14', '10:30:00', '2017-12-14', '10:35:00', 10, 'certificate_template', '<p>ilution nih</p>\r\n', 'https://www.youtube.com/watch?v=E5ONTXHS2mM', '38_photo.53.JPG', 21, 'Tiket masuk', 10, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', -6.58719, 106.73),
+(39, 'Ilution 52', 'Dramaga', '2017-12-20', '10:19:00', '2017-12-20', '10:20:00', 10, 'certificate_template', '<p>acara inaugurasi 52</p>\r\n', '', '39_photo.63.jpg', 22, 'tiket masuk', 10, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', -6.58651, 106.732),
+(40, 'Geganaan', 'Dramaga', '2017-12-20', '16:35:00', '2017-12-20', '16:38:00', 20, 'certificate_template', '<p>supporteran cuy</p>\r\n', '', '40_photo.12.jpg', 21, 'tiket joget', 20, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', -6.58637, 106.73),
+(41, 'Geganaan lagi nih', 'Dramaga', '2017-12-20', '17:12:00', '2017-12-20', '17:15:00', 100, 'certificate_template', '<p>geganaan lagi gabosen cuy</p>\r\n', '', '41_photo.92.jpg', 21, 'tiket', 10, 0, '', '0000-00-00', '00:00:00', '0000-00-00', '00:00:00', 'Select Event Type', 'Select a topic', -6.58515, 106.731);
 
 -- --------------------------------------------------------
 
@@ -188,11 +237,13 @@ INSERT INTO `organizer` (`organizer_id`, `organizer_name`, `organizer_descriptio
 (10, 'ganti nama coy', '', '0000000', 'Kalimantan Barat, Indonesia', 'http://kalbar.com', 'facebook.com/aadadad', '@adadad', 'dadaddada', 'dummy'),
 (11, 'Wiwiw inc', '<p>ini adalah sebuah awal baru,&nbsp;</p>\r\n', '085695534839', 'Bratwin, Poland', 'http://wiwiwinc.com', 'facebook.com/wiwiwinc', '@wiwiwinc', '@wiwiwinc', 'dummy'),
 (12, 'wiwiw ggmu', '<p>Glory Glory Manchester United, penyelenggara nobar, futsal bareng, CFD, meet up untuk reds army all Indonesia</p>\r\n', '085695534839', 'Manchester, United Kingdom', 'http://ggmu.wiwiw.go.id', 'facebook.com/ggmuwiwiw', '@ggmuwiwiw', '@ggmuwiwiw', 'dummy'),
-(13, 'IPB', '<p>Institut Pertanian Bogor adalah lembaga pendidikan tinggi pertanian yang secara historis merupakan bentukan dari lembaga-lembaga pendidikan menengah dan tinggi pertanian serta kedokteran hewan yang dimulai telah pada awal abad ke-20 di Bogor.<a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Embryonal_step-5\">[5]</a>&nbsp;Sebelum Perang Dunia II, lembaga-lembaga pendidikan menengah tersebut dikenal dengan nama&nbsp;<em>Middelbare Landbouwschool</em>,&nbsp;<em>Middelbare Bosbouwschool</em>&nbsp;dan&nbsp;<em>Nederlandndiche Veeartsenschool</em>.<a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Embryonal_step-5\">[5]</a></p>\r\n\r\n<p>IPB saat ini berlokasi dilaaya Dramaga, Katan&nbsp;<a href=\"https://id.wikipedia.org/wiki/Dramaga,_Bogor\">Dramaga</a>,&nbsp;<a href=\"https://id.wikipedia.org/wiki/Kabupaten_Bogor\">Kabupaten Bogor</a>,&nbsp;<a href=\"https://id.wikipedia.org/wiki/Provinsi_Jawa_Barat\">Provinsi Jawa Barat</a>.<a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_2007-2\">[2]</a></p>\r\n\r\n<p>Lahirnya Institut Pertanian Bogor (IPB) pada tanggal&nbsp;<a href=\"https://id.wikipedia.org/wiki/1_September\">1 September</a>&nbsp;1963 berdasarkan keputusan Menteri Perguruan Tinggi dan Ilmu Pengetahuan (PTIP) No. 92/1963 yang kemudian disahkan oleh Presiden RI Pertama dengan Keputusan No. 279/1965.<a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_2007-2\">[2]</a>&nbsp;Pada saat itu, dua fakultas di Bogor yang berada dalam naungan UI berkembang menjadi 5 fakultas, yaitu Fakultas Pertanian, Fakultas Kedokteran Hewan, Fakultas Perikanan, Fakultas Peternakan dan Fakultas Kehutanan. Pada tahun 1964, lahir Fakultas Teknologi dan Mekanisasi Pertanian yang kini menjadi Fakultas Teknologi Pertanian.<a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_2007-2\">[2]</a><a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_TEP_2009-6\">[6]</a></p>\r\n\r\n<p>Pada tanggal&nbsp;<a href=\"https://id.wikipedia.org/wiki/26_Desember\">26 Desember</a>&nbsp;2000, pemerintah Indonesia mengesahkan status otonomi IPB berdasarkan PP no. 152. Semenjak itu IPB merupakan perguruan tinggi berstatus Badan Hukum Milik Negara (BHMN).<a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_2007-2\">[2]</a></p>\r\n\r\n<p>Tahun 2005 IPB menerapkan sistem mayor minor sebagai pengganti sistem kurikulum nasional.<a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-undergraduate-7\">[7]</a><a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-8\">[8]</a>&nbsp;Sistem ini hanya diterapkan di IPB.[<em><a href=\"https://id.wikipedia.org/wiki/Wikipedia:Kutip_sumber_tulisan\">butuh rujukan</a></em>]&nbsp;Setiap mahasiswa IPB dimungkinkan mengambil dua atau bahkan lebih mata keahlian (jurusan) yang diminatinya.<a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-undergraduate-7\">[7]</a><a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-9\">[9]</a><a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-10\">[10]</a><a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-11\">[11]</a><a href=\"https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-12\">[12]</a></p>\r\n', '089657011491', 'Dramaga, Bogor, West Java, Indonesia', 'http://google.com', 'facebook.com/vitorizkiimanda', '@vito_rizki_i', '@vito_rizki_i', ' 13_photo.jpeg'),
+(13, 'IPB', '<p>Institut Pertanian Bogor adalah lembaga pendidikan tinggi pertanian yang secara historis merupakan bentukan dari lembaga-lembaga pendidikan menengah dan tinggi pertanian serta kedokteran hewan yang dimulai telah pada awal abad ke-20 di Bogor.<a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Embryonal_step-5">[5]</a>&nbsp;Sebelum Perang Dunia II, lembaga-lembaga pendidikan menengah tersebut dikenal dengan nama&nbsp;<em>Middelbare Landbouwschool</em>,&nbsp;<em>Middelbare Bosbouwschool</em>&nbsp;dan&nbsp;<em>Nederlandndiche Veeartsenschool</em>.<a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Embryonal_step-5">[5]</a></p>\r\n\r\n<p>IPB saat ini berlokasi dilaaya Dramaga, Katan&nbsp;<a href="https://id.wikipedia.org/wiki/Dramaga,_Bogor">Dramaga</a>,&nbsp;<a href="https://id.wikipedia.org/wiki/Kabupaten_Bogor">Kabupaten Bogor</a>,&nbsp;<a href="https://id.wikipedia.org/wiki/Provinsi_Jawa_Barat">Provinsi Jawa Barat</a>.<a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_2007-2">[2]</a></p>\r\n\r\n<p>Lahirnya Institut Pertanian Bogor (IPB) pada tanggal&nbsp;<a href="https://id.wikipedia.org/wiki/1_September">1 September</a>&nbsp;1963 berdasarkan keputusan Menteri Perguruan Tinggi dan Ilmu Pengetahuan (PTIP) No. 92/1963 yang kemudian disahkan oleh Presiden RI Pertama dengan Keputusan No. 279/1965.<a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_2007-2">[2]</a>&nbsp;Pada saat itu, dua fakultas di Bogor yang berada dalam naungan UI berkembang menjadi 5 fakultas, yaitu Fakultas Pertanian, Fakultas Kedokteran Hewan, Fakultas Perikanan, Fakultas Peternakan dan Fakultas Kehutanan. Pada tahun 1964, lahir Fakultas Teknologi dan Mekanisasi Pertanian yang kini menjadi Fakultas Teknologi Pertanian.<a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_2007-2">[2]</a><a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_TEP_2009-6">[6]</a></p>\r\n\r\n<p>Pada tanggal&nbsp;<a href="https://id.wikipedia.org/wiki/26_Desember">26 Desember</a>&nbsp;2000, pemerintah Indonesia mengesahkan status otonomi IPB berdasarkan PP no. 152. Semenjak itu IPB merupakan perguruan tinggi berstatus Badan Hukum Milik Negara (BHMN).<a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-Panduan_2007-2">[2]</a></p>\r\n\r\n<p>Tahun 2005 IPB menerapkan sistem mayor minor sebagai pengganti sistem kurikulum nasional.<a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-undergraduate-7">[7]</a><a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-8">[8]</a>&nbsp;Sistem ini hanya diterapkan di IPB.[<em><a href="https://id.wikipedia.org/wiki/Wikipedia:Kutip_sumber_tulisan">butuh rujukan</a></em>]&nbsp;Setiap mahasiswa IPB dimungkinkan mengambil dua atau bahkan lebih mata keahlian (jurusan) yang diminatinya.<a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-undergraduate-7">[7]</a><a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-9">[9]</a><a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-10">[10]</a><a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-11">[11]</a><a href="https://id.wikipedia.org/wiki/Institut_Pertanian_Bogor#cite_note-12">[12]</a></p>\r\n', '089657011491', 'Dramaga, Bogor, West Java, Indonesia', 'http://google.com', 'facebook.com/vitorizkiimanda', '@vito_rizki_i', '@vito_rizki_i', ' 13_photo.jpeg'),
 (15, 'tes', '<p>tes</p>\r\n', '0982348', 'Dramaga, Bogor, West Java, Indonesia', 'http://google.com', 'facebook.com/vitorizkiimanda', '@vito_rizki_i', '@vito_rizki_i', '14_photo.'),
 (18, ';lkdajf', '<p>;lkjds;flkj</p>\r\n', '0980', 'Dramaga, Bogor, West Java, Indonesia', 'http://google.com', 'facebook.com/', '@', '@', '16_photo.'),
 (19, 'IPB', '<p>IPB ku</p>\r\n', '089657011492', 'Dramaga, Bogor, West Java, Indonesia', 'http://ipb.ac.id', 'facebook.com/ipb', '@vito_rizki_i', '@vito_rizki_i', '19_photo.pb.png'),
-(20, 'ABCD', '<p>abcd</p>\r\n', '089608960896', 'Dramaga, Bogor, West Java, Indonesia', 'http://google.com', 'facebook.com/vitorizkiimanda', '@vito_rizki_i', '@vito_rizki_i', '20_photo.');
+(20, 'ABCD', '<p>abcd</p>\r\n', '089608960896', 'Dramaga, Bogor, West Java, Indonesia', 'http://google.com', 'facebook.com/vitorizkiimanda', '@vito_rizki_i', '@vito_rizki_i', '20_photo.'),
+(21, 'NuhSat', '<p>punya nuh</p>\r\n', '08765678', 'Jalan Pesona Cilebut 2, Cilebut Barat, Bogor, West Java, Indonesia', 'http://aww.com', 'facebook.com/nuh.satria', '@nuhsat', '@nuh', '21_photo.'),
+(22, 'Nuhsat - Organizer', '<p>tentang nuhsat</p>\r\n', '083891220022', 'Jalan Pesona Cilebut 2 No.2, Cilebut Barat, Bogor, West Java, Indonesia', 'http://nuhsat.wordpress.com', 'facebook.com/nuh.satria', '@nuhsat', '@nuhsat', '22_photo.');
 
 -- --------------------------------------------------------
 
@@ -216,7 +267,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_uid`, `user_name`, `user_email`, `user_city`, `user_photo`, `user_password`) VALUES
 (1, '102317590542089034006', 'Nuh Satria', 'nuhsatria@gmail.com', 'in', 'https://lh3.googleusercontent.com/-hsFKkGn6NuE/AAAAAAAAAAI/AAAAAAAACGo/RDsUwlhzzpU/photo.jpg', ''),
-(2, '', 'nuhsat', 'nuhsat@gmail.com', 'Jakarta', '', '5e3aaac127513d79ca5aabb98dc727ee'),
+(2, '', 'NuhSat', 'nuhsat@gmail.com', 'Jakarta', '2_user_photo._5.jpg', '5e3aaac127513d79ca5aabb98dc727ee'),
 (3, '', 'nuhsat123', 'nuhsat123@gmail.com', '', '', '5e3aaac127513d79ca5aabb98dc727ee'),
 (4, '', 'nuhsat1234', 'nuhsat1234@gmail.com', '', '', 'be25c5d37b695f7f493fc2680f7fad7b'),
 (5, '111743426734842217525', 'Zulfahmi Habibi', 'ibnuhadi11@gmail.com', '', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', ''),
@@ -263,7 +314,9 @@ INSERT INTO `user_organizer` (`user_id`, `organizer_id`) VALUES
 (13, 14),
 (13, 16),
 (13, 19),
-(13, 20);
+(13, 20),
+(1, 21),
+(2, 22);
 
 --
 -- Indexes for dumped tables
@@ -274,6 +327,12 @@ INSERT INTO `user_organizer` (`user_id`, `organizer_id`) VALUES
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `certificate_format`
+--
+ALTER TABLE `certificate_format`
+  ADD UNIQUE KEY `event_id` (`event_id`);
 
 --
 -- Indexes for table `events`
@@ -306,12 +365,12 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `organizer`
 --
 ALTER TABLE `organizer`
-  MODIFY `organizer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `organizer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `user`
 --
