@@ -118,7 +118,7 @@
         <br />
         <h1><?php echo $hasil['event_name']?> </h1>
         <a href="../../pages/organizer_profile_view?organizer_id=<?php echo $hasil['organizer_id']?> "><h4 style="color: #666a73;">by <?php echo $hasil['organizer_name'] ?></h4></a>
-        
+
         <h4 style="position: absolute; bottom: 5px;">
           <?php if($hasil['ticket_price'] === '0' ) echo "FREE" ;
                 else echo "Rp ".$hasil['ticket_price'].",00" ; ?>
@@ -148,10 +148,12 @@
     </div>
       <div class="col-lg-4">
       <br />
-          <form action=<?php if(isset($_SESSION['user_id'])) echo "../backend/register.php"; else echo "../sign_in/"?> enctype="multipart/form-data" method="post">
-            <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
-          <button id="submission" type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>
 
+          <form action=<?php if(isset($_SESSION['user_id'])) echo "../backend/register.php"; else echo "../sign_in/"?> enctype="multipart/form-data" method="post">
+        <?php if($reg->num_rows < 1 ) { ?>
+          <input type="hidden" name="event_id" value="<?php echo $event_id?>" >
+          <button id="submission" type="submit" class="btn btn-success btn-round btn-block">REGISTER</button>
+        <?php } ?>
       </div>
     </div>
 

@@ -33,4 +33,8 @@ $organizer = $hasil['organizer_id'];
 $sql2 = "SELECT * FROM user u INNER JOIN user_organizer uo ON u.user_id = uo.user_id WHERE organizer_id = '$organizer'";
 $queri2 = $connect->query($sql2);
 $hasil2 = $queri2->fetch_assoc();
+
+$sqlreg = "SELECT * FROM attendant WHERE event_id='$event_id' and user_id = '$user_id'";
+$reg = $connect->query($sqlreg);
+
 ?>
