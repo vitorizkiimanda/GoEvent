@@ -1,6 +1,10 @@
 <?php
     include('dbconnect.php');
     
+    if (!empty($_SESSION['user_id'])) { 
+        header('Location: ../../index.php' );                            
+    }
+
     if(!empty($_POST['email'])){
         $email = $_POST['email'];
         $_SESSION['user_email'] = $email;

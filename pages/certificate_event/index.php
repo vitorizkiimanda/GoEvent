@@ -314,7 +314,7 @@
         <div class="form-group">
             <label for="exampleInputEmail1"></label>
             <input type='file' id="my_file" name="my_file" class="form-control" accept="image/*" />
-            <img id="blah" src="#" onError="this.onerror=null;this.src='../../images/certificate_default.jpg';" class="img-responsive" />
+            <img id="blah" src="../../certificate_event/<?php if(!empty($result2['certificate_image'])) echo $result2['certificate_image']?>" onError="this.onerror=null;this.src='../../images/certificate_default.jpg';" class="img-responsive" />
                 <!-- </form> -->
                 <script>
                   function readURL(input) {
@@ -389,18 +389,16 @@
    <div class="container row text-left">
      <br />
      <br />
-     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#generateModal">Generate & Send</button>
+     <?php $event_id_encrypt = base64_encode($event_id); ?> 
+     <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#generateModal">Generate & Send</button> -->
+     <a class="btn btn-primary btn-lg" href="../backend/certificate_generate.php?event_id=<?php echo $event_id_encrypt;?>">Generate</a>
+
      <!-- Modal Generate -->
      <div class="modal fade" id="generateModal" role="dialog">
          <div class="modal-dialog modal-sm">
            <div class="modal-content">
              <div class="modal-body">
-             <?php if( CURRENT_TIME() < $result['event_date_starts'] ){?>
-               <p>Generate only available after or during event</p>
-             <?php } else {
-                $event_id_encrypt = base64_encode($event_id);
-                header('Location: ../backend/certificate_generate?event_id='.$event_id_encrypt);        
-             }?>
+            
              </div>
              <div class="modal-footer">
                <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
