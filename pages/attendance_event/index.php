@@ -51,30 +51,30 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 
   <!-- ini script untuk chart -->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  
-  <script type="text/javascript">  
-    google.charts.load('current', {'packages':['corechart']});  
-    google.charts.setOnLoadCallback(drawChart);  
-    function drawChart()  
-          {  
-                var data = google.visualization.arrayToDataTable([  
-                          ['status', 'number'],  
-                          <?php  
-                          while($row = mysqli_fetch_array($chart))  
-                          {  
-                               echo "['".$row["status"]."', ".$row["number"]."],";  
-                          }  
-                          ?>  
-                     ]);  
-                var options = {  
-                      title: 'Percentage of Already Arrive and Not Yet Arrive',  
-                      //is3D:true,  
-                      pieHole: 0.4  
-                     };  
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));  
-                chart.draw(data, options);  
-          }  
-  </script> 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart()
+          {
+                var data = google.visualization.arrayToDataTable([
+                          ['status', 'number'],
+                          <?php
+                          while($row = mysqli_fetch_array($chart))
+                          {
+                               echo "['".$row["status"]."', ".$row["number"]."],";
+                          }
+                          ?>
+                     ]);
+                var options = {
+                      title: 'Percentage of Already Arrive and Not Yet Arrive',
+                      //is3D:true,
+                      pieHole: 0.4
+                     };
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+          }
+  </script>
 </head>
 
 <!--<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
@@ -223,13 +223,13 @@
                   <p><?php echo $item['user_name']?><br /><p>
                 </div>
                 <div class="col-lg-3 text-center">
-                  <p><?php echo $item['user_name']?><br /><p>
+                  <p><?php echo $item['ticket_id']?><br /><p>
                 </div>
                 <div class="col-lg-3 text-center">
                   <p><?php echo date('h:i A', strtotime($item['arrival_time'])) ?><br /><p>
                 </div>
                 <div class="col-lg-3 text-center">
-                  <p><?php 
+                  <p><?php
                     if($item['status']==1) echo "Signed";
                     else echo "Not Signed" ?><br /><p>
                 </div>
@@ -240,10 +240,10 @@
         </div>
         <div id="chart" class="tab-pane fade">
           <br />
-          <div>    
-                <br />  
-                <div id="piechart" class="piechart_attendance"></div>  
-           </div> 
+          <div>
+                <br />
+                <div id="piechart" class="piechart_attendance"></div>
+           </div>
         </div>
         <div id="special" class="tab-pane fade">
           <br />
