@@ -247,11 +247,22 @@
               for($i=0; $i<count($certificate); $i++){?>
                 <?php $event_id_encrypt = base64_encode($certificate[$i]['event_id']); ?>
 
-                        <div class="col-lg-4 text-center" style="cursor: pointer; border: 10px solid white;">
+                        <div class="col-lg-4 text-center" style="cursor: pointer; border: 10px solid white;" data-toggle="modal" data-target="#myModal">
                           <img src='../../user_certificate/<?php echo $certificate[$i]["certificate"]; ?>' width='200' height='200' id="card_event2">
                           <h5 id="title_card"> <?php echo $certificate[$i]["certificate"]; ?> </h5>
                         </div>
-                      </a>
+                      <!-- </a> -->
+
+                      <!-- Modal Preview -->
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                            <img id="blah" src="../../user_certificate/<?php echo $certificate[$i]["certificate"]; ?>" onError="this.onerror=null;this.src='../../images/certificate_default.jpg';" alt="template2" class="img-responsive" style=" margin: 0 auto;" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                   
 
               <?php } ?>
