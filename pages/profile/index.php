@@ -195,14 +195,17 @@
                         <!-- </a> -->
                     
             <?php } ?>
+            <?php } else { ?>
+            <p>Bookmarked events will show up here</p>
+          <?php } ?>
                  </div>
               </div>
 
-          <?php } else { ?>
-            <p>Bookmarked events will show up here</p>
-          <?php } ?>
+          
 
         </div>
+
+
         <div id="past" class="tab-pane fade">
           <br />
           <!-- Events Card -->
